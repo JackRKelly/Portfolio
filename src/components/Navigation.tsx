@@ -3,7 +3,7 @@ import DevTo from "../assets/svg/devto";
 import Github from "../assets/svg/github";
 import JRKLogo from "../assets/svg/jrklogo";
 import LinkedIn from "../assets/svg/linkedin";
-const AnchorLink = require("react-anchor-link-smooth-scroll");
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Navigation = () => {
   return (
@@ -12,9 +12,9 @@ const Navigation = () => {
         <li className="left">
           <ul>
             <li className="logo">
-              <a href="#home">
+              <AnchorLink offset="100" href="#home">
                 <JRKLogo />
-              </a>
+              </AnchorLink>
             </li>
             <li className="divider">
               <div></div>
@@ -51,16 +51,24 @@ const Navigation = () => {
         <li className="right">
           <ul>
             <li>
-              <AnchorLink href="#about">About</AnchorLink>
+              <AnchorLink offset="70" href="#about">
+                About
+              </AnchorLink>
             </li>
             <li>
-              <a href="#work">Work</a>
+              <AnchorLink offset="70" href="#work">
+                Work
+              </AnchorLink>
             </li>
             <li>
-              <a href="#articles">Articles</a>
+              <AnchorLink offset="70" href="#articles">
+                Articles
+              </AnchorLink>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <AnchorLink offset="70" href="#contact">
+                Contact
+              </AnchorLink>
             </li>
           </ul>
         </li>
