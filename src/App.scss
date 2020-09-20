@@ -20,7 +20,7 @@ nav {
     font-weight: bold;
     text-transform: uppercase;
     flex-direction: row;
-    font-size: 18px;
+    font-size: 20px;
     justify-content: space-between;
     padding: 7.5px 0;
     transition: $bezier;
@@ -39,7 +39,7 @@ nav {
             padding: 0 10px 0 0;
             svg {
               fill: $primary;
-              height: 30px;
+              height: 35px;
             }
           }
           &.divider {
@@ -47,7 +47,7 @@ nav {
             div {
               display: block;
               width: 2px;
-              height: 40px;
+              height: 45px;
               background-color: $light;
             }
           }
@@ -55,7 +55,7 @@ nav {
             padding: 0 10px;
             svg {
               fill: $dark;
-              height: 25px;
+              height: 30px;
             }
           }
           a {

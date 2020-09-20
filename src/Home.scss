@@ -3,16 +3,20 @@
 main {
   padding-top: 70px;
   section#home {
+    position: relative;
     .content {
-      position: relative;
       @media (min-width: $large) {
         height: 85%;
         display: flex;
         align-items: center;
       }
+      @media (max-width: $large) {
+        padding-top: 5vh;
+        font-size: 12px;
+      }
       .info {
         @media (min-width: $large) {
-          width: 48%;
+          width: 50%;
         }
         h1 {
           -webkit-text-stroke: 3px $primary;
@@ -20,6 +24,9 @@ main {
           font-size: 5em;
           margin: 0;
           line-height: 1;
+          @media (max-width: $medium) {
+            -webkit-text-stroke: 2px $primary;
+          }
         }
         p {
           margin: 20px 0;
@@ -33,9 +40,20 @@ main {
         }
       }
       .hero {
-        width: 55%;
+        width: 45%;
         position: absolute;
-        right: -5%;
+        right: 5%;
+        @media (max-width: $large) {
+          right: 50%;
+          transform: translateX(50%);
+        }
+        @media (max-width: $medium) {
+          width: 75%;
+          bottom: 27vh;
+        }
+        @media (max-width: $small) {
+          width: 90%;
+        }
         svg {
           width: 100%;
         }
