@@ -1,5 +1,64 @@
+@import "./assets/variables";
+
 nav {
-  background-color: black;
-  margin: 0;
-  padding: 0;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  ul.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    font-weight: bold;
+    text-transform: uppercase;
+    flex-direction: row;
+    font-size: 1.1em;
+    justify-content: space-between;
+    padding: 7.5px 0;
+    transition: $bezier;
+    li {
+      display: inline-block;
+      ul {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        li {
+          display: inline-block;
+          padding: 16px 10px;
+          &.logo {
+            padding: 0 10px 0 0;
+            svg {
+              fill: $primary;
+              height: 30px;
+            }
+          }
+          &.divider {
+            padding: 0 7.5px;
+            div {
+              display: block;
+              width: 2px;
+              height: 35px;
+              background-color: $light;
+            }
+          }
+          &.icon {
+            padding: 0 10px;
+            svg {
+              fill: $dark;
+              height: 25px;
+            }
+          }
+          a {
+            text-decoration: none;
+            color: $dark;
+          }
+        }
+      }
+    }
+  }
 }
