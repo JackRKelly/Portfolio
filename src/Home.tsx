@@ -1,18 +1,25 @@
 import React from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import Content from "./components/Content";
 import "./Home.scss";
 
 const Home = () => {
   return (
     <main>
       <section id="home">
-        <div className="info">
-          <h1>Jack Kelly</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget
-            velit vestibulum, auctor lorem a, tincidunt nisl.
-          </p>
-          <a href="#work">View My Work</a>
-        </div>
+        <Content>
+          <div className="info">
+            <h1>Jack Kelly</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur blah adipiscing elit.
+              Mauris eget velit vestibulum, auctor lorem a, tincidunt nisl blah.
+            </p>
+            <AnchorLink offset="70" href="#work">
+              View My Work
+            </AnchorLink>
+          </div>
+        </Content>
+        <div className="hero"></div>
       </section>
       <section id="about">
         <h1>About</h1>

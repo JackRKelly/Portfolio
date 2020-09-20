@@ -1,8 +1,19 @@
+@import "./assets/variables";
+
 body {
   margin: 0;
   font-family: "Neutra";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @media (min-width: $medium) {
+    font-size: 22px;
+  }
+  @media (max-width: $medium) {
+    font-size: 18px;
+  }
+  @media (max-width: $small) {
+    font-size: 16px;
+  }
 }
 
 code {

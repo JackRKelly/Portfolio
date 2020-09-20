@@ -1,5 +1,10 @@
 @import "./assets/variables";
 
+div.content {
+  @include width;
+  margin: auto;
+}
+
 nav {
   background-color: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
@@ -15,7 +20,7 @@ nav {
     font-weight: bold;
     text-transform: uppercase;
     flex-direction: row;
-    font-size: 1.1em;
+    font-size: 18px;
     justify-content: space-between;
     padding: 7.5px 0;
     transition: $bezier;
@@ -42,7 +47,7 @@ nav {
             div {
               display: block;
               width: 2px;
-              height: 35px;
+              height: 40px;
               background-color: $light;
             }
           }

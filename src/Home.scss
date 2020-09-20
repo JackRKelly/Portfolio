@@ -1,6 +1,42 @@
+@import "./assets/variables";
+
 main {
   padding-top: 70px;
+  section#home {
+    .content {
+      @media (min-width: $large) {
+        height: 85%;
+        display: flex;
+        align-items: center;
+      }
+      .info {
+        @media (min-width: $large) {
+          width: 40%;
+        }
+        h1 {
+          -webkit-text-stroke: 3px $primary;
+          -webkit-text-fill-color: transparent;
+          font-size: 4.75em;
+          margin: 0;
+          line-height: 1;
+        }
+        p {
+          margin: 20px 0;
+          font-size: 1.2em;
+        }
+        a {
+          text-decoration: none;
+          color: $primary;
+          font-weight: bold;
+          font-size: 1.2em;
+        }
+      }
+    }
+    .hero {
+    }
+  }
   section {
     min-height: 100vh;
+    height: 100vh;
   }
 }
