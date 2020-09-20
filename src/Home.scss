@@ -4,6 +4,7 @@ main {
   padding-top: 70px;
   section#home {
     .content {
+      position: relative;
       @media (min-width: $large) {
         height: 85%;
         display: flex;
@@ -11,28 +12,41 @@ main {
       }
       .info {
         @media (min-width: $large) {
-          width: 40%;
+          width: 48%;
         }
         h1 {
           -webkit-text-stroke: 3px $primary;
           -webkit-text-fill-color: transparent;
-          font-size: 4.75em;
+          font-size: 5em;
           margin: 0;
           line-height: 1;
         }
         p {
           margin: 20px 0;
-          font-size: 1.2em;
+          font-size: 1.4em;
         }
         a {
           text-decoration: none;
           color: $primary;
           font-weight: bold;
-          font-size: 1.2em;
+          font-size: 1.4em;
         }
       }
-    }
-    .hero {
+      .hero {
+        width: 55%;
+        position: absolute;
+        right: -5%;
+        svg {
+          width: 100%;
+        }
+        &-image {
+          position: absolute;
+          width: 80%;
+          top: -7%;
+          left: 60%;
+          transform: translateX(-50%);
+        }
+      }
     }
   }
   section {

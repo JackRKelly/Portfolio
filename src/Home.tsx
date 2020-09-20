@@ -1,5 +1,6 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import HeroShapes from "./assets/svg/heroshapes";
 import Content from "./components/Content";
 import "./Home.scss";
 
@@ -18,8 +19,10 @@ const Home = () => {
               View My Work
             </AnchorLink>
           </div>
+          <div className="hero">
+            <HeroShapes />
+          </div>
         </Content>
-        <div className="hero"></div>
       </section>
       <section id="about">
         <h1>About</h1>
