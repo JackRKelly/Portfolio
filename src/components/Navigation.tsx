@@ -3,6 +3,7 @@ import DevTo from "../assets/svg/devto";
 import Github from "../assets/svg/github";
 import JRKLogo from "../assets/svg/jrklogo";
 import LinkedIn from "../assets/svg/linkedin";
+const AnchorLink = require("react-anchor-link-smooth-scroll");
 
 const Navigation = () => {
   return (
@@ -50,7 +51,7 @@ const Navigation = () => {
         <li className="right">
           <ul>
             <li>
-              <a href="#about">About</a>
+              <AnchorLink href="#about">About</AnchorLink>
             </li>
             <li>
               <a href="#work">Work</a>
