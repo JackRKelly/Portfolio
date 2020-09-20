@@ -1,5 +1,6 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import DownArrow from "./assets/svg/downarrow";
 import HeroShapes from "./assets/svg/heroshapes";
 import Content from "./components/Content";
 import "./Home.scss";
@@ -16,7 +17,7 @@ const Home = () => {
               Mauris eget velit vestibulum, auctor lorem a, tincidunt nisl blah.
             </p>
             <AnchorLink offset="70" href="#work">
-              View My Work
+              <DownArrow /> View My Work
             </AnchorLink>
           </div>
           <div className="hero">
@@ -25,7 +26,17 @@ const Home = () => {
         </Content>
       </section>
       <section id="about">
-        <h1>About</h1>
+        <Content>
+          <h1>About</h1>
+          <p>
+            I'm a self-taught software engineer who is currently a intern at
+            cerner corperation. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat,
+            a facilisis leo finibus a. Proin dignissim interdum augue ut
+            consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie
+            viverrasce turpis nisl, venenatis id malesuada et, laoreet at lacus.
+          </p>
+        </Content>
       </section>
       <section id="work">
         <h1>Work</h1>

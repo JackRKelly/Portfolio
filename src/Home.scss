@@ -18,6 +18,9 @@ main {
         @media (min-width: $large) {
           width: 50%;
         }
+        @media (min-width: $extralarge) {
+          width: 45%;
+        }
         h1 {
           -webkit-text-stroke: 3px $primary;
           -webkit-text-fill-color: transparent;
@@ -30,13 +33,19 @@ main {
         }
         p {
           margin: 20px 0;
-          font-size: 1.4em;
+          font-size: 1.5em;
         }
         a {
+          display: flex;
+          svg {
+            width: 1.25em;
+            padding-right: 7.5px;
+            fill: #ff5d5d;
+          }
           text-decoration: none;
           color: $primary;
           font-weight: bold;
-          font-size: 1.4em;
+          font-size: 1.5em;
         }
       }
       .hero {
