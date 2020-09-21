@@ -37,6 +37,8 @@ main {
         }
         a {
           display: flex;
+          align-items: center;
+          flex-direction: row;
           svg {
             width: 1.25em;
             padding-right: 7.5px;
@@ -47,8 +49,6 @@ main {
           font-weight: bold;
           font-size: 1.5em;
           transition: $bezier;
-          &:hover {
-          }
         }
       }
       .hero {
@@ -81,28 +81,43 @@ main {
     }
   }
   section#about {
-    h1 {
-      font-size: 5em;
+    padding-top: 5%;
+    .content {
       position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      margin: 0;
-      display: inline-block;
-      color: $primary;
-      &::after {
-        content: "01";
+      svg {
         position: absolute;
-        font-family: "Domine";
-        color: $light-primary;
-        font-weight: lighter;
-        font-size: 1.5em;
-        top: -0.55em;
-        right: -0.4em;
-        z-index: -1;
+        left: -27%;
+        top: -60%;
+        width: 55%;
+        overflow: visible;
+        @media (min-width: $large) {
+          top: -70%;
+        }
       }
-    }
-    p {
-      font-size: 1.5em;
+      h1 {
+        font-size: 5.5em;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        display: inline-block;
+        color: $primary;
+        margin-bottom: 25px;
+        &::after {
+          content: "01";
+          position: absolute;
+          font-family: "Domine";
+          color: $light-primary;
+          font-weight: lighter;
+          font-size: 1.7em;
+          top: -0.55em;
+          right: -0.4em;
+          z-index: -1;
+        }
+      }
+      p {
+        font-size: 1.75em;
+      }
     }
   }
   section {

@@ -1,6 +1,7 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
+import AboutShapes from "./assets/svg/aboutshapes";
 import DownArrow from "./assets/svg/downarrow";
 import HeroShapes from "./assets/svg/heroshapes";
 import Content from "./components/Content";
@@ -42,6 +43,7 @@ const Home = () => {
       </section>
       <section id="about">
         <Content>
+          <AboutShapes parallax={parallax} />
           <h1>About</h1>
           <p>
             I'm a self-taught software engineer who is currently a intern at
