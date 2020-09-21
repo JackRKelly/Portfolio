@@ -4,6 +4,8 @@ import Github from "../assets/svg/github";
 import JRKLogo from "../assets/svg/jrklogo";
 import LinkedIn from "../assets/svg/linkedin";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import Close from "../assets/svg/close";
+import Hamburger from "../assets/svg/hamburger";
 
 interface Props {
   isMobile: boolean;
@@ -35,8 +37,9 @@ const Navigation = (props: Props) => {
                     onClick={() => {
                       setIsNavOpen(true);
                     }}
+                    className="logo"
                   >
-                    Ham
+                    <Hamburger />
                   </li>
                 </ul>
               </li>
@@ -45,7 +48,7 @@ const Navigation = (props: Props) => {
           <nav
             className="mobile-full"
             style={{
-              width: isNavOpen ? "100%" : "0%",
+              left: isNavOpen ? "0" : "-100%",
               pointerEvents: isNavOpen ? "auto" : "none",
             }}
           >
@@ -54,8 +57,9 @@ const Navigation = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
+                className="icon"
               >
-                close
+                <Close />
               </li>
               <li
                 onClick={() => {

@@ -15,10 +15,42 @@ nav {
   z-index: 300;
   &.mobile-full {
     z-index: 301;
-    transition: $bezier;
+    transition: $ease-in-out;
     height: 100%;
     width: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    ul {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        cursor: pointer;
+        &.icon {
+          width: 60px;
+          fill: $primary;
+          margin-bottom: 30px;
+        }
+        a {
+          display: inline-block;
+          padding: 14px 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $dark;
+          font-weight: bold;
+          font-size: 25px;
+          cursor: pointer;
+        }
+      }
+    }
   }
   ul.container {
     width: 90%;
@@ -29,7 +61,7 @@ nav {
     flex-direction: row;
     font-size: 20px;
     justify-content: space-between;
-    padding: 7.5px 0;
+    padding: 10px 0;
     transition: $bezier;
     li {
       display: inline-block;
@@ -42,6 +74,7 @@ nav {
         li {
           display: inline-block;
           padding: 16px 10px;
+          cursor: pointer;
           &.logo {
             padding: 0 10px 0 0;
             svg {
