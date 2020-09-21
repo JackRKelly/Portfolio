@@ -1,13 +1,28 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { useSpring } from "react-spring/web";
 import DownArrow from "./assets/svg/downarrow";
 import HeroShapes from "./assets/svg/heroshapes";
 import Content from "./components/Content";
 import "./Home.scss";
 
 const Home = () => {
+  const calc = (x, y) => [
+    x - window.innerWidth / 2,
+    y - window.innerHeight / 2,
+  ];
+
+  const [parallax, setParallax] = useSpring(() => ({
+    xy: [0, 0],
+    config: { mass: 10, tension: 250, friction: 250 },
+  }));
+
   return (
-    <main>
+    <main
+      onMouseMove={({ clientX: x, clientY: y }) =>
+        setParallax({ xy: calc(x, y) })
+      }
+    >
       <section id="home">
         <Content>
           <div className="info">
@@ -21,7 +36,7 @@ const Home = () => {
             </AnchorLink>
           </div>
           <div className="hero">
-            <HeroShapes />
+            <HeroShapes parallax={parallax} />
           </div>
         </Content>
       </section>

@@ -46,6 +46,16 @@ main {
           color: $primary;
           font-weight: bold;
           font-size: 1.5em;
+          transition: $bezier;
+          &:hover {
+            // transform: translateX(10px);
+            svg {
+              polygon {
+                transition: $bezier;
+                transform: translateY(40px);
+              }
+            }
+          }
         }
       }
       .hero {
@@ -65,6 +75,7 @@ main {
         }
         svg {
           width: 100%;
+          overflow: visible;
         }
         &-image {
           position: absolute;
