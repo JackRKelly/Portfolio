@@ -5,6 +5,8 @@ import AboutShapes from "./assets/svg/aboutshapes";
 import DownArrow from "./assets/svg/downarrow";
 import HeroShapes from "./assets/svg/heroshapes";
 import Content from "./components/Content";
+import WorkCard from "./components/WorkCard";
+import WorkWrapper from "./components/WorkWrapper";
 import "./Home.scss";
 
 const Home = () => {
@@ -56,7 +58,53 @@ const Home = () => {
         </Content>
       </section>
       <section id="work">
-        <h1>Work</h1>
+        <Content>
+          <h1>Work</h1>
+          <WorkWrapper>
+            <WorkCard
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+              }
+              title={"Website Name"}
+              tags={["Website", "React.js"]}
+            />
+            <WorkCard
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+              }
+              title={"Project Name"}
+              tags={["Command", "Rust"]}
+            />
+            <WorkCard
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+              }
+              title={"Website Name"}
+              tags={["Website", "React.js"]}
+            />
+            <WorkCard
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+              }
+              title={"Website Name"}
+              tags={["Website", "React.js"]}
+            />
+            <WorkCard
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+              }
+              title={"Website Name"}
+              tags={["Website", "React.js"]}
+            />
+            <WorkCard
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+              }
+              title={"Website Name"}
+              tags={["Website", "React.js"]}
+            />
+          </WorkWrapper>
+        </Content>
       </section>
       <section id="articles">
         <h1>Articles</h1>

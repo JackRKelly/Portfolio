@@ -6,13 +6,13 @@ const AboutShapes = (props) => {
   const { parallax } = props;
 
   const trans1 = (x: number, y: number) =>
-    `translate3d(${x / 6}px,${y / 6}px,0)`;
-  const trans2 = (x: number, y: number) =>
     `translate3d(${x / 8}px,${y / 8}px,0)`;
-  const trans3 = (x: number, y: number) =>
+  const trans2 = (x: number, y: number) =>
     `translate3d(${x / 10}px,${y / 10}px,0)`;
-  const trans4 = (x: number, y: number) =>
+  const trans3 = (x: number, y: number) =>
     `translate3d(${x / 12}px,${y / 12}px,0)`;
+  const trans4 = (x: number, y: number) =>
+    `translate3d(${x / 14}px,${y / 14}px,0)`;
 
   return (
     <svg
