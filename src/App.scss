@@ -13,6 +13,13 @@ nav {
   left: 0;
   width: 100%;
   z-index: 300;
+  &.mobile-full {
+    z-index: 301;
+    transition: $bezier;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
   ul.container {
     width: 90%;
     margin: auto;

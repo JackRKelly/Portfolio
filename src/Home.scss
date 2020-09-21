@@ -51,7 +51,7 @@ main {
       .hero {
         width: 45%;
         position: absolute;
-        right: 5%;
+        right: 7.5%;
         @media (max-width: $large) {
           right: 50%;
           transform: translateX(50%);
