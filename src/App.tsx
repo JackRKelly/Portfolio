@@ -23,7 +23,7 @@ const App = () => {
   return (
     <div className="App">
       <Navigation isMobile={isMobile} />
-      <Home />
+      <Home isMobile={isMobile} />
     </div>
   );
 };

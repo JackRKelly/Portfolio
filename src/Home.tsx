@@ -9,7 +9,13 @@ import WorkCard from "./components/WorkCard";
 import WorkWrapper from "./components/WorkWrapper";
 import "./Home.scss";
 
-const Home = () => {
+interface Props {
+  isMobile: boolean;
+}
+
+const Home = (props: Props) => {
+  const { isMobile } = props;
+
   const calc = (x, y) => [
     x - window.innerWidth / 2,
     y - window.innerHeight / 2,
@@ -45,7 +51,8 @@ const Home = () => {
       </section>
       <section id="about">
         <Content>
-          <AboutShapes parallax={parallax} />
+          {isMobile ? <></> : <AboutShapes parallax={parallax} />}
+
           <h1>About</h1>
           <p>
             I'm a self-taught software engineer who is currently a intern at

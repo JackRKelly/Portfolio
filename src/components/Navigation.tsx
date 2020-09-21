@@ -159,7 +159,7 @@ const Navigation = (props: Props) => {
                   </AnchorLink>
                 </li>
                 <li>
-                  <AnchorLink offset="70" href="#work">
+                  <AnchorLink offset="30" href="#work">
                     Work
                   </AnchorLink>
                 </li>
