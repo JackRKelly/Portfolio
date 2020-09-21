@@ -3,16 +3,6 @@ import "./heroshapes.scss";
 import JRKHero from "../images/jrkhero.png";
 import { animated } from "react-spring";
 
-interface Props {
-  parallax: {
-    xy: number[];
-    config: {
-      mass: number;
-      tension: number;
-      friction: number;
-    };
-  };
-}
 const HeroShapes = (props) => {
   const { parallax } = props;
 

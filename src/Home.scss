@@ -48,13 +48,6 @@ main {
           font-size: 1.5em;
           transition: $bezier;
           &:hover {
-            // transform: translateX(10px);
-            svg {
-              polygon {
-                transition: $bezier;
-                transform: translateY(40px);
-              }
-            }
           }
         }
       }
@@ -87,8 +80,36 @@ main {
       }
     }
   }
+  section#about {
+    h1 {
+      font-size: 5em;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      display: inline-block;
+      color: $primary;
+      &::after {
+        content: "01";
+        position: absolute;
+        font-family: "Domine";
+        color: $light-primary;
+        font-weight: lighter;
+        font-size: 1.5em;
+        top: -0.55em;
+        right: -0.4em;
+        z-index: -1;
+      }
+    }
+    p {
+      font-size: 1.5em;
+    }
+  }
   section {
     min-height: 100vh;
     height: 100vh;
+    @media (max-width: $large) {
+      font-size: 12px;
+    }
   }
 }

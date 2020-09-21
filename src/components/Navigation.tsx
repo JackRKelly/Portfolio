@@ -66,6 +66,15 @@ const Navigation = (props: Props) => {
                   setIsNavOpen(false);
                 }}
               >
+                <AnchorLink offset="70" href="#home">
+                  Home
+                </AnchorLink>
+              </li>
+              <li
+                onClick={() => {
+                  setIsNavOpen(false);
+                }}
+              >
                 <AnchorLink offset="70" href="#about">
                   About
                 </AnchorLink>
