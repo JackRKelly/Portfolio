@@ -26,6 +26,7 @@ const WorkCard: FC<Props> = (props: Props) => {
       <div className="text">
         <h5>{title}</h5>
         <p>{description}</p>
+        <span>Expand</span>
       </div>
     </li>
   );

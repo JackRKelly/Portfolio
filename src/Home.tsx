@@ -71,42 +71,21 @@ const Home: FC<Props> = (props: Props) => {
           <WorkWrapper>
             <WorkCard
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat."
               }
               title={"Website Name"}
               tags={["Website", "React.js"]}
             />
             <WorkCard
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat."
               }
               title={"Project Name"}
               tags={["Command", "Rust"]}
             />
             <WorkCard
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
-              }
-              title={"Website Name"}
-              tags={["Website", "React.js"]}
-            />
-            <WorkCard
-              description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
-              }
-              title={"Website Name"}
-              tags={["Website", "React.js"]}
-            />
-            <WorkCard
-              description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
-              }
-              title={"Website Name"}
-              tags={["Website", "React.js"]}
-            />
-            <WorkCard
-              description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat."
               }
               title={"Website Name"}
               tags={["Website", "React.js"]}
