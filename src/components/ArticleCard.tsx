@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import PlaceholderImage from "../assets/images/placeholder.png";
 import ExternalLink from "../assets/svg/ExternalLink";
 
@@ -9,7 +9,7 @@ interface Props {
   link: string;
 }
 
-const ArticleCard = (props: Props) => {
+const ArticleCard: FC<Props> = (props: Props) => {
   const { description, tags, title, link } = props;
 
   return (

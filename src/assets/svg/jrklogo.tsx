@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const JRKLogo = () => {
+const JRKLogo: FC = () => {
   return (
     <svg
       id="JRKLogo"

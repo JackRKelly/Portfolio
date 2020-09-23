@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 import PlaceholderImage from "../assets/images/placeholder.png";
 
@@ -8,7 +8,7 @@ interface Props {
   title: string;
 }
 
-const WorkCard = (props: Props) => {
+const WorkCard: FC<Props> = (props: Props) => {
   const { description, tags, title } = props;
 
   return (

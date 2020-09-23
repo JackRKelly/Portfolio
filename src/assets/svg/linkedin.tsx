@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const LinkedIn = () => {
+const LinkedIn: FC = () => {
   return (
     <svg
       id="Layer_1"

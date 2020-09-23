@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const externalLink = () => {
+const ExternalLink: FC = () => {
   return (
     <svg viewBox="0 0 24 24">
       <polyline points="14,3 14,5 17.6,5 7.8,14.8 9.2,16.2 19,6.4 19,10 21,10 21,3" />
@@ -9,4 +9,4 @@ const externalLink = () => {
   );
 };
 
-export default externalLink;
+export default ExternalLink;

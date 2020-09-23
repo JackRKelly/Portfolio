@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import DevTo from "../assets/svg/DevTo";
 import Github from "../assets/svg/Github";
-import JRKLogo from "../assets/svg/jrklogo";
-import LinkedIn from "../assets/svg/linkedin";
+import JRKLogo from "../assets/svg/JRKLogo";
+import LinkedIn from "../assets/svg/LinkedIn";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Close from "../assets/svg/Close";
 import Hamburger from "../assets/svg/Hamburger";
@@ -11,7 +11,7 @@ interface Props {
   isMobile: boolean;
 }
 
-const Navigation = (props: Props) => {
+const Navigation: FC<Props> = (props: Props) => {
   const { isMobile } = props;
 
   const [isNavOpen, setIsNavOpen] = useState(false);

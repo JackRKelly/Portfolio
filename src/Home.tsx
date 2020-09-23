@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
 import AboutShapes from "./assets/svg/AboutShapes";
@@ -15,7 +15,7 @@ interface Props {
   isMobile: boolean;
 }
 
-const Home = (props: Props) => {
+const Home: FC<Props> = (props: Props) => {
   const { isMobile } = props;
 
   const calc = (x, y) => [

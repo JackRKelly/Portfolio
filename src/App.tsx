@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import "./App.scss";
 import Home from "./Home";
 
-const App = () => {
+const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const checkMobile = () => {

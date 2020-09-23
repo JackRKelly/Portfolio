@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const DevTo = () => {
+const DevTo: FC = () => {
   return (
     <svg
       id="Layer_1"
