@@ -1,9 +1,9 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
-import AboutShapes from "./assets/svg/aboutshapes";
-import DownArrow from "./assets/svg/downarrow";
-import HeroShapes from "./assets/svg/heroshapes";
+import AboutShapes from "./assets/svg/AboutShapes";
+import DownArrow from "./assets/svg/DownArrow";
+import HeroShapes from "./assets/svg/HeroShapes";
 import ArticleCard from "./components/ArticleCard";
 import ArticleWrapper from "./components/ArticleWrapper";
 import Content from "./components/Content";
@@ -120,27 +120,33 @@ const Home = (props: Props) => {
           <ArticleWrapper>
             <ArticleCard
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+                "How to create and publish a full stack application using React.js, Nginx, Strapi, MongoDB, and DigitalOcean."
               }
-              title={"Website Name"}
-              tags={["Website", "React.js"]}
-              link={"https://dev.to"}
+              title={"Create a Full-Stack App"}
+              tags={["Tutorial", "Cloud Hosting"]}
+              link={
+                "https://dev.to/jackrkelly/create-a-full-stack-web-application-using-react-strapi-nginx-mongodb-and-digitalocean-bkh"
+              }
             />
             <ArticleCard
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+                "How to create and publish a full stack application using React.js, Nginx, Strapi, MongoDB, and DigitalOcean."
               }
-              title={"Project Name"}
-              tags={["Command", "Rust"]}
-              link={"https://dev.to"}
+              title={"Create a Full-Stack App"}
+              tags={["Tutorial", "Cloud Hosting"]}
+              link={
+                "https://dev.to/jackrkelly/create-a-full-stack-web-application-using-react-strapi-nginx-mongodb-and-digitalocean-bkh"
+              }
             />
             <ArticleCard
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+                "How to create and publish a full stack application using React.js, Nginx, Strapi, MongoDB, and DigitalOcean."
               }
-              title={"Website Name"}
-              tags={["Website", "React.js"]}
-              link={"https://dev.to"}
+              title={"Create a Full-Stack App"}
+              tags={["Tutorial", "Cloud Hosting"]}
+              link={
+                "https://dev.to/jackrkelly/create-a-full-stack-web-application-using-react-strapi-nginx-mongodb-and-digitalocean-bkh"
+              }
             />
           </ArticleWrapper>
         </Content>

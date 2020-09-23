@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import DevTo from "../assets/svg/devto";
-import Github from "../assets/svg/github";
+import DevTo from "../assets/svg/DevTo";
+import Github from "../assets/svg/Github";
 import JRKLogo from "../assets/svg/jrklogo";
 import LinkedIn from "../assets/svg/linkedin";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import Close from "../assets/svg/close";
-import Hamburger from "../assets/svg/hamburger";
+import Close from "../assets/svg/Close";
+import Hamburger from "../assets/svg/Hamburger";
 
 interface Props {
   isMobile: boolean;

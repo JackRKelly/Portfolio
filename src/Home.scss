@@ -315,77 +315,88 @@ main {
         @media (max-width: $medium) {
           padding: 60px 0 0 0;
         }
-        li {
-          padding: 20px 20px 0 20px;
-          background-color: white;
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
-          border-radius: 3px;
-          cursor: pointer;
-          &:hover {
-            .image {
-              img {
-                transform: scale(1.05);
-              }
-            }
-          }
-          .image {
-            width: 95%;
-            position: relative;
-            top: -2.5em;
-            @media (max-width: $large) {
-              top: -5em;
-            }
-            left: 50%;
-            transform: translateX(-50%);
-            img {
-              width: 100%;
-              border-radius: 3px;
-              transition: $ease-in-out;
-              transform-origin: bottom;
-            }
-            .tag-list {
-              list-style: none;
-              padding: 0;
-              margin: 0;
-              position: absolute;
-              bottom: -11px;
-              li {
-                padding: 5px 15px;
-                background-color: $primary;
-                color: white;
-                font-weight: bold;
-                font-size: 1.5em;
-                display: inline-block;
-                margin-left: 17px;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-                transition: $ease-in-out;
-                @media (min-width: $large) {
-                  font-size: 1em;
+        a {
+          text-decoration: none;
+          li {
+            padding: 20px 20px 0 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+            border-radius: 3px;
+            cursor: pointer;
+            &:hover {
+              .image {
+                img {
+                  transform: scale(1.05);
                 }
               }
             }
-          }
-          .text {
-            width: 95%;
-            margin: auto;
-            position: relative;
-            top: -30px;
-            @media (max-width: $large) {
-              font-size: 20px;
+            .image {
+              width: 95%;
+              position: relative;
+              top: -2.5em;
+              @media (max-width: $large) {
+                top: -5em;
+              }
+              left: 50%;
+              transform: translateX(-50%);
+              img {
+                width: 100%;
+                border-radius: 3px;
+                transition: $ease-in-out;
+                transform-origin: bottom;
+              }
+              .tag-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                bottom: -11px;
+                li {
+                  padding: 5px 15px;
+                  background-color: $primary;
+                  color: white;
+                  font-weight: bold;
+                  font-size: 1.5em;
+                  display: inline-block;
+                  margin-left: 17px;
+                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+                  transition: $ease-in-out;
+                  @media (min-width: $large) {
+                    font-size: 1em;
+                  }
+                }
+              }
             }
-            h5 {
-              margin: 0 0 15px 0;
-              font-size: 1.75em;
-              color: $dark;
-            }
-            p {
-              margin: 0;
-              color: $medium-dark;
-            }
-            a {
-              text-align: right;
-              font-weight: bold;
-              text-decoration: none;
+            .text {
+              width: 95%;
+              margin: auto;
+              position: relative;
+              top: -30px;
+              @media (max-width: $large) {
+                font-size: 20px;
+              }
+              h5 {
+                margin: 0 0 15px 0;
+                font-size: 1.75em;
+                color: $dark;
+              }
+              p {
+                margin: 0;
+                font-size: 1.1em;
+                color: $medium-dark;
+              }
+              span {
+                margin-top: 15px;
+                font-size: 1.1em;
+                color: $primary;
+                text-align: right;
+                display: block;
+                font-weight: bold;
+                transition: $ease-in-out;
+                &:hover {
+                  // transform: scale(1.1);
+                }
+              }
             }
           }
         }
