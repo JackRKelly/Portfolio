@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-const DevTo: FC = () => {
+const Devto: FC = () => {
   return (
     <svg
       id="Layer_1"
@@ -16,4 +16,4 @@ const DevTo: FC = () => {
   );
 };
 
-export default DevTo;
+export default Devto;

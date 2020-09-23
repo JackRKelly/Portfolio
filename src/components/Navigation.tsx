@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import DevTo from "../assets/svg/DevTo";
+import Devto from "../assets/svg/Devto";
 import Github from "../assets/svg/Github";
 import JRKLogo from "../assets/svg/JRKLogo";
 import LinkedIn from "../assets/svg/LinkedIn";
@@ -137,7 +137,7 @@ const Navigation: FC<Props> = (props: Props) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <DevTo />
+                    <Devto />
                   </a>
                 </li>
                 <li className="icon">
