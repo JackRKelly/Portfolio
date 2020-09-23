@@ -200,6 +200,11 @@ main {
                 transform: scale(1.05);
               }
             }
+            .tag-list {
+              li {
+                transform: translateY(5px);
+              }
+            }
           }
           .image {
             width: 95%;
@@ -225,15 +230,17 @@ main {
               li {
                 padding: 5px 15px;
                 background-color: $primary;
-                color: white;
-                font-weight: bold;
-                font-size: 1.5em;
                 display: inline-block;
                 margin-left: 17px;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
                 @include ease-in-out(200ms);
-                @media (min-width: $large) {
-                  font-size: 1em;
+                span {
+                  color: white;
+                  font-weight: bold;
+                  font-size: 1.5em;
+                  @media (min-width: $large) {
+                    font-size: 1em;
+                  }
                 }
               }
             }
@@ -263,7 +270,7 @@ main {
   section#articles {
     padding-top: 10%;
     @media (max-width: $medium) {
-      padding-top: 15%;
+      padding-top: 25%;
     }
     .content {
       position: relative;
@@ -336,6 +343,11 @@ main {
                       transform: translate(2px, -2px);
                     }
                   }
+                }
+              }
+              .tag-list {
+                li {
+                  transform: translateY(5px);
                 }
               }
             }

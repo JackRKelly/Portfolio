@@ -17,7 +17,9 @@ const WorkCard = (props: Props) => {
         <img src={PlaceholderImage} alt="" />
         <ul className="tag-list">
           {tags.map((tag, index) => (
-            <li key={index}>{tag}</li>
+            <li key={index}>
+              <span>{tag}</span>
+            </li>
           ))}
         </ul>
       </div>
