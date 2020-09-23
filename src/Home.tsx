@@ -4,6 +4,8 @@ import { useSpring } from "react-spring/web";
 import AboutShapes from "./assets/svg/aboutshapes";
 import DownArrow from "./assets/svg/downarrow";
 import HeroShapes from "./assets/svg/heroshapes";
+import ArticleCard from "./components/ArticleCard";
+import ArticleWrapper from "./components/ArticleWrapper";
 import Content from "./components/Content";
 import WorkCard from "./components/WorkCard";
 import WorkWrapper from "./components/WorkWrapper";
@@ -52,7 +54,6 @@ const Home = (props: Props) => {
       <section id="about">
         <Content>
           {isMobile ? <></> : <AboutShapes parallax={parallax} />}
-
           <h1>About</h1>
           <p>
             I'm a self-taught software engineer who is currently a intern at
@@ -114,7 +115,35 @@ const Home = (props: Props) => {
         </Content>
       </section>
       <section id="articles">
-        <h1>Articles</h1>
+        <Content>
+          <h1>Articles</h1>
+          <ArticleWrapper>
+            <ArticleCard
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+              }
+              title={"Website Name"}
+              tags={["Website", "React.js"]}
+              link={"https://dev.to"}
+            />
+            <ArticleCard
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+              }
+              title={"Project Name"}
+              tags={["Command", "Rust"]}
+              link={"https://dev.to"}
+            />
+            <ArticleCard
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat. Vivamus placerat dapibus velit non eleifend. Sed molestie"
+              }
+              title={"Website Name"}
+              tags={["Website", "React.js"]}
+              link={"https://dev.to"}
+            />
+          </ArticleWrapper>
+        </Content>
       </section>
       <section id="contact">
         <h1>Contact</h1>
