@@ -54,7 +54,7 @@ main {
           color: $primary;
           font-weight: bold;
           font-size: 1.5em;
-          transition: $bezier;
+          @include bezier(200ms);
         }
       }
       .hero {
@@ -140,7 +140,7 @@ main {
     }
     .content {
       position: relative;
-      svg {
+      svg.shapes {
         position: absolute;
         left: -27%;
         top: -60%;
@@ -213,7 +213,7 @@ main {
             img {
               width: 100%;
               border-radius: 3px;
-              transition: $ease-in-out;
+              @include ease-in-out(200ms);
               transform-origin: bottom;
             }
             .tag-list {
@@ -231,7 +231,7 @@ main {
                 display: inline-block;
                 margin-left: 17px;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-                transition: $ease-in-out;
+                @include ease-in-out(200ms);
                 @media (min-width: $large) {
                   font-size: 1em;
                 }
@@ -267,7 +267,7 @@ main {
     }
     .content {
       position: relative;
-      svg {
+      svg.shapes {
         position: absolute;
         left: -27%;
         top: -60%;
@@ -329,6 +329,15 @@ main {
                   transform: scale(1.05);
                 }
               }
+              .text {
+                .link {
+                  svg {
+                    polyline {
+                      transform: translate(2px, -2px);
+                    }
+                  }
+                }
+              }
             }
             .image {
               width: 95%;
@@ -342,7 +351,7 @@ main {
               img {
                 width: 100%;
                 border-radius: 3px;
-                transition: $ease-in-out;
+                @include ease-in-out(200ms);
                 transform-origin: bottom;
               }
               .tag-list {
@@ -360,7 +369,7 @@ main {
                   display: inline-block;
                   margin-left: 17px;
                   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-                  transition: $ease-in-out;
+                  @include ease-in-out(200ms);
                   @media (min-width: $large) {
                     font-size: 1em;
                   }
@@ -385,16 +394,28 @@ main {
                 font-size: 1.1em;
                 color: $medium-dark;
               }
-              span {
-                margin-top: 15px;
-                font-size: 1.1em;
-                color: $primary;
-                text-align: right;
-                display: block;
-                font-weight: bold;
-                transition: $ease-in-out;
-                &:hover {
-                  // transform: scale(1.1);
+              .link {
+                display: flex;
+                justify-content: flex-end;
+                p {
+                  margin-top: 15px;
+                  font-size: 1.1em;
+                  color: $primary;
+                  text-align: right;
+                  font-weight: bold;
+                  display: flex;
+                  align-items: center;
+                  flex-direction: row;
+                  position: relative;
+                }
+                svg {
+                  margin-left: 5px;
+                  width: 30px;
+                  fill: $primary;
+                  overflow: visible;
+                  polyline {
+                    @include ease-in-out(150ms);
+                  }
                 }
               }
             }

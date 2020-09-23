@@ -1,6 +1,6 @@
 import React from "react";
-
 import PlaceholderImage from "../assets/images/placeholder.png";
+import ExternalLink from "../assets/svg/ExternalLink";
 
 interface Props {
   description: string;
@@ -26,7 +26,11 @@ const ArticleCard = (props: Props) => {
         <div className="text">
           <h5>{title}</h5>
           <p>{description}</p>
-          <span>Visit on Dev.to</span>
+          <div className="link">
+            <p>
+              Visit on Dev.to <ExternalLink />
+            </p>
+          </div>
         </div>
       </li>
     </a>

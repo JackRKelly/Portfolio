@@ -4,13 +4,18 @@ $dark: #2e2e2e;
 $medium-dark: #777777;
 $light: #d4d4d4;
 
-$bezier: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-$ease-in-out: all 200ms ease-in-out;
-
 $small: 400px;
 $medium: 800px;
 $large: 1200px;
 $extralarge: 1600px;
+
+@mixin ease-in-out($speed) {
+  transition: all $speed ease-in-out;
+}
+
+@mixin bezier($speed) {
+  transition: all $speed cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
 @mixin width {
   @media (min-width: $medium) {
@@ -21,5 +26,24 @@ $extralarge: 1600px;
   }
   @media (max-width: $small) {
     width: 90%;
+  }
+}
+
+@mixin bar($bottom, $width) {
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: $bottom;
+    left: 50%;
+    width: 0%;
+    transform: translateX(-50%);
+    height: 3px;
+    transition: $bezier;
+  }
+  &:hover::after {
+    width: $width;
+  }
+  &.active::after {
+    background-color: $secondary;
   }
 }

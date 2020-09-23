@@ -15,7 +15,7 @@ nav {
   z-index: 300;
   &.mobile-full {
     z-index: 301;
-    transition: $ease-in-out;
+    @include ease-in-out(200ms);
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -62,7 +62,7 @@ nav {
     font-size: 20px;
     justify-content: space-between;
     padding: 10px 0;
-    transition: $bezier;
+    @include bezier(200ms);
     li {
       display: inline-block;
       ul {
