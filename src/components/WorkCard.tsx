@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 
 import PlaceholderImage from "../assets/images/placeholder.png";
+import ExpandWork from "../assets/svg/ExpandWork";
 
 interface Props {
   description: string;
@@ -26,7 +27,11 @@ const WorkCard: FC<Props> = (props: Props) => {
       <div className="text">
         <h5>{title}</h5>
         <p>{description}</p>
-        <span>Expand</span>
+        <div className="link">
+          <p>
+            View Website <ExpandWork />
+          </p>
+        </div>
       </div>
     </li>
   );
