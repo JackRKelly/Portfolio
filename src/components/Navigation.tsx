@@ -6,6 +6,7 @@ import LinkedIn from "../assets/svg/LinkedIn";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Close from "../assets/svg/Close";
 import Hamburger from "../assets/svg/Hamburger";
+import ExternalLink from "../assets/svg/ExternalLink";
 
 interface Props {
   isMobile: boolean;
@@ -128,7 +129,12 @@ const Navigation: FC<Props> = (props: Props) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Github />
+                    <span className="main">
+                      <Github />
+                    </span>
+                    <span className="sub">
+                      <ExternalLink />
+                    </span>
                   </a>
                 </li>
                 <li className="icon">
@@ -137,7 +143,12 @@ const Navigation: FC<Props> = (props: Props) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Devto />
+                    <span className="main">
+                      <Devto />
+                    </span>
+                    <span className="sub">
+                      <ExternalLink />
+                    </span>
                   </a>
                 </li>
                 <li className="icon">
@@ -146,7 +157,12 @@ const Navigation: FC<Props> = (props: Props) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <LinkedIn />
+                    <span className="main">
+                      <LinkedIn />
+                    </span>
+                    <span className="sub">
+                      <ExternalLink />
+                    </span>
                   </a>
                 </li>
               </ul>

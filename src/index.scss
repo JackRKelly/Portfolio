@@ -5,6 +5,7 @@ body {
   font-family: "Neutra";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: $dark;
   @media (min-width: $medium) {
     font-size: 22px;
   }

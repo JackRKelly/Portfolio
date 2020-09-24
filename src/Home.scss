@@ -23,13 +23,11 @@ main {
           width: 45%;
         }
         h1 {
-          -webkit-text-stroke: 3px $primary;
-          -webkit-text-fill-color: transparent;
+          color: $primary;
           font-size: 5em;
           margin: 0;
           line-height: 1;
           @media (max-width: $medium) {
-            -webkit-text-stroke: 2px $primary;
             font-size: 4em;
           }
         }
@@ -126,7 +124,7 @@ main {
           right: -0.4em;
           z-index: -1;
           opacity: 0.2;
-          -webkit-text-stroke: 2.25px $primary;
+          -webkit-text-stroke: 3px $primary;
           -webkit-text-fill-color: transparent;
         }
       }
@@ -174,7 +172,7 @@ main {
           left: -0.5em;
           z-index: -1;
           opacity: 0.2;
-          -webkit-text-stroke: 2.25px $primary;
+          -webkit-text-stroke: 3px $primary;
           -webkit-text-fill-color: transparent;
         }
       }
@@ -349,7 +347,7 @@ main {
           right: -0.4em;
           z-index: -1;
           opacity: 0.2;
-          -webkit-text-stroke: 2.25px $primary;
+          -webkit-text-stroke: 3px $primary;
           -webkit-text-fill-color: transparent;
         }
       }
