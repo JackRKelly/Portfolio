@@ -92,19 +92,22 @@ nav {
           &.icon {
             padding: 0 3px;
             position: relative;
-            &:hover {
-              .main {
-                svg {
-                  opacity: 0;
-                  transform: translateX(-15px) scale(0.5);
+            a {
+              padding: 18px 21px;
+              &:hover {
+                .main {
+                  svg {
+                    opacity: 0;
+                    transform: translateX(-15px) scale(0.5);
+                  }
                 }
-              }
-              .sub {
-                svg {
-                  opacity: 1;
-                  transform: translateX(0px) scale(1);
-                  polyline {
-                    transform: translate(2px, -2px);
+                .sub {
+                  svg {
+                    opacity: 1;
+                    transform: translateX(0px) scale(1);
+                    polyline {
+                      transform: translate(2px, -2px);
+                    }
                   }
                 }
               }
@@ -113,7 +116,8 @@ nav {
           a {
             text-decoration: none;
             color: $dark;
-            padding: 16px 21px;
+            padding: 16px 10px;
+
             margin: 0 5px;
             cursor: pointer;
             .main {
@@ -141,7 +145,7 @@ nav {
                 @include ease-in-out(150ms);
                 polyline {
                   @include ease-in-out(150ms);
-                  transition-delay: 75ms;
+                  transition-delay: 25ms;
                 }
               }
             }

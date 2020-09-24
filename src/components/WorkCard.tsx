@@ -29,7 +29,7 @@ const WorkCard: FC<Props> = (props: Props) => {
         <p>{description}</p>
         <div className="link">
           <p>
-            View Website <ExpandWork />
+            More Details <ExpandWork />
           </p>
         </div>
       </div>
