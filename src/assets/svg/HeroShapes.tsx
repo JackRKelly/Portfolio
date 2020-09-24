@@ -6,30 +6,6 @@ import { animated } from "react-spring";
 const HeroShapes = (props) => {
   const { parallax } = props;
 
-  const [renderParallax, setRenderParallax] = useState<boolean>(true);
-
-  const parallaxRef = useRef<HTMLDivElement>(null);
-
-  const isInViewport = (element: RefObject<HTMLDivElement>) => {
-    const rect = element.current?.getBoundingClientRect();
-    if (rect) {
-      setRenderParallax(
-        rect.top >= -600 &&
-          rect.left >= -600 &&
-          rect.bottom <=
-            (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <=
-            (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
-  };
-
-  const checkParallax = () => {
-    console.log(isInViewport(parallaxRef));
-  };
-
-  window.addEventListener("scroll", checkParallax);
-
   const trans1 = (x: number, y: number) =>
     `translate3d(${x / 6}px,${y / 6}px,0)`;
   const trans2 = (x: number, y: number) =>
@@ -48,10 +24,10 @@ const HeroShapes = (props) => {
         src={JRKHero}
         alt=""
         style={{
-          transform: renderParallax ? parallax.xy.interpolate(trans5) : "none",
+          transform: parallax.xy.interpolate(trans5),
         }}
       />
-      <div className="hero-shapes-wrapper" ref={parallaxRef}>
+      <div className="hero-shapes-wrapper">
         <svg
           id="Layer_1"
           data-name="Layer 1"
