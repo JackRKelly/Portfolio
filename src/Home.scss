@@ -181,21 +181,29 @@ main {
         padding: 100px 0 0 0;
         list-style: none;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-gap: 64px;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-gap: 64px 32px;
         @media (min-width: $large) {
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
           grid-gap: 100px 64px;
         }
         @media (max-width: $medium) {
           padding: 60px 0 0 0;
+          grid-gap: 64px;
         }
+
         li {
           padding: 20px 20px 0 20px;
           background-color: white;
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
           border-radius: 3px;
           cursor: pointer;
+          @media (min-width: 932px) and (max-width: 1489px) {
+            &:nth-last-child(1):nth-child(odd) {
+              grid-column: span 2;
+              width: 50%;
+              margin: auto;
+            }
+          }
           &:hover {
             .image {
               img {
@@ -244,17 +252,18 @@ main {
               li {
                 padding: 5px 15px;
                 background-color: $primary;
+                color: white;
+                font-weight: bold;
+                font-size: 1.5em;
                 display: inline-block;
                 margin-left: 17px;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
                 @include ease-in-out(200ms);
-                span {
-                  color: white;
-                  font-weight: bold;
-                  font-size: 1.5em;
-                  @media (min-width: $large) {
-                    font-size: 1em;
-                  }
+                @media (min-width: $large) {
+                  font-size: 0.8em;
+                }
+                @media (min-width: $extralarge) {
+                  font-size: 1em;
                 }
               }
             }
@@ -356,17 +365,24 @@ main {
         padding: 100px 0 0 0;
         list-style: none;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-gap: 64px;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-gap: 64px 32px;
         @media (min-width: $large) {
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
           grid-gap: 100px 64px;
         }
         @media (max-width: $medium) {
           padding: 60px 0 0 0;
+          grid-gap: 64px;
         }
         a {
           text-decoration: none;
+          @media (min-width: 932px) and (max-width: 1489px) {
+            &:nth-last-child(1):nth-child(odd) {
+              grid-column: span 2;
+              width: 50%;
+              margin: auto;
+            }
+          }
           li {
             padding: 20px 20px 0 20px;
             background-color: white;
@@ -426,6 +442,9 @@ main {
                   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
                   @include ease-in-out(200ms);
                   @media (min-width: $large) {
+                    font-size: 0.8em;
+                  }
+                  @media (min-width: $extralarge) {
                     font-size: 1em;
                   }
                 }
@@ -441,7 +460,7 @@ main {
               }
               h5 {
                 margin: 0 0 15px 0;
-                font-size: 1.75em;
+                font-size: 1.5em;
                 color: $dark;
                 @media (max-width: $medium) {
                   font-size: 1.3em;
