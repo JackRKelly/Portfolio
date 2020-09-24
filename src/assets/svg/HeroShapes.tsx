@@ -1,4 +1,4 @@
-import React, { RefObject, useRef, useState } from "react";
+import React from "react";
 import "./heroshapes.scss";
 import JRKHero from "../images/jrkhero.png";
 import { animated } from "react-spring";
