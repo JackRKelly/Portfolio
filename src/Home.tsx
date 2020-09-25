@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, FormEvent, useRef } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
 import AboutShapes from "./assets/svg/AboutShapes";
@@ -53,7 +53,7 @@ const Home: FC<Props> = (props: Props) => {
       </section>
       <section id="about">
         <Content>
-          {isMobile ? <></> : <AboutShapes parallax={parallax} />}
+          {isMobile ? <></> : <AboutShapes />}
           <h1>About</h1>
           <p>
             I'm a self-taught software engineer who is currently a intern at
@@ -67,6 +67,7 @@ const Home: FC<Props> = (props: Props) => {
       </section>
       <section id="work">
         <Content>
+          {isMobile ? <></> : <AboutShapes />}
           <h1>Work</h1>
           <WorkWrapper>
             <WorkCard
@@ -95,6 +96,7 @@ const Home: FC<Props> = (props: Props) => {
       </section>
       <section id="articles">
         <Content>
+          {isMobile ? <></> : <AboutShapes />}
           <h1>Articles</h1>
           <ArticleWrapper>
             <ArticleCard
@@ -131,7 +133,50 @@ const Home: FC<Props> = (props: Props) => {
         </Content>
       </section>
       <section id="contact">
-        <h1>Contact</h1>
+        <Content>
+          <h1>Contact</h1>
+          <div className="form-wrapper">
+            <form
+              className="contact"
+              onSubmit={(e: FormEvent<HTMLFormElement>) => {
+                console.log("submit2");
+                e.preventDefault();
+              }}
+            >
+              <input
+                type="text"
+                name="full-name"
+                placeholder="Full Name"
+                required
+              />
+              <input type="email" name="email" placeholder="eMail" required />
+              <textarea
+                name="message"
+                cols={30}
+                rows={7}
+                placeholder="Reason for reaching out to me"
+                required
+              ></textarea>
+              <div className="submit">
+                <div className="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="44"
+                    height="44"
+                    viewBox="0 0 44 44"
+                  >
+                    <path
+                      id="iconmonstr-paper-plane-1"
+                      d="M44,0,33,40.333,18.1,27.062l14.3-15.1L13.228,25.216,0,22ZM16.5,30.558V44l5.973-8.123Z"
+                      fill="#fff"
+                    />
+                  </svg>
+                </div>
+                <p>Send Message</p>
+              </div>
+            </form>
+          </div>
+        </Content>
       </section>
     </main>
   );

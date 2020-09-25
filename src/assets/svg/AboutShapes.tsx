@@ -2,18 +2,7 @@ import React from "react";
 import { animated } from "react-spring";
 import "./aboutshapes.scss";
 
-const AboutShapes = (props) => {
-  const { parallax } = props;
-
-  const trans1 = (x: number, y: number) =>
-    `translate3d(${x / 800}px,${y / 800}px,0)`;
-  const trans2 = (x: number, y: number) =>
-    `translate3d(${x / 1000}px,${y / 1000}px,0)`;
-  const trans3 = (x: number, y: number) =>
-    `translate3d(${x / 1200}px,${y / 1200}px,0)`;
-  const trans4 = (x: number, y: number) =>
-    `translate3d(${x / 1400}px,${y / 1400}px,0)`;
-
+const AboutShapes = () => {
   return (
     <svg
       id="Layer_1"
@@ -22,12 +11,7 @@ const AboutShapes = (props) => {
       viewBox="0 0 787.96 435.61"
       className="shapes"
     >
-      <animated.g
-        id="Group_107"
-        data-name="Group 107"
-        className="about-cls-1"
-        style={{ transform: parallax.xy.interpolate(trans4) }}
-      >
+      <animated.g id="Group_107" data-name="Group 107" className="about-cls-1">
         <circle
           id="Ellipse_26"
           data-name="Ellipse 26"
@@ -605,7 +589,7 @@ const AboutShapes = (props) => {
           r="8.5"
         />
       </animated.g>
-      <animated.g style={{ transform: parallax.xy.interpolate(trans3) }}>
+      <animated.g>
         <path
           className="about-cls-3"
           d="M422.81,409.4,431,284.91,319.7,339.17,422.81,409.4m4.42,9.06-117.47-80,126.76-61.83Z"
@@ -617,7 +601,7 @@ const AboutShapes = (props) => {
           transform="translate(-0.54 -1.36)"
         />
       </animated.g>
-      <animated.g style={{ transform: parallax.xy.interpolate(trans2) }}>
+      <animated.g>
         <rect
           className="about-cls-4"
           x="532.17"
@@ -635,11 +619,11 @@ const AboutShapes = (props) => {
           transform="translate(117.42 511.99) rotate(-55.53)"
         />
       </animated.g>
-      <animated.g style={{ transform: parallax.xy.interpolate(trans2) }}>
+      <animated.g>
         <circle className="about-cls-6" cx="624.58" cy="290.2" r="45.1" />
         <circle className="about-cls-7" cx="611.8" cy="277.45" r="45.1" />
       </animated.g>
-      <animated.g style={{ transform: parallax.xy.interpolate(trans1) }}>
+      <animated.g>
         <path
           className="about-cls-8"
           d="M753,206.26l-15.28,12-13.3-17,15.28-11.95-12.4-15.86,17.45-13.64,12.4,15.86,15.28-12,13.31,17-15.29,12,12.4,15.86-17.45,13.64Z"
@@ -651,7 +635,7 @@ const AboutShapes = (props) => {
           transform="translate(-0.54 -1.36)"
         />
       </animated.g>
-      <animated.g style={{ transform: parallax.xy.interpolate(trans3) }}>
+      <animated.g>
         <path
           className="about-cls-3"
           d="M369.42,137.58a56.33,56.33,0,0,0,72.33-23.67L339.41,67.64a56.31,56.31,0,0,0,30,69.94m-2.06,4.56a61.32,61.32,0,0,1-30.64-81.21L448.56,111.5a61.34,61.34,0,0,1-81.2,30.64Z"

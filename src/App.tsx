@@ -7,7 +7,7 @@ const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const checkMobile = () => {
-    if (window.innerWidth < 600) {
+    if (window.innerWidth < 900) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
