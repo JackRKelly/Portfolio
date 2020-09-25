@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, useRef } from "react";
+import React, { FC, FormEvent } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
 import AboutShapes from "./assets/svg/AboutShapes";
@@ -18,7 +18,7 @@ interface Props {
 const Home: FC<Props> = (props: Props) => {
   const { isMobile } = props;
 
-  const calc = (x, y) => [
+  const calc = (x: number, y: number) => [
     x - window.innerWidth / 2,
     y - window.innerHeight / 2,
   ];
@@ -157,23 +157,25 @@ const Home: FC<Props> = (props: Props) => {
                 placeholder="Reason for reaching out to me"
                 required
               ></textarea>
-              <div className="submit">
-                <div className="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="44"
-                    height="44"
-                    viewBox="0 0 44 44"
-                  >
-                    <path
-                      id="iconmonstr-paper-plane-1"
-                      d="M44,0,33,40.333,18.1,27.062l14.3-15.1L13.228,25.216,0,22ZM16.5,30.558V44l5.973-8.123Z"
-                      fill="#fff"
-                    />
-                  </svg>
+              <button type="submit" className="submit-button">
+                <div className="submit">
+                  <div className="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="44"
+                      height="44"
+                      viewBox="0 0 44 44"
+                    >
+                      <path
+                        id="plane"
+                        d="M44,0,33,40.333,18.1,27.062l14.3-15.1L13.228,25.216,0,22ZM16.5,30.558V44l5.973-8.123Z"
+                        fill="#fff"
+                      />
+                    </svg>
+                  </div>
+                  <p>Send Message</p>
                 </div>
-                <p>Send Message</p>
-              </div>
+              </button>
             </form>
           </div>
         </Content>

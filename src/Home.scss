@@ -608,36 +608,42 @@ main {
               color: $light-gray-3;
             }
           }
-          .submit {
-            display: flex;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
-            background-color: white;
-            align-items: center;
-            border-radius: 2px;
+          button.submit-button {
             position: absolute;
+            border: none;
+            font-family: "Neutra";
+            padding: 0;
             bottom: -1.25em;
             right: 2.5em;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+            background-color: white;
+            border-radius: 2px;
             @media (max-width: $medium) {
               right: 1.5em;
+              bottom: -1.5em;
               box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
             }
-            cursor: pointer;
-            .icon {
-              background-color: $primary;
-              padding: 11px 12px 8px;
-              border-radius: 2px;
-              height: 100%;
-              svg {
-                width: 1.2em;
-                height: 1.2em;
+            div.submit {
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+              .icon {
+                background-color: $primary;
+                padding: 0.7em 0.8em 0.5em;
+                border-radius: 2px;
+                height: 100%;
+                svg {
+                  width: 1.6em;
+                  height: 1.6em;
+                }
               }
-            }
-            p {
-              margin: 0;
-              padding: 10px 20px;
-              font-size: 1.1em;
-              @media (max-width: $medium) {
-                padding: 10px 15px;
+              p {
+                margin: 0;
+                padding: 10px 20px;
+                font-size: 1.2em;
+                @media (max-width: $medium) {
+                  padding: 10px 15px;
+                }
               }
             }
           }
