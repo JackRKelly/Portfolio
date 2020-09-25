@@ -422,11 +422,11 @@ main {
               width: 95%;
               position: relative;
               top: -2.5em;
+              left: 50%;
+              transform: translateX(-50%);
               @media (max-width: $large) {
                 top: -5em;
               }
-              left: 50%;
-              transform: translateX(-50%);
               img {
                 width: 100%;
                 border-radius: 3px;
@@ -534,14 +534,14 @@ main {
         font-size: 5.5em;
         position: relative;
         left: 50%;
-        @media (max-width: $medium) {
-          left: 55%;
-        }
         transform: translateX(-50%);
         margin: 0;
         display: inline-block;
         color: $primary;
-        margin-bottom: 25px;
+        margin-bottom: 1em;
+        @media (max-width: $medium) {
+          left: 55%;
+        }
         &::after {
           content: "04";
           position: absolute;
@@ -618,10 +618,17 @@ main {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
             background-color: white;
             border-radius: 2px;
+            @media (min-width: $medium) {
+              font-size: 22px;
+            }
             @media (max-width: $medium) {
+              font-size: 18px;
               right: 1.5em;
-              bottom: -1.5em;
+              bottom: -1.25em;
               box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
+            }
+            @media (max-width: $small) {
+              font-size: 16px;
             }
             div.submit {
               display: flex;
@@ -632,9 +639,16 @@ main {
                 padding: 0.7em 0.8em 0.5em;
                 border-radius: 2px;
                 height: 100%;
+                @media (max-width: $medium) {
+                  padding: 0.6em 0.7em 0.4em;
+                }
                 svg {
                   width: 1.6em;
                   height: 1.6em;
+                  @media (max-width: $medium) {
+                    width: 1.4em;
+                    height: 1.4em;
+                  }
                 }
               }
               p {
@@ -643,6 +657,7 @@ main {
                 font-size: 1.2em;
                 @media (max-width: $medium) {
                   padding: 10px 15px;
+                  font-size: 1.1em;
                 }
               }
             }
