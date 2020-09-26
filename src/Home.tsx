@@ -134,6 +134,7 @@ const Home: FC<Props> = (props: Props) => {
       </section>
       <section id="contact">
         <Content>
+          {isMobile ? <></> : <AboutShapes />}
           <h1>Contact</h1>
           <div className="form-wrapper">
             <form
