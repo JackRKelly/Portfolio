@@ -142,6 +142,7 @@ const Home: FC<Props> = (props: Props) => {
                 console.log("submit2");
                 e.preventDefault();
               }}
+              data-netlify="true"
             >
               <input
                 type="text"
