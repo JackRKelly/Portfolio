@@ -29,6 +29,14 @@ const Home: FC<Props> = (props: Props) => {
     y - window.innerHeight / 2,
   ];
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
   const [parallax, setParallax] = useSpring(() => ({
     xy: [0, 0],
     config: { mass: 10, tension: 250, friction: 250 },
@@ -149,6 +157,7 @@ const Home: FC<Props> = (props: Props) => {
               method="POST"
               ref={contactRef}
               data-netlify="true"
+              data-netlify-honeypot="bot-field"
               onSubmit={(e: FormEvent<HTMLFormElement>) => {
                 console.log("submit2");
                 e.preventDefault();
@@ -159,28 +168,20 @@ const Home: FC<Props> = (props: Props) => {
                   message: message,
                 };
 
-                let request = contactRef.current?.getAttribute("action");
+                fetch("/", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                  },
+                  body: encode({ "form-name": "contact", ...formData }),
+                })
+                  .then(() => alert("Success!"))
+                  .catch((error) => alert(error));
 
-                if (request) {
-                  fetch(request, {
-                    method: "POST",
-                    headers: {
-                      Accept: "application/x-www-form-urlencoded;charset=UTF-8",
-                      "Content-Type":
-                        "application/x-www-form-urlencoded;charset=UTF-8",
-                    },
-                    body: new URLSearchParams(formData).toString(),
-                  }).then((res) => {
-                    if (res) {
-                      console.log("success");
-                      // document.querySelector(domStrings.talkForm).reset();
-                    } else {
-                      alert("Error submitting form. Please try again.");
-                    }
-                  });
-                }
+                e.preventDefault();
               }}
             >
+              <input type="hidden" name="form-name" value="contact" />
               <input
                 type="text"
                 name="full-name"
