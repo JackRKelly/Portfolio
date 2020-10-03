@@ -1,4 +1,4 @@
-import React, { FC, FormEvent } from "react";
+import React, { FC, FormEvent, useRef, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
 import AboutShapes from "./assets/svg/AboutShapes";
@@ -17,6 +17,12 @@ interface Props {
 
 const Home: FC<Props> = (props: Props) => {
   const { isMobile } = props;
+
+  const contactRef = useRef<HTMLFormElement>(null);
+
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const calc = (x: number, y: number) => [
     x - window.innerWidth / 2,
@@ -137,25 +143,72 @@ const Home: FC<Props> = (props: Props) => {
           <h1>Contact</h1>
           <div className="form-wrapper">
             <form
+              id="contactForm"
               className="contact"
+              method="POST"
+              ref={contactRef}
+              data-netlify="true"
               onSubmit={(e: FormEvent<HTMLFormElement>) => {
                 console.log("submit2");
                 e.preventDefault();
+
+                let formData = {
+                  fullName: fullName,
+                  email: email,
+                  message: message,
+                };
+
+                let request = contactRef.current?.getAttribute("action");
+
+                if (request) {
+                  fetch(request, {
+                    method: "POST",
+                    headers: {
+                      Accept: "application/x-www-form-urlencoded;charset=UTF-8",
+                      "Content-Type":
+                        "application/x-www-form-urlencoded;charset=UTF-8",
+                    },
+                    body: new URLSearchParams(formData).toString(),
+                  }).then((res) => {
+                    if (res) {
+                      console.log("success");
+                      // document.querySelector(domStrings.talkForm).reset();
+                    } else {
+                      alert("Error submitting form. Please try again.");
+                    }
+                  });
+                }
               }}
-              data-netlify="true"
             >
               <input
                 type="text"
                 name="full-name"
                 placeholder="Full Name"
+                value={fullName}
+                onChange={(e) => {
+                  setFullName(e.target.value);
+                }}
                 required
               />
-              <input type="email" name="email" placeholder="eMail" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="eMail"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                required
+              />
               <textarea
                 name="message"
                 cols={30}
                 rows={7}
                 placeholder="Reason for reaching out to me"
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
                 required
               ></textarea>
               <button type="submit" className="submit-button">

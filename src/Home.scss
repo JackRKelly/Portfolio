@@ -94,6 +94,7 @@ main {
     .content {
       position: relative;
       svg {
+        max-height: 475px;
         position: absolute;
         left: -27%;
         top: -60%;
@@ -142,6 +143,7 @@ main {
     .content {
       position: relative;
       svg.shapes {
+        max-height: 475px;
         position: absolute;
         right: -27%;
         top: 20%;
@@ -190,6 +192,7 @@ main {
         grid-gap: 64px 32px;
         @media (min-width: $large) {
           grid-gap: 100px 64px;
+          grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
         }
         @media (max-width: $medium) {
           padding: 60px 0 0 0;
@@ -330,6 +333,7 @@ main {
     .content {
       position: relative;
       svg.shapes {
+        max-height: 475px;
         position: absolute;
         left: -27%;
         top: -20%;
@@ -377,6 +381,7 @@ main {
         grid-gap: 64px 32px;
         @media (min-width: $large) {
           grid-gap: 100px 64px;
+          grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
         }
         @media (max-width: $medium) {
           padding: 60px 0 0 0;
@@ -518,6 +523,7 @@ main {
     .content {
       position: relative;
       svg.shapes {
+        max-height: 475px;
         position: absolute;
         left: -27%;
         top: -20%;
