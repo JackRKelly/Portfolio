@@ -18,7 +18,7 @@ interface Props {
 const Home: FC<Props> = (props: Props) => {
   const { isMobile } = props;
 
-  const [fullName, setFullName] = useState("");
+  const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -160,7 +160,7 @@ const Home: FC<Props> = (props: Props) => {
                 e.preventDefault();
 
                 let formData = {
-                  fullName: fullName,
+                  fullname: fullname,
                   email: email,
                   message: message,
                 };
@@ -181,11 +181,11 @@ const Home: FC<Props> = (props: Props) => {
               <input type="hidden" name="form-name" value="contact" />
               <input
                 type="text"
-                name="full-name"
+                name="fullname"
                 placeholder="Full Name"
-                value={fullName}
+                value={fullname}
                 onChange={(e) => {
-                  setFullName(e.target.value);
+                  setFullname(e.target.value);
                 }}
                 required
               />
