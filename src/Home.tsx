@@ -18,8 +18,6 @@ interface Props {
 const Home: FC<Props> = (props: Props) => {
   const { isMobile } = props;
 
-  const contactRef = useRef<HTMLFormElement>(null);
-
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -155,7 +153,6 @@ const Home: FC<Props> = (props: Props) => {
               id="contactForm"
               className="contact"
               method="POST"
-              ref={contactRef}
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               onSubmit={(e: FormEvent<HTMLFormElement>) => {
@@ -168,7 +165,7 @@ const Home: FC<Props> = (props: Props) => {
                   message: message,
                 };
 
-                fetch("/", {
+                fetch("/form", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
