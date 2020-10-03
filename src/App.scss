@@ -3,6 +3,7 @@
 div.content {
   @include width;
   margin: auto;
+  max-width: 1920px;
 }
 
 nav {
@@ -53,6 +54,7 @@ nav {
     }
   }
   ul.container {
+    max-width: 1920px;
     width: 90%;
     margin: auto;
     display: flex;

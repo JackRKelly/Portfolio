@@ -7,6 +7,7 @@ main {
     position: relative;
     height: 100vh;
     .content {
+      position: relative;
       @media (min-width: $large) {
         height: 85%;
         display: flex;
@@ -57,17 +58,19 @@ main {
         }
       }
       .hero {
-        width: 45%;
+        width: 55%;
         position: absolute;
-        right: 7.5%;
+        right: 0%;
+        z-index: -1;
         @media (max-width: $large) {
           right: 50%;
           width: 65%;
+          bottom: -50vh;
           transform: translateX(50%);
         }
         @media (max-width: $medium) {
           width: 75%;
-          bottom: 27vh;
+          bottom: -40vh;
         }
         @media (max-width: $small) {
           width: 90%;
@@ -196,13 +199,30 @@ main {
           padding: 60px 0 0 0;
           grid-gap: 64px;
         }
-
+        .work-details {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #00000050;
+          z-index: 400;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .content {
+            background-color: white;
+            max-width: 1920px;
+            @include width;
+          }
+        }
         li {
           padding: 20px 20px 0 20px;
           background-color: white;
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
           border-radius: 3px;
           cursor: pointer;
+          @include ease-in-out(200ms);
           @media (min-width: 932px) and (max-width: 1489px) {
             &:nth-last-child(1):nth-child(odd) {
               grid-column: span 2;
@@ -341,7 +361,7 @@ main {
           top: -15%;
         }
         @media (min-width: $extralarge) {
-          top: -31%;
+          top: -34%;
         }
       }
       h1 {
@@ -531,7 +551,7 @@ main {
           top: -13%;
         }
         @media (min-width: $extralarge) {
-          top: -25%;
+          top: -28%;
         }
       }
       h1 {
