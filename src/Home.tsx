@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, useRef, useState } from "react";
+import React, { FC, FormEvent, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
 import AboutShapes from "./assets/svg/AboutShapes";
