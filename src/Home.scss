@@ -106,6 +106,9 @@ main {
         @media (min-width: $large) {
           top: -70%;
         }
+        @media (min-width: $extralarge) {
+          top: -77%;
+        }
       }
       h1 {
         font-size: 5.5em;
@@ -205,18 +208,74 @@ main {
           left: 0;
           right: 0;
           bottom: 0;
-          background-color: #00000050;
           z-index: 400;
           display: flex;
           align-items: center;
           justify-content: center;
+          opacity: 0;
+          pointer-events: none;
+          @include ease-in-out(200ms);
+          .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #00000050;
+          }
           .content {
             background-color: white;
+            padding: 20px 20px 0 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+            border-radius: 3px;
             max-width: 1920px;
             @include width;
+            .image {
+              width: 95%;
+              position: relative;
+              top: -2.5em;
+              @media (max-width: $large) {
+                top: -5em;
+              }
+              left: 50%;
+              transform: translateX(-50%);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              img {
+                width: 50%;
+                border-radius: 3px;
+                @include ease-in-out(200ms);
+                transform-origin: bottom;
+              }
+              .tag-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                bottom: -11px;
+                li {
+                  padding: 5px 15px;
+                  background-color: $primary;
+                  color: white;
+                  font-weight: bold;
+                  font-size: 1.5em;
+                  display: inline-block;
+                  margin-left: 17px;
+                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+                  @include ease-in-out(200ms);
+                  @media (min-width: $large) {
+                    font-size: 0.8em;
+                  }
+                  @media (min-width: $extralarge) {
+                    font-size: 1em;
+                  }
+                }
+              }
+            }
           }
         }
-        li {
+        li.work-card {
           padding: 20px 20px 0 20px;
           background-color: white;
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);

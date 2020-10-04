@@ -16,12 +16,41 @@ const WorkCard: FC<Props> = (props: Props) => {
 
   return (
     <>
-      <div className="work-details">
+      <div
+        className="work-details"
+        style={{
+          opacity: isVisible ? "1" : "0",
+          pointerEvents: isVisible ? "auto" : "none",
+        }}
+      >
+        <div
+          className="background"
+          onClick={() => {
+            setIsVisible(false);
+          }}
+        ></div>
         <div className="content">
-          <p>details</p>
+          <div className="image">
+            <img src={PlaceholderImage} alt="" />
+            <ul className="tag-list">
+              {tags.map((tag, index) => (
+                <li key={index}>{tag}</li>
+              ))}
+            </ul>
+          </div>
+          <h5>{title}</h5>
+          <p>{description}</p>
+          <p
+            onClick={() => {
+              setIsVisible(false);
+            }}
+          >
+            close
+          </p>
         </div>
       </div>
       <li
+        className="work-card"
         onClick={() => {
           setIsVisible(!isVisible);
         }}
