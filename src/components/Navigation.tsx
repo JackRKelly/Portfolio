@@ -76,7 +76,7 @@ const Navigation: FC<Props> = (props: Props) => {
                   setIsNavOpen(false);
                 }}
               >
-                <AnchorLink offset="70" href="#about">
+                <AnchorLink offset="185" href="#about">
                   About
                 </AnchorLink>
               </li>
@@ -94,7 +94,7 @@ const Navigation: FC<Props> = (props: Props) => {
                   setIsNavOpen(false);
                 }}
               >
-                <AnchorLink offset="70" href="#articles">
+                <AnchorLink offset="50" href="#articles">
                   Articles
                 </AnchorLink>
               </li>

@@ -235,7 +235,6 @@ main {
             opacity: 0;
             pointer-events: none;
             @include ease-in-out(200ms);
-
             .background {
               position: absolute;
               top: 0;
@@ -246,31 +245,30 @@ main {
             }
             .content {
               background-color: white;
-              padding: 20px 20px 0 20px;
+              padding: 20px;
               box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
               border-radius: 3px;
               max-width: 1920px;
+              display: flex;
+              flex-direction: column;
               @include width;
               .image {
-                width: 95%;
+                width: 45%;
                 position: relative;
                 top: -2.5em;
                 @media (max-width: $large) {
                   top: -5em;
                 }
+                @media (max-width: $medium) {
+                  width: 100%;
+                }
                 left: 50%;
                 transform: translateX(-50%);
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 img {
-                  width: 50%;
+                  width: 100%;
                   border-radius: 3px;
                   @include ease-in-out(200ms);
                   transform-origin: bottom;
-                  @media (max-width: $medium) {
-                    width: 100%;
-                  }
                 }
                 .tag-list {
                   list-style: none;
@@ -298,15 +296,25 @@ main {
                 }
               }
               .text {
-                top: -3em;
-                position: relative;
+                margin-top: -30px;
+                @media (max-width: $medium) {
+                  width: 100%;
+                }
+                width: 80%;
                 h5 {
-                  margin: 10px 0 0;
+                  margin: 0 0 10px 0;
+
                   font-size: 2.5em;
                 }
                 p {
-                  margin: 10px 0 0;
+                  margin: 15px 0 0;
                   font-size: 1.5em;
+                }
+                p.close {
+                  color: $primary;
+                  font-weight: bold;
+                  text-align: right;
+                  font-size: 1.75em;
                 }
               }
             }
