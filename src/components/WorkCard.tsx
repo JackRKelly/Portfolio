@@ -15,7 +15,7 @@ const WorkCard: FC<Props> = (props: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
-    <>
+    <li>
       <div
         className="work-details"
         style={{
@@ -45,11 +45,11 @@ const WorkCard: FC<Props> = (props: Props) => {
               setIsVisible(false);
             }}
           >
-            close
+            Close
           </p>
         </div>
       </div>
-      <li
+      <div
         className="work-card"
         onClick={() => {
           setIsVisible(!isVisible);
@@ -72,8 +72,8 @@ const WorkCard: FC<Props> = (props: Props) => {
             </p>
           </div>
         </div>
-      </li>
-    </>
+      </div>
+    </li>
   );
 };
 
