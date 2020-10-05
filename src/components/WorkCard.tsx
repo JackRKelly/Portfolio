@@ -38,15 +38,18 @@ const WorkCard: FC<Props> = (props: Props) => {
               ))}
             </ul>
           </div>
-          <h5>{title}</h5>
-          <p>{description}</p>
-          <p
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            Close
-          </p>
+          <div className="text">
+            <h5>{title}</h5>
+            <p>{description}</p>
+            <p
+              onClick={() => {
+                setIsVisible(false);
+              }}
+              className="close"
+            >
+              Close
+            </p>
+          </div>
         </div>
       </div>
       <div

@@ -120,7 +120,7 @@ main {
         margin: 0;
         display: inline-block;
         color: $primary;
-        margin-bottom: 25px;
+        margin-bottom: 7%;
         &::after {
           content: "01";
           position: absolute;
@@ -142,11 +142,14 @@ main {
   }
   section#work {
     padding-top: 10%;
+    @media (max-width: $large) {
+      padding-top: 17%;
+    }
     @media (max-width: $medium) {
       padding-top: 15%;
     }
     @media (max-width: $small) {
-      padding-top: 23%;
+      padding-top: 25%;
     }
     .content {
       position: relative;
@@ -176,7 +179,10 @@ main {
         margin: 0;
         display: inline-block;
         color: $primary;
-        margin-bottom: 25px;
+        margin-bottom: 100px;
+        @media (max-width: $medium) {
+          margin-bottom: 80px;
+        }
         &::after {
           content: "02";
           position: absolute;
@@ -193,8 +199,8 @@ main {
       }
       .work-wrapper {
         margin: 0;
-        padding: 100px 0 0 0;
         list-style: none;
+        padding: 0;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         grid-gap: 64px 32px;
@@ -203,8 +209,10 @@ main {
           grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
         }
         @media (max-width: $medium) {
-          padding: 60px 0 0 0;
           grid-gap: 64px;
+        }
+        @media (max-width: $small) {
+          grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         }
         li {
           @media (min-width: 932px) and (max-width: 1489px) {
@@ -227,6 +235,7 @@ main {
             opacity: 0;
             pointer-events: none;
             @include ease-in-out(200ms);
+
             .background {
               position: absolute;
               top: 0;
@@ -259,6 +268,9 @@ main {
                   border-radius: 3px;
                   @include ease-in-out(200ms);
                   transform-origin: bottom;
+                  @media (max-width: $medium) {
+                    width: 100%;
+                  }
                 }
                 .tag-list {
                   list-style: none;
@@ -283,6 +295,18 @@ main {
                       font-size: 1em;
                     }
                   }
+                }
+              }
+              .text {
+                top: -3em;
+                position: relative;
+                h5 {
+                  margin: 10px 0 0;
+                  font-size: 2.5em;
+                }
+                p {
+                  margin: 10px 0 0;
+                  font-size: 1.5em;
                 }
               }
             }
@@ -410,7 +434,10 @@ main {
     }
   }
   section#articles {
-    padding-top: 13%;
+    padding-top: 10%;
+    @media (max-width: $large) {
+      padding-top: 17%;
+    }
     @media (max-width: $medium) {
       padding-top: 25%;
     }
@@ -444,7 +471,10 @@ main {
         margin: 0;
         display: inline-block;
         color: $primary;
-        margin-bottom: 25px;
+        margin-bottom: 100px;
+        @media (max-width: $medium) {
+          margin-bottom: 80px;
+        }
         &::after {
           content: "03";
           position: absolute;
@@ -461,18 +491,20 @@ main {
       }
       .article-wrapper {
         margin: 0;
-        padding: 100px 0 0 0;
         list-style: none;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         grid-gap: 64px 32px;
+        padding: 0;
         @media (min-width: $large) {
           grid-gap: 100px 64px;
           grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
         }
         @media (max-width: $medium) {
-          padding: 60px 0 0 0;
           grid-gap: 64px;
+        }
+        @media (max-width: $small) {
+          grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         }
         a {
           text-decoration: none;
@@ -602,10 +634,16 @@ main {
     }
   }
   section#contact {
-    padding-top: 13%;
+    padding-top: 10%;
     padding-bottom: 30%;
+    @media (max-width: $large) {
+      padding-top: 17%;
+    }
     @media (max-width: $medium) {
       padding-top: 25%;
+    }
+    @media (max-width: $small) {
+      padding-top: 30%;
     }
     .content {
       position: relative;
@@ -635,7 +673,7 @@ main {
         margin-bottom: 100px;
         @media (max-width: $medium) {
           left: 55%;
-          margin-bottom: 60px;
+          margin-bottom: 40px;
         }
         &::after {
           content: "04";

@@ -170,7 +170,7 @@ const Navigation: FC<Props> = (props: Props) => {
             <li className="right">
               <ul>
                 <li>
-                  <AnchorLink offset="70" href="#about">
+                  <AnchorLink offset="150" href="#about">
                     About
                   </AnchorLink>
                 </li>
@@ -180,7 +180,7 @@ const Navigation: FC<Props> = (props: Props) => {
                   </AnchorLink>
                 </li>
                 <li>
-                  <AnchorLink offset="70" href="#articles">
+                  <AnchorLink offset="10" href="#articles">
                     Articles
                   </AnchorLink>
                 </li>
