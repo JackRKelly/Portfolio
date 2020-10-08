@@ -184,7 +184,7 @@ main {
           grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         }
         li {
-          @media (min-width: 932px) and (max-width: 1489px) {
+          @media (min-width: 932px) and (max-width: $extralarge) {
             &:not(.work-details):nth-last-child(1):nth-child(odd) {
               grid-column: span 2;
               width: 50%;
@@ -470,7 +470,7 @@ main {
         }
         a {
           text-decoration: none;
-          @media (min-width: 932px) and (max-width: 1489px) {
+          @media (min-width: 932px) and (max-width: $extralarge) {
             &:nth-last-child(1):nth-child(odd) {
               grid-column: span 2;
               width: 50%;
@@ -645,6 +645,111 @@ main {
             font-size: 16px;
             padding: 2.5em 1.5em;
           }
+          ul.contact-options {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            top: -2.5em;
+            left: 5em;
+            min-height: 2.75em;
+            @media (min-width: $medium) {
+              font-size: 22px;
+              top: -2.25em;
+              left: 2.5em;
+            }
+            @media (min-width: $large) {
+              top: -1.5em;
+              left: 2.5em;
+            }
+            @media (max-width: $large) {
+              top: -1.75em;
+              left: 1.5em;
+              transform: scale(0.85);
+              transform-origin: left;
+            }
+            @media (max-width: $medium) {
+              font-size: 18px;
+              left: 1.5em;
+              top: -1.5em;
+            }
+            @media (max-width: $small) {
+              font-size: 16px;
+            }
+            li {
+              margin-right: 1.5em;
+              a {
+                position: relative;
+                text-decoration: none;
+                color: black;
+                display: block;
+                border: none;
+                font-family: "Neutra";
+                padding: 0;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+                background-color: white;
+                border-radius: 2px;
+                @media (min-width: $medium) {
+                  font-size: 22px;
+                }
+                @media (max-width: $medium) {
+                  font-size: 18px;
+                  box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
+                }
+                @media (max-width: $small) {
+                  font-size: 16px;
+                }
+                cursor: pointer;
+                min-height: 2.75em;
+                padding: 0.5em 1.25em 0.5em 4em;
+                @media (max-width: $extralarge) {
+                  padding: 0.5em 1.25em 0.5em 1.5em;
+                }
+                border-radius: 3px;
+                &:hover {
+                  .icon {
+                    width: 100%;
+                  }
+                  p {
+                    color: white;
+                  }
+                }
+                .icon {
+                  width: 2.75em;
+                  height: 2.75em;
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  background-color: $primary;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  border-radius: 3px;
+                  @include ease-in-out(200ms);
+                  svg {
+                    margin-left: 0.55em;
+                    width: 1.6em;
+                    height: 1.6em;
+                    @media (max-width: $medium) {
+                      width: 1.4em;
+                      height: 1.4em;
+                      margin-left: 0.65em;
+                    }
+                  }
+                }
+                p {
+                  margin: 0;
+                  font-size: 1.25em;
+                  position: relative;
+                  @include ease-in-out(200ms);
+                  @media (max-width: $extralarge) {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
           input {
             width: 48.5%;
             padding: 0.75em;
@@ -693,43 +798,56 @@ main {
               bottom: -1.25em;
               box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
             }
-            @media (min-width: $medium) and (max-width: $large) {
-              bottom: -2.25em;
+            @media (max-width: $large) {
+              bottom: -1.75em;
               right: 1.5em;
+              transform: scale(0.85);
+              transform-origin: right;
             }
             @media (max-width: $small) {
               font-size: 16px;
             }
-            div.submit {
-              display: flex;
-              align-items: center;
-              cursor: pointer;
+            cursor: pointer;
+            min-height: 2.75em;
+            position: absolute;
+            padding: 0.5em 1.25em 0.5em 4em;
+            border-radius: 3px;
+            &:hover {
               .icon {
-                background-color: $primary;
-                padding: 0.7em 0.8em 0.5em;
-                border-radius: 2px;
-                height: 100%;
-                @media (max-width: $medium) {
-                  padding: 0.6em 0.7em 0.4em;
-                }
-                svg {
-                  width: 1.6em;
-                  height: 1.6em;
-                  @media (max-width: $medium) {
-                    width: 1.4em;
-                    height: 1.4em;
-                  }
-                }
+                width: 100%;
               }
               p {
-                margin: 0;
-                padding: 10px 20px;
-                font-size: 1.2em;
+                color: white;
+              }
+            }
+            .icon {
+              width: 2.75em;
+              height: 2.75em;
+              position: absolute;
+              left: 0;
+              top: 0;
+              background-color: $primary;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              border-radius: 3px;
+              @include ease-in-out(200ms);
+              svg {
+                margin-left: 0.55em;
+                width: 1.6em;
+                height: 1.6em;
                 @media (max-width: $medium) {
-                  padding: 10px 15px;
-                  font-size: 1.1em;
+                  width: 1.4em;
+                  height: 1.4em;
+                  margin-left: 0.65em;
                 }
               }
+            }
+            p {
+              margin: 0;
+              font-size: 1.25em;
+              position: relative;
+              @include ease-in-out(200ms);
             }
           }
         }
