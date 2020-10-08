@@ -20,6 +20,7 @@ main {
         font-size: 16px;
       }
       .info {
+        z-index: 5;
         @media (min-width: $large) {
           width: 50%;
         }
@@ -63,7 +64,7 @@ main {
         width: 55%;
         position: absolute;
         right: 0%;
-        z-index: -1;
+        z-index: 1;
         @media (max-width: $large) {
           right: 50%;
           width: 90%;
@@ -71,7 +72,7 @@ main {
           transform: translateX(50%);
         }
         @media (max-width: $medium) {
-          width: 100%;
+          width: 45vh;
         }
         @media (max-width: $small) {
           bottom: -40vh;

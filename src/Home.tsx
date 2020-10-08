@@ -37,7 +37,7 @@ const Home: FC<Props> = (props: Props) => {
 
   const [parallax, setParallax] = useSpring(() => ({
     xy: [0, 0],
-    config: { mass: 10, tension: 250, friction: 250 },
+    config: { mass: 20, tension: 200, friction: 250 },
   }));
 
   return (
