@@ -3,7 +3,7 @@ import "./heroshapes.scss";
 import JRKHero from "../images/jrkhero.png";
 import { animated } from "react-spring";
 
-const HeroShapes = (props) => {
+const HeroShapes = React.forwardRef((props: any, ref: any) => {
   const { parallax } = props;
 
   const trans1 = (x: number, y: number) =>
@@ -18,7 +18,7 @@ const HeroShapes = (props) => {
     `translate3d(${x / 14}px,${y / 14}px,0) translateX(-50%)`;
 
   return (
-    <>
+    <div ref={ref}>
       <animated.img
         className="hero-image"
         src={JRKHero}
@@ -232,8 +232,8 @@ const HeroShapes = (props) => {
           </animated.g>
         </svg>
       </div>
-    </>
+    </div>
   );
-};
+});
 
 export default HeroShapes;

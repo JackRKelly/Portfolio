@@ -49,6 +49,9 @@ nav {
           font-weight: bold;
           font-size: 25px;
           cursor: pointer;
+          &.active {
+            color: $primary;
+          }
         }
       }
     }
@@ -119,9 +122,12 @@ nav {
             text-decoration: none;
             color: $dark;
             padding: 16px 10px;
-
             margin: 0 5px;
             cursor: pointer;
+            @include ease-in-out(200ms);
+            &.active {
+              color: $primary;
+            }
             .main {
               position: absolute;
               top: -3px;

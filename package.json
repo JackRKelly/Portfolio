@@ -17,6 +17,7 @@
     "react-inlinesvg": "^2.1.0",
     "react-scripts": "3.4.3",
     "react-spring": "^8.0.27",
+    "ts-debounce": "^2.0.1",
     "typescript": "^3.7.5"
   },
   "scripts": {

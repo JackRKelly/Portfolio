@@ -10,10 +10,11 @@ import ExternalLink from "../assets/svg/ExternalLink";
 
 interface Props {
   isMobile: boolean;
+  activeRef: number;
 }
 
 const Navigation: FC<Props> = (props: Props) => {
-  const { isMobile } = props;
+  const { isMobile, activeRef } = props;
 
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -66,6 +67,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
+                className={activeRef === 0 ? "active" : ""}
               >
                 <AnchorLink offset="70" href="#home">
                   Home
@@ -75,6 +77,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
+                className={activeRef === 1 ? "active" : ""}
               >
                 <AnchorLink offset="185" href="#about">
                   About
@@ -84,6 +87,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
+                className={activeRef === 2 ? "active" : ""}
               >
                 <AnchorLink offset="70" href="#work">
                   Work
@@ -93,6 +97,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
+                className={activeRef === 3 ? "active" : ""}
               >
                 <AnchorLink offset="50" href="#articles">
                   Articles
@@ -102,6 +107,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
+                className={activeRef === 4 ? "active" : ""}
               >
                 <AnchorLink offset="70" href="#contact">
                   Contact
@@ -115,7 +121,7 @@ const Navigation: FC<Props> = (props: Props) => {
           <ul className="container">
             <li className="left">
               <ul>
-                <li className="logo">
+                <li className={activeRef === 0 ? "active logo" : "logo"}>
                   <AnchorLink offset="100" href="#home">
                     <JRKLogo />
                   </AnchorLink>
@@ -170,22 +176,38 @@ const Navigation: FC<Props> = (props: Props) => {
             <li className="right">
               <ul>
                 <li>
-                  <AnchorLink offset="150" href="#about">
+                  <AnchorLink
+                    offset="150"
+                    href="#about"
+                    className={activeRef === 1 ? "active" : ""}
+                  >
                     About
                   </AnchorLink>
                 </li>
                 <li>
-                  <AnchorLink offset="30" href="#work">
+                  <AnchorLink
+                    offset="30"
+                    href="#work"
+                    className={activeRef === 2 ? "active" : ""}
+                  >
                     Work
                   </AnchorLink>
                 </li>
                 <li>
-                  <AnchorLink offset="10" href="#articles">
+                  <AnchorLink
+                    offset="10"
+                    href="#articles"
+                    className={activeRef === 3 ? "active" : ""}
+                  >
                     Articles
                   </AnchorLink>
                 </li>
                 <li>
-                  <AnchorLink offset="70" href="#contact">
+                  <AnchorLink
+                    offset="70"
+                    href="#contact"
+                    className={activeRef === 4 ? "active" : ""}
+                  >
                     Contact
                   </AnchorLink>
                 </li>

@@ -1,6 +1,7 @@
-import React, { FC, FormEvent, useState } from "react";
+import React, { FC, FormEvent, RefObject, useRef, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
+import { debounce } from "ts-debounce";
 import AboutShapes from "./assets/svg/AboutShapes";
 import DownArrow from "./assets/svg/DownArrow";
 import HeroShapes from "./assets/svg/HeroShapes";
@@ -13,14 +14,22 @@ import "./Home.scss";
 
 interface Props {
   isMobile: boolean;
+  setActiveRef: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const Home: FC<Props> = (props: Props) => {
-  const { isMobile } = props;
+  const { isMobile, setActiveRef } = props;
 
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const workRef = useRef(null);
+  const articleRef = useRef(null);
+  const contactRef = useRef(null);
+  const parallaxRef = useRef(null);
 
   const calc = (x: number, y: number) => [
     x - window.innerWidth / 2,
@@ -35,6 +44,51 @@ const Home: FC<Props> = (props: Props) => {
       .join("&");
   };
 
+  const isInViewport = (el) => {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) + 400 &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
+
+  const checkCurrentRef = () => {
+    if (homeRef.current) {
+      if (isInViewport(homeRef.current)) {
+        setActiveRef(0);
+      }
+    }
+    if (aboutRef.current) {
+      if (isInViewport(aboutRef.current)) {
+        setActiveRef(1);
+      }
+    }
+    if (workRef.current) {
+      if (isInViewport(workRef.current)) {
+        setActiveRef(2);
+      }
+    }
+    if (articleRef.current) {
+      if (isInViewport(articleRef.current)) {
+        setActiveRef(3);
+      }
+    }
+    if (contactRef.current) {
+      if (isInViewport(contactRef.current)) {
+        setActiveRef(4);
+      }
+    }
+  };
+
+  const scrollRefCheck = debounce(() => {
+    checkCurrentRef();
+  }, 100);
+
+  window.addEventListener("scroll", scrollRefCheck);
+
   const [parallax, setParallax] = useSpring(() => ({
     xy: [0, 0],
     config: { mass: 20, tension: 200, friction: 250 },
@@ -42,11 +96,15 @@ const Home: FC<Props> = (props: Props) => {
 
   return (
     <main
-      onMouseMove={({ clientX: x, clientY: y }) =>
-        setParallax({ xy: calc(x, y) })
-      }
+      onMouseMove={({ clientX: x, clientY: y }) => {
+        if (parallaxRef.current) {
+          if (isInViewport(parallaxRef.current)) {
+            setParallax({ xy: calc(x, y) });
+          }
+        }
+      }}
     >
-      <section id="home">
+      <section id="home" ref={homeRef}>
         <Content>
           <div className="info">
             <h1>Jack Kelly</h1>
@@ -59,11 +117,11 @@ const Home: FC<Props> = (props: Props) => {
             </AnchorLink>
           </div>
           <div className="hero">
-            <HeroShapes parallax={parallax} />
+            <HeroShapes parallax={parallax} ref={parallaxRef} />
           </div>
         </Content>
       </section>
-      <section id="about">
+      <section id="about" ref={aboutRef}>
         <Content>
           {isMobile ? <></> : <AboutShapes />}
           <h1>About</h1>
@@ -77,7 +135,7 @@ const Home: FC<Props> = (props: Props) => {
           </p>
         </Content>
       </section>
-      <section id="work">
+      <section id="work" ref={workRef}>
         <Content>
           {isMobile ? <></> : <AboutShapes />}
           <h1>Work</h1>
@@ -106,7 +164,7 @@ const Home: FC<Props> = (props: Props) => {
           </WorkWrapper>
         </Content>
       </section>
-      <section id="articles">
+      <section id="articles" ref={articleRef}>
         <Content>
           {isMobile ? <></> : <AboutShapes />}
           <h1>Articles</h1>
@@ -144,7 +202,7 @@ const Home: FC<Props> = (props: Props) => {
           </ArticleWrapper>
         </Content>
       </section>
-      <section id="contact">
+      <section id="contact" ref={contactRef}>
         <Content>
           {isMobile ? <></> : <AboutShapes />}
           <h1>Contact</h1>
