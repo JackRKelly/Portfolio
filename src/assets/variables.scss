@@ -54,3 +54,55 @@ $extralarge: 1600px;
     background-color: $secondary;
   }
 }
+
+@mixin padding-top($isCard) {
+  @if $isCard {
+    padding-top: 10%;
+    @media (max-width: $large) {
+      padding-top: 17%;
+    }
+    @media (max-width: $medium) {
+      padding-top: 15%;
+    }
+    @media (max-width: $small) {
+      padding-top: 25%;
+    }
+  } @else {
+    padding-top: 6%;
+    @media (max-width: $large) {
+      padding-top: 9%;
+    }
+    @media (max-width: $medium) {
+      padding-top: 10%;
+    }
+    @media (max-width: $small) {
+      padding-top: 15%;
+    }
+  }
+}
+
+@mixin margin-bottom($isCard) {
+  @if $isCard {
+    margin-bottom: 10%;
+    @media (max-width: $large) {
+      margin-bottom: 17%;
+    }
+    @media (max-width: $medium) {
+      margin-bottom: 15%;
+    }
+    @media (max-width: $small) {
+      margin-bottom: 25%;
+    }
+  } @else {
+    margin-bottom: 6%;
+    @media (max-width: $large) {
+      margin-bottom: 8%;
+    }
+    @media (max-width: $medium) {
+      margin-bottom: 10%;
+    }
+    @media (max-width: $small) {
+      margin-bottom: 13%;
+    }
+  }
+}
