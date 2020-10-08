@@ -7,6 +7,8 @@ interface Props {
   description: string;
   tags: Array<string>;
   title: string;
+  github?: string;
+  preview?: string;
 }
 
 const WorkCard: FC<Props> = (props: Props) => {
@@ -68,7 +70,7 @@ const WorkCard: FC<Props> = (props: Props) => {
         </div>
         <div className="text">
           <h5>{title}</h5>
-          <p>{description}</p>
+          <p>{description.split(" ").slice(1, 35).join(" ")}...</p>
           <div className="link">
             <p>
               More Details <ExpandWork />

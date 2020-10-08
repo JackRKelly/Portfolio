@@ -84,10 +84,10 @@ const Home: FC<Props> = (props: Props) => {
           <WorkWrapper>
             <WorkCard
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat."
+                "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
               }
-              title={"Website Name"}
-              tags={["Website", "React.js"]}
+              title={"Fridge Man"}
+              tags={["Full-Stack", "React.js"]}
             />
             <WorkCard
               description={
@@ -172,7 +172,12 @@ const Home: FC<Props> = (props: Props) => {
                   },
                   body: encode({ "form-name": "contact", ...formData }),
                 })
-                  .then(() => alert("Success!"))
+                  .then(() => {
+                    alert("Success!");
+                    setEmail("");
+                    setFullname("");
+                    setMessage("");
+                  })
                   .catch((error) => alert(error));
 
                 e.preventDefault();

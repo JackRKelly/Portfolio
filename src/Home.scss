@@ -5,9 +5,11 @@ main {
   overflow: hidden;
   section#home {
     position: relative;
-    min-height: 100vh;
     height: 100vh;
     min-height: -webkit-fill-available;
+    @media (max-width: $small) and (min-height: 700px) {
+      height: 90vh;
+    }
     .content {
       position: relative;
       @media (min-width: $large) {
@@ -170,6 +172,7 @@ main {
         margin: 0;
         list-style: none;
         padding: 0;
+        grid-auto-rows: 1fr;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         grid-gap: 64px 32px;
@@ -792,18 +795,19 @@ main {
             @media (min-width: $medium) {
               font-size: 22px;
             }
-            @media (max-width: $medium) {
-              font-size: 18px;
-              right: 1.5em;
-              bottom: -1.25em;
-              box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
-            }
             @media (max-width: $large) {
               bottom: -1.75em;
               right: 1.5em;
               transform: scale(0.85);
               transform-origin: right;
             }
+            @media (max-width: $medium) {
+              font-size: 18px;
+              right: 1.5em;
+              bottom: -1.25em;
+              box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
+            }
+
             @media (max-width: $small) {
               font-size: 16px;
             }
