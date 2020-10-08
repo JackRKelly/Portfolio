@@ -7,7 +7,7 @@ $light-gray: #f9f9f9;
 $light-gray-2: #f0f0f0;
 $light-gray-3: #b3b3b3;
 
-$small: 400px;
+$small: 500px;
 $medium: 800px;
 $large: 1200px;
 $extralarge: 1600px;
@@ -65,7 +65,7 @@ $extralarge: 1600px;
       padding-top: 15%;
     }
     @media (max-width: $small) {
-      padding-top: 25%;
+      padding-top: calc(15% + 60px);
     }
   } @else {
     padding-top: 6%;
@@ -76,7 +76,7 @@ $extralarge: 1600px;
       padding-top: 10%;
     }
     @media (max-width: $small) {
-      padding-top: 15%;
+      padding-top: calc(10% + 30px);
     }
   }
 }
@@ -91,7 +91,7 @@ $extralarge: 1600px;
       margin-bottom: 15%;
     }
     @media (max-width: $small) {
-      margin-bottom: 25%;
+      margin-bottom: calc(10% + 50px);
     }
   } @else {
     margin-bottom: 6%;
@@ -102,7 +102,7 @@ $extralarge: 1600px;
       margin-bottom: 10%;
     }
     @media (max-width: $small) {
-      margin-bottom: 13%;
+      margin-bottom: calc(8% + 30px);
     }
   }
 }

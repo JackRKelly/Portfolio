@@ -73,11 +73,8 @@ main {
         @media (max-width: $medium) {
           width: 100%;
         }
-        @media (max-width: 500px) {
+        @media (max-width: $small) {
           bottom: -40vh;
-        }
-        @media (max-width: $medium) and (max-height: $large) {
-          bottom: -55vh;
         }
         svg {
           width: 100%;
