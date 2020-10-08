@@ -121,17 +121,7 @@ main {
         color: $primary;
         @include margin-bottom(false);
         &::after {
-          content: "01";
-          position: absolute;
-          font-family: "Domine";
-          font-weight: lighter;
-          font-size: 1.7em;
-          top: -0.7em;
-          right: -0.4em;
-          z-index: -1;
-          opacity: 0.2;
-          -webkit-text-stroke: 3px $primary;
-          -webkit-text-fill-color: transparent;
+          @include headerPseudoText("01", false);
         }
       }
       p {
@@ -172,17 +162,7 @@ main {
         color: $primary;
         @include margin-bottom(true);
         &::after {
-          content: "02";
-          position: absolute;
-          font-family: "Domine";
-          font-weight: lighter;
-          font-size: 1.7em;
-          top: -0.7em;
-          left: -0.5em;
-          z-index: -1;
-          opacity: 0.2;
-          -webkit-text-stroke: 3px $primary;
-          -webkit-text-fill-color: transparent;
+          @include headerPseudoText("02", true);
         }
       }
       .work-wrapper {
@@ -270,6 +250,7 @@ main {
                     color: white;
                     font-weight: bold;
                     font-size: 1.5em;
+                    border-radius: 2px;
                     display: inline-block;
                     margin-left: 17px;
                     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -278,7 +259,7 @@ main {
                       font-size: 0.8em;
                     }
                     @media (min-width: $extralarge) {
-                      font-size: 1em;
+                      font-size: 1.25em;
                     }
                   }
                 }
@@ -286,6 +267,9 @@ main {
               .text {
                 margin: -30px auto 10px auto;
                 width: 80%;
+                @media (min-width: $large) {
+                  margin: -10px auto 10px auto;
+                }
                 @media (max-width: $medium) {
                   width: 100%;
                   margin: -25px auto 5px auto;
@@ -325,7 +309,7 @@ main {
               }
               .tag-list {
                 li {
-                  transform: translateY(5px);
+                  transform: translateY(3px);
                 }
               }
               .text {
@@ -367,6 +351,7 @@ main {
                   background-color: $primary;
                   color: white;
                   font-weight: bold;
+                  border-radius: 2px;
                   font-size: 1.5em;
                   display: inline-block;
                   margin-left: 17px;
@@ -462,17 +447,7 @@ main {
         color: $primary;
         @include margin-bottom(true);
         &::after {
-          content: "03";
-          position: absolute;
-          font-family: "Domine";
-          font-weight: lighter;
-          font-size: 1.7em;
-          top: -0.7em;
-          right: -0.4em;
-          z-index: -1;
-          opacity: 0.2;
-          -webkit-text-stroke: 3px $primary;
-          -webkit-text-fill-color: transparent;
+          @include headerPseudoText("03", false);
         }
       }
       .article-wrapper {
@@ -524,7 +499,7 @@ main {
               }
               .tag-list {
                 li {
-                  transform: translateY(5px);
+                  transform: translateY(3px);
                 }
               }
             }
@@ -652,17 +627,7 @@ main {
           left: 55%;
         }
         &::after {
-          content: "04";
-          position: absolute;
-          font-family: "Domine";
-          font-weight: lighter;
-          font-size: 1.7em;
-          top: -0.7em;
-          left: -0.5em;
-          z-index: -1;
-          opacity: 0.2;
-          -webkit-text-stroke: 3px $primary;
-          -webkit-text-fill-color: transparent;
+          @include headerPseudoText("04", true);
         }
       }
       .form-wrapper {
@@ -692,12 +657,8 @@ main {
               width: 100%;
               margin: 0 0 1em;
             }
-            &:focus {
-              outline-color: $primary;
-            }
-            &::placeholder {
-              color: $light-gray-3;
-            }
+            @include inputFocusEffect;
+            @include ease-in-out(200ms);
           }
           textarea {
             width: 100%;
@@ -709,13 +670,8 @@ main {
             border: none;
             border-radius: 2px;
             background-color: $light-gray-2;
-            transition: none;
-            &:focus {
-              outline-color: $primary;
-            }
-            &::placeholder {
-              color: $light-gray-3;
-            }
+            transition: box-shadow ease-in-out 200ms;
+            @include inputFocusEffect;
           }
           button.submit-button {
             position: absolute;

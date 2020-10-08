@@ -106,3 +106,42 @@ $extralarge: 1600px;
     }
   }
 }
+
+@mixin headerPseudoText($content, $isLeft) {
+  content: $content;
+  position: absolute;
+  font-family: "Domine";
+  font-weight: lighter;
+  font-size: 1.7em;
+  @if ($isLeft) {
+    top: -0.7em;
+    left: -0.5em;
+    @media (max-width: $small) {
+      top: -0.8em;
+    }
+  } @else {
+    top: -0.7em;
+    right: -0.4em;
+    @media (max-width: $small) {
+      top: -0.8em;
+    }
+  }
+  z-index: -1;
+  opacity: 0.2;
+  -webkit-text-stroke: 3px $primary;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin inputFocusEffect {
+  box-shadow: 0 0 0 0 transparent;
+  &:focus {
+    box-shadow: 0 0 0 2px $primary;
+    &::placeholder {
+      color: $medium-dark;
+    }
+  }
+  &::placeholder {
+    color: $light-gray-3;
+    @include ease-in-out(200ms);
+  }
+}

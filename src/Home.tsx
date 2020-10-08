@@ -210,6 +210,7 @@ const Home: FC<Props> = (props: Props) => {
                 }}
                 required
               ></textarea>
+
               <button type="submit" className="submit-button">
                 <div className="submit">
                   <div className="icon">
@@ -226,6 +227,7 @@ const Home: FC<Props> = (props: Props) => {
                       />
                     </svg>
                   </div>
+
                   <p>Send Message</p>
                 </div>
               </button>
