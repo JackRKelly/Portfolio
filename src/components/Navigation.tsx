@@ -67,7 +67,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
-                className={activeRef === 0 ? "active" : ""}
+                className={activeRef === 0 ? "anchor active" : "anchor"}
               >
                 <AnchorLink offset="70" href="#home">
                   Home
@@ -179,7 +179,7 @@ const Navigation: FC<Props> = (props: Props) => {
                   <AnchorLink
                     offset="150"
                     href="#about"
-                    className={activeRef === 1 ? "active" : ""}
+                    className={activeRef === 0 ? "anchor active" : "anchor"}
                   >
                     About
                   </AnchorLink>
@@ -188,7 +188,7 @@ const Navigation: FC<Props> = (props: Props) => {
                   <AnchorLink
                     offset="30"
                     href="#work"
-                    className={activeRef === 2 ? "active" : ""}
+                    className={activeRef === 2 ? "anchor active" : "anchor"} 
                   >
                     Work
                   </AnchorLink>
@@ -197,7 +197,7 @@ const Navigation: FC<Props> = (props: Props) => {
                   <AnchorLink
                     offset="10"
                     href="#articles"
-                    className={activeRef === 3 ? "active" : ""}
+                    className={activeRef === 3 ? "anchor active" : "anchor"}
                   >
                     Articles
                   </AnchorLink>
@@ -206,7 +206,7 @@ const Navigation: FC<Props> = (props: Props) => {
                   <AnchorLink
                     offset="70"
                     href="#contact"
-                    className={activeRef === 4 ? "active" : ""}
+                    className={activeRef === 4 ? "anchor active" : "anchor"}
                   >
                     Contact
                   </AnchorLink>

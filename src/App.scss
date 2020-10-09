@@ -125,8 +125,12 @@ nav {
             margin: 0 5px;
             cursor: pointer;
             @include ease-in-out(200ms);
+
             &.active {
               color: $primary;
+            }
+            &.anchor {
+              @include bar(7px, 90%);
             }
             .main {
               position: absolute;

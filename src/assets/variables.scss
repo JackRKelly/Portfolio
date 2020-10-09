@@ -145,3 +145,24 @@ $extralarge: 1600px;
     @include ease-in-out(200ms);
   }
 }
+
+@mixin bar($bottom, $width) {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: $bottom;
+    left: 50%;
+    width: 0%;
+    transform: translateX(-50%);
+    height: 3px;
+    @include ease-in-out(100ms);
+    background-color: $dark;
+  }
+  &:hover::after {
+    width: $width;
+  }
+  &.active::after {
+    background-color: $primary;
+  }
+}
