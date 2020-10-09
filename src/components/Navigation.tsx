@@ -11,10 +11,11 @@ import ExternalLink from "../assets/svg/ExternalLink";
 interface Props {
   isMobile: boolean;
   activeRef: number;
+  isTop: boolean;
 }
 
 const Navigation: FC<Props> = (props: Props) => {
-  const { isMobile, activeRef } = props;
+  const { isMobile, activeRef, isTop } = props;
 
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -67,7 +68,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
-                className={activeRef === 0 ? "anchor active" : "anchor"}
+                className="anchor"
               >
                 <AnchorLink offset="70" href="#home">
                   Home
@@ -77,7 +78,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
-                className={activeRef === 1 ? "active" : ""}
+                className="anchor"
               >
                 <AnchorLink offset="185" href="#about">
                   About
@@ -87,7 +88,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
-                className={activeRef === 2 ? "active" : ""}
+                className="anchor"
               >
                 <AnchorLink offset="70" href="#work">
                   Work
@@ -97,7 +98,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
-                className={activeRef === 3 ? "active" : ""}
+                className="anchor"
               >
                 <AnchorLink offset="50" href="#articles">
                   Articles
@@ -107,7 +108,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 onClick={() => {
                   setIsNavOpen(false);
                 }}
-                className={activeRef === 4 ? "active" : ""}
+                className="anchor"
               >
                 <AnchorLink offset="70" href="#contact">
                   Contact
@@ -117,8 +118,8 @@ const Navigation: FC<Props> = (props: Props) => {
           </nav>
         </>
       ) : (
-        <nav className="desktop">
-          <ul className="container">
+        <nav className="desktop"  style={{boxShadow: isTop ? "none" : "0 0 20px rgba(0, 0, 0, 0.16)"}}>
+          <ul className="container" style={{padding: isTop ? "20px 0" : "10px 0"}}>
             <li className="left">
               <ul>
                 <li className={activeRef === 0 ? "active logo" : "logo"}>
@@ -179,7 +180,7 @@ const Navigation: FC<Props> = (props: Props) => {
                   <AnchorLink
                     offset="150"
                     href="#about"
-                    className={activeRef === 0 ? "anchor active" : "anchor"}
+                    className={activeRef === 1 ? "anchor active" : "anchor"}
                   >
                     About
                   </AnchorLink>

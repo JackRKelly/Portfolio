@@ -7,20 +7,18 @@ import Home from "./Home";
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [activeRef, setActiveRef] = useState(0);
+  const [isTop, setIsTop] = useState(true);
 
   const checkMobile = () => {
-    if (window.innerWidth < 900) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
+    setIsMobile(window.innerWidth < 900);
+    setIsTop(window.scrollY < 10)
   };
 
-  window.addEventListener("resize", () => {
-    debounce(checkMobile, 1000, {
-      isImmediate: true,
-    });
+  const checkMobileDebounced = debounce(checkMobile, 100, {
+    isImmediate: true,
   });
+
+  window.addEventListener("resize", checkMobileDebounced);
 
   useEffect(() => {
     checkMobile();
@@ -28,7 +26,7 @@ const App: FC = () => {
 
   return (
     <div className="App">
-      <Navigation isMobile={isMobile} activeRef={activeRef} />
+      <Navigation isMobile={isMobile} activeRef={activeRef} isTop={isTop} />
       <Home isMobile={isMobile} setActiveRef={setActiveRef} />
     </div>
   );

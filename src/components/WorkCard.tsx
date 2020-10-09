@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 
 import PlaceholderImage from "../assets/images/placeholder.png";
+import Close from "../assets/svg/Close";
 import ExpandWork from "../assets/svg/ExpandWork";
 
 interface Props {
@@ -9,10 +10,11 @@ interface Props {
   title: string;
   github?: string;
   preview?: string;
+  checkCurrentRef: () => void;
 }
 
 const WorkCard: FC<Props> = (props: Props) => {
-  const { description, tags, title } = props;
+  const { description, tags, title, checkCurrentRef } = props;
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -29,6 +31,7 @@ const WorkCard: FC<Props> = (props: Props) => {
           className="background"
           onClick={() => {
             setIsVisible(false);
+            checkCurrentRef();
           }}
         ></div>
         <div className="content">
@@ -46,10 +49,11 @@ const WorkCard: FC<Props> = (props: Props) => {
             <p
               onClick={() => {
                 setIsVisible(false);
+                checkCurrentRef();
               }}
               className="close"
             >
-              Close
+              Close <Close/>
             </p>
           </div>
         </div>
@@ -58,6 +62,7 @@ const WorkCard: FC<Props> = (props: Props) => {
         className="work-card"
         onClick={() => {
           setIsVisible(!isVisible);
+          document.title = `${title} | Jack Kelly`
         }}
       >
         <div className="image">
@@ -70,7 +75,7 @@ const WorkCard: FC<Props> = (props: Props) => {
         </div>
         <div className="text">
           <h5>{title}</h5>
-          <p>{description.split(" ").slice(1, 35).join(" ")}...</p>
+          <p>{description.split(" ").slice(1, 35).join(" ")}{description.split(" ").length > 35 ? "..." : ""}</p>
           <div className="link">
             <p>
               More Details <ExpandWork />

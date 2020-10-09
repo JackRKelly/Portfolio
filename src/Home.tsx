@@ -59,26 +59,35 @@ const Home: FC<Props> = (props: Props) => {
     if (homeRef.current) {
       if (isInViewport(homeRef.current)) {
         setActiveRef(0);
+        document.title = "Home | Jack Kelly"
+
       }
     }
     if (aboutRef.current) {
       if (isInViewport(aboutRef.current)) {
-        setActiveRef(1);
+        setActiveRef(1);        
+        document.title = "About | Jack Kelly"
+
       }
     }
     if (workRef.current) {
       if (isInViewport(workRef.current)) {
-        setActiveRef(2);
+        setActiveRef(2);       
+         document.title = "Work | Jack Kelly"
+
       }
     }
     if (articleRef.current) {
       if (isInViewport(articleRef.current)) {
-        setActiveRef(3);
+        setActiveRef(3);       
+        document.title = "Article | Jack Kelly"
+
       }
     }
     if (contactRef.current) {
       if (isInViewport(contactRef.current)) {
-        setActiveRef(4);
+        setActiveRef(4);        
+        document.title = "Contact | Jack Kelly"
       }
     }
   };
@@ -146,6 +155,7 @@ const Home: FC<Props> = (props: Props) => {
               }
               title={"Fridge Man"}
               tags={["Full-Stack", "React.js"]}
+              checkCurrentRef={checkCurrentRef}
             />
             <WorkCard
               description={
@@ -153,6 +163,7 @@ const Home: FC<Props> = (props: Props) => {
               }
               title={"Project Name"}
               tags={["Command", "Rust"]}
+              checkCurrentRef={checkCurrentRef}
             />
             <WorkCard
               description={
@@ -160,6 +171,7 @@ const Home: FC<Props> = (props: Props) => {
               }
               title={"Website Name"}
               tags={["Website", "React.js"]}
+              checkCurrentRef={checkCurrentRef}
             />
           </WorkWrapper>
         </Content>
