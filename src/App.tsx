@@ -8,9 +8,11 @@ const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [activeRef, setActiveRef] = useState(0);
   const [isTop, setIsTop] = useState(true);
+  const [viewport, setViewport] = useState<number>(0);
 
   const checkMobile = () => {
-    setIsMobile(window.innerWidth < 900);
+    setViewport(window.innerWidth);
+    setIsMobile(viewport < 900);
     setIsTop(window.scrollY < 10);
   };
 
@@ -31,6 +33,7 @@ const App: FC = () => {
         isMobile={isMobile}
         setActiveRef={setActiveRef}
         activeRef={activeRef}
+        viewport={viewport}
       />
     </div>
   );

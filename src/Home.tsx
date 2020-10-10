@@ -20,10 +20,11 @@ interface Props {
   isMobile: boolean;
   setActiveRef: React.Dispatch<React.SetStateAction<number>>;
   activeRef: number;
+  viewport: number;
 }
 
 const Home: FC<Props> = (props: Props) => {
-  const { isMobile, setActiveRef, activeRef } = props;
+  const { isMobile, setActiveRef, activeRef, viewport } = props;
 
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -175,6 +176,7 @@ const Home: FC<Props> = (props: Props) => {
                 }
                 title={"Fridge Man"}
                 tags={["Full-Stack", "React.js"]}
+                viewport={viewport}
                 images={[
                   PlaceholderImage1,
                   PlaceholderImage2,
@@ -192,6 +194,7 @@ const Home: FC<Props> = (props: Props) => {
                 title={"Project Name"}
                 tags={["Command", "Rust"]}
                 checkCurrentRef={checkCurrentRef}
+                viewport={viewport}
                 images={[
                   PlaceholderImage1,
                   PlaceholderImage2,
@@ -208,6 +211,7 @@ const Home: FC<Props> = (props: Props) => {
                 title={"Website Name"}
                 tags={["Website", "React.js"]}
                 checkCurrentRef={checkCurrentRef}
+                viewport={viewport}
                 images={[
                   PlaceholderImage1,
                   PlaceholderImage2,

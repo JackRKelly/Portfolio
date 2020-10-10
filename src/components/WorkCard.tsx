@@ -13,10 +13,11 @@ interface Props {
   preview?: string;
   images: Array<string>;
   checkCurrentRef: () => void;
+  viewport: number;
 }
 
 const WorkCard: FC<Props> = (props: Props) => {
-  const { description, tags, title, checkCurrentRef, images } = props;
+  const { description, tags, title, checkCurrentRef, images, viewport } = props;
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -29,23 +30,21 @@ const WorkCard: FC<Props> = (props: Props) => {
           pointerEvents: isVisible ? "auto" : "none",
         }}
       >
+        <div
+          onClick={() => {
+            setIsVisible(false);
+            checkCurrentRef();
+          }}
+          className="close"
+        >
+          <Close />
+        </div>
         <div className="content">
-          <div className="carousel">
-            <Carousel images={images} />
-          </div>
+          <Carousel images={images} viewport={viewport} />
 
           <div className="text">
             <h5>{title}</h5>
             <p>{description}</p>
-            <p
-              onClick={() => {
-                setIsVisible(false);
-                checkCurrentRef();
-              }}
-              className="close"
-            >
-              Close <Close />
-            </p>
           </div>
         </div>
       </div>

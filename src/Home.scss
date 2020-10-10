@@ -237,17 +237,25 @@ main {
             pointer-events: none;
             @include ease-in-out(200ms);
             background-color: white;
+            .close {
+              position: absolute;
+              top: 7vh;
+              left: 50%;
+              transform: translateX(-50%);
+              cursor: pointer;
+              svg {
+                width: 100px;
+                @media (max-width: $medium) {
+                  width: 50px;
+                }
+              }
+            }
             .content {
               padding: 20px;
               max-width: 1920px;
-              display: flex;
-              flex-direction: column;
               @include width;
-
               .carousel {
-                position: relative;
                 width: 100%;
-                height: 300px;
                 .left {
                   position: absolute;
                   left: 0;
@@ -266,17 +274,15 @@ main {
                   cursor: pointer;
                 }
                 .images {
-                  position: relative;
                   img {
                     width: 33%;
                     position: absolute;
                     left: 50%;
                     transform: translateX(-50%);
-                    @include ease-in-out(200ms);
+                    transition: all 450ms ease 0s;
                   }
                 }
               }
-
               .text {
                 margin: -30px auto 10px auto;
                 width: 90%;
@@ -288,15 +294,15 @@ main {
                   margin: -25px auto 5px auto;
                 }
                 h5 {
-                  margin: 0 0 10px 0;
-
+                  margin: 0 0 calc(10px + 2%) 0;
+                  text-align: center;
                   font-size: 2.5em;
                 }
                 p {
                   margin: 15px 0 0;
                   font-size: 1.5em;
                 }
-                p.close {
+                .close {
                   color: $primary;
                   font-weight: bold;
                   cursor: pointer;
