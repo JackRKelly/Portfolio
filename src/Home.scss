@@ -1,5 +1,34 @@
 @import "./assets/variables";
 
+.back-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 4%;
+  padding: 20px;
+  cursor: pointer;
+  z-index: 100;
+  @include ease-in-out(200ms);
+  @media (min-width: $medium) {
+    right: 3%;
+  }
+  @media (max-width: $medium) {
+    right: 1.5%;
+  }
+  @media (max-width: $small) {
+    right: 2%;
+  }
+  svg {
+    width: 50px;
+    fill: $primary;
+  }
+  polygon {
+    fill: #fff;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
 main {
   padding-top: 70px;
   overflow: hidden;
@@ -297,7 +326,7 @@ main {
                   justify-content: flex-end;
                   svg {
                     margin-left: 10px;
-                    width: 1em;
+                    width: 0.9em;
                     fill: $primary;
                   }
                 }
@@ -607,7 +636,6 @@ main {
   }
   section#contact {
     @include padding-top(true);
-    padding-bottom: 100px;
     .content {
       position: relative;
       svg.shapes {
@@ -861,6 +889,44 @@ main {
               @include ease-in-out(200ms);
             }
           }
+        }
+      }
+    }
+  }
+  footer#footer {
+    @include padding-top(false);
+    min-height: 200px;
+
+    .content {
+      position: relative;
+      svg.shapes {
+        max-height: 475px;
+        position: absolute;
+        right: -27%;
+        top: -33%;
+        width: 50%;
+        overflow: visible;
+        transform: rotate(180deg);
+        @media (min-width: $large) {
+          top: -13%;
+        }
+        @media (min-width: $extralarge) {
+          top: -28%;
+        }
+      }
+      .jrk-logo {
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        @media (max-width: $medium) {
+          width: 30%;
+        }
+        @include margin-bottom(false);
+        svg {
+          width: 100%;
+          fill: $primary;
         }
       }
     }

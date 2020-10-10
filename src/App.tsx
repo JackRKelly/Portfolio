@@ -11,7 +11,7 @@ const App: FC = () => {
 
   const checkMobile = () => {
     setIsMobile(window.innerWidth < 900);
-    setIsTop(window.scrollY < 10)
+    setIsTop(window.scrollY < 10);
   };
 
   const checkMobileDebounced = debounce(checkMobile, 100, {
@@ -27,7 +27,11 @@ const App: FC = () => {
   return (
     <div className="App">
       <Navigation isMobile={isMobile} activeRef={activeRef} isTop={isTop} />
-      <Home isMobile={isMobile} setActiveRef={setActiveRef} />
+      <Home
+        isMobile={isMobile}
+        setActiveRef={setActiveRef}
+        activeRef={activeRef}
+      />
     </div>
   );
 };

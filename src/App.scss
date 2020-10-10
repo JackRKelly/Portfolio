@@ -82,6 +82,11 @@ nav {
           &.logo {
             padding: 2px 10px 0 0;
             cursor: pointer;
+            &:first-child {
+              a {
+                padding: 16px 10px 16px 0;
+              }
+            }
             svg {
               fill: $primary;
               height: 35px;
