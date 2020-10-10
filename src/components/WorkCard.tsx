@@ -3,6 +3,7 @@ import React, { FC, useState } from "react";
 import PlaceholderImage from "../assets/images/placeholder.png";
 import Close from "../assets/svg/Close";
 import ExpandWork from "../assets/svg/ExpandWork";
+import Carousel from "./Carousel";
 
 interface Props {
   description: string;
@@ -10,11 +11,12 @@ interface Props {
   title: string;
   github?: string;
   preview?: string;
+  images: Array<string>;
   checkCurrentRef: () => void;
 }
 
 const WorkCard: FC<Props> = (props: Props) => {
-  const { description, tags, title, checkCurrentRef } = props;
+  const { description, tags, title, checkCurrentRef, images } = props;
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -27,22 +29,11 @@ const WorkCard: FC<Props> = (props: Props) => {
           pointerEvents: isVisible ? "auto" : "none",
         }}
       >
-        <div
-          className="background"
-          onClick={() => {
-            setIsVisible(false);
-            checkCurrentRef();
-          }}
-        ></div>
         <div className="content">
-          <div className="image">
-            <img src={PlaceholderImage} alt="" />
-            <ul className="tag-list">
-              {tags.map((tag, index) => (
-                <li key={index}>{tag}</li>
-              ))}
-            </ul>
+          <div className="carousel">
+            <Carousel images={images} />
           </div>
+
           <div className="text">
             <h5>{title}</h5>
             <p>{description}</p>
@@ -53,7 +44,7 @@ const WorkCard: FC<Props> = (props: Props) => {
               }}
               className="close"
             >
-              Close <Close/>
+              Close <Close />
             </p>
           </div>
         </div>
@@ -62,7 +53,7 @@ const WorkCard: FC<Props> = (props: Props) => {
         className="work-card"
         onClick={() => {
           setIsVisible(!isVisible);
-          document.title = `${title} | Jack Kelly`
+          document.title = `${title} | Jack Kelly`;
         }}
       >
         <div className="image">
@@ -75,7 +66,10 @@ const WorkCard: FC<Props> = (props: Props) => {
         </div>
         <div className="text">
           <h5>{title}</h5>
-          <p>{description.split(" ").slice(1, 35).join(" ")}{description.split(" ").length > 35 ? "..." : ""}</p>
+          <p>
+            {description.split(" ").slice(1, 35).join(" ")}
+            {description.split(" ").length > 35 ? "..." : ""}
+          </p>
           <div className="link">
             <p>
               More Details <ExpandWork />

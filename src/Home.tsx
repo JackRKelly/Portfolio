@@ -11,6 +11,9 @@ import ArticleWrapper from "./components/ArticleWrapper";
 import Content from "./components/Content";
 import WorkCard from "./components/WorkCard";
 import WorkWrapper from "./components/WorkWrapper";
+import PlaceholderImage1 from "./assets/images/placeholder.png";
+import PlaceholderImage2 from "./assets/images/placeholder2.png";
+import PlaceholderImage3 from "./assets/images/placeholder3.jpg";
 import "./Home.scss";
 
 interface Props {
@@ -172,6 +175,14 @@ const Home: FC<Props> = (props: Props) => {
                 }
                 title={"Fridge Man"}
                 tags={["Full-Stack", "React.js"]}
+                images={[
+                  PlaceholderImage1,
+                  PlaceholderImage2,
+                  PlaceholderImage3,
+                  PlaceholderImage1,
+                  PlaceholderImage2,
+                  PlaceholderImage3,
+                ]}
                 checkCurrentRef={checkCurrentRef}
               />
               <WorkCard
@@ -181,6 +192,14 @@ const Home: FC<Props> = (props: Props) => {
                 title={"Project Name"}
                 tags={["Command", "Rust"]}
                 checkCurrentRef={checkCurrentRef}
+                images={[
+                  PlaceholderImage1,
+                  PlaceholderImage2,
+                  PlaceholderImage3,
+                  PlaceholderImage1,
+                  PlaceholderImage2,
+                  PlaceholderImage3,
+                ]}
               />
               <WorkCard
                 description={
@@ -189,6 +208,14 @@ const Home: FC<Props> = (props: Props) => {
                 title={"Website Name"}
                 tags={["Website", "React.js"]}
                 checkCurrentRef={checkCurrentRef}
+                images={[
+                  PlaceholderImage1,
+                  PlaceholderImage2,
+                  PlaceholderImage3,
+                  PlaceholderImage1,
+                  PlaceholderImage2,
+                  PlaceholderImage3,
+                ]}
               />
             </WorkWrapper>
           </Content>
