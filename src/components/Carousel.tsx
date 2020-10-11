@@ -49,7 +49,11 @@ const Carousel: FC<Props> = (props: Props) => {
     >
       <div
         className="left"
-        style={{ top: (Math.min(viewport / 2, 800) * 9) / 16 / 2 - 25 }}
+        style={{
+          top:
+            (Math.min(viewport / 2, 800) * 9) / 16 / 2 -
+            (viewport < 800 ? 2 : 25),
+        }}
         onClick={() => {
           setImageList((oldList) => {
             return oldList.map((listItem) => {
@@ -85,9 +89,13 @@ const Carousel: FC<Props> = (props: Props) => {
           />
         ))}
       </div>
-      <p
+      <div
         className="right"
-        style={{ top: (Math.min(viewport / 2, 800) * 9) / 16 / 2 - 25 }}
+        style={{
+          top:
+            (Math.min(viewport / 2, 800) * 9) / 16 / 2 -
+            (viewport < 800 ? 2 : 25),
+        }}
         onClick={() => {
           setImageList((oldList) => {
             return oldList.map((listItem) => {
@@ -102,8 +110,8 @@ const Carousel: FC<Props> = (props: Props) => {
           });
         }}
       >
-        right
-      </p>
+        <LeftArrow />
+      </div>
     </div>
   );
 };
