@@ -240,7 +240,12 @@ main {
             overflow-y: auto;
             .close {
               position: absolute;
+              z-index: 1000;
               top: 7vh;
+              @media (min-width: 1400),
+                (max-width: 1650px) and (max-height: 900px) {
+                top: 6vh;
+              }
               left: 50%;
               transform: translateX(-50%);
               cursor: pointer;
@@ -254,6 +259,10 @@ main {
                 @media (max-width: $medium) {
                   width: 50px;
                 }
+                @media (min-width: 1400),
+                  (max-width: 1650px) and (max-height: 900px) {
+                  width: 65px;
+                }
               }
             }
             .content {
@@ -265,13 +274,30 @@ main {
               @media (max-width: $medium) {
                 top: 2%;
               }
+              @media (min-width: 1400),
+                (max-width: 1650px) and (max-height: 900px) {
+                top: 2%;
+              }
               .carousel {
                 width: 100%;
+                @media (min-width: 1400),
+                  (max-width: 1650px) and (max-height: 900px) {
+                  transform: scale(0.7);
+                }
                 .left {
                   position: absolute;
                   left: 0;
-                  @media (min-width: 1500px) and (max-width: 2000px) {
+                  @media (min-width: 1600px) and (max-width: 2000px) {
                     left: -90px;
+                  }
+                  @media (min-width: 1400) and (max-width: 1600px) {
+                    left: -180px;
+                  }
+                  @media (min-width: 1400),
+                    (max-width: 1650px) and (max-height: 900px) {
+                    left: -150px;
+                    top: 50% !important;
+                    transform: translateY(-50%);
                   }
                   display: inline-block;
                   z-index: 100;
@@ -295,6 +321,15 @@ main {
                   right: 0;
                   @media (min-width: 1500px) and (max-width: 2000px) {
                     right: -90px;
+                  }
+                  @media (min-width: 1400) and (max-width: 1600px) {
+                    right: -180px;
+                  }
+                  @media (min-width: 1400),
+                    (max-width: 1650px) and (max-height: 900px) {
+                    right: -150px;
+                    top: 50% !important;
+                    transform: translateY(-50%) rotate(180deg);
                   }
                   display: inline-block;
                   z-index: 100;
@@ -333,14 +368,27 @@ main {
                   width: 100%;
                   margin: -25px auto 5px auto;
                 }
+                @media (min-width: 1400),
+                  (max-width: 1650px) and (max-height: 900px) {
+                  margin: -65px auto 10px auto;
+                }
                 h5 {
                   margin: 0 0 calc(10px + 2%) 0;
+                  @media (min-width: 1400),
+                    (max-width: 1650px) and (max-height: 900px) {
+                    margin: 0 0 calc(14px) 0;
+                  }
                   text-align: center;
                   font-size: 2.5em;
                 }
                 p {
                   margin: 15px 0 0;
                   font-size: 1.5em;
+
+                  @media (min-width: 1400),
+                    (max-width: 1650px) and (max-height: 900px) {
+                    font-size: 1.25em;
+                  }
                 }
                 .close {
                   color: $primary;
