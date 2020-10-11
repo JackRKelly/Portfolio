@@ -46,6 +46,7 @@ import JacksPeppers6 from "./assets/images/jackspeppers/Screenshot_6.png";
 import ArticleThumb from "./assets/images/articlethumb.jpg";
 //styles
 import "./Home.scss";
+import JRKLogo from "./assets/svg/JRKLogo";
 
 interface Props {
   isMobile: boolean;
@@ -135,20 +136,21 @@ const Home: FC<Props> = (props: Props) => {
       {isMobile ? (
         <> </>
       ) : (
-        <div
-          className="back-to-top"
-          style={{
-            opacity: activeRef !== 0 ? 1 : 0,
-            pointerEvents: activeRef !== 0 ? "auto" : "none",
-          }}
-        >
-          <AnchorLink offset="0" href="#home">
+        <AnchorLink offset="0" href="#main">
+          <div
+            className="back-to-top"
+            style={{
+              opacity: activeRef !== 0 ? 1 : 0,
+              pointerEvents: activeRef !== 0 ? "auto" : "none",
+            }}
+          >
             <ScrollToTop />
-          </AnchorLink>
-        </div>
+          </div>
+        </AnchorLink>
       )}
 
       <main
+        id="main"
         onMouseMove={({ clientX: x, clientY: y }) => {
           if (parallaxRef.current) {
             if (isInViewport(parallaxRef.current)) {
@@ -461,10 +463,10 @@ const Home: FC<Props> = (props: Props) => {
         </section>
         <footer id="footer">
           <Content>
-            <div className="resume-download">
-              <a href="/pdf/jack-kelly-resume.pdf" download>
-                Download Resume
-              </a>
+            <div className="logo-wrapper">
+              <div className="jrk-logo">
+                <JRKLogo />
+              </div>
             </div>
           </Content>
         </footer>

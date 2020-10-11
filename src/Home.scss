@@ -154,7 +154,7 @@ main {
         margin: 0;
         display: inline-block;
         color: $primary;
-        @include margin-bottom(false);
+        @include margin-bottom-about;
         &::after {
           @include headerPseudoText("01", false);
         }
@@ -618,6 +618,7 @@ main {
               .image {
                 img {
                   transform: scale(1.05);
+                  filter: grayscale(0);
                 }
               }
               .text {
@@ -650,6 +651,7 @@ main {
                 @include ease-in-out(200ms);
                 transform-origin: bottom;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                filter: grayscale(1);
               }
               .tag-list {
                 list-style: none;
@@ -743,7 +745,7 @@ main {
           top: -13%;
         }
         @media (min-width: $extralarge) {
-          top: -28%;
+          top: -26%;
         }
       }
       h1 {
@@ -1005,17 +1007,16 @@ main {
     align-items: center;
     .content {
       position: relative;
-
-      .resume-download {
-        text-align: center;
-        display: block;
-        a {
-          text-decoration: none;
-          color: $primary;
-          font-weight: bold;
-          border: solid 3px $primary;
-          padding: 14px 16px;
-          border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .logo-wrapper {
+        .jrk-logo {
+          fill: $dark;
+          width: 10vw;
+          @media (min-width: $extralarge) {
+            width: 15vh;
+          }
         }
       }
     }

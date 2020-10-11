@@ -26,21 +26,21 @@ const Carousel: FC<Props> = (props: Props) => {
   const translateSwitch = (index) => {
     switch (index) {
       case 0:
-        return `calc(-50% - ${Math.min(viewport / 3, 800)}px)`;
+        return `calc(-50% - ${Math.min(viewport / 3, 700)}px)`;
       case 1:
         return `calc(-50% - ${Math.min(
           viewport < 1400 ? viewport / 4 : viewport / 5,
-          600
+          500
         )}px)`;
       case 2:
         return `calc(-50% + 0px)`;
       case 3:
         return `calc(-50% + ${Math.min(
           viewport < 1400 ? viewport / 4 : viewport / 5,
-          600
+          500
         )}px)`;
       case 4:
-        return `calc(-50% + ${Math.min(viewport / 3, 800)}px)`;
+        return `calc(-50% + ${Math.min(viewport / 3, 700)}px)`;
     }
   };
 
@@ -78,7 +78,7 @@ const Carousel: FC<Props> = (props: Props) => {
       style={{
         height:
           ((Math.min(viewport / 2, 800) * 9) / 16) *
-          (viewport < 1400 ? 1.4 : viewport < 2000 ? 1 : 1.15),
+          (viewport < 1400 ? 1.4 : viewport < 2000 ? 1 : 1.075),
       }}
       onTouchStart={(e) => {
         const firstTouch = e.touches[0];

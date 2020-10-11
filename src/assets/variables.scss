@@ -57,7 +57,7 @@ $extralarge: 1600px;
 
 @mixin padding-top($isCard) {
   @if $isCard {
-    padding-top: 10%;
+    padding-top: 15vh;
     @media (max-width: $large) {
       padding-top: 17%;
     }
@@ -68,7 +68,7 @@ $extralarge: 1600px;
       padding-top: calc(15% + 60px);
     }
   } @else {
-    padding-top: 6%;
+    padding-top: 9vh;
     @media (max-width: $large) {
       padding-top: 9%;
     }
@@ -104,6 +104,19 @@ $extralarge: 1600px;
     @media (max-width: $small) {
       margin-bottom: calc(8% + 30px);
     }
+  }
+}
+
+@mixin margin-bottom-about {
+  margin-bottom: 6%;
+  @media (max-width: $large) {
+    margin-bottom: 8%;
+  }
+  @media (max-width: $medium) {
+    margin-bottom: 10%;
+  }
+  @media (max-width: $small) {
+    margin-bottom: calc(4% + 30px);
   }
 }
 

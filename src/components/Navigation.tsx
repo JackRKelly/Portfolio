@@ -80,7 +80,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 }}
                 className="anchor"
               >
-                <AnchorLink offset="185" href="#about">
+                <AnchorLink offset="325" href="#about">
                   About
                 </AnchorLink>
               </li>
@@ -118,8 +118,14 @@ const Navigation: FC<Props> = (props: Props) => {
           </nav>
         </>
       ) : (
-        <nav className="desktop"  style={{boxShadow: isTop ? "none" : "0 0 20px rgba(0, 0, 0, 0.16)"}}>
-          <ul className="container" style={{padding: isTop ? "20px 0" : "10px 0"}}>
+        <nav
+          className="desktop"
+          style={{ boxShadow: isTop ? "none" : "0 0 20px rgba(0, 0, 0, 0.16)" }}
+        >
+          <ul
+            className="container"
+            style={{ padding: isTop ? "20px 0" : "10px 0" }}
+          >
             <li className="left">
               <ul>
                 <li className={activeRef === 0 ? "active logo" : "logo"}>
@@ -189,7 +195,7 @@ const Navigation: FC<Props> = (props: Props) => {
                   <AnchorLink
                     offset="30"
                     href="#work"
-                    className={activeRef === 2 ? "anchor active" : "anchor"} 
+                    className={activeRef === 2 ? "anchor active" : "anchor"}
                   >
                     Work
                   </AnchorLink>
@@ -205,7 +211,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 </li>
                 <li>
                   <AnchorLink
-                    offset="70"
+                    offset="50"
                     href="#contact"
                     className={activeRef === 4 ? "anchor active" : "anchor"}
                   >
