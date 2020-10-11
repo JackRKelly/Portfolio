@@ -6,6 +6,8 @@ import {
   zIndexSwitch,
   transitionSwitch,
 } from "../assets/util";
+import LoadingImage from "../assets/images/loading.svg";
+import Img from "react-cool-img";
 
 interface Props {
   images: Array<string>;
@@ -124,11 +126,12 @@ const Carousel: FC<Props> = (props: Props) => {
       </div>
       <div className="images">
         {imageList.map((img, index) => (
-          <img
+          <Img
+            placeholder={LoadingImage}
             src={images[img]}
             className={`image-${img} position-${index}`}
             alt=""
-            key={img}
+            lazy={true}
             style={{
               width: Math.min(viewport / 2, 800),
               transform: `translateX(${translateSwitch(
@@ -138,6 +141,7 @@ const Carousel: FC<Props> = (props: Props) => {
               opacity: opacitySwitch(index),
               transition: `all ${transitionSwitch(index)}ms ease`,
             }}
+            key={img}
           />
         ))}
       </div>

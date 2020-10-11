@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import ExternalLink from "../assets/svg/ExternalLink";
+import LoadingImage from "../assets/images/loading.svg";
+import Img from "react-cool-img";
 
 interface Props {
   description: string;
@@ -16,7 +18,12 @@ const ArticleCard: FC<Props> = (props: Props) => {
     <a href={link} target="_blank" rel="noopener noreferrer">
       <li>
         <div className="image">
-          <img src={image} alt="" />
+          <Img
+            placeholder={LoadingImage}
+            src={image}
+            alt="Work Card Thumbnail"
+            lazy={true}
+          />
           <ul className="tag-list">
             {tags.map((tag, index) => (
               <li key={index}>{tag}</li>

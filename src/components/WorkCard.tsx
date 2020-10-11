@@ -2,6 +2,8 @@ import React, { FC, useState } from "react";
 import Close from "../assets/svg/Close";
 import ExpandWork from "../assets/svg/ExpandWork";
 import Carousel from "./Carousel";
+import LoadingImage from "../assets/images/loading.svg";
+import Img from "react-cool-img";
 
 interface Props {
   description: string;
@@ -71,7 +73,12 @@ const WorkCard: FC<Props> = (props: Props) => {
         }}
       >
         <div className="image">
-          <img src={thumbnail} alt="" />
+          <Img
+            placeholder={LoadingImage}
+            src={thumbnail}
+            alt="Work Card Thumbnail"
+            lazy={true}
+          />
           <ul className="tag-list">
             {tags.map((tag, index) => (
               <li key={index}>{tag}</li>
