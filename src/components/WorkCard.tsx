@@ -1,6 +1,4 @@
 import React, { FC, useState } from "react";
-
-import PlaceholderImage from "../assets/images/placeholder.png";
 import Close from "../assets/svg/Close";
 import ExpandWork from "../assets/svg/ExpandWork";
 import Carousel from "./Carousel";

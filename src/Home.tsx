@@ -18,11 +18,6 @@ import { debounce } from "ts-debounce";
 import { isInViewport } from "./assets/util";
 import { encode } from "./assets/util";
 //images
-import PlaceholderImage1 from "./assets/images/placeholder.png";
-import PlaceholderImage2 from "./assets/images/placeholder2.png";
-import PlaceholderImage3 from "./assets/images/placeholder3.jpg";
-import FridgeMan0 from "./assets/images/fridgeman/Screenshot_0.png";
-import FridgeMan01 from "./assets/images/fridgeman/Screenshot_01.png";
 import FridgeMan1 from "./assets/images/fridgeman/Screenshot_1.png";
 import FridgeMan2 from "./assets/images/fridgeman/Screenshot_2.png";
 import FridgeMan3 from "./assets/images/fridgeman/Screenshot_3.png";

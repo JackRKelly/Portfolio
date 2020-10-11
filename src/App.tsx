@@ -9,9 +9,6 @@ const App: FC = () => {
   const [activeRef, setActiveRef] = useState(0);
   const [isTop, setIsTop] = useState(true);
   const [viewport, setViewport] = useState<number>(0);
-  const [isFixed, setIsFixed] = useState<boolean>(false);
-
-  // const [scrollPosition, setScrollPosition] = useState(0);
 
   const checkMobile = () => {
     setViewport(window.innerWidth);
