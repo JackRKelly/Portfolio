@@ -116,7 +116,7 @@ const Carousel: FC<Props> = (props: Props) => {
         style={{
           top:
             (Math.min(viewport / 2, 800) * 9) / 16 / 2 -
-            (viewport < 800 ? 2 : 25),
+            (viewport < 800 ? 2 : 55),
         }}
         onClick={previousImage}
       >
@@ -146,7 +146,7 @@ const Carousel: FC<Props> = (props: Props) => {
         style={{
           top:
             (Math.min(viewport / 2, 800) * 9) / 16 / 2 -
-            (viewport < 800 ? 2 : 25),
+            (viewport < 800 ? 2 : 55),
         }}
         onClick={nextImage}
       >

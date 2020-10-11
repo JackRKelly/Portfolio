@@ -270,14 +270,18 @@ main {
                 .left {
                   position: absolute;
                   left: 0;
+                  @media (min-width: 1500px) and (max-width: 2000px) {
+                    left: -90px;
+                  }
                   display: inline-block;
                   z-index: 100;
                   cursor: pointer;
-                  user-select: none; /* standard syntax */
-                  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-                  -moz-user-select: none; /* mozilla browsers */
-                  -khtml-user-select: none; /* webkit (konqueror) browsers */
-                  -ms-user-select: none; /* IE10+ */
+                  user-select: none;
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  -khtml-user-select: none;
+                  -ms-user-select: none;
+                  padding: 30px;
                   @media (max-width: $medium) {
                     display: none;
                   }
@@ -289,15 +293,19 @@ main {
                 .right {
                   position: absolute;
                   right: 0;
+                  @media (min-width: 1500px) and (max-width: 2000px) {
+                    right: -90px;
+                  }
                   display: inline-block;
                   z-index: 100;
                   transform: rotate(180deg);
                   cursor: pointer;
-                  user-select: none; /* standard syntax */
-                  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-                  -moz-user-select: none; /* mozilla browsers */
-                  -khtml-user-select: none; /* webkit (konqueror) browsers */
-                  -ms-user-select: none; /* IE10+ */
+                  user-select: none;
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  -khtml-user-select: none;
+                  -ms-user-select: none;
+                  padding: 30px;
                   @media (max-width: $medium) {
                     display: none;
                   }
