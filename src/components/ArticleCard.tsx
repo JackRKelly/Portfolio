@@ -7,16 +7,17 @@ interface Props {
   tags: Array<string>;
   title: string;
   link: string;
+  image: string;
 }
 
 const ArticleCard: FC<Props> = (props: Props) => {
-  const { description, tags, title, link } = props;
+  const { description, tags, title, link, image } = props;
 
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
       <li>
         <div className="image">
-          <img src={PlaceholderImage} alt="" />
+          <img src={image} alt="" />
           <ul className="tag-list">
             {tags.map((tag, index) => (
               <li key={index}>{tag}</li>

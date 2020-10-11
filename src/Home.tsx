@@ -42,6 +42,8 @@ import JacksPeppers3 from "./assets/images/jackspeppers/Screenshot_3.png";
 import JacksPeppers4 from "./assets/images/jackspeppers/Screenshot_4.png";
 import JacksPeppers5 from "./assets/images/jackspeppers/Screenshot_5.png";
 import JacksPeppers6 from "./assets/images/jackspeppers/Screenshot_6.png";
+//articles
+import ArticleThumb from "./assets/images/articlethumb.jpg";
 //styles
 import "./Home.scss";
 
@@ -263,6 +265,7 @@ const Home: FC<Props> = (props: Props) => {
                   "How to create and publish a full stack application using React.js, Nginx, Strapi, MongoDB, and DigitalOcean."
                 }
                 title={"Create a Full-Stack App"}
+                image={ArticleThumb}
                 tags={["Tutorial", "Cloud Hosting"]}
                 link={
                   "https://dev.to/jackrkelly/create-a-full-stack-web-application-using-react-strapi-nginx-mongodb-and-digitalocean-bkh"
@@ -273,6 +276,7 @@ const Home: FC<Props> = (props: Props) => {
                   "How to create and publish a full stack application using React.js, Nginx, Strapi, MongoDB, and DigitalOcean."
                 }
                 title={"Create a Full-Stack App"}
+                image={ArticleThumb}
                 tags={["Tutorial", "Cloud Hosting"]}
                 link={
                   "https://dev.to/jackrkelly/create-a-full-stack-web-application-using-react-strapi-nginx-mongodb-and-digitalocean-bkh"
@@ -283,6 +287,7 @@ const Home: FC<Props> = (props: Props) => {
                   "How to create and publish a full stack application using React.js, Nginx, Strapi, MongoDB, and DigitalOcean."
                 }
                 title={"Create a Full-Stack App"}
+                image={ArticleThumb}
                 tags={["Tutorial", "Cloud Hosting"]}
                 link={
                   "https://dev.to/jackrkelly/create-a-full-stack-web-application-using-react-strapi-nginx-mongodb-and-digitalocean-bkh"

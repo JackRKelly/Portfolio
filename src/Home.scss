@@ -573,6 +573,7 @@ main {
                 border-radius: 3px;
                 @include ease-in-out(200ms);
                 transform-origin: bottom;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
               }
               .tag-list {
                 list-style: none;
