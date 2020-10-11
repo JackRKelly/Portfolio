@@ -112,12 +112,15 @@ main {
           width: 100%;
           overflow: visible;
         }
-        &-image {
+        &-image-container {
           position: absolute;
           width: 80%;
           top: -7%;
           left: 60%;
           transform: translateX(-50%);
+        }
+        &-image {
+          width: 100%;
         }
       }
     }

@@ -2,6 +2,8 @@ import React from "react";
 import "./heroshapes.scss";
 import JRKHero from "../images/jrkhero.png";
 import { animated } from "react-spring";
+import Img from "react-cool-img";
+import HeroPlaceholder from "../images/hero-placeholder.svg";
 
 const HeroShapes = React.forwardRef((props: any, ref: any) => {
   const { parallax } = props;
@@ -19,14 +21,21 @@ const HeroShapes = React.forwardRef((props: any, ref: any) => {
 
   return (
     <div ref={ref}>
-      <animated.img
-        className="hero-image"
-        src={JRKHero}
-        alt=""
+      <animated.div
+        className="hero-image-container"
         style={{
           transform: parallax.xy.interpolate(trans5),
         }}
-      />
+      >
+        <Img
+          className="hero-image"
+          placeholder={HeroPlaceholder}
+          src={JRKHero}
+          alt="JRK Hero"
+          lazy={true}
+        />
+      </animated.div>
+
       <div className="hero-shapes-wrapper">
         <svg
           id="Layer_1"
