@@ -243,8 +243,13 @@ main {
               left: 50%;
               transform: translateX(-50%);
               cursor: pointer;
+              @include ease-in-out(200ms);
+              &:hover {
+                transform: translateX(-50%) scale(1.1);
+              }
               svg {
                 width: 100px;
+                fill: $dark;
                 @media (max-width: $medium) {
                   width: 50px;
                 }
@@ -259,27 +264,27 @@ main {
                 .left {
                   position: absolute;
                   left: 0;
-                  top: 50%;
-                  transform: translateY(-50%);
                   display: inline-block;
                   z-index: 100;
                   cursor: pointer;
+                  svg {
+                    width: 50px;
+                    fill: $dark;
+                  }
                 }
                 .right {
                   position: absolute;
                   right: 0;
-                  top: 50%;
-                  transform: translateY(-50%);
                   display: inline-block;
+                  z-index: 100;
                   cursor: pointer;
                 }
                 .images {
                   img {
-                    width: 33%;
                     position: absolute;
                     left: 50%;
-                    transform: translateX(-50%);
-                    transition: all 450ms ease 0s;
+                    border-radius: 3px;
+                    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
                   }
                 }
               }

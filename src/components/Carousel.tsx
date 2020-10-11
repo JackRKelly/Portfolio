@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import LeftArrow from "../assets/svg/LeftArrow";
 import {
   scaleSwitch,
   opacitySwitch,
@@ -19,19 +20,21 @@ const Carousel: FC<Props> = (props: Props) => {
   const translateSwitch = (index) => {
     switch (index) {
       case 0:
-        return `calc(-50% - ${viewport / 3}px)`;
+        return `calc(-50% - ${Math.min(viewport / 3, 800)}px)`;
       case 1:
-        return `calc(-50% - ${
-          viewport < 1400 ? viewport / 4 : viewport / 5
-        }px)`;
+        return `calc(-50% - ${Math.min(
+          viewport < 1400 ? viewport / 4 : viewport / 5,
+          600
+        )}px)`;
       case 2:
         return `calc(-50% + 0px)`;
       case 3:
-        return `calc(-50% + ${
-          viewport < 1400 ? viewport / 4 : viewport / 5
-        }px)`;
+        return `calc(-50% + ${Math.min(
+          viewport < 1400 ? viewport / 4 : viewport / 5,
+          600
+        )}px)`;
       case 4:
-        return `calc(-50% + ${viewport / 3}px)`;
+        return `calc(-50% + ${Math.min(viewport / 3, 800)}px)`;
     }
   };
 
@@ -43,12 +46,10 @@ const Carousel: FC<Props> = (props: Props) => {
           ((Math.min(viewport / 2, 800) * 9) / 16) *
           (viewport < 1400 ? 1.4 : 1.15),
       }}
-      onDrag={(e) => {
-        console.log(e);
-      }}
     >
-      <p
+      <div
         className="left"
+        style={{ top: (Math.min(viewport / 2, 800) * 9) / 16 / 2 - 25 }}
         onClick={() => {
           setImageList((oldList) => {
             return oldList.map((listItem) => {
@@ -63,8 +64,8 @@ const Carousel: FC<Props> = (props: Props) => {
           });
         }}
       >
-        left
-      </p>
+        <LeftArrow />
+      </div>
       <div className="images">
         {imageList.map((img, index) => (
           <img
@@ -86,6 +87,7 @@ const Carousel: FC<Props> = (props: Props) => {
       </div>
       <p
         className="right"
+        style={{ top: (Math.min(viewport / 2, 800) * 9) / 16 / 2 - 25 }}
         onClick={() => {
           setImageList((oldList) => {
             return oldList.map((listItem) => {

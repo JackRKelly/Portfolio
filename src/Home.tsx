@@ -14,6 +14,13 @@ import WorkWrapper from "./components/WorkWrapper";
 import PlaceholderImage1 from "./assets/images/placeholder.png";
 import PlaceholderImage2 from "./assets/images/placeholder2.png";
 import PlaceholderImage3 from "./assets/images/placeholder3.jpg";
+import FridgeMan1 from "./assets/images/fridgeman/Screenshot_1.png";
+import FridgeMan2 from "./assets/images/fridgeman/Screenshot_2.png";
+import FridgeMan3 from "./assets/images/fridgeman/Screenshot_3.png";
+import FridgeMan4 from "./assets/images/fridgeman/Screenshot_4.png";
+import FridgeMan5 from "./assets/images/fridgeman/Screenshot_5.png";
+import FridgeMan6 from "./assets/images/fridgeman/Screenshot_6.png";
+import FridgeMan7 from "./assets/images/fridgeman/Screenshot_7.png";
 import "./Home.scss";
 
 interface Props {
@@ -178,12 +185,13 @@ const Home: FC<Props> = (props: Props) => {
                 tags={["Full-Stack", "React.js"]}
                 viewport={viewport}
                 images={[
-                  PlaceholderImage1,
-                  PlaceholderImage2,
-                  PlaceholderImage3,
-                  PlaceholderImage1,
-                  PlaceholderImage2,
-                  PlaceholderImage3,
+                  FridgeMan1,
+                  FridgeMan2,
+                  FridgeMan3,
+                  FridgeMan5,
+                  FridgeMan4,
+                  FridgeMan6,
+                  FridgeMan7,
                 ]}
                 checkCurrentRef={checkCurrentRef}
               />
