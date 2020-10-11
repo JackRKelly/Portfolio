@@ -242,9 +242,10 @@ main {
               position: absolute;
               z-index: 1000;
               top: 7vh;
-              @media (min-width: 1400),
-                (max-width: 1700px) and (max-height: 900px) {
-                top: 6vh;
+              @media (min-width: 1400) and (max-width: 1700px) {
+                @media (min-height: 600px) and (max-height: 900px) {
+                  top: 6vh;
+                }
               }
               left: 50%;
               transform: translateX(-50%);
@@ -259,9 +260,10 @@ main {
                 @media (max-width: $medium) {
                   width: 50px;
                 }
-                @media (min-width: 1400),
-                  (max-width: 1700px) and (max-height: 900px) {
-                  width: 65px;
+                @media (min-width: 1400) and (max-width: 1700px) {
+                  @media (min-height: 600px) and (max-height: 900px) {
+                    width: 65px;
+                  }
                 }
               }
             }
@@ -274,15 +276,18 @@ main {
               @media (max-width: $medium) {
                 top: 2%;
               }
-              @media (min-width: 1400),
-                (max-width: 1700px) and (max-height: 900px) {
-                top: 2%;
+
+              @media (min-width: 1400) and (max-width: 1700px) {
+                @media (min-height: 600px) and (max-height: 900px) {
+                  top: 2%;
+                }
               }
               .carousel {
                 width: 100%;
-                @media (min-width: 1400),
-                  (max-width: 1700px) and (max-height: 900px) {
-                  transform: scale(0.7);
+                @media (min-width: 1400) and (max-width: 1700px) {
+                  @media (min-height: 600px) and (max-height: 900px) {
+                    transform: scale(0.7);
+                  }
                 }
                 .left {
                   position: absolute;
@@ -293,11 +298,12 @@ main {
                   @media (min-width: 1400) and (max-width: 1600px) {
                     left: -180px;
                   }
-                  @media (min-width: 1400),
-                    (max-width: 1700px) and (max-height: 900px) {
-                    left: -150px;
-                    top: 50% !important;
-                    transform: translateY(-50%);
+                  @media (min-width: 1400) and (max-width: 1700px) {
+                    @media (min-height: 600px) and (max-height: 900px) {
+                      left: -150px;
+                      top: 50% !important;
+                      transform: translateY(-50%);
+                    }
                   }
                   display: inline-block;
                   z-index: 100;
@@ -325,12 +331,14 @@ main {
                   @media (min-width: 1400) and (max-width: 1600px) {
                     right: -180px;
                   }
-                  @media (min-width: 1400),
-                    (max-width: 1700px) and (max-height: 900px) {
-                    right: -150px;
-                    top: 50% !important;
-                    transform: translateY(-50%) rotate(180deg);
+                  @media (min-width: 1400) and (max-width: 1700px) {
+                    @media (min-height: 600px) and (max-height: 900px) {
+                      right: -150px;
+                      top: 50% !important;
+                      transform: translateY(-50%) rotate(180deg);
+                    }
                   }
+
                   display: inline-block;
                   z-index: 100;
                   transform: rotate(180deg);
@@ -368,15 +376,19 @@ main {
                   width: 100%;
                   margin: -25px auto 5px auto;
                 }
-                @media (min-width: 1400),
-                  (max-width: 1700px) and (max-height: 900px) {
-                  margin: -65px auto 10px auto;
+
+                @media (min-width: 1400) and (max-width: 1700px) {
+                  @media (min-height: 600px) and (max-height: 900px) {
+                    margin: -65px auto 10px auto;
+                  }
                 }
                 h5 {
                   margin: 0 0 calc(10px + 2%) 0;
-                  @media (min-width: 1400),
-                    (max-width: 1700px) and (max-height: 900px) {
-                    margin: 0 0 calc(14px) 0;
+
+                  @media (min-width: 1400) and (max-width: 1700px) {
+                    @media (min-height: 600px) and (max-height: 900px) {
+                      margin: 0 0 calc(14px) 0;
+                    }
                   }
                   text-align: center;
                   font-size: 2.5em;
@@ -384,10 +396,10 @@ main {
                 p {
                   margin: 15px 0 0;
                   font-size: 1.5em;
-
-                  @media (min-width: 1400),
-                    (max-width: 1700px) and (max-height: 900px) {
-                    font-size: 1.25em;
+                  @media (min-width: 1400) and (max-width: 1700px) {
+                    @media (min-height: 600px) and (max-height: 900px) {
+                      font-size: 1.25em;
+                    }
                   }
                 }
                 .close {
@@ -795,6 +807,18 @@ main {
             }
             li {
               margin-right: 1.5em;
+              &:last-child {
+                a {
+                  @media (max-width: $extralarge) {
+                    padding: 0.5em 1.25em 0.5em 4em;
+                  }
+                }
+                p {
+                  @media (max-width: $extralarge) {
+                    display: block;
+                  }
+                }
+              }
               a {
                 position: relative;
                 text-decoration: none;
@@ -972,39 +996,23 @@ main {
     }
   }
   footer#footer {
-    @include padding-top(false);
-    min-height: 200px;
-
+    min-height: 315px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .content {
       position: relative;
-      svg.shapes {
-        max-height: 475px;
-        position: absolute;
-        right: -27%;
-        top: -33%;
-        width: 50%;
-        overflow: visible;
-        transform: rotate(180deg);
-        @media (min-width: $large) {
-          top: -13%;
-        }
-        @media (min-width: $extralarge) {
-          top: -28%;
-        }
-      }
-      .jrk-logo {
-        display: inline-block;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        margin: 0;
-        @media (max-width: $medium) {
-          width: 30%;
-        }
-        @include margin-bottom(false);
-        svg {
-          width: 100%;
-          fill: $primary;
+
+      .resume-download {
+        text-align: center;
+        display: block;
+        a {
+          text-decoration: none;
+          color: $primary;
+          font-weight: bold;
+          border: solid 3px $primary;
+          padding: 14px 16px;
+          border-radius: 4px;
         }
       }
     }
