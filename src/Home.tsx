@@ -1,16 +1,23 @@
+//dependencies
 import React, { FC, FormEvent, useRef, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
-import { debounce } from "ts-debounce";
+//svg
 import AboutShapes from "./assets/svg/AboutShapes";
 import DownArrow from "./assets/svg/DownArrow";
 import HeroShapes from "./assets/svg/HeroShapes";
 import ScrollToTop from "./assets/svg/ScrollToTop";
+//components
 import ArticleCard from "./components/ArticleCard";
 import ArticleWrapper from "./components/ArticleWrapper";
 import Content from "./components/Content";
 import WorkCard from "./components/WorkCard";
 import WorkWrapper from "./components/WorkWrapper";
+//methods
+import { debounce } from "ts-debounce";
+import { isInViewport } from "./assets/util";
+import { encode } from "./assets/util";
+//images
 import PlaceholderImage1 from "./assets/images/placeholder.png";
 import PlaceholderImage2 from "./assets/images/placeholder2.png";
 import PlaceholderImage3 from "./assets/images/placeholder3.jpg";
@@ -21,6 +28,7 @@ import FridgeMan4 from "./assets/images/fridgeman/Screenshot_4.png";
 import FridgeMan5 from "./assets/images/fridgeman/Screenshot_5.png";
 import FridgeMan6 from "./assets/images/fridgeman/Screenshot_6.png";
 import FridgeMan7 from "./assets/images/fridgeman/Screenshot_7.png";
+//styles
 import "./Home.scss";
 
 interface Props {
@@ -57,25 +65,6 @@ const Home: FC<Props> = (props: Props) => {
     x - window.innerWidth / 2,
     y - window.innerHeight / 2,
   ];
-
-  const encode = (data) => {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&");
-  };
-
-  const isInViewport = (el) => {
-    var rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) + 400 &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  };
 
   const checkCurrentRef = () => {
     document.documentElement.style.setProperty(
@@ -212,41 +201,43 @@ const Home: FC<Props> = (props: Props) => {
               />
               <WorkCard
                 description={
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat."
+                  "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
                 }
-                title={"Project Name"}
-                tags={["Command", "Rust"]}
-                checkCurrentRef={checkCurrentRef}
+                title={"Fridge Man"}
+                tags={["Full-Stack", "React.js"]}
                 viewport={viewport}
                 onModalClose={onModalClose}
                 onModalOpen={onModalOpen}
                 images={[
-                  PlaceholderImage1,
-                  PlaceholderImage2,
-                  PlaceholderImage3,
-                  PlaceholderImage1,
-                  PlaceholderImage2,
-                  PlaceholderImage3,
+                  FridgeMan1,
+                  FridgeMan2,
+                  FridgeMan3,
+                  FridgeMan5,
+                  FridgeMan4,
+                  FridgeMan6,
+                  FridgeMan7,
                 ]}
+                checkCurrentRef={checkCurrentRef}
               />
               <WorkCard
                 description={
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor erat, a facilisis leo finibus a. Proin dignissim interdum augue ut consequat."
+                  "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
                 }
-                title={"Website Name"}
-                tags={["Website", "React.js"]}
-                checkCurrentRef={checkCurrentRef}
+                title={"Fridge Man"}
+                tags={["Full-Stack", "React.js"]}
+                viewport={viewport}
                 onModalClose={onModalClose}
                 onModalOpen={onModalOpen}
-                viewport={viewport}
                 images={[
-                  PlaceholderImage1,
-                  PlaceholderImage2,
-                  PlaceholderImage3,
-                  PlaceholderImage1,
-                  PlaceholderImage2,
-                  PlaceholderImage3,
+                  FridgeMan1,
+                  FridgeMan2,
+                  FridgeMan3,
+                  FridgeMan5,
+                  FridgeMan4,
+                  FridgeMan6,
+                  FridgeMan7,
                 ]}
+                checkCurrentRef={checkCurrentRef}
               />
             </WorkWrapper>
           </Content>

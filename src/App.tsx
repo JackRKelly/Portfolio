@@ -34,8 +34,10 @@ const App: FC = () => {
       "--scroll-y"
     );
     const body = document.body;
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}`;
+    setTimeout(() => {
+      body.style.position = "fixed";
+      body.style.top = `-${scrollY}`;
+    }, 200);
   };
 
   const onModalClose = () => {

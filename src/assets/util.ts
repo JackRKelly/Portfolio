@@ -53,3 +53,20 @@ export const transitionSwitch = (index) => {
       return 450;
   }
 };
+
+export const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
+export const isInViewport = (el) => {
+  var rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) + 400 &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
