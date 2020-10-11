@@ -17,6 +17,9 @@ const Carousel: FC<Props> = (props: Props) => {
 
   const [imageList, setImageList] = useState([0, 1, 2, 3, 4]);
 
+  const [xDown, setXDown] = useState<null | number>(null);
+  const [yDown, setYDown] = useState<null | number>(null);
+
   const translateSwitch = (index) => {
     switch (index) {
       case 0:
@@ -38,6 +41,34 @@ const Carousel: FC<Props> = (props: Props) => {
     }
   };
 
+  const previousImage = () => {
+    setImageList((oldList) => {
+      return oldList.map((listItem) => {
+        if (listItem > 0) {
+          return (listItem -= 1);
+        }
+        if (listItem === 0) {
+          return (listItem = images.length - 1);
+        }
+        return listItem;
+      });
+    });
+  };
+
+  const nextImage = () => {
+    setImageList((oldList) => {
+      return oldList.map((listItem) => {
+        if (listItem < images.length - 1) {
+          return (listItem += 1);
+        }
+        if (listItem === images.length - 1) {
+          return (listItem = 0);
+        }
+        return listItem;
+      });
+    });
+  };
+
   return (
     <div
       className="carousel"
@@ -45,6 +76,40 @@ const Carousel: FC<Props> = (props: Props) => {
         height:
           ((Math.min(viewport / 2, 800) * 9) / 16) *
           (viewport < 1400 ? 1.4 : 1.15),
+      }}
+      onTouchStart={(e) => {
+        const firstTouch = e.touches[0];
+        setXDown(firstTouch.clientX);
+        setYDown(firstTouch.clientY);
+      }}
+      onTouchMove={(e) => {
+        if (!xDown || !yDown) {
+          return;
+        }
+
+        var xUp = e.touches[0].clientX;
+        var yUp = e.touches[0].clientY;
+
+        var xDiff = xDown - xUp;
+        var yDiff = yDown - yUp;
+
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+          /*most significant*/
+          if (xDiff > 0) {
+            nextImage();
+          } else {
+            previousImage();
+          }
+        } else {
+          if (yDiff > 0) {
+            console.log("up swipe");
+          } else {
+            console.log("down swipe");
+          }
+        }
+        /* reset values */
+        setXDown(null);
+        setYDown(null);
       }}
     >
       <div
@@ -54,19 +119,7 @@ const Carousel: FC<Props> = (props: Props) => {
             (Math.min(viewport / 2, 800) * 9) / 16 / 2 -
             (viewport < 800 ? 2 : 25),
         }}
-        onClick={() => {
-          setImageList((oldList) => {
-            return oldList.map((listItem) => {
-              if (listItem > 0) {
-                return (listItem -= 1);
-              }
-              if (listItem === 0) {
-                return (listItem = images.length - 1);
-              }
-              return listItem;
-            });
-          });
-        }}
+        onClick={previousImage}
       >
         <LeftArrow />
       </div>
@@ -96,19 +149,7 @@ const Carousel: FC<Props> = (props: Props) => {
             (Math.min(viewport / 2, 800) * 9) / 16 / 2 -
             (viewport < 800 ? 2 : 25),
         }}
-        onClick={() => {
-          setImageList((oldList) => {
-            return oldList.map((listItem) => {
-              if (listItem < images.length - 1) {
-                return (listItem += 1);
-              }
-              if (listItem === images.length - 1) {
-                return (listItem = 0);
-              }
-              return listItem;
-            });
-          });
-        }}
+        onClick={nextImage}
       >
         <LeftArrow />
       </div>

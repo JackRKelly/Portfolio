@@ -237,6 +237,7 @@ main {
             pointer-events: none;
             @include ease-in-out(200ms);
             background-color: white;
+            overflow-y: auto;
             .close {
               position: absolute;
               top: 7vh;
@@ -264,9 +265,6 @@ main {
                 .left {
                   position: absolute;
                   left: 0;
-                  @media (max-width: $medium) {
-                    left: -7px;
-                  }
                   display: inline-block;
                   z-index: 100;
                   cursor: pointer;
@@ -275,20 +273,17 @@ main {
                   -moz-user-select: none; /* mozilla browsers */
                   -khtml-user-select: none; /* webkit (konqueror) browsers */
                   -ms-user-select: none; /* IE10+ */
+                  @media (max-width: $medium) {
+                    display: none;
+                  }
                   svg {
                     width: 50px;
-                    @media (max-width: $medium) {
-                      width: 25px;
-                    }
                     fill: $dark;
                   }
                 }
                 .right {
                   position: absolute;
                   right: 0;
-                  @media (max-width: $medium) {
-                    right: -7px;
-                  }
                   display: inline-block;
                   z-index: 100;
                   transform: rotate(180deg);
@@ -298,11 +293,11 @@ main {
                   -moz-user-select: none; /* mozilla browsers */
                   -khtml-user-select: none; /* webkit (konqueror) browsers */
                   -ms-user-select: none; /* IE10+ */
+                  @media (max-width: $medium) {
+                    display: none;
+                  }
                   svg {
                     width: 50px;
-                    @media (max-width: $medium) {
-                      width: 25px;
-                    }
                     fill: $dark;
                   }
                 }

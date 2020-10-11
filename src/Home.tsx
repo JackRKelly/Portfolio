@@ -28,10 +28,19 @@ interface Props {
   setActiveRef: React.Dispatch<React.SetStateAction<number>>;
   activeRef: number;
   viewport: number;
+  onModalOpen: () => void;
+  onModalClose: () => void;
 }
 
 const Home: FC<Props> = (props: Props) => {
-  const { isMobile, setActiveRef, activeRef, viewport } = props;
+  const {
+    isMobile,
+    setActiveRef,
+    activeRef,
+    viewport,
+    onModalClose,
+    onModalOpen,
+  } = props;
 
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -69,6 +78,10 @@ const Home: FC<Props> = (props: Props) => {
   };
 
   const checkCurrentRef = () => {
+    document.documentElement.style.setProperty(
+      "--scroll-y",
+      `${window.scrollY}px`
+    );
     if (homeRef.current) {
       if (isInViewport(homeRef.current)) {
         setActiveRef(0);
@@ -103,7 +116,7 @@ const Home: FC<Props> = (props: Props) => {
 
   const scrollRefCheck = debounce(() => {
     checkCurrentRef();
-  }, 100);
+  }, 50);
 
   window.addEventListener("scroll", scrollRefCheck);
 
@@ -184,6 +197,8 @@ const Home: FC<Props> = (props: Props) => {
                 title={"Fridge Man"}
                 tags={["Full-Stack", "React.js"]}
                 viewport={viewport}
+                onModalClose={onModalClose}
+                onModalOpen={onModalOpen}
                 images={[
                   FridgeMan1,
                   FridgeMan2,
@@ -203,6 +218,8 @@ const Home: FC<Props> = (props: Props) => {
                 tags={["Command", "Rust"]}
                 checkCurrentRef={checkCurrentRef}
                 viewport={viewport}
+                onModalClose={onModalClose}
+                onModalOpen={onModalOpen}
                 images={[
                   PlaceholderImage1,
                   PlaceholderImage2,
@@ -219,6 +236,8 @@ const Home: FC<Props> = (props: Props) => {
                 title={"Website Name"}
                 tags={["Website", "React.js"]}
                 checkCurrentRef={checkCurrentRef}
+                onModalClose={onModalClose}
+                onModalOpen={onModalOpen}
                 viewport={viewport}
                 images={[
                   PlaceholderImage1,

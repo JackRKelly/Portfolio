@@ -14,10 +14,21 @@ interface Props {
   images: Array<string>;
   checkCurrentRef: () => void;
   viewport: number;
+  onModalOpen: () => void;
+  onModalClose: () => void;
 }
 
 const WorkCard: FC<Props> = (props: Props) => {
-  const { description, tags, title, checkCurrentRef, images, viewport } = props;
+  const {
+    description,
+    tags,
+    title,
+    checkCurrentRef,
+    images,
+    viewport,
+    onModalOpen,
+    onModalClose,
+  } = props;
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -33,6 +44,7 @@ const WorkCard: FC<Props> = (props: Props) => {
         <div
           onClick={() => {
             setIsVisible(false);
+            onModalClose();
             checkCurrentRef();
           }}
           className="close"
@@ -51,7 +63,8 @@ const WorkCard: FC<Props> = (props: Props) => {
       <div
         className="work-card"
         onClick={() => {
-          setIsVisible(!isVisible);
+          setIsVisible(true);
+          onModalOpen();
           document.title = `${title} | Jack Kelly`;
         }}
       >

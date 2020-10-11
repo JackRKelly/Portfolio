@@ -9,6 +9,9 @@ const App: FC = () => {
   const [activeRef, setActiveRef] = useState(0);
   const [isTop, setIsTop] = useState(true);
   const [viewport, setViewport] = useState<number>(0);
+  const [isFixed, setIsFixed] = useState<boolean>(false);
+
+  // const [scrollPosition, setScrollPosition] = useState(0);
 
   const checkMobile = () => {
     setViewport(window.innerWidth);
@@ -26,6 +29,23 @@ const App: FC = () => {
     checkMobile();
   });
 
+  const onModalOpen = () => {
+    const scrollY = document.documentElement.style.getPropertyValue(
+      "--scroll-y"
+    );
+    const body = document.body;
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}`;
+  };
+
+  const onModalClose = () => {
+    const body = document.body;
+    const scrollY = body.style.top;
+    body.style.position = "";
+    body.style.top = "";
+    window.scrollTo(0, parseInt(scrollY || "0") * -1);
+  };
+
   return (
     <div className="App">
       <Navigation isMobile={isMobile} activeRef={activeRef} isTop={isTop} />
@@ -34,6 +54,8 @@ const App: FC = () => {
         setActiveRef={setActiveRef}
         activeRef={activeRef}
         viewport={viewport}
+        onModalOpen={onModalOpen}
+        onModalClose={onModalClose}
       />
     </div>
   );
