@@ -10,10 +10,11 @@ import {
 interface Props {
   images: Array<string>;
   viewport: number;
+  color?: string;
 }
 
 const Carousel: FC<Props> = (props: Props) => {
-  const { images, viewport } = props;
+  const { images, viewport, color } = props;
 
   const [imageList, setImageList] = useState([0, 1, 2, 3, 4]);
 
@@ -94,7 +95,6 @@ const Carousel: FC<Props> = (props: Props) => {
         var yDiff = yDown - yUp;
 
         if (Math.abs(xDiff) > Math.abs(yDiff)) {
-          /*most significant*/
           if (xDiff > 0) {
             nextImage();
           } else {
@@ -107,7 +107,6 @@ const Carousel: FC<Props> = (props: Props) => {
             console.log("down swipe");
           }
         }
-        /* reset values */
         setXDown(null);
         setYDown(null);
       }}
@@ -121,7 +120,7 @@ const Carousel: FC<Props> = (props: Props) => {
         }}
         onClick={previousImage}
       >
-        <LeftArrow />
+        <LeftArrow color={color} />
       </div>
       <div className="images">
         {imageList.map((img, index) => (
@@ -151,7 +150,7 @@ const Carousel: FC<Props> = (props: Props) => {
         }}
         onClick={nextImage}
       >
-        <LeftArrow />
+        <LeftArrow color={color} />
       </div>
     </div>
   );

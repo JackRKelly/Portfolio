@@ -21,6 +21,8 @@ import { encode } from "./assets/util";
 import PlaceholderImage1 from "./assets/images/placeholder.png";
 import PlaceholderImage2 from "./assets/images/placeholder2.png";
 import PlaceholderImage3 from "./assets/images/placeholder3.jpg";
+import FridgeMan0 from "./assets/images/fridgeman/Screenshot_0.png";
+import FridgeMan01 from "./assets/images/fridgeman/Screenshot_01.png";
 import FridgeMan1 from "./assets/images/fridgeman/Screenshot_1.png";
 import FridgeMan2 from "./assets/images/fridgeman/Screenshot_2.png";
 import FridgeMan3 from "./assets/images/fridgeman/Screenshot_3.png";
@@ -183,11 +185,35 @@ const Home: FC<Props> = (props: Props) => {
                 description={
                   "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
                 }
+                primaryColor={"#7353ff"}
                 title={"Fridge Man"}
                 tags={["Full-Stack", "React.js"]}
                 viewport={viewport}
                 onModalClose={onModalClose}
                 onModalOpen={onModalOpen}
+                thumbnail={FridgeMan6}
+                images={[
+                  FridgeMan6,
+                  FridgeMan2,
+                  FridgeMan4,
+                  FridgeMan1,
+                  FridgeMan7,
+                  FridgeMan3,
+                  FridgeMan5,
+                ]}
+                checkCurrentRef={checkCurrentRef}
+              />
+              <WorkCard
+                description={
+                  "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
+                }
+                title={"Fridge Man"}
+                primaryColor={"#7353ff"}
+                tags={["Full-Stack", "React.js"]}
+                viewport={viewport}
+                onModalClose={onModalClose}
+                onModalOpen={onModalOpen}
+                thumbnail={FridgeMan6}
                 images={[
                   FridgeMan1,
                   FridgeMan2,
@@ -204,30 +230,12 @@ const Home: FC<Props> = (props: Props) => {
                   "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
                 }
                 title={"Fridge Man"}
+                primaryColor={"#7353ff"}
                 tags={["Full-Stack", "React.js"]}
                 viewport={viewport}
                 onModalClose={onModalClose}
                 onModalOpen={onModalOpen}
-                images={[
-                  FridgeMan1,
-                  FridgeMan2,
-                  FridgeMan3,
-                  FridgeMan5,
-                  FridgeMan4,
-                  FridgeMan6,
-                  FridgeMan7,
-                ]}
-                checkCurrentRef={checkCurrentRef}
-              />
-              <WorkCard
-                description={
-                  "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
-                }
-                title={"Fridge Man"}
-                tags={["Full-Stack", "React.js"]}
-                viewport={viewport}
-                onModalClose={onModalClose}
-                onModalOpen={onModalOpen}
+                thumbnail={FridgeMan6}
                 images={[
                   FridgeMan1,
                   FridgeMan2,

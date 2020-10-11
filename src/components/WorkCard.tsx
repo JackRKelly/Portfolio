@@ -12,6 +12,8 @@ interface Props {
   github?: string;
   preview?: string;
   images: Array<string>;
+  thumbnail: string;
+  primaryColor?: string;
   checkCurrentRef: () => void;
   viewport: number;
   onModalOpen: () => void;
@@ -28,6 +30,8 @@ const WorkCard: FC<Props> = (props: Props) => {
     viewport,
     onModalOpen,
     onModalClose,
+    thumbnail,
+    primaryColor,
   } = props;
 
   const [isVisible, setIsVisible] = useState(false);
@@ -52,10 +56,10 @@ const WorkCard: FC<Props> = (props: Props) => {
           <Close />
         </div>
         <div className="content">
-          <Carousel images={images} viewport={viewport} />
+          <Carousel images={images} viewport={viewport} color={primaryColor} />
 
           <div className="text">
-            <h5>{title}</h5>
+            <h5 style={{ color: primaryColor ? primaryColor : "" }}>{title}</h5>
             <p>{description}</p>
           </div>
         </div>
@@ -69,7 +73,7 @@ const WorkCard: FC<Props> = (props: Props) => {
         }}
       >
         <div className="image">
-          <img src={PlaceholderImage} alt="" />
+          <img src={thumbnail} alt="" />
           <ul className="tag-list">
             {tags.map((tag, index) => (
               <li key={index}>{tag}</li>
