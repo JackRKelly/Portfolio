@@ -260,6 +260,11 @@ main {
               padding: 20px;
               max-width: 1920px;
               @include width;
+              margin: 0;
+              top: 7%;
+              @media (max-width: $medium) {
+                top: 2%;
+              }
               .carousel {
                 width: 100%;
                 .left {

@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import PlaceholderImage from "../assets/images/placeholder.png";
 import ExternalLink from "../assets/svg/ExternalLink";
 
 interface Props {

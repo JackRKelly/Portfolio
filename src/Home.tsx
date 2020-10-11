@@ -197,7 +197,7 @@ const Home: FC<Props> = (props: Props) => {
             <WorkWrapper>
               <WorkCard
                 description={
-                  "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
+                  "Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in. Fridge Man is a full-stack application built using React.js, SCSS, Node.js, Express.js, and PostgreSQL."
                 }
                 primaryColor={"#7353ff"}
                 title={"Fridge Man"}
@@ -219,7 +219,7 @@ const Home: FC<Props> = (props: Props) => {
               />
               <WorkCard
                 description={
-                  "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
+                  "J2 Business Site is a mock business site built to showcase Jack Kelly’s work. There is a contact page utilizing Netlify Forms to handle form submission. This website was awarded 2nd place in the 2019 eMagine Media festival. This site was built using HTML, CSS, JavaScript, Netlify, and Fullpage.js."
                 }
                 title={"J2 Business Site"}
                 primaryColor={"#3D00FF"}
@@ -233,7 +233,7 @@ const Home: FC<Props> = (props: Props) => {
               />
               <WorkCard
                 description={
-                  "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
+                  "Jack’s Peppers is an full stack e-commerce site that is built to allow Jack to sell his many varieties of home grown peppers with ease. This site supports advanced search queries by color, price, and heat. Jack’s Peppers has a home, cart, contact, and search page. This e-commerce site was built using React.js, Express.js, Node.js, SCSS, Stripe.js, MongoDB, Mongoose, and Typescript."
                 }
                 title={"Jacks Peppers"}
                 primaryColor={"#C1272D"}

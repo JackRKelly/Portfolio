@@ -76,7 +76,7 @@ const Carousel: FC<Props> = (props: Props) => {
       style={{
         height:
           ((Math.min(viewport / 2, 800) * 9) / 16) *
-          (viewport < 1400 ? 1.4 : 1.15),
+          (viewport < 1400 ? 1.4 : viewport < 2000 ? 1 : 1.15),
       }}
       onTouchStart={(e) => {
         const firstTouch = e.touches[0];
