@@ -81,7 +81,7 @@ const WorkCard: FC<Props> = (props: Props) => {
         <div className="text">
           <h5>{title}</h5>
           <p>
-            {description.split(" ").slice(1, 35).join(" ")}
+            {description.split(" ").slice(0, 35).join(" ")}
             {description.split(" ").length > 35 ? "..." : ""}
           </p>
           <div className="link">

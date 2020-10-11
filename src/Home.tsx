@@ -18,6 +18,7 @@ import { debounce } from "ts-debounce";
 import { isInViewport } from "./assets/util";
 import { encode } from "./assets/util";
 //images
+//FridgeMan
 import FridgeMan1 from "./assets/images/fridgeman/Screenshot_1.png";
 import FridgeMan2 from "./assets/images/fridgeman/Screenshot_2.png";
 import FridgeMan3 from "./assets/images/fridgeman/Screenshot_3.png";
@@ -25,6 +26,22 @@ import FridgeMan4 from "./assets/images/fridgeman/Screenshot_4.png";
 import FridgeMan5 from "./assets/images/fridgeman/Screenshot_5.png";
 import FridgeMan6 from "./assets/images/fridgeman/Screenshot_6.png";
 import FridgeMan7 from "./assets/images/fridgeman/Screenshot_7.png";
+//J2
+import J21 from "./assets/images/j2/Screenshot_1.png";
+import J22 from "./assets/images/j2/Screenshot_2.png";
+import J23 from "./assets/images/j2/Screenshot_3.png";
+import J24 from "./assets/images/j2/Screenshot_4.png";
+import J25 from "./assets/images/j2/Screenshot_5.png";
+import J26 from "./assets/images/j2/Screenshot_6.png";
+import J27 from "./assets/images/j2/Screenshot_7.png";
+import J28 from "./assets/images/j2/Screenshot_8.png";
+//Jacks Peppers
+import JacksPeppers1 from "./assets/images/jackspeppers/Screenshot_1.png";
+import JacksPeppers2 from "./assets/images/jackspeppers/Screenshot_2.png";
+import JacksPeppers3 from "./assets/images/jackspeppers/Screenshot_3.png";
+import JacksPeppers4 from "./assets/images/jackspeppers/Screenshot_4.png";
+import JacksPeppers5 from "./assets/images/jackspeppers/Screenshot_5.png";
+import JacksPeppers6 from "./assets/images/jackspeppers/Screenshot_6.png";
 //styles
 import "./Home.scss";
 
@@ -202,43 +219,34 @@ const Home: FC<Props> = (props: Props) => {
                 description={
                   "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
                 }
-                title={"Fridge Man"}
-                primaryColor={"#7353ff"}
-                tags={["Full-Stack", "React.js"]}
+                title={"J2 Business Site"}
+                primaryColor={"#3D00FF"}
+                tags={["Javascript", "Fullpage.js"]}
                 viewport={viewport}
                 onModalClose={onModalClose}
                 onModalOpen={onModalOpen}
-                thumbnail={FridgeMan6}
-                images={[
-                  FridgeMan1,
-                  FridgeMan2,
-                  FridgeMan3,
-                  FridgeMan5,
-                  FridgeMan4,
-                  FridgeMan6,
-                  FridgeMan7,
-                ]}
+                thumbnail={J21}
+                images={[J21, J22, J28, J24, J25, J26, J27, J23]}
                 checkCurrentRef={checkCurrentRef}
               />
               <WorkCard
                 description={
                   "Fridge Man is a full-stack application built using React.js, Node.js, Express.js, and PostgreSQL. Fridge Man was built to make food inventory management a breeze. Fridge Man allows you to create and edit locations in which food will be stored. You can also add food items and their expiration dates to the locations you created. This application has user authentication supporting signing up and logging in."
                 }
-                title={"Fridge Man"}
-                primaryColor={"#7353ff"}
+                title={"Jacks Peppers"}
+                primaryColor={"#C1272D"}
                 tags={["Full-Stack", "React.js"]}
                 viewport={viewport}
                 onModalClose={onModalClose}
                 onModalOpen={onModalOpen}
-                thumbnail={FridgeMan6}
+                thumbnail={JacksPeppers2}
                 images={[
-                  FridgeMan1,
-                  FridgeMan2,
-                  FridgeMan3,
-                  FridgeMan5,
-                  FridgeMan4,
-                  FridgeMan6,
-                  FridgeMan7,
+                  JacksPeppers1,
+                  JacksPeppers2,
+                  JacksPeppers3,
+                  JacksPeppers5,
+                  JacksPeppers4,
+                  JacksPeppers6,
                 ]}
                 checkCurrentRef={checkCurrentRef}
               />

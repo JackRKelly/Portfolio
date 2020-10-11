@@ -394,7 +394,7 @@ main {
                 @include ease-in-out(200ms);
                 transform-origin: bottom;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-                filter: grayscale(1) brightness(1.1);
+                filter: grayscale(1);
               }
               .tag-list {
                 list-style: none;
