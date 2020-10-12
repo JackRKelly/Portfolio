@@ -122,6 +122,7 @@ const Home: FC<Props> = (props: Props) => {
 
   const scrollRefCheck = debounce(() => {
     checkCurrentRef();
+    console.log("ref check");
   }, 50);
 
   window.addEventListener("scroll", scrollRefCheck);

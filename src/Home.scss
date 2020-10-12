@@ -242,6 +242,7 @@ main {
             width: 100vw;
             .back-arrow {
               background-color: white;
+              box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
               position: sticky;
               top: 0;
               min-height: 100px;
@@ -282,12 +283,16 @@ main {
               li {
                 max-width: 1250px;
                 margin: 0 0 2em 0;
-                &:last-child {
-                  margin-bottom: 0;
+                display: flex;
+                justify-content: center;
+                &:first-child {
+                  margin-top: 2em;
                 }
                 img {
-                  width: 100%;
-                  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+                  width: 90%;
+                  border-radius: 2px;
+                  margin: auto;
+                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
                 }
               }
             }
