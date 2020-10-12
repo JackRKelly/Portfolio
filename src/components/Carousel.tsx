@@ -22,7 +22,6 @@ const Carousel: FC<Props> = (props: Props) => {
   const [imageList, setImageList] = useState([0, 1, 2, 3, 4]);
 
   const [xDown, setXDown] = useState<null | number>(null);
-  const [yDown, setYDown] = useState<null | number>(null);
 
   const translateSwitch = (index) => {
     switch (index) {
@@ -84,10 +83,9 @@ const Carousel: FC<Props> = (props: Props) => {
       onTouchStart={(e) => {
         const firstTouch = e.touches[0];
         setXDown(firstTouch.clientX);
-        setYDown(firstTouch.clientY);
       }}
       onTouchMove={(e) => {
-        if (!xDown || !yDown) {
+        if (!xDown) {
           return;
         }
 
