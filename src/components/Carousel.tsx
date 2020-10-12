@@ -13,10 +13,11 @@ interface Props {
   images: Array<string>;
   viewport: number;
   color?: string;
+  setImageListVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Carousel: FC<Props> = (props: Props) => {
-  const { images, viewport, color } = props;
+  const { images, viewport, color, setImageListVisible } = props;
 
   const [imageList, setImageList] = useState([0, 1, 2, 3, 4]);
 
@@ -75,6 +76,9 @@ const Carousel: FC<Props> = (props: Props) => {
   return (
     <div
       className="carousel"
+      onClick={() => {
+        setImageListVisible(true);
+      }}
       style={{
         height:
           ((Math.min(viewport / 2, 800) * 9) / 16) *

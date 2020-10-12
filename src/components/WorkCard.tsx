@@ -35,9 +35,33 @@ const WorkCard: FC<Props> = (props: Props) => {
   } = props;
 
   const [isVisible, setIsVisible] = useState(false);
+  const [imageListVisible, setImageListVisible] = useState(false);
 
   return (
     <li>
+      <div
+        className="image-list"
+        style={{
+          pointerEvents: imageListVisible ? "auto" : "none",
+          opacity: imageListVisible ? 1 : 0,
+        }}
+      >
+        <div className="back-arrow"></div>
+        <ul>
+          {images.map((img, index) => (
+            <li>
+              {" "}
+              <Img
+                placeholder={LoadingImage}
+                src={img}
+                alt=""
+                lazy={true}
+                key={index}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
       <div
         className="work-details"
         style={{
@@ -56,7 +80,12 @@ const WorkCard: FC<Props> = (props: Props) => {
           <Close />
         </div>
         <div className="content">
-          <Carousel images={images} viewport={viewport} color={primaryColor} />
+          <Carousel
+            images={images}
+            viewport={viewport}
+            color={primaryColor}
+            setImageListVisible={setImageListVisible}
+          />
 
           <div className="text">
             <h5 style={{ color: primaryColor ? primaryColor : "" }}>{title}</h5>

@@ -226,6 +226,35 @@ main {
               margin: auto;
             }
           }
+          .image-list {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 500;
+            @include ease-in-out(200ms);
+            background-color: white;
+            opacity: 0;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              li {
+                max-width: 1250px;
+                margin: 2em 0;
+                img {
+                  width: 100%;
+                  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+                }
+              }
+            }
+          }
           .work-details {
             position: fixed;
             top: 0;
