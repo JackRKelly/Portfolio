@@ -229,15 +229,49 @@ main {
           .image-list {
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
             bottom: 0;
             z-index: 500;
+            -webkit-transform: translateZ(1px);
+            -moz-transform: translateZ(1px);
+            -o-transform: translateZ(1px);
+            transform: translateZ(1px);
             @include ease-in-out(200ms);
             background-color: white;
-            opacity: 0;
             overflow-y: scroll;
             overflow-x: hidden;
+            width: 100vw;
+            .back-arrow {
+              background-color: white;
+              position: sticky;
+              top: 0;
+              min-height: 100px;
+              width: 100vw;
+              z-index: 503;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              @media (min-width: $large) {
+                padding: 25px;
+              }
+              svg {
+                height: 100px;
+                fill: $dark;
+                @media (max-width: $large) {
+                  height: 50px;
+                }
+                @media (min-width: 1400) and (max-width: 1700px) {
+                  @media (min-height: 600px) and (max-height: 900px) {
+                    height: 65px;
+                  }
+                }
+                @include ease-in-out(200ms);
+                &:hover {
+                  transform: scale(1.1);
+                }
+              }
+            }
+
             ul {
               list-style: none;
               padding: 0;
@@ -247,7 +281,10 @@ main {
               flex-direction: column;
               li {
                 max-width: 1250px;
-                margin: 2em 0;
+                margin: 0 0 2em 0;
+                &:last-child {
+                  margin-bottom: 0;
+                }
                 img {
                   width: 100%;
                   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
@@ -272,7 +309,7 @@ main {
             overflow-y: auto;
             .close {
               position: absolute;
-              z-index: 1000;
+              z-index: 401;
               top: 7vh;
               @media (min-width: 1400) and (max-width: 1700px) {
                 @media (min-height: 600px) and (max-height: 900px) {
@@ -316,6 +353,7 @@ main {
               }
               .carousel {
                 width: 100%;
+                cursor: pointer;
                 @media (min-width: 1400) and (max-width: 1700px) {
                   @media (min-height: 600px) and (max-height: 900px) {
                     transform: scale(0.7);
@@ -1030,7 +1068,7 @@ main {
     }
   }
   footer#footer {
-    min-height: 315px;
+    min-height: 215px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1045,6 +1083,9 @@ main {
           width: 10vw;
           @media (min-width: $extralarge) {
             width: 15vh;
+          }
+          @media (max-width: $medium) {
+            width: 25vw;
           }
         }
       }

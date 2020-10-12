@@ -76,9 +76,6 @@ const Carousel: FC<Props> = (props: Props) => {
   return (
     <div
       className="carousel"
-      onClick={() => {
-        setImageListVisible(true);
-      }}
       style={{
         height:
           ((Math.min(viewport / 2, 800) * 9) / 16) *
@@ -128,7 +125,12 @@ const Carousel: FC<Props> = (props: Props) => {
       >
         <LeftArrow color={color} />
       </div>
-      <div className="images">
+      <div
+        className="images"
+        onClick={() => {
+          setImageListVisible(true);
+        }}
+      >
         {imageList.map((img, index) => (
           <Img
             placeholder={LoadingImage}

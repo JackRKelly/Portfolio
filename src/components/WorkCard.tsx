@@ -4,6 +4,7 @@ import ExpandWork from "../assets/svg/ExpandWork";
 import Carousel from "./Carousel";
 import LoadingImage from "../assets/images/loading.svg";
 import Img from "react-cool-img";
+import BackArrow from "../assets/svg/BackArrow";
 
 interface Props {
   description: string;
@@ -43,14 +44,20 @@ const WorkCard: FC<Props> = (props: Props) => {
         className="image-list"
         style={{
           pointerEvents: imageListVisible ? "auto" : "none",
-          opacity: imageListVisible ? 1 : 0,
+          left: imageListVisible ? "0" : "-100%",
         }}
       >
-        <div className="back-arrow"></div>
+        <div
+          className="back-arrow"
+          onClick={() => {
+            setImageListVisible(false);
+          }}
+        >
+          <BackArrow />
+        </div>
         <ul>
           {images.map((img, index) => (
             <li>
-              {" "}
               <Img
                 placeholder={LoadingImage}
                 src={img}

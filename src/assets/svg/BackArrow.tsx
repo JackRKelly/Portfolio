@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-const DownArrow: FC = () => {
+const BackArrow: FC = () => {
   return (
     <svg
       id="Layer_1"
@@ -13,4 +13,4 @@ const DownArrow: FC = () => {
   );
 };
 
-export default DownArrow;
+export default BackArrow;
