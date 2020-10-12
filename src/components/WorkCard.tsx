@@ -45,6 +45,7 @@ const WorkCard: FC<Props> = (props: Props) => {
         style={{
           pointerEvents: imageListVisible ? "auto" : "none",
           left: imageListVisible ? "0" : "-100%",
+          overflowY: imageListVisible ? "scroll" : "hidden",
         }}
       >
         <div
@@ -57,14 +58,8 @@ const WorkCard: FC<Props> = (props: Props) => {
         </div>
         <ul>
           {images.map((img, index) => (
-            <li>
-              <Img
-                placeholder={LoadingImage}
-                src={img}
-                alt=""
-                lazy={true}
-                key={index}
-              />
+            <li key={index}>
+              <Img placeholder={LoadingImage} src={img} alt="" lazy={true} />
             </li>
           ))}
         </ul>

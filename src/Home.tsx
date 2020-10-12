@@ -387,6 +387,8 @@ const Home: FC<Props> = (props: Props) => {
                   <li>
                     <a
                       href="/pdf/jack-kelly-resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       download
                       className="submit-button"
                     >
