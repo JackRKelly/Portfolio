@@ -79,7 +79,7 @@ const Carousel: FC<Props> = (props: Props) => {
       style={{
         height:
           ((Math.min(viewport / 2, 800) * 9) / 16) *
-          (viewport < 1400 ? 1.3 : viewport < 2000 ? 1 : 1.075),
+          (viewport < 1400 ? 1.4 : viewport < 2000 ? 1 : 1.075),
       }}
       onTouchStart={(e) => {
         const firstTouch = e.touches[0];
@@ -91,27 +91,16 @@ const Carousel: FC<Props> = (props: Props) => {
           return;
         }
 
-        var xUp = e.touches[0].clientX;
-        var yUp = e.touches[0].clientY;
+        let xUp = e.touches[0].clientX;
+        let xDiff = xDown - xUp;
 
-        var xDiff = xDown - xUp;
-        var yDiff = yDown - yUp;
-
-        if (Math.abs(xDiff) > Math.abs(yDiff)) {
-          if (xDiff > 0) {
-            nextImage();
-          } else {
-            previousImage();
-          }
+        if (xDiff > 0) {
+          nextImage();
         } else {
-          if (yDiff > 0) {
-            console.log("up swipe");
-          } else {
-            console.log("down swipe");
-          }
+          previousImage();
         }
+
         setXDown(null);
-        setYDown(null);
       }}
     >
       <div
