@@ -36,7 +36,7 @@ $extralarge: 1600px;
   }
 }
 
-@mixin bar($bottom, $width) {
+@mixin hover-bar($bottom, $width) {
   &::after {
     content: "";
     position: absolute;
@@ -45,13 +45,14 @@ $extralarge: 1600px;
     width: 0%;
     transform: translateX(-50%);
     height: 3px;
-    transition: $bezier;
+    background-color: $dark;
+    @include ease-in-out(120ms);
   }
   &:hover::after {
     width: $width;
   }
   &.active::after {
-    background-color: $secondary;
+    background-color: $primary;
   }
 }
 

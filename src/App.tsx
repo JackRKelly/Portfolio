@@ -61,6 +61,7 @@ const App: FC = () => {
         viewport={viewport}
         onModalOpen={onModalOpen}
         onModalClose={onModalClose}
+        setIsTop={setIsTop}
       />
     </div>
   );

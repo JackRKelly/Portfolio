@@ -79,9 +79,24 @@ nav {
         height: 100%;
         li {
           display: inline-block;
+          position: relative;
           &.logo {
             padding: 2px 10px 0 0;
             cursor: pointer;
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -3px;
+              left: 0%;
+              width: 0%;
+              height: 3px;
+              background-color: $primary;
+              @include ease-in-out(200ms);
+            }
+            &.active::after {
+              width: 84%;
+            }
             &:first-child {
               a {
                 padding: 16px 10px 16px 0;
@@ -103,7 +118,6 @@ nav {
           }
           &.icon {
             padding: 0 3px;
-            position: relative;
             a {
               padding: 18px 21px;
               &:hover {
@@ -137,7 +151,8 @@ nav {
               color: $primary;
             }
             &.anchor {
-              @include bar(7px, 90%);
+              position: relative;
+              @include hover-bar(7px, 90%);
             }
             .main {
               position: absolute;

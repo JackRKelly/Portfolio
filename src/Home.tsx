@@ -55,6 +55,7 @@ interface Props {
   viewport: number;
   onModalOpen: () => void;
   onModalClose: () => void;
+  setIsTop: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Home: FC<Props> = (props: Props) => {
@@ -65,6 +66,7 @@ const Home: FC<Props> = (props: Props) => {
     viewport,
     onModalClose,
     onModalOpen,
+    setIsTop,
   } = props;
 
   const [fullname, setFullname] = useState("");
@@ -89,13 +91,14 @@ const Home: FC<Props> = (props: Props) => {
       `${window.scrollY}px`
     );
 
-    if (
-      document.documentElement.style.getPropertyValue("--scroll-y") !== "0px"
-    ) {
+    setIsTop(window.scrollY < 10);
+
+    if (document.body.style.position !== "fixed") {
       if (homeRef.current) {
         if (isInViewport(homeRef.current)) {
           setActiveRef(0);
           document.title = "Home | Jack Kelly";
+          console.log("home");
         }
       }
       if (aboutRef.current) {
@@ -127,7 +130,6 @@ const Home: FC<Props> = (props: Props) => {
 
   const scrollRefCheck = debounce(() => {
     checkCurrentRef();
-    console.log("ref check");
   }, 50);
 
   window.addEventListener("scroll", scrollRefCheck);

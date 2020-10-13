@@ -254,6 +254,11 @@ main {
               @media (min-width: $large) {
                 padding: calc(1% + 25px);
               }
+              &:hover {
+                svg {
+                  transform: translateX(-15px);
+                }
+              }
               svg {
                 height: 100px;
                 fill: $dark;
@@ -264,9 +269,6 @@ main {
                   height: 65px;
                 }
                 @include ease-in-out(200ms);
-                &:hover {
-                  transform: scale(1.1);
-                }
               }
             }
 
@@ -297,6 +299,9 @@ main {
                     border-radius: 2px;
                     margin: auto;
                     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                    &.no-js-loading {
+                      box-shadow: none;
+                    }
                   }
                 }
               }
