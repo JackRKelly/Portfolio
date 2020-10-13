@@ -384,6 +384,11 @@ main {
                   -khtml-user-select: none;
                   -ms-user-select: none;
                   padding: 30px;
+                  @include ease-in-out(200ms);
+                  &:hover {
+                    transform: translateX(-10px);
+                    padding: 30px 40px 30px 30px;
+                  }
                   @media (max-width: $medium) {
                     display: none;
                   }
@@ -404,12 +409,13 @@ main {
                   @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
                     right: -150px;
                     top: 50% !important;
-                    transform: translateY(-50%) rotate(180deg);
+                    transform: translateY(-50%);
+                    &:hover {
+                      transform: translateX(10px) translateY(-50%);
+                    }
                   }
-
                   display: inline-block;
                   z-index: 100;
-                  transform: rotate(180deg);
                   cursor: pointer;
                   user-select: none;
                   -webkit-user-select: none;
@@ -417,6 +423,11 @@ main {
                   -khtml-user-select: none;
                   -ms-user-select: none;
                   padding: 30px;
+                  @include ease-in-out(200ms);
+                  &:hover {
+                    transform: translateX(10px);
+                    padding: 30px 30px 30px 40px;
+                  }
                   @media (max-width: $medium) {
                     display: none;
                   }

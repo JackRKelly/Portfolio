@@ -8,6 +8,7 @@ import {
 } from "../assets/util";
 import LoadingImage from "../assets/images/loading.svg";
 import Img from "react-cool-img";
+import RightArrow from "../assets/svg/RightArrow";
 
 interface Props {
   images: Array<string>;
@@ -147,7 +148,7 @@ const Carousel: FC<Props> = (props: Props) => {
         }}
         onClick={nextImage}
       >
-        <LeftArrow color={color} />
+        <RightArrow color={color} />
       </div>
     </div>
   );
