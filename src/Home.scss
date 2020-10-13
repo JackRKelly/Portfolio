@@ -83,7 +83,7 @@ main {
               pointer-events: auto;
             }
             .arrow-2 {
-              transform: translateY(1.5em);
+              transform: translateY(1.7em);
               pointer-events: none;
             }
           }
@@ -93,7 +93,7 @@ main {
             fill: #ff5d5d;
             overflow: visible;
             .arrow-1 {
-              transform: translateY(-1.5em);
+              transform: translateY(-1.7em);
               pointer-events: none;
               @include ease-in-out(200ms);
             }
@@ -388,11 +388,7 @@ main {
                   @media (min-width: 1400) and (max-width: 1600px) {
                     left: -180px;
                   }
-                  @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-                    left: -150px;
-                    top: 50% !important;
-                    transform: translateY(-50%);
-                  }
+
                   display: inline-block;
                   z-index: 100;
                   cursor: pointer;
@@ -423,14 +419,6 @@ main {
                   }
                   @media (min-width: 1400) and (max-width: 1600px) {
                     right: -180px;
-                  }
-                  @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-                    right: -150px;
-                    top: 50% !important;
-                    transform: translateY(-50%);
-                    &:hover {
-                      transform: translateX(10px) translateY(-50%);
-                    }
                   }
                   display: inline-block;
                   z-index: 100;
@@ -1193,7 +1181,7 @@ main {
       justify-content: center;
       .logo-wrapper {
         .jrk-logo {
-          fill: $dark;
+          fill: $primary;
           width: 10vw;
           @media (min-width: $extralarge) {
             width: 15vh;
