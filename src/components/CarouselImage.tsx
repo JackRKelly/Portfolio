@@ -18,8 +18,6 @@ interface Props {
 const CarouselImage: React.FC<Props> = (props) => {
   const { images, img, index, viewport } = props;
 
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-
   const translateSwitch = (index: number) => {
     switch (index) {
       case 0:
@@ -50,18 +48,12 @@ const CarouselImage: React.FC<Props> = (props) => {
       lazy={true}
       style={{
         width: Math.min(viewport / 2, 800),
-        transform: `translateX(${translateSwitch(index)}) ${
-          isHovered ? "translateY(-15px)" : ""
-        } scale(${scaleSwitch(index)})`,
+        transform: `translateX(${translateSwitch(index)}) scale(${scaleSwitch(
+          index
+        )})`,
         zIndex: zIndexSwitch(index),
         opacity: opacitySwitch(index),
         transition: `all ${transitionSwitch(index)}ms ease`,
-      }}
-      onMouseOver={() => {
-        setIsHovered(true);
-      }}
-      onMouseOut={() => {
-        setIsHovered(false);
       }}
     />
   );

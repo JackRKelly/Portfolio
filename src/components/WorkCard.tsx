@@ -8,6 +8,7 @@ import BackArrow from "../assets/svg/BackArrow";
 import ExternalLink from "../assets/svg/ExternalLink";
 import Github from "../assets/svg/Github";
 import Preview from "../assets/svg/Preview";
+import LinkIcon from "../assets/svg/LinkIcon";
 
 interface Props {
   description: string;
@@ -110,7 +111,7 @@ const WorkCard: FC<Props> = (props: Props) => {
                 <a href={live} target="_blank" rel="noopener noreferrer">
                   <div className="svg-wrapper">
                     <span className="main">
-                      <ExternalLink />
+                      <LinkIcon />
                     </span>
                     <span className="sub">
                       <ExternalLink />

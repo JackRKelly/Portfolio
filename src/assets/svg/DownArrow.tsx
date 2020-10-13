@@ -2,12 +2,7 @@ import React, { FC } from "react";
 
 const DownArrow: FC = () => {
   return (
-    <svg
-      id="Layer_1"
-      data-name="Layer 1"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 54 54"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
       <clipPath id="circleClip">
         <polygon
           className="arrow-1"

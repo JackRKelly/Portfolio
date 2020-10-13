@@ -145,19 +145,13 @@ main {
     @include padding-top(false);
     .content {
       position: relative;
-      svg {
+      svg.shapes {
         max-height: 475px;
         position: absolute;
         left: -27%;
         top: -63%;
         width: 50%;
         overflow: visible;
-        @media (min-width: $large) {
-          top: -70%;
-        }
-        @media (min-width: $extralarge) {
-          top: -77%;
-        }
       }
       h1 {
         font-size: 5.5em;
