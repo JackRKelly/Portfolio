@@ -7,6 +7,8 @@ import AboutShapes from "./assets/svg/AboutShapes";
 import DownArrow from "./assets/svg/DownArrow";
 import HeroShapes from "./assets/svg/HeroShapes";
 import ScrollToTop from "./assets/svg/ScrollToTop";
+import JRKLogoStroke from "./assets/svg/JRKLogoStroke";
+import LinkedIn from "./assets/svg/LinkedIn";
 //components
 import ArticleCard from "./components/ArticleCard";
 import ArticleWrapper from "./components/ArticleWrapper";
@@ -46,7 +48,10 @@ import JacksPeppers6 from "./assets/images/jackspeppers/Screenshot_6.png";
 import ArticleThumb from "./assets/images/articlethumb.jpg";
 //styles
 import "./Home.scss";
-import JRKLogoStroke from "./assets/svg/JRKLogoStroke";
+import EmailIcon from "./assets/svg/EmailIcon";
+import DownloadIcon from "./assets/svg/DownloadIcon";
+import ContactOption from "./components/ContactOption";
+import ContactOptionsWrapper from "./components/ContactOptionsWrapper";
 
 interface Props {
   isMobile: boolean;
@@ -349,77 +354,27 @@ const Home: FC<Props> = (props: Props) => {
                   e.preventDefault();
                 }}
               >
-                <ul className="contact-options">
-                  <li>
-                    <a
-                      href="mailto:kcjackkelly@gmail.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="submit-button"
-                    >
-                      <div className="icon">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            fill="#fff"
-                            d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"
-                          />
-                        </svg>
-                      </div>
-                      <p>kcjackkelly@gmail.com</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/jackkelly4/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="submit-button"
-                    >
-                      <div className="icon">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            fill="#fff"
-                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
-                          />
-                        </svg>
-                      </div>
-                      <p>Jack Kelly</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/pdf/jack-kelly-resume.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="submit-button"
-                    >
-                      <div className="icon">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            fill="#fff"
-                            d="M15.003 3h2.997v5h-2.997v-5zm8.997 1v20h-24v-24h20l4 4zm-19 5h14v-7h-14v7zm16 4h-18v9h18v-9z"
-                          />
-                        </svg>
-                      </div>
-                      <p>Résumé</p>
-                    </a>
-                  </li>
-                </ul>
+                <ContactOptionsWrapper>
+                  <ContactOption
+                    string="kcjackkelly@gmail.com"
+                    href="mailto:kcjackkelly@gmail.com"
+                  >
+                    <EmailIcon />
+                  </ContactOption>
+                  <ContactOption
+                    string="Jack Kelly"
+                    href="https://www.linkedin.com/in/jackkelly4/"
+                  >
+                    <LinkedIn />
+                  </ContactOption>
+
+                  <ContactOption
+                    string="Résumé"
+                    href="/pdf/jack-kelly-resume.pdf"
+                  >
+                    <DownloadIcon />
+                  </ContactOption>
+                </ContactOptionsWrapper>
                 <input type="hidden" name="form-name" value="contact" />
                 <input
                   type="text"

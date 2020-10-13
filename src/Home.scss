@@ -1054,6 +1054,7 @@ main {
                   @include ease-in-out(200ms);
                   svg {
                     margin-left: 0.55em;
+                    fill: #fff;
                     width: 1.6em;
                     height: 1.6em;
                     @media (max-width: $medium) {

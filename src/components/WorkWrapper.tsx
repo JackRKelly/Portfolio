@@ -1,11 +1,11 @@
-import React, { FC, ReactNode } from "react";
+import React from "react";
 
 interface Props {
-  children?: ReactNode;
+  children?: React.ReactNode;
 }
 
-const WorkWrapper: FC<Props> = (props: Props) => {
-  return <ul className="work-wrapper">{props.children}</ul>;
+const WorkWrapper: React.FC<Props> = ({ children }) => {
+  return <ul className="work-wrapper">{children}</ul>;
 };
 
 export default WorkWrapper;

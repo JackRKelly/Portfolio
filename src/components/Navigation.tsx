@@ -2,7 +2,7 @@ import React, { FC, useState } from "react";
 import Devto from "../assets/svg/Devto";
 import Github from "../assets/svg/Github";
 import JRKLogo from "../assets/svg/JRKLogo";
-import LinkedIn from "../assets/svg/LinkedIn";
+import LinkedInBox from "../assets/svg/LinkedInBox";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Close from "../assets/svg/Close";
 import Hamburger from "../assets/svg/Hamburger";
@@ -175,7 +175,7 @@ const Navigation: FC<Props> = (props: Props) => {
                     rel="noopener noreferrer"
                   >
                     <span className="main">
-                      <LinkedIn />
+                      <LinkedInBox />
                     </span>
                     <span className="sub">
                       <ExternalLink />
