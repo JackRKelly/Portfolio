@@ -47,7 +47,13 @@ const App: FC = () => {
 
   return (
     <div className="App">
-      <Navigation isMobile={isMobile} activeRef={activeRef} isTop={isTop} />
+      <Navigation
+        isMobile={isMobile}
+        activeRef={activeRef}
+        isTop={isTop}
+        onModalClose={onModalClose}
+        onModalOpen={onModalOpen}
+      />
       <Home
         isMobile={isMobile}
         setActiveRef={setActiveRef}

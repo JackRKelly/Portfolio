@@ -39,9 +39,9 @@ const WorkCard: FC<Props> = (props: Props) => {
   const [imageListVisible, setImageListVisible] = useState(false);
 
   return (
-    <li>
+    <li className="work-card">
       <div
-        className="image-list"
+        className="image-list-wrapper"
         style={{
           pointerEvents: imageListVisible ? "auto" : "none",
           left: imageListVisible ? "0" : "-100%",
@@ -56,10 +56,12 @@ const WorkCard: FC<Props> = (props: Props) => {
         >
           <BackArrow />
         </div>
-        <ul>
+        <ul className="image-list">
           {images.map((img, index) => (
             <li key={index}>
-              <Img placeholder={LoadingImage} src={img} alt="" lazy={true} />
+              <a href={img} target="_blank" rel="noopener noreferrer">
+                <Img placeholder={LoadingImage} src={img} alt="" lazy={true} />
+              </a>
             </li>
           ))}
         </ul>

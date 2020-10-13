@@ -88,34 +88,39 @@ const Home: FC<Props> = (props: Props) => {
       "--scroll-y",
       `${window.scrollY}px`
     );
-    if (homeRef.current) {
-      if (isInViewport(homeRef.current)) {
-        setActiveRef(0);
-        document.title = "Home | Jack Kelly";
+
+    if (
+      document.documentElement.style.getPropertyValue("--scroll-y") !== "0px"
+    ) {
+      if (homeRef.current) {
+        if (isInViewport(homeRef.current)) {
+          setActiveRef(0);
+          document.title = "Home | Jack Kelly";
+        }
       }
-    }
-    if (aboutRef.current) {
-      if (isInViewport(aboutRef.current)) {
-        setActiveRef(1);
-        document.title = "About | Jack Kelly";
+      if (aboutRef.current) {
+        if (isInViewport(aboutRef.current)) {
+          setActiveRef(1);
+          document.title = "About | Jack Kelly";
+        }
       }
-    }
-    if (workRef.current) {
-      if (isInViewport(workRef.current)) {
-        setActiveRef(2);
-        document.title = "Work | Jack Kelly";
+      if (workRef.current) {
+        if (isInViewport(workRef.current)) {
+          setActiveRef(2);
+          document.title = "Work | Jack Kelly";
+        }
       }
-    }
-    if (articleRef.current) {
-      if (isInViewport(articleRef.current)) {
-        setActiveRef(3);
-        document.title = "Article | Jack Kelly";
+      if (articleRef.current) {
+        if (isInViewport(articleRef.current)) {
+          setActiveRef(3);
+          document.title = "Article | Jack Kelly";
+        }
       }
-    }
-    if (contactRef.current) {
-      if (isInViewport(contactRef.current)) {
-        setActiveRef(4);
-        document.title = "Contact | Jack Kelly";
+      if (contactRef.current) {
+        if (isInViewport(contactRef.current)) {
+          setActiveRef(4);
+          document.title = "Contact | Jack Kelly";
+        }
       }
     }
   };
@@ -225,7 +230,7 @@ const Home: FC<Props> = (props: Props) => {
                   "J2 Business Site is a mock business site built to showcase Jack Kelly’s work. There is a contact page utilizing Netlify Forms to handle form submission. This website was awarded 2nd place in the 2019 eMagine Media festival. This site was built using HTML, CSS, JavaScript, Netlify, and Fullpage.js."
                 }
                 title={"J2 Business Site"}
-                primaryColor={"#3D00FF"}
+                primaryColor={"#F600FF"}
                 tags={["Javascript", "Fullpage.js"]}
                 viewport={viewport}
                 onModalClose={onModalClose}

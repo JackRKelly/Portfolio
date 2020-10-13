@@ -3,19 +3,18 @@
 .back-to-top {
   position: fixed;
   bottom: 100px;
-  right: 4%;
   padding: 20px;
   cursor: pointer;
   z-index: 100;
   @include ease-in-out(200ms);
   @media (min-width: $medium) {
-    right: 3%;
+    right: calc(5% - 25px - 20px);
   }
   @media (max-width: $medium) {
-    right: 1.5%;
+    right: calc(3.75% - 25px - 20px);
   }
   @media (max-width: $small) {
-    right: 2%;
+    right: calc(2.5% - 25px - 20px);
   }
   svg {
     width: 50px;
@@ -181,7 +180,7 @@ main {
           top: -13%;
         }
         @media (min-width: $extralarge) {
-          top: -32%;
+          top: -24%;
         }
       }
       h1 {
@@ -220,13 +219,13 @@ main {
         }
         li {
           @media (min-width: 932px) and (max-width: $extralarge) {
-            &:not(.work-details):nth-last-child(1):nth-child(odd) {
+            &.work-card:not(.work-details):nth-last-child(1):nth-child(odd) {
               grid-column: span 2;
               width: 50%;
               margin: auto;
             }
           }
-          .image-list {
+          .image-list-wrapper {
             position: fixed;
             top: 0;
             bottom: 0;
@@ -253,7 +252,7 @@ main {
               justify-content: center;
               cursor: pointer;
               @media (min-width: $large) {
-                padding: 25px;
+                padding: calc(1% + 25px);
               }
               svg {
                 height: 100px;
@@ -271,7 +270,7 @@ main {
               }
             }
 
-            ul {
+            .image-list {
               list-style: none;
               padding: 0;
               margin: 0;
@@ -280,17 +279,25 @@ main {
               flex-direction: column;
               li {
                 max-width: 1250px;
+                width: 100%;
                 margin: 0 0 2em 0;
-                display: flex;
-                justify-content: center;
+                @include ease-in-out(200ms);
+                &:hover {
+                  transform: scale(1.025);
+                }
                 &:first-child {
                   margin-top: 2em;
                 }
-                img {
-                  width: 90%;
-                  border-radius: 2px;
-                  margin: auto;
-                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                a {
+                  display: flex;
+                  justify-content: center;
+                  img,
+                  svg {
+                    width: 90%;
+                    border-radius: 2px;
+                    margin: auto;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+                  }
                 }
               }
             }
@@ -795,7 +802,7 @@ main {
           top: -13%;
         }
         @media (min-width: $extralarge) {
-          top: -26%;
+          top: -19%;
         }
       }
       h1 {
@@ -806,7 +813,7 @@ main {
         margin: 0;
         display: inline-block;
         color: $primary;
-        @include margin-bottom(false);
+        @include margin-bottom(true);
         @media (max-width: $medium) {
           left: 55%;
         }
