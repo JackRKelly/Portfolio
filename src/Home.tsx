@@ -46,7 +46,6 @@ import JacksPeppers6 from "./assets/images/jackspeppers/Screenshot_6.png";
 import ArticleThumb from "./assets/images/articlethumb.jpg";
 //styles
 import "./Home.scss";
-import JRKLogo from "./assets/svg/JRKLogo";
 import JRKLogoStroke from "./assets/svg/JRKLogoStroke";
 
 interface Props {
