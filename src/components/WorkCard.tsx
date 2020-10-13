@@ -45,6 +45,8 @@ const WorkCard: FC<Props> = (props: Props) => {
         style={{
           pointerEvents: imageListVisible ? "auto" : "none",
           left: imageListVisible ? "0" : "-100%",
+          top: imageListVisible ? "0" : "unset",
+          bottom: imageListVisible ? "0" : "unset",
           overflowY: imageListVisible ? "scroll" : "hidden",
         }}
       >

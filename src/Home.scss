@@ -227,8 +227,6 @@ main {
           }
           .image-list-wrapper {
             position: fixed;
-            top: 0;
-            bottom: 0;
             z-index: 500;
             -webkit-transform: translateZ(1px);
             -moz-transform: translateZ(1px);
@@ -447,7 +445,7 @@ main {
                     position: absolute;
                     left: 50%;
                     border-radius: 3px;
-                    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+                    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
                   }
                 }
               }
@@ -915,6 +913,7 @@ main {
                 @media (max-width: $medium) {
                   font-size: 18px;
                   box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
+                  padding: 0.5em 1.25em 0.5em 1.5em;
                 }
                 @media (max-width: $small) {
                   font-size: 16px;
