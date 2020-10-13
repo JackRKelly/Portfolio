@@ -227,6 +227,8 @@ main {
           }
           .image-list-wrapper {
             position: fixed;
+            top: 0;
+            bottom: 0;
             z-index: 500;
             -webkit-transform: translateZ(1px);
             -moz-transform: translateZ(1px);
@@ -274,6 +276,7 @@ main {
               list-style: none;
               padding: 0;
               margin: 0;
+
               display: flex;
               align-items: center;
               flex-direction: column;
