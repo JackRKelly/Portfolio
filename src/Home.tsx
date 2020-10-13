@@ -214,6 +214,8 @@ const Home: FC<Props> = (props: Props) => {
                 tags={["Full-Stack", "React.js"]}
                 viewport={viewport}
                 onModalClose={onModalClose}
+                github={"https://github.com/JackRKelly/FridgeMan"}
+                preview={"https://vimeo.com/412508762"}
                 onModalOpen={onModalOpen}
                 thumbnail={FridgeMan6}
                 images={[
@@ -234,6 +236,8 @@ const Home: FC<Props> = (props: Props) => {
                 title={"J2 Business Site"}
                 primaryColor={"#F600FF"}
                 tags={["Javascript", "Fullpage.js"]}
+                github={"https://github.com/JackRKelly/J2"}
+                live={"https://j2.netlify.com/"}
                 viewport={viewport}
                 onModalClose={onModalClose}
                 onModalOpen={onModalOpen}
@@ -248,6 +252,8 @@ const Home: FC<Props> = (props: Props) => {
                 title={"Jacks Peppers"}
                 primaryColor={"#C1272D"}
                 tags={["Full-Stack", "React.js"]}
+                github={"https://github.com/JackRKelly/FridgeMan"}
+                preview={"https://vimeo.com/451655410"}
                 viewport={viewport}
                 onModalClose={onModalClose}
                 onModalOpen={onModalOpen}

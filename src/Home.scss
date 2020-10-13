@@ -493,6 +493,99 @@ main {
                 }
               }
             }
+            .links {
+              position: absolute;
+              z-index: 401;
+              bottom: 7vh;
+              @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+                bottom: 6vh;
+              }
+
+              left: 50%;
+              transform: translateX(-50%);
+              .link-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                li {
+                  margin: 0 15px;
+
+                  &:first-child {
+                    margin-left: 0;
+                  }
+                  &:last-child {
+                    margin-right: 0;
+                  }
+                  &:hover {
+                    a {
+                      .svg-wrapper {
+                        .main {
+                          svg {
+                            opacity: 0;
+                            transform: translateX(-15px) scale(0.5);
+                          }
+                        }
+                        .sub {
+                          svg {
+                            opacity: 1;
+                            transform: translateX(0px) scale(1);
+                            polyline {
+                              transform: translate(2px, -2px);
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    font-size: 1.6em;
+                    padding-left: 1.5em;
+                    font-weight: bold;
+                    color: $dark;
+                    text-decoration: none;
+                    position: relative;
+                    .svg-wrapper {
+                      margin-right: 0.2em;
+                      .main {
+                        position: absolute;
+                        top: 61%;
+                        transform: translateY(-50%);
+                        left: 0;
+                        svg {
+                          fill: $dark;
+                          height: 1.3em;
+                          @include ease-in-out(150ms);
+                        }
+                      }
+                      .sub {
+                        position: absolute;
+                        top: 61%;
+                        transform: translateY(-50%);
+                        left: 0;
+                        svg {
+                          overflow: visible;
+                          fill: $dark;
+                          height: 1.3em;
+                          opacity: 0;
+                          transform: translateX(15px) scale(0.5);
+                          @include ease-in-out(150ms);
+                          polyline {
+                            @include ease-in-out(150ms);
+                            transition-delay: 25ms;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
 
           div.work-card {

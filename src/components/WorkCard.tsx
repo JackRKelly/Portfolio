@@ -5,6 +5,9 @@ import Carousel from "./Carousel";
 import LoadingImage from "../assets/images/loading.svg";
 import Img from "react-cool-img";
 import BackArrow from "../assets/svg/BackArrow";
+import ExternalLink from "../assets/svg/ExternalLink";
+import Github from "../assets/svg/Github";
+import Preview from "../assets/svg/Preview";
 
 interface Props {
   description: string;
@@ -12,6 +15,7 @@ interface Props {
   title: string;
   github?: string;
   preview?: string;
+  live?: string;
   images: Array<string>;
   thumbnail: string;
   primaryColor?: string;
@@ -33,6 +37,9 @@ const WorkCard: FC<Props> = (props: Props) => {
     onModalClose,
     thumbnail,
     primaryColor,
+    github,
+    live,
+    preview,
   } = props;
 
   const [isVisible, setIsVisible] = useState(false);
@@ -97,6 +104,62 @@ const WorkCard: FC<Props> = (props: Props) => {
             <h5 style={{ color: primaryColor ? primaryColor : "" }}>{title}</h5>
             <p>{description}</p>
           </div>
+        </div>
+        <div className="links">
+          <ul className="link-list">
+            {live ? (
+              <li>
+                <a href={live} target="_blank" rel="noopener noreferrer">
+                  <div className="svg-wrapper">
+                    <span className="main">
+                      <ExternalLink />
+                    </span>
+                    <span className="sub">
+                      <ExternalLink />
+                    </span>
+                  </div>
+                  Live
+                </a>
+              </li>
+            ) : (
+              <> </>
+            )}
+            {preview ? (
+              <li>
+                <a href={preview} target="_blank" rel="noopener noreferrer">
+                  <div className="svg-wrapper">
+                    <span className="main">
+                      <Preview />
+                    </span>
+                    <span className="sub">
+                      <ExternalLink />
+                    </span>
+                  </div>
+                  Preview
+                </a>
+              </li>
+            ) : (
+              <> </>
+            )}
+            {github ? (
+              <li>
+                <a href={github} target="_blank" rel="noopener noreferrer">
+                  {" "}
+                  <div className="svg-wrapper">
+                    <span className="main">
+                      <Github />
+                    </span>
+                    <span className="sub">
+                      <ExternalLink />
+                    </span>
+                  </div>
+                  Code
+                </a>
+              </li>
+            ) : (
+              <> </>
+            )}
+          </ul>
         </div>
       </div>
       <div
