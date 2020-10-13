@@ -9,6 +9,7 @@ import {
 import LoadingImage from "../assets/images/loading.svg";
 import Img from "react-cool-img";
 import RightArrow from "../assets/svg/RightArrow";
+import { debounce } from "ts-debounce";
 
 interface Props {
   images: Array<string>;
@@ -73,6 +74,18 @@ const Carousel: FC<Props> = (props: Props) => {
     });
   };
 
+  const wheelHandler = (eDelta: number) => {
+    if (eDelta < 0) {
+      previousImage();
+    } else if (eDelta > 0) {
+      nextImage();
+    }
+  };
+
+  const wheelHandlerDebounced = debounce((eDelta: number) => {
+    wheelHandler(eDelta);
+  }, 75);
+
   return (
     <div
       className="carousel"
@@ -100,6 +113,9 @@ const Carousel: FC<Props> = (props: Props) => {
         }
 
         setXDown(null);
+      }}
+      onWheel={(e) => {
+        wheelHandlerDebounced(e.deltaY);
       }}
     >
       <div
