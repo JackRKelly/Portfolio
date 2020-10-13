@@ -77,17 +77,34 @@ main {
           display: flex;
           align-items: center;
           flex-direction: row;
+          &:hover {
+            .arrow-1 {
+              transform: translateY(0);
+              pointer-events: auto;
+            }
+            .arrow-2 {
+              transform: translateY(1.5em);
+              pointer-events: none;
+            }
+          }
           svg {
             width: 1.5em;
             padding-right: 7.5px;
             fill: #ff5d5d;
             overflow: visible;
+            .arrow-1 {
+              transform: translateY(-1.5em);
+              pointer-events: none;
+              @include ease-in-out(200ms);
+            }
+            .arrow-2 {
+              @include ease-in-out(200ms);
+            }
           }
           text-decoration: none;
           color: $primary;
           font-weight: bold;
           font-size: 1.5em;
-          @include bezier(200ms);
         }
       }
       .hero {
@@ -355,13 +372,13 @@ main {
               max-width: 1920px;
               @include width;
               margin: 0;
-              top: 7%;
-              @media (max-width: $medium) {
-                top: 2%;
-              }
-              @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-                top: 2%;
-              }
+              top: 2%;
+              // @media (max-width: $medium) {
+              //   top: 2%;
+              // }
+              // @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+              //   top: 2%;
+              // }
               .carousel {
                 width: 100%;
                 cursor: pointer;

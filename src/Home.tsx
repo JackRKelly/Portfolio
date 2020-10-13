@@ -47,6 +47,7 @@ import ArticleThumb from "./assets/images/articlethumb.jpg";
 //styles
 import "./Home.scss";
 import JRKLogo from "./assets/svg/JRKLogo";
+import JRKLogoStroke from "./assets/svg/JRKLogoStroke";
 
 interface Props {
   isMobile: boolean;
@@ -98,7 +99,6 @@ const Home: FC<Props> = (props: Props) => {
         if (isInViewport(homeRef.current)) {
           setActiveRef(0);
           document.title = "Home | Jack Kelly";
-          console.log("home");
         }
       }
       if (aboutRef.current) {
@@ -235,7 +235,7 @@ const Home: FC<Props> = (props: Props) => {
                 }
                 title={"J2 Business Site"}
                 primaryColor={"#F600FF"}
-                tags={["Javascript", "Fullpage.js"]}
+                tags={["Front-End", "Fullpage.js"]}
                 github={"https://github.com/JackRKelly/J2"}
                 live={"https://j2.netlify.com/"}
                 viewport={viewport}
@@ -324,7 +324,6 @@ const Home: FC<Props> = (props: Props) => {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={(e: FormEvent<HTMLFormElement>) => {
-                  console.log("submit2");
                   e.preventDefault();
 
                   let formData = {
@@ -341,7 +340,7 @@ const Home: FC<Props> = (props: Props) => {
                     body: encode({ "form-name": "contact", ...formData }),
                   })
                     .then(() => {
-                      alert("Success!");
+                      alert("Message Received!");
                       setEmail("");
                       setFullname("");
                       setMessage("");
@@ -403,7 +402,6 @@ const Home: FC<Props> = (props: Props) => {
                       href="/pdf/jack-kelly-resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      download
                       className="submit-button"
                     >
                       <div className="icon">
@@ -481,7 +479,7 @@ const Home: FC<Props> = (props: Props) => {
           <Content>
             <div className="logo-wrapper">
               <div className="jrk-logo">
-                <JRKLogo />
+                <JRKLogoStroke />
               </div>
             </div>
           </Content>
