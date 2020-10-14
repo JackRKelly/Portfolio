@@ -17,7 +17,7 @@ interface Props {
 }
 
 const Navigation: FC<Props> = (props: Props) => {
-  const { isMobile, activeRef, isTop, onModalClose, onModalOpen } = props;
+  const { isMobile, activeRef, isTop } = props;
 
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -41,7 +41,6 @@ const Navigation: FC<Props> = (props: Props) => {
                   <li
                     onClick={() => {
                       setIsNavOpen(true);
-                      onModalOpen();
                     }}
                     className="logo"
                   >
@@ -62,7 +61,6 @@ const Navigation: FC<Props> = (props: Props) => {
               <li
                 onClick={() => {
                   setIsNavOpen(false);
-                  onModalClose();
                 }}
                 className="icon"
               >
