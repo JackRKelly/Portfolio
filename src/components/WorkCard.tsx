@@ -163,7 +163,7 @@ const WorkCard: FC<Props> = (props: Props) => {
                 setImageListVisible(true);
               }}
             >
-              <span>
+              <span className="link">
                 <div className="svg-wrapper">
                   <span className="main">
                     <PictureIcon />

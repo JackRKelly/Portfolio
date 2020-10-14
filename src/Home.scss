@@ -539,7 +539,7 @@ main {
                         }
                       }
                     }
-                    span {
+                    span.link {
                       .svg-wrapper {
                         .main {
                           svg {
@@ -550,7 +550,7 @@ main {
                     }
                   }
                   a,
-                  span {
+                  span.link {
                     margin: 0;
                     display: flex;
                     flex-direction: row;
