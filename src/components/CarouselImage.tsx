@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Img from "react-cool-img";
 import LoadingImage from "../assets/images/loading.svg";
 import {
