@@ -256,7 +256,7 @@ const Home: FC<Props> = (props: Props) => {
                 title={"Jacks Peppers"}
                 primaryColor={"#C1272D"}
                 tags={["Full-Stack", "React.js"]}
-                github={"https://github.com/JackRKelly/FridgeMan"}
+                github={"https://github.com/JackRKelly/JacksPeppers"}
                 preview={"https://vimeo.com/451655410"}
                 viewport={viewport}
                 onModalClose={onModalClose}

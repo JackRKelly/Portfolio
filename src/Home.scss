@@ -77,16 +77,19 @@ main {
           display: flex;
           align-items: center;
           flex-direction: row;
-          &:hover {
-            .arrow-1 {
-              transform: translateY(0);
-              pointer-events: auto;
-            }
-            .arrow-2 {
-              transform: translateY(1.7em);
-              pointer-events: none;
+          @media (min-width: $medium) {
+            &:hover {
+              .arrow-1 {
+                transform: translateY(0);
+                pointer-events: auto;
+              }
+              .arrow-2 {
+                transform: translateY(1.7em);
+                pointer-events: none;
+              }
             }
           }
+
           svg {
             width: 1.5em;
             padding-right: 7.5px;
@@ -369,7 +372,7 @@ main {
               top: 2%;
               .carousel {
                 width: 100%;
-                cursor: pointer;
+
                 @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
                   transform: scale(0.7);
                 }
@@ -437,6 +440,7 @@ main {
                   }
                 }
                 .images {
+                  cursor: pointer;
                   img {
                     position: absolute;
                     left: 50%;
@@ -507,7 +511,7 @@ main {
                 flex-direction: row;
                 justify-content: center;
                 li {
-                  margin: 0 15px;
+                  margin: 0 0.8em;
 
                   &:first-child {
                     margin-left: 0;
@@ -535,8 +539,19 @@ main {
                         }
                       }
                     }
+                    p {
+                      .svg-wrapper {
+                        .main {
+                          svg {
+                            transform: scale(1.1);
+                          }
+                        }
+                      }
+                    }
                   }
-                  a {
+                  a,
+                  p {
+                    margin: 0;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -546,6 +561,7 @@ main {
                     color: $dark;
                     text-decoration: none;
                     position: relative;
+                    cursor: pointer;
                     .svg-wrapper {
                       margin-right: 0.2em;
                       .main {

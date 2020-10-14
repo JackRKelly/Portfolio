@@ -9,6 +9,7 @@ import ExternalLink from "../assets/svg/ExternalLink";
 import Github from "../assets/svg/Github";
 import Preview from "../assets/svg/Preview";
 import LinkIcon from "../assets/svg/LinkIcon";
+import PictureIcon from "../assets/svg/PictureIcon";
 
 interface Props {
   description: string;
@@ -143,7 +144,6 @@ const WorkCard: FC<Props> = (props: Props) => {
             {github ? (
               <li>
                 <a href={github} target="_blank" rel="noopener noreferrer">
-                  {" "}
                   <div className="svg-wrapper">
                     <span className="main">
                       <Github />
@@ -158,6 +158,20 @@ const WorkCard: FC<Props> = (props: Props) => {
             ) : (
               <> </>
             )}
+            <li
+              onClick={() => {
+                setImageListVisible(true);
+              }}
+            >
+              <p>
+                <div className="svg-wrapper">
+                  <span className="main">
+                    <PictureIcon />
+                  </span>
+                </div>
+                Images
+              </p>
+            </li>
           </ul>
         </div>
       </div>
