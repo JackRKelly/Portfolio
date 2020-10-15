@@ -2,7 +2,7 @@ import React from "react";
 import ExpandWork from "../assets/svg/ExpandWork";
 import LoadingImage from "../assets/images/loading.svg";
 import Img from "react-cool-img";
-import ModalDetails from "../util";
+import { ModalDetails } from "../util";
 
 import { splitDescription } from "../util";
 
@@ -23,7 +23,7 @@ interface Props {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setModalInfo: React.Dispatch<React.SetStateAction<ModalDetails | undefined>>;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setImageModalList: React.Dispatch<React.SetStateAction<string[]>>;
+  setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
 }
 
 const WorkCard: React.FC<Props> = (props: Props) => {

@@ -1,8 +1,6 @@
 //dependencies
 import React, { FC, FormEvent, useRef, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
-import Img from "react-cool-img";
 import { useSpring } from "react-spring/web";
 //svg
 import EmailIcon from "./assets/svg/EmailIcon";
@@ -13,14 +11,6 @@ import HeroShapes from "./assets/svg/HeroShapes";
 import ScrollToTop from "./assets/svg/ScrollToTop";
 import JRKLogoStroke from "./assets/svg/JRKLogoStroke";
 import LinkedIn from "./assets/svg/LinkedIn";
-import BackArrow from "./assets/svg/BackArrow";
-import PictureIcon from "./assets/svg/PictureIcon";
-import ExternalLink from "./assets/svg/ExternalLink";
-import Github from "./assets/svg/Github";
-import Preview from "./assets/svg/Preview";
-import LinkIcon from "./assets/svg/LinkIcon";
-import Carousel from "./components/Carousel";
-import Close from "./assets/svg/Close";
 //components
 import ArticleCard from "./components/ArticleCard";
 import ContactOption from "./components/ContactOption";
@@ -29,12 +19,12 @@ import ArticleWrapper from "./components/ArticleWrapper";
 import Content from "./components/Content";
 import WorkCard from "./components/WorkCard";
 import WorkWrapper from "./components/WorkWrapper";
+import PrimaryModal from "./components/PrimaryModal";
+import SecondaryModal from "./components/SecondaryModal";
 //methods
 import { debounce } from "ts-debounce";
 import { isInViewport } from "./assets/util";
 import { encode } from "./assets/util";
-//images
-import LoadingImage from "./assets/images/loading.svg";
 //FridgeMan
 import FridgeMan1 from "./assets/images/fridgeman/Screenshot_1.png";
 import FridgeMan2 from "./assets/images/fridgeman/Screenshot_2.png";
@@ -64,7 +54,7 @@ import ArticleThumb from "./assets/images/articlethumb.jpg";
 //styles
 import "./Home.scss";
 //types
-import ModalDetails from "./util";
+import { ModalDetails } from "./util";
 
 interface Props {
   isMobile: boolean;
@@ -87,15 +77,18 @@ const Home: FC<Props> = (props: Props) => {
     setIsTop,
   } = props;
 
+  //Form state
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  //Modal State
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [modalInfo, setModalInfo] = useState<ModalDetails | undefined>();
   const [isImageModalOpen, setIsImageModalOpen] = useState<boolean>(false);
   const [imageModalList, setImageModalList] = useState<Array<string>>([]);
 
+  //Section Refs
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const workRef = useRef(null);
@@ -164,164 +157,29 @@ const Home: FC<Props> = (props: Props) => {
   return (
     <>
       {modalInfo ? (
-        <div
-          className="modal-primary"
-          style={{
-            opacity: isModalOpen ? "1" : "0",
-            pointerEvents: isModalOpen ? "auto" : "none",
-          }}
-        >
-          <div className="work-details">
-            <div
-              onClick={() => {
-                setIsModalOpen(false);
-                onModalClose();
-                checkCurrentRef();
-              }}
-              className="close"
-            >
-              <Close />
-            </div>
-            <div className="content">
-              <Carousel
-                images={modalInfo.images}
-                viewport={viewport}
-                color={modalInfo.primaryColor}
-                setIsImageModalOpen={setIsImageModalOpen}
-                setImageModalList={setImageModalList}
-              />
-
-              <div className="text">
-                <h5
-                  style={{
-                    color: modalInfo.primaryColor ? modalInfo.primaryColor : "",
-                  }}
-                >
-                  {modalInfo.title}
-                </h5>
-                <p>{modalInfo.description}</p>
-              </div>
-            </div>
-            <div className="links">
-              <ul className="link-list">
-                {modalInfo.live ? (
-                  <li>
-                    <a
-                      href={modalInfo.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div className="svg-wrapper">
-                        <span className="main">
-                          <LinkIcon />
-                        </span>
-                        <span className="sub">
-                          <ExternalLink />
-                        </span>
-                      </div>
-                      Live
-                    </a>
-                  </li>
-                ) : (
-                  <> </>
-                )}
-                {modalInfo.preview ? (
-                  <li>
-                    <a
-                      href={modalInfo.preview}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div className="svg-wrapper">
-                        <span className="main">
-                          <Preview />
-                        </span>
-                        <span className="sub">
-                          <ExternalLink />
-                        </span>
-                      </div>
-                      Preview
-                    </a>
-                  </li>
-                ) : (
-                  <> </>
-                )}
-                {modalInfo.github ? (
-                  <li>
-                    <a
-                      href={modalInfo.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <div className="svg-wrapper">
-                        <span className="main">
-                          <Github />
-                        </span>
-                        <span className="sub">
-                          <ExternalLink />
-                        </span>
-                      </div>
-                      Code
-                    </a>
-                  </li>
-                ) : (
-                  <> </>
-                )}
-                <li
-                  onClick={() => {
-                    setIsImageModalOpen(true);
-                    setImageModalList(modalInfo.images);
-                  }}
-                >
-                  <span className="link">
-                    <div className="svg-wrapper">
-                      <span className="main">
-                        <PictureIcon />
-                      </span>
-                    </div>
-                    Images
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <PrimaryModal
+          isModalOpen={isModalOpen}
+          modalInfo={modalInfo}
+          onModalClose={onModalClose}
+          setIsModalOpen={setIsModalOpen}
+          checkCurrentRef={checkCurrentRef}
+          viewport={viewport}
+          setIsImageModalOpen={setIsImageModalOpen}
+          setImageModalList={setImageModalList}
+        />
       ) : (
-        <> </>
+        <></>
       )}
 
-      <div
-        className="modal-secondary"
-        style={{
-          opacity: isImageModalOpen ? "1" : "0",
-          pointerEvents: isImageModalOpen ? "auto" : "none",
-        }}
-      >
-        <div className="image-list-wrapper">
-          <div
-            className="back-arrow"
-            onClick={() => {
-              setIsImageModalOpen(false);
-            }}
-          >
-            <BackArrow />
-          </div>
-          <ul className="image-list">
-            {imageModalList.map((img, index) => (
-              <li key={index}>
-                <a href={img} target="_blank" rel="noopener noreferrer">
-                  <Img
-                    placeholder={LoadingImage}
-                    src={img}
-                    alt=""
-                    lazy={true}
-                  />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      {imageModalList ? (
+        <SecondaryModal
+          setIsImageModalOpen={setIsImageModalOpen}
+          isImageModalOpen={isImageModalOpen}
+          imageModalList={imageModalList}
+        />
+      ) : (
+        <></>
+      )}
 
       {isMobile ? (
         <> </>

@@ -9,7 +9,7 @@ interface Props {
   viewport: number;
   color?: string;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setImageModalList: React.Dispatch<React.SetStateAction<string[]>>;
+  setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
 }
 
 const Carousel: FC<Props> = (props: Props) => {

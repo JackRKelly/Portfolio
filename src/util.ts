@@ -1,4 +1,4 @@
-export default interface ModalDetails {
+export interface ModalDetails {
   description: string;
   tags: Array<string>;
   title: string;
@@ -14,7 +14,7 @@ export default interface ModalDetails {
   onModalClose: () => void;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setImageModalList: React.Dispatch<React.SetStateAction<string[]>>;
+  setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
 }
 
 export const splitDescription = (description: string) => {
