@@ -8,11 +8,18 @@ interface Props {
   images: Array<string>;
   viewport: number;
   color?: string;
-  setImageListVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setImageModalList: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const Carousel: FC<Props> = (props: Props) => {
-  const { images, viewport, color, setImageListVisible } = props;
+  const {
+    images,
+    viewport,
+    color,
+    setIsImageModalOpen,
+    setImageModalList,
+  } = props;
 
   const [imageList, setImageList] = useState([0, 1, 2, 3, 4]);
 
@@ -104,7 +111,8 @@ const Carousel: FC<Props> = (props: Props) => {
       <div
         className="images"
         onClick={() => {
-          setImageListVisible(true);
+          setIsImageModalOpen(true);
+          setImageModalList(images);
         }}
       >
         {imageList.map((img, index) => (

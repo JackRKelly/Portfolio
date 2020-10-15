@@ -1,15 +1,10 @@
-import React, { FC, useState } from "react";
-import Close from "../assets/svg/Close";
+import React from "react";
 import ExpandWork from "../assets/svg/ExpandWork";
-import Carousel from "./Carousel";
 import LoadingImage from "../assets/images/loading.svg";
 import Img from "react-cool-img";
-import BackArrow from "../assets/svg/BackArrow";
-import ExternalLink from "../assets/svg/ExternalLink";
-import Github from "../assets/svg/Github";
-import Preview from "../assets/svg/Preview";
-import LinkIcon from "../assets/svg/LinkIcon";
-import PictureIcon from "../assets/svg/PictureIcon";
+import ModalDetails from "../util";
+
+import { splitDescription } from "../util";
 
 interface Props {
   description: string;
@@ -25,9 +20,13 @@ interface Props {
   viewport: number;
   onModalOpen: () => void;
   onModalClose: () => void;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalInfo: React.Dispatch<React.SetStateAction<ModalDetails | undefined>>;
+  setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setImageModalList: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const WorkCard: FC<Props> = (props: Props) => {
+const WorkCard: React.FC<Props> = (props: Props) => {
   const {
     description,
     tags,
@@ -42,143 +41,36 @@ const WorkCard: FC<Props> = (props: Props) => {
     github,
     live,
     preview,
+    setModalInfo,
+    setIsModalOpen,
+    setIsImageModalOpen,
+    setImageModalList,
   } = props;
-
-  const [isVisible, setIsVisible] = useState(false);
-  const [imageListVisible, setImageListVisible] = useState(false);
 
   return (
     <li className="work-card">
       <div
-        className="image-list-wrapper"
-        style={{
-          pointerEvents: imageListVisible ? "auto" : "none",
-          left: imageListVisible ? "0" : "-105%",
-          overflowY: imageListVisible ? "scroll" : "hidden",
-        }}
-      >
-        <div
-          className="back-arrow"
-          onClick={() => {
-            setImageListVisible(false);
-          }}
-        >
-          <BackArrow />
-        </div>
-        <ul className="image-list">
-          {images.map((img, index) => (
-            <li key={index}>
-              <a href={img} target="_blank" rel="noopener noreferrer">
-                <Img placeholder={LoadingImage} src={img} alt="" lazy={true} />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div
-        className="work-details"
-        style={{
-          opacity: isVisible ? "1" : "0",
-          pointerEvents: isVisible ? "auto" : "none",
-        }}
-      >
-        <div
-          onClick={() => {
-            setIsVisible(false);
-            onModalClose();
-            checkCurrentRef();
-          }}
-          className="close"
-        >
-          <Close />
-        </div>
-        <div className="content">
-          <Carousel
-            images={images}
-            viewport={viewport}
-            color={primaryColor}
-            setImageListVisible={setImageListVisible}
-          />
-
-          <div className="text">
-            <h5 style={{ color: primaryColor ? primaryColor : "" }}>{title}</h5>
-            <p>{description}</p>
-          </div>
-        </div>
-        <div className="links">
-          <ul className="link-list">
-            {live ? (
-              <li>
-                <a href={live} target="_blank" rel="noopener noreferrer">
-                  <div className="svg-wrapper">
-                    <span className="main">
-                      <LinkIcon />
-                    </span>
-                    <span className="sub">
-                      <ExternalLink />
-                    </span>
-                  </div>
-                  Live
-                </a>
-              </li>
-            ) : (
-              <> </>
-            )}
-            {preview ? (
-              <li>
-                <a href={preview} target="_blank" rel="noopener noreferrer">
-                  <div className="svg-wrapper">
-                    <span className="main">
-                      <Preview />
-                    </span>
-                    <span className="sub">
-                      <ExternalLink />
-                    </span>
-                  </div>
-                  Preview
-                </a>
-              </li>
-            ) : (
-              <> </>
-            )}
-            {github ? (
-              <li>
-                <a href={github} target="_blank" rel="noopener noreferrer">
-                  <div className="svg-wrapper">
-                    <span className="main">
-                      <Github />
-                    </span>
-                    <span className="sub">
-                      <ExternalLink />
-                    </span>
-                  </div>
-                  Code
-                </a>
-              </li>
-            ) : (
-              <> </>
-            )}
-            <li
-              onClick={() => {
-                setImageListVisible(true);
-              }}
-            >
-              <span className="link">
-                <div className="svg-wrapper">
-                  <span className="main">
-                    <PictureIcon />
-                  </span>
-                </div>
-                Images
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div
         className="work-card"
         onClick={() => {
-          setIsVisible(true);
+          setModalInfo({
+            description: description,
+            tags: tags,
+            title: title,
+            checkCurrentRef: checkCurrentRef,
+            images: images,
+            viewport: viewport,
+            onModalOpen: onModalOpen,
+            onModalClose: onModalClose,
+            thumbnail: thumbnail,
+            primaryColor: primaryColor,
+            github: github,
+            live: live,
+            preview: preview,
+            setIsModalOpen: setIsModalOpen,
+            setIsImageModalOpen: setIsImageModalOpen,
+            setImageModalList: setImageModalList,
+          });
+          setIsModalOpen(true);
           onModalOpen();
           document.title = `${title} | Jack Kelly`;
         }}
@@ -198,10 +90,7 @@ const WorkCard: FC<Props> = (props: Props) => {
         </div>
         <div className="text">
           <h5>{title}</h5>
-          <p>
-            {description.split(" ").slice(0, 35).join(" ")}
-            {description.split(" ").length > 35 ? "..." : ""}
-          </p>
+          <p>{splitDescription(description)}</p>
           <div className="link">
             <p>
               More Details <ExpandWork />
