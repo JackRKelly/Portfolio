@@ -71,6 +71,11 @@ nav {
     @include ease-in-out(200ms);
     li {
       display: inline-block;
+      &.right {
+        .logo {
+          padding: 2px 0 0 10px;
+        }
+      }
       ul {
         padding: 0;
         display: flex;
@@ -83,7 +88,6 @@ nav {
           &.logo {
             padding: 2px 10px 0 0;
             cursor: pointer;
-
             &::after {
               content: "";
               position: absolute;
@@ -109,6 +113,9 @@ nav {
           }
           &.divider {
             padding: 0 7.5px;
+            @media (max-width: $medium) {
+              padding: 0 7.5px 0 0;
+            }
             div {
               display: block;
               width: 2px;
@@ -120,6 +127,9 @@ nav {
             padding: 0 3px;
             a {
               padding: 18px 21px;
+              @media (max-width: $medium) {
+                padding: 16px 16px;
+              }
               &:hover {
                 .main {
                   svg {

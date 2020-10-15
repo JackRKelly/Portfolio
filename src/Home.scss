@@ -566,8 +566,7 @@ main {
                       margin-right: 0.2em;
                       .main {
                         position: absolute;
-                        top: 61%;
-                        transform: translateY(-50%);
+                        top: -1px;
                         left: 0;
                         svg {
                           fill: $dark;

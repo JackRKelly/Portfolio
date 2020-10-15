@@ -34,6 +34,51 @@ const Navigation: FC<Props> = (props: Props) => {
                       <JRKLogo />
                     </AnchorLink>
                   </li>
+                  <li className="divider">
+                    <div></div>
+                  </li>
+                  <li className="icon">
+                    <a
+                      href="https://github.com/JackRKelly"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="main">
+                        <Github />
+                      </span>
+                      <span className="sub">
+                        <ExternalLink />
+                      </span>
+                    </a>
+                  </li>
+                  <li className="icon">
+                    <a
+                      href="https://dev.to/jackrkelly"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="main">
+                        <Devto />
+                      </span>
+                      <span className="sub">
+                        <ExternalLink />
+                      </span>
+                    </a>
+                  </li>
+                  <li className="icon">
+                    <a
+                      href="https://www.linkedin.com/in/jackkelly4/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="main">
+                        <LinkedInBox />
+                      </span>
+                      <span className="sub">
+                        <ExternalLink />
+                      </span>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li className="right">
