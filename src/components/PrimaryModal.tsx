@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Close from "../assets/svg/Close";
 import ExternalLink from "../assets/svg/ExternalLink";
 import Github from "../assets/svg/Github";
@@ -29,6 +29,31 @@ const PrimaryModal: React.FC<Props> = ({
   setIsImageModalOpen,
   setImageModalList,
 }) => {
+  const RenderCarousel = () => {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+      setMounted(true);
+
+      return function cleanup() {
+        setMounted(false);
+      };
+    }, []);
+    if (mounted) {
+      return (
+        <Carousel
+          images={modalInfo.images}
+          viewport={viewport}
+          color={modalInfo.primaryColor}
+          setIsImageModalOpen={setIsImageModalOpen}
+          setImageModalList={setImageModalList}
+        />
+      );
+    } else {
+      return <> </>;
+    }
+  };
+
   return (
     <div
       className="modal-primary"
@@ -49,13 +74,7 @@ const PrimaryModal: React.FC<Props> = ({
           <Close />
         </div>
         <div className="content">
-          <Carousel
-            images={modalInfo.images}
-            viewport={viewport}
-            color={modalInfo.primaryColor}
-            setIsImageModalOpen={setIsImageModalOpen}
-            setImageModalList={setImageModalList}
-          />
+          <RenderCarousel />
 
           <div className="text">
             <h5

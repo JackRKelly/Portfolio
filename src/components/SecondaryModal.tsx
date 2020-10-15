@@ -14,12 +14,14 @@ const SecondaryModal: React.FC<Props> = ({
   isImageModalOpen,
   imageModalList,
 }) => {
-  const secondaryRef = useRef<HTMLDivElement | null>(null);
+  const listRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (secondaryRef.current) {
-      secondaryRef.current.scrollTo(0, 0);
-    }
+    setTimeout(() => {
+      if (listRef.current) {
+        listRef.current.scrollTo(0, 0);
+      }
+    }, 200);
   }, [isImageModalOpen]);
 
   return (
@@ -29,9 +31,8 @@ const SecondaryModal: React.FC<Props> = ({
         opacity: isImageModalOpen ? "1" : "0",
         pointerEvents: isImageModalOpen ? "auto" : "none",
       }}
-      ref={secondaryRef}
     >
-      <div className="image-list-wrapper">
+      <div className="image-list-wrapper" ref={listRef}>
         <div
           className="back-arrow"
           onClick={() => {
