@@ -1,5 +1,5 @@
 //dependencies
-import React, { FC, FormEvent, useRef, useState } from "react";
+import React, { FC, FormEvent, useEffect, useRef, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
 //svg
@@ -131,7 +131,7 @@ const Home: FC<Props> = (props: Props) => {
       if (articleRef.current) {
         if (isInViewport(articleRef.current)) {
           setActiveRef(3);
-          document.title = "Article | Jack Kelly";
+          document.title = "Articles | Jack Kelly";
         }
       }
       if (contactRef.current) {
@@ -148,6 +148,10 @@ const Home: FC<Props> = (props: Props) => {
   }, 50);
 
   window.addEventListener("scroll", scrollRefCheck);
+
+  useEffect(() => {
+    console.log("modalinfo");
+  }, [modalInfo]);
 
   const [parallax, setParallax] = useSpring(() => ({
     xy: [0, 0],
@@ -212,9 +216,9 @@ const Home: FC<Props> = (props: Props) => {
             <div className="info">
               <h1>Jack Kelly</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur blah adipiscing elit.
-                Mauris eget velit vestibulum, auctor lorem a, tincidunt nisl
-                blah.
+                I'm a self-taught software engineer based in Kansas who enjoys
+                designing and building websites, writing software, and
+                everything in between.
               </p>
               <AnchorLink offset="70" href="#work">
                 <DownArrow /> View My Work
@@ -231,12 +235,11 @@ const Home: FC<Props> = (props: Props) => {
             <h1>About</h1>
             <p>
               I'm a self-taught software engineer who is currently a intern at
-              cerner corperation. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Curabitur vitae ex mi. Aliquam euismod tortor
-              erat, a facilisis leo finibus a. Proin dignissim interdum augue ut
-              consequat. Vivamus placerat dapibus velit non eleifend. Sed
-              molestie viverrasce turpis nisl, venenatis id malesuada et,
-              laoreet at lacus.
+              Cerner corperation. In my free time I enjoy contributing to
+              open-source, designing, and working on side projects. Some
+              tecnhologies I enjoy are Typescript, Rust, Docker, React.js, and
+              Node.js. I have been writing code for 5 years after I first got
+              introduced to web development.
             </p>
           </Content>
         </section>

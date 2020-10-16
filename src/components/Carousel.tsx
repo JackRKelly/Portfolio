@@ -117,10 +117,9 @@ const Carousel: FC<Props> = (props: Props) => {
       >
         {imageList.map((img, index) => (
           <CarouselImage
-            img={img}
             index={index}
             viewport={viewport}
-            images={images}
+            image={images[img]}
             key={img}
           />
         ))}

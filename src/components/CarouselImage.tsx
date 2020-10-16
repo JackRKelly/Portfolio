@@ -9,14 +9,13 @@ import {
 } from "../assets/util";
 
 interface Props {
-  images: Array<string>;
-  img: number;
+  image: string;
   index: number;
   viewport: number;
 }
 
 const CarouselImage: React.FC<Props> = (props) => {
-  const { images, img, index, viewport } = props;
+  const { image, index, viewport } = props;
 
   const translateSwitch = (index: number) => {
     switch (index) {
@@ -42,8 +41,7 @@ const CarouselImage: React.FC<Props> = (props) => {
   return (
     <Img
       placeholder={LoadingImage}
-      src={images[img]}
-      className={`image-${img} position-${index}`}
+      src={image}
       alt=""
       lazy={true}
       style={{

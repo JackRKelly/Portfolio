@@ -34,12 +34,12 @@ const PrimaryModal: React.FC<Props> = ({
 
     useEffect(() => {
       setMounted(true);
-
       return function cleanup() {
         setMounted(false);
       };
     }, []);
     if (mounted) {
+      console.log("mount");
       return (
         <Carousel
           images={modalInfo.images}
@@ -50,7 +50,7 @@ const PrimaryModal: React.FC<Props> = ({
         />
       );
     } else {
-      return <> </>;
+      return <></>;
     }
   };
 
