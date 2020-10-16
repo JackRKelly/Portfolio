@@ -149,10 +149,6 @@ const Home: FC<Props> = (props: Props) => {
 
   window.addEventListener("scroll", scrollRefCheck);
 
-  useEffect(() => {
-    console.log("modalinfo");
-  }, [modalInfo]);
-
   const [parallax, setParallax] = useSpring(() => ({
     xy: [0, 0],
     config: { mass: 20, tension: 200, friction: 250 },
