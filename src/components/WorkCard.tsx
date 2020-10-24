@@ -52,23 +52,25 @@ const WorkCard: React.FC<Props> = (props: Props) => {
       <div
         className="work-card"
         onClick={() => {
-          setModalInfo({
-            description: description,
-            tags: tags,
-            title: title,
-            checkCurrentRef: checkCurrentRef,
-            images: images,
-            viewport: viewport,
-            onModalOpen: onModalOpen,
-            onModalClose: onModalClose,
-            thumbnail: thumbnail,
-            primaryColor: primaryColor,
-            github: github,
-            live: live,
-            preview: preview,
-            setIsModalOpen: setIsModalOpen,
-            setIsImageModalOpen: setIsImageModalOpen,
-            setImageModalList: setImageModalList,
+          setModalInfo((old) => {
+            return {
+              description: description,
+              tags: tags,
+              title: title,
+              checkCurrentRef: checkCurrentRef,
+              images: images,
+              viewport: viewport,
+              onModalOpen: onModalOpen,
+              onModalClose: onModalClose,
+              thumbnail: thumbnail,
+              primaryColor: primaryColor,
+              github: github,
+              live: live,
+              preview: preview,
+              setIsModalOpen: setIsModalOpen,
+              setIsImageModalOpen: setIsImageModalOpen,
+              setImageModalList: setImageModalList,
+            };
           });
           setIsModalOpen(true);
           onModalOpen();

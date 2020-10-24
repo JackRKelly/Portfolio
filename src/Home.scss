@@ -1041,6 +1041,8 @@ main {
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
                 background-color: white;
                 border-radius: 2px;
+                display: flex;
+                align-items: center;
                 @media (min-width: $medium) {
                   font-size: 22px;
                 }
@@ -1143,6 +1145,8 @@ main {
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
             background-color: white;
             border-radius: 2px;
+            display: flex;
+            align-items: center;
             @media (min-width: $medium) {
               font-size: 22px;
             }
