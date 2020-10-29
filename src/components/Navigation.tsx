@@ -127,7 +127,7 @@ const Navigation: FC<Props> = (props: Props) => {
                 }}
                 className="anchor"
               >
-                <AnchorLink offset="325" href="#about">
+                <AnchorLink offset="155" href="#about">
                   About
                 </AnchorLink>
               </li>
