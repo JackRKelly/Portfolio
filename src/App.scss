@@ -98,7 +98,7 @@ nav {
               background-color: $primary;
               @include ease-in-out(200ms);
             }
-            &.active::after {
+            &:hover::after {
               width: 84%;
             }
             &:first-child {

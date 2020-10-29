@@ -231,6 +231,15 @@ const Navigation: FC<Props> = (props: Props) => {
               <ul>
                 <li>
                   <AnchorLink
+                    offset="0"
+                    href="#main"
+                    className={activeRef === 0 ? "anchor active" : "anchor"}
+                  >
+                    Home
+                  </AnchorLink>
+                </li>
+                <li>
+                  <AnchorLink
                     offset="175"
                     href="#about"
                     className={activeRef === 1 ? "anchor active" : "anchor"}
