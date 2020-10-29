@@ -148,18 +148,8 @@
       }
 
       .text {
-        margin: -30px auto 10px auto;
+        margin: 0 auto 10px auto;
         width: 90%;
-        @media (min-width: $large) {
-          margin: -10px auto 10px auto;
-        }
-        @media (max-width: $medium) {
-          width: 100%;
-          margin: -25px auto 5px auto;
-        }
-        @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-          margin: -65px auto 10px auto;
-        }
         h5 {
           margin: 0 0 calc(10px + 1%) 0;
           @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
