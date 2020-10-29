@@ -15,26 +15,20 @@ interface Props {
 }
 
 const CarouselImage: React.FC<Props> = (props) => {
-  const { image, index, viewport } = props;
+  const { image, index } = props;
 
   const translateSwitch = (index: number) => {
     switch (index) {
       case 0:
-        return `calc(-50% - ${Math.min(viewport / 3, 700)}px)`;
+        return `-150%`;
       case 1:
-        return `calc(-50% - ${Math.min(
-          viewport < 1400 ? viewport / 4 : viewport / 5,
-          500
-        )}px)`;
+        return `-100%`;
       case 2:
-        return `calc(-50% + 0px)`;
+        return `-50%`;
       case 3:
-        return `calc(-50% + ${Math.min(
-          viewport < 1400 ? viewport / 4 : viewport / 5,
-          500
-        )}px)`;
+        return `0%`;
       case 4:
-        return `calc(-50% + ${Math.min(viewport / 3, 700)}px)`;
+        return `50%`;
     }
   };
 
