@@ -259,17 +259,19 @@
               margin-right: 0.2em;
               .main {
                 position: absolute;
-                top: -1px;
+                top: 50%;
+                transform: translateY(-50%);
                 left: 0;
                 svg {
                   fill: $dark;
                   height: 1.3em;
                   @include ease-in-out(150ms);
+                  display: block;
                 }
               }
               .sub {
                 position: absolute;
-                top: 61%;
+                top: 50%;
                 transform: translateY(-50%);
                 left: 0;
                 svg {
@@ -277,6 +279,7 @@
                   fill: $dark;
                   height: 1.3em;
                   opacity: 0;
+                  display: block;
                   transform: translateX(15px) scale(0.5);
                   @include ease-in-out(150ms);
                   polyline {
