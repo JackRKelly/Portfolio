@@ -29,6 +29,9 @@
       @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
         top: 6vh;
       }
+      @media (min-width: $extralarge) {
+        top: 5vh;
+      }
 
       left: 50%;
       transform: translateX(-50%);
@@ -61,9 +64,15 @@
       .carousel {
         width: 100%;
         position: relative;
+        margin: 0 0 calc(15px + 1%) 0;
+        @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+          margin: 0 0 calc(18px) 0;
+        }
         .left {
           position: absolute;
           left: 0;
+          top: 50%;
+          transform: translateY(-50%);
           @media (min-width: 1600px) and (max-width: 2000px) {
             left: -90px;
           }
@@ -82,7 +91,7 @@
           padding: 30px;
           @include ease-in-out(200ms);
           &:hover {
-            transform: translateX(-10px);
+            transform: translateX(-10px) translateY(-50%);
             padding: 30px 40px 30px 30px;
           }
           @media (max-width: $medium) {
@@ -96,6 +105,8 @@
         .right {
           position: absolute;
           right: 0;
+          top: 50%;
+          transform: translateY(-50%);
           @media (min-width: 1500px) and (max-width: 2000px) {
             right: -90px;
           }
@@ -113,7 +124,7 @@
           padding: 30px;
           @include ease-in-out(200ms);
           &:hover {
-            transform: translateX(10px);
+            transform: translateX(10px) translateY(-50%);
             padding: 30px 30px 30px 40px;
           }
           @media (max-width: $medium) {
@@ -129,6 +140,7 @@
           img {
             position: absolute;
             left: 50%;
+            height: 100%;
             border-radius: 3px;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
           }
@@ -157,7 +169,7 @@
           font-size: 1.75em;
         }
         p {
-          margin: 15px 0 0;
+          margin: 0;
           font-size: 1.5em;
           @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
             font-size: 1.25em;
@@ -188,6 +200,9 @@
       bottom: 7vh;
       @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
         bottom: 6vh;
+      }
+      @media (min-width: $extralarge) {
+        bottom: 5vh;
       }
 
       left: 50%;

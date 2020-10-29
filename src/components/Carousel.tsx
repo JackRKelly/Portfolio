@@ -98,16 +98,7 @@ const Carousel: FC<Props> = (props: Props) => {
         wheelHandlerDebounced(e.deltaY);
       }}
     >
-      <div
-        className="left"
-        style={{
-          top:
-            ((Math.min(viewport / 2, 800) * 9) / 16 / 2 -
-              (viewport < 800 ? 2 : 55)) *
-            0.55,
-        }}
-        onClick={previousImage}
-      >
+      <div className="left" onClick={previousImage}>
         <LeftArrow color={color} />
       </div>
       <div
@@ -127,16 +118,7 @@ const Carousel: FC<Props> = (props: Props) => {
         ))}
       </div>
 
-      <div
-        className="right"
-        style={{
-          top:
-            ((Math.min(viewport / 2, 800) * 9) / 16 / 2 -
-              (viewport < 800 ? 2 : 55)) *
-            0.55,
-        }}
-        onClick={nextImage}
-      >
+      <div className="right" onClick={nextImage}>
         <RightArrow color={color} />
       </div>
     </div>
