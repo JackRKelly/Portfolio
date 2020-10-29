@@ -54,6 +54,11 @@
     .content {
       padding: 20px;
       max-width: 1920px;
+      min-height: 70vh;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
       @include width;
       margin: 0;
       top: 4%;
@@ -147,40 +152,37 @@
         }
       }
 
-      .text {
-        margin: 0 auto 10px auto;
-        width: 90%;
-        h5 {
-          margin: 0 0 calc(10px + 1%) 0;
-          @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-            margin: 0 0 calc(14px) 0;
-          }
-          text-align: center;
-          font-size: 1.75em;
+      h5 {
+        margin: 0 0 calc(10px + 1%) 0;
+        @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+          margin: 0 0 calc(14px) 0;
         }
-        p {
-          margin: 0;
-          font-size: 1.5em;
-          @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
-            font-size: 1.25em;
-          }
-          @media (max-width: $medium) {
-            font-size: 1.25em;
-          }
+        text-align: center;
+        font-size: 1.75em;
+      }
+      p {
+        margin: 0;
+        font-size: 1.5em;
+        @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+          font-size: 1.25em;
         }
-        .close {
-          color: $primary;
-          font-weight: bold;
-          cursor: pointer;
-          text-align: right;
-          font-size: 1.75em;
-          display: flex;
-          justify-content: flex-end;
-          svg {
-            margin-left: 10px;
-            width: 0.9em;
-            fill: $primary;
-          }
+        @media (max-width: $medium) {
+          font-size: 1.25em;
+        }
+      }
+
+      .close {
+        color: $primary;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: right;
+        font-size: 1.75em;
+        display: flex;
+        justify-content: flex-end;
+        svg {
+          margin-left: 10px;
+          width: 0.9em;
+          fill: $primary;
         }
       }
     }

@@ -75,16 +75,14 @@ const PrimaryModal: React.FC<Props> = ({
         <div className="content">
           <RenderCarousel />
 
-          <div className="text">
-            <h5
-              style={{
-                color: modalInfo.primaryColor ? modalInfo.primaryColor : "",
-              }}
-            >
-              {modalInfo.title}
-            </h5>
-            <p>{modalInfo.description}</p>
-          </div>
+          <h5
+            style={{
+              color: modalInfo.primaryColor ? modalInfo.primaryColor : "",
+            }}
+          >
+            {modalInfo.title}
+          </h5>
+          <p>{modalInfo.description}</p>
         </div>
         <div className="links">
           <ul className="link-list">
