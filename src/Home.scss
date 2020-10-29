@@ -22,6 +22,7 @@
     @include ease-in-out(200ms);
     background-color: white;
     overflow-y: auto;
+    overflow-x: hidden;
     .close {
       position: absolute;
       z-index: 401;
