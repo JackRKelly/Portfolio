@@ -514,6 +514,7 @@ main {
         position: absolute;
         right: 0%;
         z-index: 1;
+
         @media (max-width: $large) {
           right: 50%;
           width: 90%;
@@ -525,6 +526,9 @@ main {
         }
         @media (max-width: $small) {
           bottom: -40vh;
+        }
+        @media (min-width: $medium) and (max-width: $large) {
+          width: 60%;
         }
         svg {
           width: 100%;
