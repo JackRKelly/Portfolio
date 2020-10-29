@@ -30,16 +30,15 @@ const PrimaryModal: React.FC<Props> = ({
   setImageModalList,
 }) => {
   const RenderCarousel = () => {
-    const [mounted, setMounted] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-      setMounted(true);
+      setIsMounted(true);
       return function cleanup() {
-        setMounted(false);
+        setIsMounted(false);
       };
     }, []);
-    if (mounted) {
-      console.log("mount");
+    if (isMounted) {
       return (
         <Carousel
           images={modalInfo.images}
