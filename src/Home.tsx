@@ -480,7 +480,9 @@ const Home: FC<Props> = (props: Props) => {
           <Content>
             <div className="logo-wrapper">
               <div className="jrk-logo">
-                <JRKLogoStroke />
+                <AnchorLink offset="0" href="#main">
+                  <JRKLogoStroke />
+                </AnchorLink>
               </div>
             </div>
           </Content>

@@ -71,7 +71,8 @@ const Carousel: FC<Props> = (props: Props) => {
       style={{
         height:
           ((Math.min(viewport / 2, 800) * 9) / 16) *
-          (viewport < 1400 ? 1.4 : viewport < 2000 ? 1 : 1.075),
+          (viewport < 1400 ? 1.4 : viewport < 2000 ? 1 : 1.075) *
+          0.8,
       }}
       onTouchStart={(e) => {
         const firstTouch = e.touches[0];
@@ -101,8 +102,9 @@ const Carousel: FC<Props> = (props: Props) => {
         className="left"
         style={{
           top:
-            (Math.min(viewport / 2, 800) * 9) / 16 / 2 -
-            (viewport < 800 ? 2 : 55),
+            ((Math.min(viewport / 2, 800) * 9) / 16 / 2 -
+              (viewport < 800 ? 2 : 55)) *
+            0.55,
         }}
         onClick={previousImage}
       >
@@ -124,12 +126,14 @@ const Carousel: FC<Props> = (props: Props) => {
           />
         ))}
       </div>
+
       <div
         className="right"
         style={{
           top:
-            (Math.min(viewport / 2, 800) * 9) / 16 / 2 -
-            (viewport < 800 ? 2 : 55),
+            ((Math.min(viewport / 2, 800) * 9) / 16 / 2 -
+              (viewport < 800 ? 2 : 55)) *
+            0.55,
         }}
         onClick={nextImage}
       >

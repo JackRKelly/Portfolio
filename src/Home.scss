@@ -53,7 +53,8 @@
       max-width: 1920px;
       @include width;
       margin: 0;
-      top: 2%;
+      top: 4%;
+      position: relative;
       @media (max-width: $small) {
         width: 95%;
       }
@@ -151,7 +152,7 @@
           margin: -65px auto 10px auto;
         }
         h5 {
-          margin: 0 0 calc(10px + 2%) 0;
+          margin: 0 0 calc(10px + 1%) 0;
           @media screen and (min-device-width: 1200px) and (max-device-width: 1700px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
             margin: 0 0 calc(14px) 0;
           }
@@ -246,6 +247,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            justify-content: center;
             font-size: 1.6em;
             @media (max-width: $small) {
               font-size: 1.2em;

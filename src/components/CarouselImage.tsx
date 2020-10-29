@@ -45,7 +45,7 @@ const CarouselImage: React.FC<Props> = (props) => {
       alt=""
       lazy={true}
       style={{
-        width: Math.min(viewport / 2, 800),
+        width: Math.min(viewport / 2, 800) * 0.8,
         transform: `translateX(${translateSwitch(index)}) scale(${scaleSwitch(
           index
         )})`,
