@@ -230,12 +230,12 @@ const Home: FC<Props> = (props: Props) => {
             {isMobile ? <></> : <AboutShapes />}
             <h1>About</h1>
             <p>
-              I'm a self-taught software engineer who is currently a intern at
-              Cerner corperation. In my free time I enjoy contributing to
-              open-source, designing, and working on side projects. Some
-              tecnhologies I enjoy are Typescript, Rust, Docker, React.js, and
-              Node.js. I have been writing code for 5 years after I first got
-              introduced to web development.
+              I'm a self-taught software engineer who is currently working at
+              Cerner. In my free time I enjoy contributing to open-source,
+              designing, and working on side projects. Some tecnhologies I enjoy
+              are Typescript, Rust, Docker, React.js, and Node.js. I have been
+              writing code for 5 years after I first got introduced to web
+              development.
             </p>
           </Content>
         </section>
