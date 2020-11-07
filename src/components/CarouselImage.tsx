@@ -20,7 +20,7 @@ const CarouselImage: React.FC<Props> = (props) => {
   const translateSwitch = (index: number) => {
     switch (index) {
       case 0:
-        return `-150%`;
+        return `-125%`;
       case 1:
         return `-100%`;
       case 2:
@@ -28,7 +28,7 @@ const CarouselImage: React.FC<Props> = (props) => {
       case 3:
         return `0%`;
       case 4:
-        return `50%`;
+        return `25%`;
     }
   };
 
