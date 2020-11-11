@@ -436,7 +436,7 @@ const Home: FC<Props> = (props: Props) => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="eMail"
+                  placeholder="Email"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
