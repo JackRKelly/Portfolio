@@ -50,7 +50,8 @@ import JacksPeppers4 from "./assets/images/jackspeppers/Screenshot_4.png";
 import JacksPeppers5 from "./assets/images/jackspeppers/Screenshot_5.png";
 import JacksPeppers6 from "./assets/images/jackspeppers/Screenshot_6.png";
 //articles
-import ArticleThumb from "./assets/images/articlethumb.jpg";
+import FullStackThumbnail from "./assets/images/articles/full-stack.jpg";
+import NetworkingThumbnail from "./assets/images/articles/networking.jpg";
 //styles
 import "./Home.scss";
 //types
@@ -332,7 +333,7 @@ const Home: FC<Props> = (props: Props) => {
                   "How to create and publish a full stack application using React.js, Nginx, Strapi, MongoDB, and DigitalOcean."
                 }
                 title={"Create a Full-Stack App"}
-                image={ArticleThumb}
+                image={FullStackThumbnail}
                 tags={["Tutorial", "Cloud Hosting"]}
                 link={
                   "https://dev.to/jackrkelly/create-a-full-stack-web-application-using-react-strapi-nginx-mongodb-and-digitalocean-bkh"
@@ -340,13 +341,13 @@ const Home: FC<Props> = (props: Props) => {
               />
               <ArticleCard
                 description={
-                  "How to create and publish a full stack application using React.js, Nginx, Strapi, MongoDB, and DigitalOcean."
+                  "Learn about the importance of networking, and how to network successfully as a Software Engineer."
                 }
-                title={"Create a Full-Stack App"}
-                image={ArticleThumb}
-                tags={["Tutorial", "Cloud Hosting"]}
+                title={"The importance of networking"}
+                image={NetworkingThumbnail}
+                tags={["Career", "Beginners"]}
                 link={
-                  "https://dev.to/jackrkelly/create-a-full-stack-web-application-using-react-strapi-nginx-mongodb-and-digitalocean-bkh"
+                  "https://dev.to/jackrkelly/the-importance-of-networking-2o7o"
                 }
               />
               <ArticleCard
@@ -354,7 +355,7 @@ const Home: FC<Props> = (props: Props) => {
                   "How to create and publish a full stack application using React.js, Nginx, Strapi, MongoDB, and DigitalOcean."
                 }
                 title={"Create a Full-Stack App"}
-                image={ArticleThumb}
+                image={FullStackThumbnail}
                 tags={["Tutorial", "Cloud Hosting"]}
                 link={
                   "https://dev.to/jackrkelly/create-a-full-stack-web-application-using-react-strapi-nginx-mongodb-and-digitalocean-bkh"
