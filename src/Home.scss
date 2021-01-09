@@ -55,8 +55,8 @@
     .content {
       padding: 20px;
       max-width: 1800px;
-      min-height: 70vh;
-      max-height: 80vh;
+      min-height: 60vh;
+      max-height: 70vh;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -1156,6 +1156,7 @@ main {
             @media (max-width: $medium) {
               width: 100%;
               margin: 0 0 1em;
+              font-size: 1.2em;
             }
             @media (min-width: $large) {
               font-size: 1.2em;
@@ -1175,6 +1176,9 @@ main {
             border-radius: 2px;
             background-color: $light-gray-2;
             transition: box-shadow ease-in-out 200ms;
+            @media (max-width: $medium) {
+              font-size: 1.2em;
+            }
             @media (min-width: $large) {
               font-size: 1.2em;
             }
