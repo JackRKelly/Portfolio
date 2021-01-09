@@ -148,6 +148,10 @@ const Home: FC<Props> = (props: Props) => {
     checkCurrentRef();
   }, 50);
 
+  const setParallaxDebounce = debounce((x: number, y: number) => {
+    setParallax({ xy: calc(x, y) });
+  }, 20);
+
   window.addEventListener("scroll", scrollRefCheck);
 
   const [parallax, setParallax] = useSpring(() => ({
@@ -203,7 +207,7 @@ const Home: FC<Props> = (props: Props) => {
         onMouseMove={({ clientX: x, clientY: y }) => {
           if (parallaxRef.current) {
             if (isInViewport(parallaxRef.current)) {
-              setParallax({ xy: calc(x, y) });
+              setParallaxDebounce(x, y);
             }
           }
         }}
