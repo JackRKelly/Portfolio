@@ -1157,7 +1157,7 @@ main {
               width: 100%;
               margin: 0 0 1em;
             }
-            @media (min-width: $medium) {
+            @media (min-width: $large) {
               font-size: 1.2em;
             }
             @include inputFocusEffect;
@@ -1175,7 +1175,7 @@ main {
             border-radius: 2px;
             background-color: $light-gray-2;
             transition: box-shadow ease-in-out 200ms;
-            @media (min-width: $medium) {
+            @media (min-width: $large) {
               font-size: 1.2em;
             }
             @include inputFocusEffect;
