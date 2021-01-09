@@ -404,8 +404,8 @@ const Home: FC<Props> = (props: Props) => {
               >
                 <ContactOptionsWrapper>
                   <ContactOption
-                    string="kcjackkelly@gmail.com"
-                    href="mailto:kcjackkelly@gmail.com"
+                    string="me@jrk.digital"
+                    href="mailto:me@jrk.digital"
                   >
                     <EmailIcon />
                   </ContactOption>

@@ -42,7 +42,7 @@
         transform: translateX(-50%) scale(1.1);
       }
       svg {
-        width: 100px;
+        width: 4em;
         fill: $dark;
         @media (max-width: $medium) {
           width: 50px;
@@ -54,7 +54,7 @@
     }
     .content {
       padding: 20px;
-      max-width: 1920px;
+      max-width: 1800px;
       min-height: 70vh;
       max-height: 80vh;
       display: flex;
@@ -85,7 +85,7 @@
           @media (min-width: 1400) and (max-width: 1600px) {
             left: -180px;
           }
-
+          filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
           display: inline-block;
           z-index: 100;
           cursor: pointer;
@@ -119,6 +119,7 @@
           @media (min-width: 1400) and (max-width: 1600px) {
             right: -180px;
           }
+          filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
           display: inline-block;
           z-index: 100;
           cursor: pointer;
@@ -514,11 +515,11 @@ main {
         position: absolute;
         right: 0%;
         z-index: 1;
-
+        max-width: 750px;
         @media (max-width: $large) {
           right: 50%;
           width: 90%;
-          bottom: -50vh;
+          bottom: -48vh;
           transform: translateX(50%);
         }
         @media (max-width: $medium) {
@@ -528,7 +529,7 @@ main {
           bottom: -40vh;
         }
         @media (min-width: $medium) and (max-width: $large) {
-          width: 60%;
+          width: 50%;
         }
         svg {
           width: 100%;
@@ -548,16 +549,24 @@ main {
     }
   }
   section#about {
-    @include padding-top(false);
+    padding-top: 2em;
     .content {
       position: relative;
       svg.shapes {
-        max-height: 475px;
+        max-height: 350px;
         position: absolute;
-        left: -27%;
-        top: -63%;
+        left: -26em;
+        top: -10em;
         width: 50%;
         overflow: visible;
+        @media only screen and (max-width: 1950px) and (min-width: 1600px) {
+          left: -23em;
+          top: -6em;
+        }
+        @media (min-width: 1950px) {
+          left: -21em;
+          top: -7em;
+        }
       }
       h1 {
         font-size: 5.5em;
@@ -570,7 +579,7 @@ main {
         margin: 0;
         display: inline-block;
         color: $primary;
-        @include margin-bottom-about;
+        margin-bottom: 1em;
         &::after {
           @include headerPseudoText("01", false);
         }
@@ -582,22 +591,24 @@ main {
     }
   }
   section#work {
-    @include padding-top(true);
+    padding-top: 10em;
     .content {
       position: relative;
       svg.shapes {
-        max-height: 475px;
+        transform: rotate(180deg);
+        max-height: 350px;
         position: absolute;
-        right: -27%;
-        top: -10%;
+        right: -26em;
+        top: -10em;
         width: 50%;
         overflow: visible;
-        transform: rotate(180deg);
-        @media (min-width: $large) {
-          top: -13%;
+        @media only screen and (max-width: 1950px) and (min-width: 1600px) {
+          right: -23em;
+          top: -6em;
         }
-        @media (min-width: $extralarge) {
-          top: -24%;
+        @media (min-width: 1950px) {
+          right: -21em;
+          top: -7em;
         }
       }
       h1 {
@@ -611,7 +622,7 @@ main {
         margin: 0;
         display: inline-block;
         color: $primary;
-        @include margin-bottom(true);
+        margin-bottom: 1.5em;
         &::after {
           @include headerPseudoText("02", true);
         }
@@ -769,23 +780,26 @@ main {
     }
   }
   section#articles {
-    @include padding-top(true);
+    padding-top: 10em;
     .content {
       position: relative;
       svg.shapes {
-        max-height: 475px;
+        max-height: 350px;
         position: absolute;
-        left: -27%;
-        top: -13%;
+        left: -26em;
+        top: -10em;
         width: 50%;
         overflow: visible;
-        @media (min-width: $large) {
-          top: -15%;
+        @media only screen and (max-width: 1950px) and (min-width: 1600px) {
+          left: -23em;
+          top: -6em;
         }
-        @media (min-width: $extralarge) {
-          top: -27%;
+        @media (min-width: 1950px) {
+          left: -21em;
+          top: -7em;
         }
       }
+
       h1 {
         font-size: 5.5em;
         position: relative;
@@ -797,7 +811,7 @@ main {
         margin: 0;
         display: inline-block;
         color: $primary;
-        @include margin-bottom(true);
+        margin-bottom: 1.5em;
         &::after {
           @include headerPseudoText("03", false);
         }
@@ -950,22 +964,24 @@ main {
     }
   }
   section#contact {
-    @include padding-top(true);
+    padding-top: 10em;
     .content {
       position: relative;
       svg.shapes {
-        max-height: 475px;
+        transform: rotate(180deg);
+        max-height: 350px;
         position: absolute;
-        right: -27%;
-        top: -33%;
+        right: -26em;
+        top: -10em;
         width: 50%;
         overflow: visible;
-        transform: rotate(180deg);
-        @media (min-width: $large) {
-          top: -13%;
+        @media only screen and (max-width: 1950px) and (min-width: 1600px) {
+          right: -23em;
+          top: -6em;
         }
-        @media (min-width: $extralarge) {
-          top: -19%;
+        @media (min-width: 1950px) {
+          right: -21em;
+          top: -7em;
         }
       }
       h1 {
@@ -976,7 +992,7 @@ main {
         margin: 0;
         display: inline-block;
         color: $primary;
-        @include margin-bottom(true);
+        margin-bottom: 1em;
         @media (max-width: $medium) {
           left: 55%;
         }
@@ -1124,13 +1140,16 @@ main {
             padding: 0.75em;
             margin: 0 0 1.5em;
             font-family: "Neutra";
-            font-size: 1.2em;
+            font-size: 1.5em;
             border: none;
             border-radius: 2px;
             background-color: $light-gray-2;
             @media (max-width: $medium) {
               width: 100%;
               margin: 0 0 1em;
+            }
+            @media (min-width: $medium) {
+              font-size: 1.2em;
             }
             @include inputFocusEffect;
             @include ease-in-out(200ms);
@@ -1142,11 +1161,14 @@ main {
             min-height: 150px;
             padding: 0.8em;
             font-family: "Neutra";
-            font-size: 1.2em;
+            font-size: 1.5em;
             border: none;
             border-radius: 2px;
             background-color: $light-gray-2;
             transition: box-shadow ease-in-out 200ms;
+            @media (min-width: $medium) {
+              font-size: 1.2em;
+            }
             @include inputFocusEffect;
           }
           button.submit-button {

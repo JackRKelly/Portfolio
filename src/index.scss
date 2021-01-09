@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $dark;
+
   @media (min-width: $medium) {
     font-size: 22px;
   }
@@ -13,6 +14,9 @@ body {
     font-size: 18px;
   }
   @media (max-width: $small) {
+    font-size: 16px;
+  }
+  @media only screen and (max-width: 1300px) and (max-height: 1080px) {
     font-size: 16px;
   }
 }
