@@ -817,6 +817,7 @@ main {
         margin: 0;
         display: inline-block;
         color: $primary;
+        margin-bottom: 1.5em;
         @media (min-width: $large) {
           margin-bottom: 1em;
         }
