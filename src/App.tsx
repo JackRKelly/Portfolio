@@ -7,6 +7,7 @@ import Home from "./Home";
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [activeRef, setActiveRef] = useState(0);
+  const [progress, setProgress] = useState(0);
   const [isTop, setIsTop] = useState(true);
   const [viewport, setViewport] = useState<number>(0);
 
@@ -37,6 +38,21 @@ const App: FC = () => {
     }, 200);
   };
 
+  const calcPercent = () => {
+    let h = document.documentElement,
+      b = document.body,
+      st = "scrollTop",
+      sh = "scrollHeight";
+
+    setProgress(((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100);
+  };
+
+  const calcPercentDebounced = debounce(calcPercent, 200, {
+    isImmediate: true,
+  });
+
+  window.addEventListener("scroll", calcPercentDebounced);
+
   const onModalClose = () => {
     const body = document.body;
     const scrollY = body.style.top;
@@ -54,6 +70,7 @@ const App: FC = () => {
         onModalClose={onModalClose}
         onModalOpen={onModalOpen}
       />
+      <div className="scroll-progress" style={{ width: `${progress}%` }} />
       <Home
         isMobile={isMobile}
         setActiveRef={setActiveRef}

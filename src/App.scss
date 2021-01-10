@@ -6,6 +6,16 @@ div.content {
   max-width: 1920px;
 }
 
+.scroll-progress {
+  height: 3px;
+  background-color: $primary;
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  left: 0;
+  transition: ease-in-out 0.5s;
+}
+
 nav {
   background-color: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
