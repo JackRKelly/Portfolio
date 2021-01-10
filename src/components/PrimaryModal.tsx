@@ -13,7 +13,7 @@ interface Props {
   modalInfo: ModalDetails;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   onModalClose: () => void;
-  checkCurrentRef: () => void;
+  // checkCurrentRef: () => void;
   viewport: number;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
@@ -24,7 +24,7 @@ const PrimaryModal: React.FC<Props> = ({
   isModalOpen,
   setIsModalOpen,
   onModalClose,
-  checkCurrentRef,
+  // checkCurrentRef,
   viewport,
   setIsImageModalOpen,
   setImageModalList,
@@ -66,7 +66,7 @@ const PrimaryModal: React.FC<Props> = ({
           onClick={() => {
             setIsModalOpen(false);
             onModalClose();
-            checkCurrentRef();
+            // checkCurrentRef();
           }}
           className="close"
         >

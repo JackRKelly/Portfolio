@@ -16,7 +16,6 @@ interface Props {
   images: Array<string>;
   thumbnail: string;
   primaryColor?: string;
-  checkCurrentRef: () => void;
   viewport: number;
   onModalOpen: () => void;
   onModalClose: () => void;
@@ -31,7 +30,6 @@ const WorkCard: React.FC<Props> = (props: Props) => {
     description,
     tags,
     title,
-    checkCurrentRef,
     images,
     viewport,
     onModalOpen,
@@ -52,12 +50,11 @@ const WorkCard: React.FC<Props> = (props: Props) => {
       <div
         className="work-card"
         onClick={() => {
-          setModalInfo((old) => {
+          setModalInfo(() => {
             return {
               description: description,
               tags: tags,
               title: title,
-              checkCurrentRef: checkCurrentRef,
               images: images,
               viewport: viewport,
               onModalOpen: onModalOpen,

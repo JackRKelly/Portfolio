@@ -8,7 +8,6 @@ export interface ModalDetails {
   images: Array<string>;
   thumbnail: string;
   primaryColor?: string;
-  checkCurrentRef: () => void;
   viewport: number;
   onModalOpen: () => void;
   onModalClose: () => void;

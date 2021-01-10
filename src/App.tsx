@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import { Navigation } from "./components/Navigation";
 import { debounce } from "ts-debounce";
-import Home from "./Home";
+import { Main } from "./Main";
 import "./App.scss";
 
 const App: FC = () => {
@@ -71,7 +71,7 @@ const App: FC = () => {
         onModalOpen={onModalOpen}
       />
       <div className="scroll-progress" style={{ width: `${progress}%` }} />
-      <Home
+      <Main
         isMobile={isMobile}
         setActiveRef={setActiveRef}
         activeRef={activeRef}
