@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { RenderCarousel } from "./RenderCarousel";
 import { Close } from "../assets/svg/";
 import { ExternalLink } from "../assets/svg/";
 import { Github } from "../assets/svg/";
@@ -6,7 +7,6 @@ import { LinkIcon } from "../assets/svg/";
 import { PictureIcon } from "../assets/svg/";
 import { Preview } from "../assets/svg/";
 import { ModalDetails } from "../util";
-import Carousel from "./Carousel";
 import { onModalClose } from "../util";
 
 interface Props {
@@ -26,31 +26,6 @@ const PrimaryModal: React.FC<Props> = ({
   setIsImageModalOpen,
   setImageModalList,
 }) => {
-  const RenderCarousel = () => {
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-      setIsMounted(true);
-      return function cleanup() {
-        setIsMounted(false);
-      };
-    }, []);
-
-    if (isMounted && modalInfo) {
-      return (
-        <Carousel
-          images={modalInfo.images}
-          viewport={viewport}
-          color={modalInfo.primaryColor}
-          setIsImageModalOpen={setIsImageModalOpen}
-          setImageModalList={setImageModalList}
-        />
-      );
-    } else {
-      return <></>;
-    }
-  };
-
   if (modalInfo) {
     return (
       <div
@@ -63,8 +38,8 @@ const PrimaryModal: React.FC<Props> = ({
         <div className="work-details">
           <div
             onClick={() => {
-              setIsModalOpen(false);
               onModalClose();
+              setIsModalOpen(false);
               // checkCurrentRef();
             }}
             className="close"
@@ -72,7 +47,13 @@ const PrimaryModal: React.FC<Props> = ({
             <Close />
           </div>
           <div className="content">
-            <RenderCarousel />
+            <RenderCarousel
+              isModalOpen={isModalOpen}
+              viewport={viewport}
+              modalInfo={modalInfo}
+              setIsImageModalOpen={setIsImageModalOpen}
+              setImageModalList={setImageModalList}
+            />
 
             <h5
               style={{

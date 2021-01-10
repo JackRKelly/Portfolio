@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { LeftArrow } from "../assets/svg/";
 import { RightArrow } from "../assets/svg/";
 import { debounce } from "ts-debounce";
@@ -8,6 +8,7 @@ interface Props {
   images: Array<string>;
   viewport: number;
   color?: string;
+  isModalOpen: boolean;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
 }
@@ -15,6 +16,7 @@ interface Props {
 const Carousel: FC<Props> = (props: Props) => {
   const {
     images,
+    isModalOpen,
     viewport,
     color,
     setIsImageModalOpen,
@@ -22,7 +24,6 @@ const Carousel: FC<Props> = (props: Props) => {
   } = props;
 
   const [imageList, setImageList] = useState([0, 1, 2, 3, 4]);
-
   const [xDown, setXDown] = useState<null | number>(null);
 
   const previousImage = () => {
@@ -64,6 +65,12 @@ const Carousel: FC<Props> = (props: Props) => {
   const wheelHandlerDebounced = debounce((eDelta: number) => {
     wheelHandler(eDelta);
   }, 75);
+
+  useEffect(() => {
+    if (!isModalOpen) {
+      setImageList([0, 1, 2, 3, 4]);
+    }
+  }, [isModalOpen]);
 
   return (
     <div
@@ -110,7 +117,7 @@ const Carousel: FC<Props> = (props: Props) => {
             index={index}
             viewport={viewport}
             image={images[img]}
-            key={img}
+            key={`${images[img]}-${img}`}
           />
         ))}
       </div>

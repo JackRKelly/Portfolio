@@ -118,7 +118,6 @@ export const onModalOpen = () => {
     body.style.position = "fixed";
     body.style.top = `-${scrollY}`;
   }, 200);
-  console.log("modal open from util;");
 };
 
 export const onModalClose = () => {
@@ -127,5 +126,4 @@ export const onModalClose = () => {
   body.style.position = "";
   body.style.top = "";
   window.scrollTo(0, parseInt(scrollY || "0") * -1);
-  console.log("modal close from util;");
 };
