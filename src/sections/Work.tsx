@@ -33,8 +33,6 @@ import JacksPeppers6 from "../assets/images/jackspeppers/Screenshot_6.png";
 interface Props {
   isMobile: boolean;
   viewport: number;
-  onModalOpen: () => void;
-  onModalClose: () => void;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setModalInfo: React.Dispatch<React.SetStateAction<ModalDetails | undefined>>;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -44,8 +42,6 @@ interface Props {
 export const Work: FC<Props> = ({
   isMobile,
   viewport,
-  onModalOpen,
-  onModalClose,
   setIsModalOpen,
   setModalInfo,
   setIsImageModalOpen,
@@ -65,10 +61,8 @@ export const Work: FC<Props> = ({
             title={"Fridge Man"}
             tags={["Full-Stack", "React.js"]}
             viewport={viewport}
-            onModalClose={onModalClose}
             github={"https://github.com/JackRKelly/FridgeMan"}
             preview={"https://vimeo.com/412508762"}
-            onModalOpen={onModalOpen}
             thumbnail={FridgeMan6}
             images={[
               FridgeMan6,
@@ -94,8 +88,6 @@ export const Work: FC<Props> = ({
             github={"https://github.com/JackRKelly/J2"}
             live={"https://j2.netlify.com/"}
             viewport={viewport}
-            onModalClose={onModalClose}
-            onModalOpen={onModalOpen}
             thumbnail={J21}
             images={[J21, J22, J28, J24, J25, J26, J27, J23]}
             setIsModalOpen={setIsModalOpen}
@@ -113,8 +105,6 @@ export const Work: FC<Props> = ({
             github={"https://github.com/JackRKelly/JacksPeppers"}
             preview={"https://vimeo.com/451655410"}
             viewport={viewport}
-            onModalClose={onModalClose}
-            onModalOpen={onModalOpen}
             thumbnail={JacksPeppers2}
             images={[
               JacksPeppers1,

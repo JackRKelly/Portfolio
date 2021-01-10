@@ -12,8 +12,6 @@ interface Props {
   isMobile: boolean;
   activeRef: number;
   isTop: boolean;
-  onModalOpen: () => void;
-  onModalClose: () => void;
 }
 
 export const Navigation: FC<Props> = (props: Props) => {

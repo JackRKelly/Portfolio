@@ -8,8 +8,9 @@ import SecondaryModal from "./components/SecondaryModal";
 import { isInViewport, calc } from "./util";
 //styles
 import "./Main.scss";
-//types
+//util
 import { ModalDetails } from "./util";
+//sections
 import { Home } from "./sections/Home";
 import { About } from "./sections/About";
 import { Work } from "./sections/Work";
@@ -17,19 +18,18 @@ import { Articles } from "./sections/Articles";
 import { Contact } from "./sections/Contact";
 import { BackToTop } from "./components/BackToTop";
 import { Footer } from "./sections/Footer";
+import { debounce } from "ts-debounce";
 
 interface Props {
   isMobile: boolean;
   setActiveRef: React.Dispatch<React.SetStateAction<number>>;
   activeRef: number;
   viewport: number;
-  onModalOpen: () => void;
-  onModalClose: () => void;
   setIsTop: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Main: FC<Props> = (props: Props) => {
-  const { isMobile, activeRef, viewport, onModalClose, onModalOpen } = props;
+  const { isMobile, viewport } = props;
 
   //Modal State
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -82,11 +82,14 @@ export const Main: FC<Props> = (props: Props) => {
   //   }
   // };
 
-  // const scrollRefCheck = debounce(() => {
-  //   checkCurrentRef();
-  // }, 50);
+  const scrollPositionCheck = debounce(() => {
+    document.documentElement.style.setProperty(
+      "--scroll-y",
+      `${window.scrollY}px`
+    );
+  }, 50);
 
-  // window.addEventListener("scroll", scrollRefCheck);
+  window.addEventListener("scroll", scrollPositionCheck);
 
   const [parallax, setParallax] = useSpring(() => ({
     xy: [0, 0],
@@ -95,19 +98,14 @@ export const Main: FC<Props> = (props: Props) => {
 
   return (
     <>
-      {modalInfo ? (
-        <PrimaryModal
-          isModalOpen={isModalOpen}
-          modalInfo={modalInfo}
-          onModalClose={onModalClose}
-          setIsModalOpen={setIsModalOpen}
-          viewport={viewport}
-          setIsImageModalOpen={setIsImageModalOpen}
-          setImageModalList={setImageModalList}
-        />
-      ) : (
-        <></>
-      )}
+      <PrimaryModal
+        isModalOpen={isModalOpen}
+        modalInfo={modalInfo}
+        setIsModalOpen={setIsModalOpen}
+        viewport={viewport}
+        setIsImageModalOpen={setIsImageModalOpen}
+        setImageModalList={setImageModalList}
+      />
 
       <SecondaryModal
         setIsImageModalOpen={setIsImageModalOpen}
@@ -132,8 +130,6 @@ export const Main: FC<Props> = (props: Props) => {
         <Work
           isMobile={isMobile}
           viewport={viewport}
-          onModalClose={onModalClose}
-          onModalOpen={onModalOpen}
           setIsModalOpen={setIsModalOpen}
           setModalInfo={setModalInfo}
           setIsImageModalOpen={setIsImageModalOpen}

@@ -8,12 +8,6 @@ export interface ModalDetails {
   images: Array<string>;
   thumbnail: string;
   primaryColor?: string;
-  viewport: number;
-  onModalOpen: () => void;
-  onModalClose: () => void;
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
 }
 
 export const splitDescription = (description: string) => {
@@ -106,4 +100,32 @@ export const isInViewport = (el) => {
       (window.innerHeight || document.documentElement.clientHeight) + 400 &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
+};
+
+export const calcPercent = () => {
+  let h = document.documentElement,
+    b = document.body,
+    st = "scrollTop",
+    sh = "scrollHeight";
+
+  return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
+};
+
+export const onModalOpen = () => {
+  const scrollY = document.documentElement.style.getPropertyValue("--scroll-y");
+  const body = document.body;
+  setTimeout(() => {
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}`;
+  }, 200);
+  console.log("modal open from util;");
+};
+
+export const onModalClose = () => {
+  const body = document.body;
+  const scrollY = body.style.top;
+  body.style.position = "";
+  body.style.top = "";
+  window.scrollTo(0, parseInt(scrollY || "0") * -1);
+  console.log("modal close from util;");
 };
