@@ -1,5 +1,28 @@
 @import "./assets/variables";
 
+.external-link {
+  color: $primary;
+  font-weight: normal;
+  svg {
+    display: inline-block;
+    overflow: visible;
+    height: 0.75em;
+    vertical-align: middle;
+    margin-left: 5px;
+    fill: $primary;
+    polyline {
+      @include ease-in-out(150ms);
+    }
+  }
+  &:hover {
+    svg {
+      polyline {
+        transform: translate(2px, -2px);
+      }
+    }
+  }
+}
+
 .modal-primary {
   position: fixed;
   top: 0;

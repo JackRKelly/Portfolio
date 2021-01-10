@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $dark;
+  overflow-y: scroll;
 
   @media (min-width: $medium) {
     font-size: 22px;

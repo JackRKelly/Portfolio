@@ -1003,7 +1003,7 @@ export const ExpandWork = () => {
   );
 };
 
-export const ExternalLink = () => {
+export const ExternalLinkIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
       <polyline points="11 0 11 2 14.6 2 4.8 11.8 6.2 13.2 16 3.4 16 7 18 7 18 0" />

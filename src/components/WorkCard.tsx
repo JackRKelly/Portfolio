@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { ExpandWork } from "../assets/svg/";
 import LoadingImage from "../assets/images/loading.svg";
 import Img from "react-cool-img";
-import { ModalDetails } from "../util";
+import { ModalDetails, onModalOpen } from "../util";
 
 import { splitDescription } from "../util";
 
@@ -17,12 +17,10 @@ interface Props {
   thumbnail: string;
   primaryColor?: string;
   viewport: number;
-  onModalOpen: () => void;
-  onModalClose: () => void;
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setModalInfo: React.Dispatch<React.SetStateAction<ModalDetails | undefined>>;
-  setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+  setModalInfo: Dispatch<SetStateAction<ModalDetails | undefined>>;
+  setIsImageModalOpen: Dispatch<SetStateAction<boolean>>;
+  setImageModalList: Dispatch<SetStateAction<string[]>>;
 }
 
 const WorkCard: React.FC<Props> = (props: Props) => {
@@ -32,8 +30,6 @@ const WorkCard: React.FC<Props> = (props: Props) => {
     title,
     images,
     viewport,
-    onModalOpen,
-    onModalClose,
     thumbnail,
     primaryColor,
     github,
@@ -41,8 +37,6 @@ const WorkCard: React.FC<Props> = (props: Props) => {
     preview,
     setModalInfo,
     setIsModalOpen,
-    setIsImageModalOpen,
-    setImageModalList,
   } = props;
 
   return (
@@ -57,16 +51,11 @@ const WorkCard: React.FC<Props> = (props: Props) => {
               title: title,
               images: images,
               viewport: viewport,
-              onModalOpen: onModalOpen,
-              onModalClose: onModalClose,
               thumbnail: thumbnail,
               primaryColor: primaryColor,
               github: github,
               live: live,
               preview: preview,
-              setIsModalOpen: setIsModalOpen,
-              setIsImageModalOpen: setIsImageModalOpen,
-              setImageModalList: setImageModalList,
             };
           });
           setIsModalOpen(true);

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { ExternalLink } from "../assets/svg/";
+import { ExternalLinkIcon } from "../assets/svg/";
 import LoadingImage from "../assets/images/loading.svg";
 import Img from "react-cool-img";
 
@@ -35,7 +35,7 @@ const ArticleCard: FC<Props> = (props: Props) => {
           <p>{description}</p>
           <div className="link">
             <p>
-              Visit on Dev.to <ExternalLink />
+              Visit on Dev.to <ExternalLinkIcon />
             </p>
           </div>
         </div>
