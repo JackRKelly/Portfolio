@@ -6,7 +6,7 @@ import { LinkedInBox } from "../assets/svg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Close } from "../assets/svg";
 import { Hamburger } from "../assets/svg";
-import { ExternalLink } from "../assets/svg";
+import { ExternalLinkIcon } from "../assets/svg";
 
 interface Props {
   isMobile: boolean;
@@ -45,7 +45,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                         <Github />
                       </span>
                       <span className="sub">
-                        <ExternalLink />
+                        <ExternalLinkIcon />
                       </span>
                     </a>
                   </li>
@@ -59,7 +59,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                         <Devto />
                       </span>
                       <span className="sub">
-                        <ExternalLink />
+                        <ExternalLinkIcon />
                       </span>
                     </a>
                   </li>
@@ -73,7 +73,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                         <LinkedInBox />
                       </span>
                       <span className="sub">
-                        <ExternalLink />
+                        <ExternalLinkIcon />
                       </span>
                     </a>
                   </li>
@@ -191,7 +191,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                       <Github />
                     </span>
                     <span className="sub">
-                      <ExternalLink />
+                      <ExternalLinkIcon />
                     </span>
                   </a>
                 </li>
@@ -205,7 +205,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                       <Devto />
                     </span>
                     <span className="sub">
-                      <ExternalLink />
+                      <ExternalLinkIcon />
                     </span>
                   </a>
                 </li>
@@ -219,7 +219,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                       <LinkedInBox />
                     </span>
                     <span className="sub">
-                      <ExternalLink />
+                      <ExternalLinkIcon />
                     </span>
                   </a>
                 </li>

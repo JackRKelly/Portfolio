@@ -1,7 +1,7 @@
 import React from "react";
 import { RenderCarousel } from "./RenderCarousel";
 import { Close } from "../assets/svg/";
-import { ExternalLink } from "../assets/svg/";
+import { ExternalLinkIcon } from "../assets/svg/";
 import { Github } from "../assets/svg/";
 import { LinkIcon } from "../assets/svg/";
 import { PictureIcon } from "../assets/svg/";
@@ -78,7 +78,7 @@ const PrimaryModal: React.FC<Props> = ({
                         <LinkIcon />
                       </span>
                       <span className="sub">
-                        <ExternalLink />
+                        <ExternalLinkIcon />
                       </span>
                     </div>
                     Live
@@ -99,7 +99,7 @@ const PrimaryModal: React.FC<Props> = ({
                         <Preview />
                       </span>
                       <span className="sub">
-                        <ExternalLink />
+                        <ExternalLinkIcon />
                       </span>
                     </div>
                     Preview
@@ -120,7 +120,7 @@ const PrimaryModal: React.FC<Props> = ({
                         <Github />
                       </span>
                       <span className="sub">
-                        <ExternalLink />
+                        <ExternalLinkIcon />
                       </span>
                     </div>
                     Code
