@@ -29,7 +29,7 @@ export const calc = (x: number, y: number) => [
   y - window.innerHeight / 2,
 ];
 
-export const zIndexSwitch = (index) => {
+export const zIndexSwitch = (index: number) => {
   switch (index) {
     case 0:
       return 1;
@@ -44,7 +44,7 @@ export const zIndexSwitch = (index) => {
   }
 };
 
-export const scaleSwitch = (index) => {
+export const scaleSwitch = (index: number) => {
   switch (index) {
     case 0:
       return 0.5;
@@ -59,7 +59,7 @@ export const scaleSwitch = (index) => {
   }
 };
 
-export const opacitySwitch = (index) => {
+export const opacitySwitch = (index: number) => {
   switch (index) {
     case 0:
       return 0;
@@ -74,7 +74,7 @@ export const opacitySwitch = (index) => {
   }
 };
 
-export const transitionSwitch = (index) => {
+export const transitionSwitch = (index: number) => {
   switch (index) {
     case 0:
       return 200;
@@ -85,7 +85,7 @@ export const transitionSwitch = (index) => {
   }
 };
 
-export const encode = (data) => {
+export const encode = (data: any) => {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
