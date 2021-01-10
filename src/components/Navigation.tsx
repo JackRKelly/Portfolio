@@ -1,12 +1,12 @@
 import React, { FC, useState } from "react";
-import Devto from "../assets/svg/Devto";
-import Github from "../assets/svg/Github";
-import JRKLogo from "../assets/svg/JRKLogo";
-import LinkedInBox from "../assets/svg/LinkedInBox";
+import { Devto } from "../assets/svg";
+import { Github } from "../assets/svg";
+import { JRKLogo } from "../assets/svg";
+import { LinkedInBox } from "../assets/svg";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import Close from "../assets/svg/Close";
-import Hamburger from "../assets/svg/Hamburger";
-import ExternalLink from "../assets/svg/ExternalLink";
+import { Close } from "../assets/svg";
+import { Hamburger } from "../assets/svg";
+import { ExternalLink } from "../assets/svg";
 
 interface Props {
   isMobile: boolean;
@@ -16,7 +16,7 @@ interface Props {
   onModalClose: () => void;
 }
 
-const Navigation: FC<Props> = (props: Props) => {
+export const Navigation: FC<Props> = (props: Props) => {
   const { isMobile, activeRef, isTop } = props;
 
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -282,5 +282,3 @@ const Navigation: FC<Props> = (props: Props) => {
     </>
   );
 };
-
-export default Navigation;

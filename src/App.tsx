@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
-import Navigation from "./components/Navigation";
+import { Navigation } from "./components/Navigation";
 import { debounce } from "ts-debounce";
-import "./App.scss";
 import Home from "./Home";
+import "./App.scss";
 
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);

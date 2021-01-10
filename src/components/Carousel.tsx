@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
-import LeftArrow from "../assets/svg/LeftArrow";
-import RightArrow from "../assets/svg/RightArrow";
+import { LeftArrow } from "../assets/svg/";
+import { RightArrow } from "../assets/svg/";
 import { debounce } from "ts-debounce";
 import CarouselImage from "./CarouselImage";
 

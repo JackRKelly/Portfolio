@@ -1,5 +1,5 @@
 import React from "react";
-import ExpandWork from "../assets/svg/ExpandWork";
+import { ExpandWork } from "../assets/svg/";
 import LoadingImage from "../assets/images/loading.svg";
 import Img from "react-cool-img";
 import { ModalDetails } from "../util";

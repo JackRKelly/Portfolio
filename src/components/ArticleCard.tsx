@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import ExternalLink from "../assets/svg/ExternalLink";
+import { ExternalLink } from "../assets/svg/";
 import LoadingImage from "../assets/images/loading.svg";
 import Img from "react-cool-img";
 

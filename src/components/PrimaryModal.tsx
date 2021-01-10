@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Close from "../assets/svg/Close";
-import ExternalLink from "../assets/svg/ExternalLink";
-import Github from "../assets/svg/Github";
-import LinkIcon from "../assets/svg/LinkIcon";
-import PictureIcon from "../assets/svg/PictureIcon";
-import Preview from "../assets/svg/Preview";
+import { Close } from "../assets/svg/";
+import { ExternalLink } from "../assets/svg/";
+import { Github } from "../assets/svg/";
+import { LinkIcon } from "../assets/svg/";
+import { PictureIcon } from "../assets/svg/";
+import { Preview } from "../assets/svg/";
 import { ModalDetails } from "../util";
 import Carousel from "./Carousel";
 

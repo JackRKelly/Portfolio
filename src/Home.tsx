@@ -3,14 +3,14 @@ import React, { FC, FormEvent, useRef, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
 //svg
-import EmailIcon from "./assets/svg/EmailIcon";
-import DownloadIcon from "./assets/svg/DownloadIcon";
-import AboutShapes from "./assets/svg/AboutShapes";
-import DownArrow from "./assets/svg/DownArrow";
-import HeroShapes from "./assets/svg/HeroShapes";
-import ScrollToTop from "./assets/svg/ScrollToTop";
-import JRKLogoStroke from "./assets/svg/JRKLogoStroke";
-import LinkedIn from "./assets/svg/LinkedIn";
+import { EmailIcon } from "./assets/svg/";
+import { DownloadIcon } from "./assets/svg/";
+import { AboutShapes } from "./assets/svg/";
+import { DownArrow } from "./assets/svg/";
+import { HeroShapes } from "./assets/svg/";
+import { ScrollToTop } from "./assets/svg/";
+import { JRKLogoStroke } from "./assets/svg/";
+import { LinkedIn } from "./assets/svg/";
 //components
 import ArticleCard from "./components/ArticleCard";
 import ContactOption from "./components/ContactOption";

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Img from "react-cool-img";
-import BackArrow from "../assets/svg/BackArrow";
+import { BackArrow } from "../assets/svg/";
 import LoadingImage from "../assets/images/loading.svg";
 
 interface Props {
