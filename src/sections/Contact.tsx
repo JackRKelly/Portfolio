@@ -1,4 +1,4 @@
-import { encode } from "../assets/util";
+import { encode } from "../util";
 import React, { FC, FormEvent, useState } from "react";
 import { AboutShapes, DownloadIcon, EmailIcon, LinkedIn } from "../assets/svg";
 import ContactOption from "../components/ContactOption";

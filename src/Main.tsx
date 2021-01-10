@@ -1,15 +1,11 @@
 //dependencies
 import React, { FC, useRef, useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useSpring } from "react-spring/web";
-//svg
-import { ScrollToTop } from "./assets/svg";
 //components
 import PrimaryModal from "./components/PrimaryModal";
 import SecondaryModal from "./components/SecondaryModal";
 //methods
-import { debounce } from "ts-debounce";
-import { isInViewport } from "./assets/util";
+import { isInViewport, calc } from "./util";
 //styles
 import "./Main.scss";
 //types
@@ -19,6 +15,8 @@ import { About } from "./sections/About";
 import { Work } from "./sections/Work";
 import { Articles } from "./sections/Articles";
 import { Contact } from "./sections/Contact";
+import { BackToTop } from "./components/BackToTop";
+import { Footer } from "./sections/Footer";
 
 interface Props {
   isMobile: boolean;
@@ -41,11 +39,6 @@ export const Main: FC<Props> = (props: Props) => {
 
   //Section Refs
   const parallaxRef = useRef(null);
-
-  const calc = (x: number, y: number) => [
-    x - window.innerWidth / 2,
-    y - window.innerHeight / 2,
-  ];
 
   // const checkCurrentRef = () => {
   //   document.documentElement.style.setProperty(
@@ -93,10 +86,6 @@ export const Main: FC<Props> = (props: Props) => {
   //   checkCurrentRef();
   // }, 50);
 
-  const setParallaxDebounce = debounce((x: number, y: number) => {
-    setParallax({ xy: calc(x, y) });
-  }, 20);
-
   // window.addEventListener("scroll", scrollRefCheck);
 
   const [parallax, setParallax] = useSpring(() => ({
@@ -120,38 +109,20 @@ export const Main: FC<Props> = (props: Props) => {
         <></>
       )}
 
-      {imageModalList ? (
-        <SecondaryModal
-          setIsImageModalOpen={setIsImageModalOpen}
-          isImageModalOpen={isImageModalOpen}
-          imageModalList={imageModalList}
-        />
-      ) : (
-        <></>
-      )}
+      <SecondaryModal
+        setIsImageModalOpen={setIsImageModalOpen}
+        isImageModalOpen={isImageModalOpen}
+        imageModalList={imageModalList}
+      />
 
-      {isMobile ? (
-        <> </>
-      ) : (
-        <AnchorLink offset="0" href="#main">
-          <div
-            className="back-to-top"
-            style={{
-              opacity: activeRef !== 0 ? 1 : 0,
-              pointerEvents: activeRef !== 0 ? "auto" : "none",
-            }}
-          >
-            <ScrollToTop />
-          </div>
-        </AnchorLink>
-      )}
+      <BackToTop isMobile={isMobile} />
 
       <main
         id="main"
         onMouseMove={({ clientX: x, clientY: y }) => {
           if (parallaxRef.current) {
             if (isInViewport(parallaxRef.current)) {
-              setParallaxDebounce(x, y);
+              setParallax({ xy: calc(x, y) });
             }
           }
         }}
@@ -170,6 +141,7 @@ export const Main: FC<Props> = (props: Props) => {
         />
         <Articles isMobile={isMobile} />
         <Contact isMobile={isMobile} />
+        <Footer />
       </main>
     </>
   );

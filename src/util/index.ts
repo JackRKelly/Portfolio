@@ -1,3 +1,40 @@
+export interface ModalDetails {
+  description: string;
+  tags: Array<string>;
+  title: string;
+  github?: string;
+  preview?: string;
+  live?: string;
+  images: Array<string>;
+  thumbnail: string;
+  primaryColor?: string;
+  viewport: number;
+  onModalOpen: () => void;
+  onModalClose: () => void;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
+}
+
+export const splitDescription = (description: string) => {
+  let final = {
+    split: description.split(" "),
+    getSlice: function () {
+      return this.split.slice(0, 35).join(" ");
+    },
+    getEnd: function () {
+      return this.split.length > 35 ? "..." : "";
+    },
+  };
+
+  return `${final.getSlice()}${final.getEnd()}`;
+};
+
+export const calc = (x: number, y: number) => [
+  x - window.innerWidth / 2,
+  y - window.innerHeight / 2,
+];
+
 export const zIndexSwitch = (index) => {
   switch (index) {
     case 0:

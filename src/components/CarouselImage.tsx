@@ -6,7 +6,7 @@ import {
   opacitySwitch,
   zIndexSwitch,
   transitionSwitch,
-} from "../assets/util";
+} from "../util";
 
 interface Props {
   image: string;
