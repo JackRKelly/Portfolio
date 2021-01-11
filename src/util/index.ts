@@ -1,3 +1,5 @@
+import { Image } from "../util/image";
+
 export interface ModalDetails {
   description: string;
   tags: Array<string>;
@@ -5,8 +7,8 @@ export interface ModalDetails {
   github?: string;
   preview?: string;
   live?: string;
-  images: Array<string>;
-  thumbnail: string;
+  images: Image[];
+  thumbnail: Image;
   primaryColor?: string;
 }
 
@@ -82,6 +84,21 @@ export const transitionSwitch = (index: number) => {
       return 200;
     default:
       return 450;
+  }
+};
+
+export const translateSwitch = (index: number) => {
+  switch (index) {
+    case 0:
+      return `-125%`;
+    case 1:
+      return `-100%`;
+    case 2:
+      return `-50%`;
+    case 3:
+      return `0%`;
+    case 4:
+      return `25%`;
   }
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-const useIntersectionObserver = ({
+export const useIntersectionObserver = ({
   target,
   onIntersect,
   threshold = 0.1,
@@ -21,5 +21,3 @@ const useIntersectionObserver = ({
     };
   });
 };
-
-export default useIntersectionObserver;

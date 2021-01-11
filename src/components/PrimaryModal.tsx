@@ -1,4 +1,5 @@
 import React from "react";
+import { Image } from "../util/image";
 import { RenderCarousel } from "./RenderCarousel";
 import { Close } from "../assets/svg/";
 import { ExternalLinkIcon } from "../assets/svg/";
@@ -15,7 +16,7 @@ interface Props {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   viewport: number;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
+  setImageModalList: React.Dispatch<React.SetStateAction<Image[]>>;
 }
 
 const PrimaryModal: React.FC<Props> = ({

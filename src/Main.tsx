@@ -10,6 +10,7 @@ import { isInViewport, calc } from "./util";
 import "./Main.scss";
 //util
 import { ModalDetails } from "./util";
+import { Image } from "./util/image";
 //sections
 import { Home } from "./sections/Home";
 import { About } from "./sections/About";
@@ -19,6 +20,7 @@ import { Contact } from "./sections/Contact";
 import { BackToTop } from "./components/BackToTop";
 import { Footer } from "./sections/Footer";
 import { debounce } from "ts-debounce";
+import ImageContainer from "./components/ImageContainer";
 
 interface Props {
   isMobile: boolean;
@@ -35,7 +37,7 @@ export const Main: FC<Props> = (props: Props) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [modalInfo, setModalInfo] = useState<ModalDetails | undefined>();
   const [isImageModalOpen, setIsImageModalOpen] = useState<boolean>(false);
-  const [imageModalList, setImageModalList] = useState<Array<string>>([]);
+  const [imageModalList, setImageModalList] = useState<Image[]>([]);
 
   //Section Refs
   const parallaxRef = useRef(null);

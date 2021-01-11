@@ -1,10 +1,9 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { ExpandWork } from "../assets/svg/";
-import LoadingImage from "../assets/images/loading.svg";
-import Img from "react-cool-img";
 import { ModalDetails, onModalOpen } from "../util";
-
+import { Image } from "../util/image";
 import { splitDescription } from "../util";
+import ImageContainer from "./ImageContainer";
 
 interface Props {
   description: string;
@@ -13,14 +12,14 @@ interface Props {
   github?: string;
   preview?: string;
   live?: string;
-  images: Array<string>;
-  thumbnail: string;
+  images: Image[];
+  thumbnail: Image;
   primaryColor?: string;
   viewport: number;
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
   setModalInfo: Dispatch<SetStateAction<ModalDetails | undefined>>;
   setIsImageModalOpen: Dispatch<SetStateAction<boolean>>;
-  setImageModalList: Dispatch<SetStateAction<string[]>>;
+  setImageModalList: Dispatch<SetStateAction<Image[]>>;
 }
 
 const WorkCard: React.FC<Props> = (props: Props) => {
@@ -64,11 +63,12 @@ const WorkCard: React.FC<Props> = (props: Props) => {
         }}
       >
         <div className="image">
-          <Img
-            placeholder={LoadingImage}
-            src={thumbnail}
-            alt="Work Card Thumbnail"
-            lazy={true}
+          <ImageContainer
+            src={thumbnail.src}
+            thumb={thumbnail.thumb}
+            alt={thumbnail.alt}
+            width={thumbnail.width}
+            height={thumbnail.height}
           />
           <ul className="tag-list">
             {tags.map((tag, index) => (

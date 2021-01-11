@@ -1,43 +1,26 @@
 import React from "react";
-import Img from "react-cool-img";
-import LoadingImage from "../assets/images/loading.svg";
+import { Image } from "../util/image";
+
 import {
   scaleSwitch,
   opacitySwitch,
   zIndexSwitch,
   transitionSwitch,
+  translateSwitch,
 } from "../util";
+import ImageContainer from "./ImageContainer";
 
 interface Props {
-  image: string;
+  image: Image;
   index: number;
   viewport: number;
+  carouselHeight: number;
 }
 
-const CarouselImage: React.FC<Props> = (props) => {
-  const { image, index } = props;
-
-  const translateSwitch = (index: number) => {
-    switch (index) {
-      case 0:
-        return `-125%`;
-      case 1:
-        return `-100%`;
-      case 2:
-        return `-50%`;
-      case 3:
-        return `0%`;
-      case 4:
-        return `25%`;
-    }
-  };
-
+const CarouselImage: React.FC<Props> = ({ image, index, carouselHeight }) => {
   return (
-    <Img
-      placeholder={LoadingImage}
-      src={image}
-      alt=""
-      lazy={true}
+    <div
+      className="carousel-image"
       style={{
         transform: `translateX(${translateSwitch(index)}) scale(${scaleSwitch(
           index
@@ -46,7 +29,16 @@ const CarouselImage: React.FC<Props> = (props) => {
         opacity: opacitySwitch(index),
         transition: `all ${transitionSwitch(index)}ms ease`,
       }}
-    />
+    >
+      <ImageContainer
+        src={image.src}
+        thumb={image.thumb}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        carouselHeight={carouselHeight}
+      />
+    </div>
   );
 };
 

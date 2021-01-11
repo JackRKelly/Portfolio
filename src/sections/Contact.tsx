@@ -68,7 +68,7 @@ export const Contact: FC<Props> = ({ isMobile }) => {
                 <LinkedIn />
               </ContactOption>
 
-              <ContactOption string="Résumé" href="/pdf/jack-kelly-resume.pdf">
+              <ContactOption string="Resume" href="/pdf/jack-kelly-resume.pdf">
                 <DownloadIcon />
               </ContactOption>
             </ContactOptionsWrapper>
