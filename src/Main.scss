@@ -188,12 +188,13 @@
         .images {
           height: 100%;
           position: relative;
+          cursor: pointer;
           .carousel-image {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             height: 100%;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
             .image-container-wrapper {
               overflow: hidden;
               position: relative;
@@ -757,6 +758,7 @@ main {
               left: 50%;
               transform: translateX(-50%);
               .image-container {
+                border-radius: 3px;
                 .lazy-image {
                   filter: grayscale(1);
                   &.thumb {
@@ -943,14 +945,18 @@ main {
               @media (max-width: $large) {
                 top: -5em;
               }
-              img {
-                width: 100%;
+              .image-container {
                 border-radius: 3px;
-                @include ease-in-out(200ms);
-                transform-origin: bottom;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-                filter: grayscale(1);
+                .lazy-image {
+                  width: 100%;
+                  border-radius: 3px;
+                  @include ease-in-out(200ms);
+                  transform-origin: bottom;
+                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                  filter: grayscale(1);
+                }
               }
+
               .tag-list {
                 list-style: none;
                 padding: 0;

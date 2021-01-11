@@ -3,12 +3,15 @@ import { DownArrow, HeroShapes } from "../assets/svg";
 import Content from "../components/Content";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-export const Home: FC<{ parallax: any; parallaxRef: any }> = ({
-  parallax,
-  parallaxRef,
-}) => {
+interface Props {
+  parallax: any;
+  parallaxRef: React.MutableRefObject<null>;
+  homeRef: React.MutableRefObject<null>;
+}
+
+export const Home: FC<Props> = ({ parallax, parallaxRef, homeRef }) => {
   return (
-    <section id="home">
+    <section id="home" ref={homeRef}>
       <Content>
         <div className="info">
           <h1>Jack Kelly</h1>

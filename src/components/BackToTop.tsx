@@ -4,9 +4,10 @@ import { ScrollToTop } from "../assets/svg";
 
 interface Props {
   isMobile: boolean;
+  activeRef: number;
 }
 
-export const BackToTop: FC<Props> = ({ isMobile }) => {
+export const BackToTop: FC<Props> = ({ isMobile, activeRef }) => {
   if (isMobile) {
     return <></>;
   } else {
@@ -14,12 +15,10 @@ export const BackToTop: FC<Props> = ({ isMobile }) => {
       <AnchorLink offset="0" href="#main">
         <div
           className="back-to-top"
-          style={
-            {
-              // opacity: activeRef !== 0 ? 1 : 0,
-              // pointerEvents: activeRef !== 0 ? "auto" : "none",
-            }
-          }
+          style={{
+            opacity: activeRef > 1 ? 1 : 0,
+            pointerEvents: activeRef > 1 ? "auto" : "none",
+          }}
         >
           <ScrollToTop />
         </div>

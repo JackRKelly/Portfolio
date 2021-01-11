@@ -22,6 +22,9 @@ import JacksPeppers3 from "../assets/images/jackspeppers/Screenshot_3.png";
 import JacksPeppers4 from "../assets/images/jackspeppers/Screenshot_4.png";
 import JacksPeppers5 from "../assets/images/jackspeppers/Screenshot_5.png";
 import JacksPeppers6 from "../assets/images/jackspeppers/Screenshot_6.png";
+//Articles
+import FullStackApplication from "../assets/images/articles/full-stack.jpg";
+import Networking from "../assets/images/articles/networking.jpg";
 
 export interface Image {
   width: number;
@@ -35,6 +38,10 @@ export const images: {
   fridgeman: Image[];
   jacksquared: Image[];
   jackspeppers: Image[];
+  articles: {
+    networking: Image;
+    fullstack: Image;
+  };
 } = {
   fridgeman: [
     {
@@ -189,4 +196,20 @@ export const images: {
       alt: "JacksPeppers Screenshot #6",
     },
   ],
+  articles: {
+    networking: {
+      width: 2559,
+      height: 1326,
+      thumb: Networking,
+      src: Networking,
+      alt: "Networking article by Jack Kelly",
+    },
+    fullstack: {
+      width: 2559,
+      height: 1326,
+      thumb: FullStackApplication,
+      src: FullStackApplication,
+      alt: "Full-stack web app article by Jack Kelly",
+    },
+  },
 };

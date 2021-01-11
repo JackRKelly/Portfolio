@@ -5,11 +5,12 @@ import { ExternalLink } from "../components/ExternalLink";
 
 interface Props {
   isMobile: boolean;
+  aboutRef: React.MutableRefObject<null>;
 }
 
-export const About: FC<Props> = ({ isMobile }) => {
+export const About: FC<Props> = ({ isMobile, aboutRef }) => {
   return (
-    <section id="about">
+    <section id="about" ref={aboutRef}>
       <Content>
         {isMobile ? <></> : <AboutShapes />}
         <h1>About</h1>

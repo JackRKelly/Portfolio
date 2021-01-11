@@ -13,6 +13,7 @@ interface Props {
   setModalInfo: React.Dispatch<React.SetStateAction<ModalDetails | undefined>>;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setImageModalList: React.Dispatch<React.SetStateAction<Image[]>>;
+  workRef: React.MutableRefObject<null>;
 }
 
 export const Work: FC<Props> = ({
@@ -22,9 +23,10 @@ export const Work: FC<Props> = ({
   setModalInfo,
   setIsImageModalOpen,
   setImageModalList,
+  workRef,
 }) => {
   return (
-    <section id="work">
+    <section id="work" ref={workRef}>
       <Content>
         {isMobile ? <></> : <AboutShapes />}
         <h1>Work</h1>
