@@ -1,14 +1,13 @@
 import React, { FC } from "react";
 import { ExternalLinkIcon } from "../assets/svg/";
-import LoadingImage from "../assets/images/loading.svg";
-import Img from "react-cool-img";
-
+import ImageContainer from "./ImageContainer";
+import { Image } from "../util/image";
 interface Props {
   description: string;
   tags: Array<string>;
   title: string;
   link: string;
-  image: string;
+  image: Image;
 }
 
 const ArticleCard: FC<Props> = (props: Props) => {
@@ -18,11 +17,12 @@ const ArticleCard: FC<Props> = (props: Props) => {
     <a href={link} target="_blank" rel="noopener noreferrer">
       <li>
         <div className="image">
-          <Img
-            placeholder={LoadingImage}
-            src={image}
-            alt="Work Card Thumbnail"
-            lazy={true}
+          <ImageContainer
+            src={image.src}
+            thumb={image.thumb}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
           />
           <ul className="tag-list">
             {tags.map((tag, index) => (

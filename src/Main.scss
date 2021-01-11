@@ -1,5 +1,25 @@
 @import "./assets/variables";
 
+.image-container {
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: block;
+  width: 100%;
+  .lazy-image {
+    position: absolute;
+    width: 100%;
+    border-radius: 3px;
+    @include ease-in-out(200ms);
+    &.thumb {
+      filter: blur(20px);
+      transform: scale(1.1);
+      visibility: visible;
+    }
+  }
+}
+
 .external-link {
   color: $primary;
   font-weight: normal;
@@ -166,13 +186,25 @@
           }
         }
         .images {
+          height: 100%;
+          position: relative;
           cursor: pointer;
-          img {
+          .carousel-image {
             position: absolute;
             left: 50%;
+            transform: translateX(-50%);
             height: 100%;
-            border-radius: 3px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+            .image-container-wrapper {
+              overflow: hidden;
+              position: relative;
+              .image-container {
+                position: unset;
+                width: 100%;
+                box-shadow: none;
+                overflow: unset;
+              }
+            }
           }
         }
       }
@@ -388,13 +420,12 @@
       list-style: none;
       padding: 0;
       margin: 0;
-
       display: flex;
       align-items: center;
       flex-direction: column;
       li {
         max-width: 1250px;
-        width: 100%;
+        width: 90%;
         margin: 0 0 2em 0;
         @include ease-in-out(200ms);
         &:hover {
@@ -409,7 +440,7 @@
           justify-content: center;
           img,
           svg {
-            width: 90%;
+            width: 100%;
             border-radius: 2px;
             margin: auto;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -692,9 +723,11 @@ main {
             @include ease-in-out(200ms);
             &:hover {
               .image {
-                img {
-                  transform: scale(1.05);
-                  filter: grayscale(0);
+                .image-container {
+                  img {
+                    transform: scale(1.05);
+                    filter: grayscale(0);
+                  }
                 }
               }
               .tag-list {
@@ -724,13 +757,14 @@ main {
               }
               left: 50%;
               transform: translateX(-50%);
-              img {
-                width: 100%;
+              .image-container {
                 border-radius: 3px;
-                @include ease-in-out(200ms);
-                transform-origin: bottom;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-                filter: grayscale(1);
+                .lazy-image {
+                  filter: grayscale(1);
+                  &.thumb {
+                    filter: blur(20px) grayscale(1);
+                  }
+                }
               }
               .tag-list {
                 list-style: none;
@@ -911,14 +945,18 @@ main {
               @media (max-width: $large) {
                 top: -5em;
               }
-              img {
-                width: 100%;
+              .image-container {
                 border-radius: 3px;
-                @include ease-in-out(200ms);
-                transform-origin: bottom;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-                filter: grayscale(1);
+                .lazy-image {
+                  width: 100%;
+                  border-radius: 3px;
+                  @include ease-in-out(200ms);
+                  transform-origin: bottom;
+                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                  filter: grayscale(1);
+                }
               }
+
               .tag-list {
                 list-style: none;
                 padding: 0;

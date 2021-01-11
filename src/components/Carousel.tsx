@@ -3,14 +3,15 @@ import { LeftArrow } from "../assets/svg/";
 import { RightArrow } from "../assets/svg/";
 import { debounce } from "ts-debounce";
 import CarouselImage from "./CarouselImage";
+import { Image } from "../util/image";
 
 interface Props {
-  images: Array<string>;
+  images: Image[];
   viewport: number;
   color?: string;
   isModalOpen: boolean;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
+  setImageModalList: React.Dispatch<React.SetStateAction<Image[]>>;
 }
 
 const Carousel: FC<Props> = (props: Props) => {
@@ -26,6 +27,7 @@ const Carousel: FC<Props> = (props: Props) => {
   const [imageList, setImageList] = useState([0, 1, 2, 3, 4]);
   const [xDown, setXDown] = useState<null | number>(null);
 
+  const carouselHeight = ((Math.min(viewport / 2, 800) * 9) / 16) * 0.8;
   const previousImage = () => {
     setImageList((oldList) => {
       return oldList.map((listItem) => {
@@ -76,7 +78,7 @@ const Carousel: FC<Props> = (props: Props) => {
     <div
       className="carousel"
       style={{
-        height: ((Math.min(viewport / 2, 800) * 9) / 16) * 0.8,
+        height: carouselHeight,
       }}
       onTouchStart={(e) => {
         const firstTouch = e.touches[0];
@@ -117,7 +119,8 @@ const Carousel: FC<Props> = (props: Props) => {
             index={index}
             viewport={viewport}
             image={images[img]}
-            key={`${images[img]}-${img}`}
+            key={`${images[img].src}-${img}`}
+            carouselHeight={carouselHeight}
           />
         ))}
       </div>

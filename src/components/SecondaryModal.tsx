@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import Img from "react-cool-img";
 import { BackArrow } from "../assets/svg/";
-import LoadingImage from "../assets/images/loading.svg";
+import { Image } from "../util/image";
+import ImageContainer from "./ImageContainer";
 
 interface Props {
   isImageModalOpen: boolean;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  imageModalList: Array<string>;
+  imageModalList: Image[];
 }
 
 const SecondaryModal: React.FC<Props> = ({
@@ -44,8 +44,14 @@ const SecondaryModal: React.FC<Props> = ({
         <ul className="image-list">
           {imageModalList.map((img, index) => (
             <li key={index}>
-              <a href={img} target="_blank" rel="noopener noreferrer">
-                <Img placeholder={LoadingImage} src={img} alt="" lazy={true} />
+              <a href={img.src} target="_blank" rel="noopener noreferrer">
+                <ImageContainer
+                  src={img.src}
+                  thumb={img.thumb}
+                  alt={img.alt}
+                  width={img.width}
+                  height={img.height}
+                />
               </a>
             </li>
           ))}

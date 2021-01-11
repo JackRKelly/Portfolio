@@ -1,13 +1,13 @@
 import { ModalDetails } from "../util";
 import React, { useEffect, useState } from "react";
 import Carousel from "./Carousel";
-
+import { Image } from "../util/image";
 interface Props {
   isModalOpen: boolean;
   modalInfo?: ModalDetails;
   viewport: number;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
+  setImageModalList: React.Dispatch<React.SetStateAction<Image[]>>;
 }
 
 export const RenderCarousel: React.FC<Props> = ({

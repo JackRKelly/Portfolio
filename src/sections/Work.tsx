@@ -4,31 +4,7 @@ import Content from "../components/Content";
 import WorkCard from "../components/WorkCard";
 import WorkWrapper from "../components/WorkWrapper";
 import { ModalDetails } from "../util";
-
-//FridgeMan
-import FridgeMan1 from "../assets/images/fridgeman/Screenshot_1.png";
-import FridgeMan2 from "../assets/images/fridgeman/Screenshot_2.png";
-import FridgeMan3 from "../assets/images/fridgeman/Screenshot_3.png";
-import FridgeMan4 from "../assets/images/fridgeman/Screenshot_4.png";
-import FridgeMan5 from "../assets/images/fridgeman/Screenshot_5.png";
-import FridgeMan6 from "../assets/images/fridgeman/Screenshot_6.png";
-import FridgeMan7 from "../assets/images/fridgeman/Screenshot_7.png";
-//J2
-import J21 from "../assets/images/j2/Screenshot_1.png";
-import J22 from "../assets/images/j2/Screenshot_2.png";
-import J23 from "../assets/images/j2/Screenshot_3.png";
-import J24 from "../assets/images/j2/Screenshot_4.png";
-import J25 from "../assets/images/j2/Screenshot_5.png";
-import J26 from "../assets/images/j2/Screenshot_6.png";
-import J27 from "../assets/images/j2/Screenshot_7.png";
-import J28 from "../assets/images/j2/Screenshot_8.png";
-//Jacks Peppers
-import JacksPeppers1 from "../assets/images/jackspeppers/Screenshot_1.png";
-import JacksPeppers2 from "../assets/images/jackspeppers/Screenshot_2.png";
-import JacksPeppers3 from "../assets/images/jackspeppers/Screenshot_3.png";
-import JacksPeppers4 from "../assets/images/jackspeppers/Screenshot_4.png";
-import JacksPeppers5 from "../assets/images/jackspeppers/Screenshot_5.png";
-import JacksPeppers6 from "../assets/images/jackspeppers/Screenshot_6.png";
+import { images, Image } from "../util/image";
 
 interface Props {
   isMobile: boolean;
@@ -36,7 +12,8 @@ interface Props {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setModalInfo: React.Dispatch<React.SetStateAction<ModalDetails | undefined>>;
   setIsImageModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  setImageModalList: React.Dispatch<React.SetStateAction<Array<string>>>;
+  setImageModalList: React.Dispatch<React.SetStateAction<Image[]>>;
+  workRef: React.MutableRefObject<null>;
 }
 
 export const Work: FC<Props> = ({
@@ -46,9 +23,10 @@ export const Work: FC<Props> = ({
   setModalInfo,
   setIsImageModalOpen,
   setImageModalList,
+  workRef,
 }) => {
   return (
-    <section id="work">
+    <section id="work" ref={workRef}>
       <Content>
         {isMobile ? <></> : <AboutShapes />}
         <h1>Work</h1>
@@ -63,16 +41,8 @@ export const Work: FC<Props> = ({
             viewport={viewport}
             github={"https://github.com/JackRKelly/FridgeMan"}
             preview={"https://vimeo.com/412508762"}
-            thumbnail={FridgeMan6}
-            images={[
-              FridgeMan6,
-              FridgeMan2,
-              FridgeMan4,
-              FridgeMan1,
-              FridgeMan7,
-              FridgeMan3,
-              FridgeMan5,
-            ]}
+            thumbnail={images.fridgeman[0]}
+            images={images.fridgeman}
             setIsModalOpen={setIsModalOpen}
             setIsImageModalOpen={setIsImageModalOpen}
             setImageModalList={setImageModalList}
@@ -88,8 +58,8 @@ export const Work: FC<Props> = ({
             github={"https://github.com/JackRKelly/J2"}
             live={"https://j2.netlify.com/"}
             viewport={viewport}
-            thumbnail={J21}
-            images={[J21, J22, J28, J24, J25, J26, J27, J23]}
+            thumbnail={images.jacksquared[0]}
+            images={images.jacksquared}
             setIsModalOpen={setIsModalOpen}
             setIsImageModalOpen={setIsImageModalOpen}
             setImageModalList={setImageModalList}
@@ -105,15 +75,8 @@ export const Work: FC<Props> = ({
             github={"https://github.com/JackRKelly/JacksPeppers"}
             preview={"https://vimeo.com/451655410"}
             viewport={viewport}
-            thumbnail={JacksPeppers2}
-            images={[
-              JacksPeppers1,
-              JacksPeppers2,
-              JacksPeppers3,
-              JacksPeppers5,
-              JacksPeppers4,
-              JacksPeppers6,
-            ]}
+            thumbnail={images.jackspeppers[0]}
+            images={images.jackspeppers}
             setIsModalOpen={setIsModalOpen}
             setIsImageModalOpen={setIsImageModalOpen}
             setImageModalList={setImageModalList}

@@ -7,16 +7,17 @@ import Content from "../components/Content";
 
 interface Props {
   isMobile: boolean;
+  contactRef: React.MutableRefObject<null>;
 }
 
-export const Contact: FC<Props> = ({ isMobile }) => {
+export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
   //Form state
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   return (
-    <section id="contact">
+    <section id="contact" ref={contactRef}>
       <Content>
         {isMobile ? <></> : <AboutShapes />}
         <h1>Contact</h1>
@@ -68,7 +69,7 @@ export const Contact: FC<Props> = ({ isMobile }) => {
                 <LinkedIn />
               </ContactOption>
 
-              <ContactOption string="Résumé" href="/pdf/jack-kelly-resume.pdf">
+              <ContactOption string="Resume" href="/pdf/jack-kelly-resume.pdf">
                 <DownloadIcon />
               </ContactOption>
             </ContactOptionsWrapper>

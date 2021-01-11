@@ -1,3 +1,5 @@
+import { Image } from "../util/image";
+
 export interface ModalDetails {
   description: string;
   tags: Array<string>;
@@ -5,8 +7,8 @@ export interface ModalDetails {
   github?: string;
   preview?: string;
   live?: string;
-  images: Array<string>;
-  thumbnail: string;
+  images: Image[];
+  thumbnail: Image;
   primaryColor?: string;
 }
 
@@ -29,7 +31,7 @@ export const calc = (x: number, y: number) => [
   y - window.innerHeight / 2,
 ];
 
-export const zIndexSwitch = (index) => {
+export const zIndexSwitch = (index: number) => {
   switch (index) {
     case 0:
       return 1;
@@ -44,7 +46,7 @@ export const zIndexSwitch = (index) => {
   }
 };
 
-export const scaleSwitch = (index) => {
+export const scaleSwitch = (index: number) => {
   switch (index) {
     case 0:
       return 0.5;
@@ -59,7 +61,7 @@ export const scaleSwitch = (index) => {
   }
 };
 
-export const opacitySwitch = (index) => {
+export const opacitySwitch = (index: number) => {
   switch (index) {
     case 0:
       return 0;
@@ -74,7 +76,7 @@ export const opacitySwitch = (index) => {
   }
 };
 
-export const transitionSwitch = (index) => {
+export const transitionSwitch = (index: number) => {
   switch (index) {
     case 0:
       return 200;
@@ -85,7 +87,22 @@ export const transitionSwitch = (index) => {
   }
 };
 
-export const encode = (data) => {
+export const translateSwitch = (index: number) => {
+  switch (index) {
+    case 0:
+      return `-125%`;
+    case 1:
+      return `-100%`;
+    case 2:
+      return `-50%`;
+    case 3:
+      return `0%`;
+    case 4:
+      return `25%`;
+  }
+};
+
+export const encode = (data: any) => {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");

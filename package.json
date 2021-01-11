@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-cool-img": "^1.2.4",
+    "react-cool-img": "^1.2.8",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
     "react-spring": "^8.0.27",
