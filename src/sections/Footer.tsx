@@ -8,7 +8,7 @@ export const Footer: FC = () => {
     <footer id="footer">
       <Content>
         <div className="logo-wrapper">
-          <div className="jrk-logo">
+          <div className="jrk-logo" title="Back to top">
             <AnchorLink offset="0" href="#main">
               <JRKLogoStroke />
             </AnchorLink>

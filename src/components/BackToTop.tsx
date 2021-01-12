@@ -15,6 +15,7 @@ export const BackToTop: FC<Props> = ({ isMobile, activeRef }) => {
       <AnchorLink offset="0" href="#main">
         <div
           className="back-to-top"
+          title="Back to top"
           style={{
             opacity: activeRef > 1 ? 1 : 0,
             pointerEvents: activeRef > 1 ? "auto" : "none",

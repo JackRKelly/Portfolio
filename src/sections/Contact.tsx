@@ -66,17 +66,23 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               <ContactOption
                 string="me@jrk.digital"
                 href="mailto:me@jrk.digital"
+                title='Send an email to "me@jrk.digital"'
               >
                 <EmailIcon />
               </ContactOption>
               <ContactOption
                 string="Jack Kelly"
                 href="https://www.linkedin.com/in/jackkelly4/"
+                title="View Jack Kelly's LinkedIn page"
               >
                 <LinkedIn />
               </ContactOption>
 
-              <ContactOption string="Resume" href="/pdf/jack-kelly-resume.pdf">
+              <ContactOption
+                string="Resume"
+                href="/pdf/jack-kelly-resume.pdf"
+                title="View Jack Kelly's Resume"
+              >
                 <DownloadIcon />
               </ContactOption>
             </ContactOptionsWrapper>
@@ -112,7 +118,11 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               }}
               required
             ></textarea>
-            <button type="submit" className="submit-button">
+            <button
+              type="submit"
+              className="submit-button"
+              title="Submit the contact form"
+            >
               <div className="icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

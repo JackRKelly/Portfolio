@@ -1354,11 +1354,15 @@ main {
         .jrk-logo {
           fill: $primary;
           width: 10vw;
+          @include ease-in-out(150ms);
           @media (min-width: $extralarge) {
             width: 15vh;
           }
           @media (max-width: $medium) {
             width: 25vw;
+          }
+          &:hover {
+            transform: scale(1.05);
           }
         }
       }
