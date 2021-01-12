@@ -111,6 +111,7 @@
         width: 95%;
       }
       .carousel {
+        user-select: none;
         width: 100%;
         position: relative;
         margin: 0 0 calc(15px + 1%) 0;
@@ -244,6 +245,7 @@
       }
     }
     .links {
+      user-select: none;
       position: absolute;
       z-index: 401;
       bottom: 7vh;
@@ -384,6 +386,7 @@
     overflow-x: hidden;
     width: 100vw;
     .back-arrow {
+      padding: 0.75em;
       background-color: white;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
       position: sticky;
@@ -396,7 +399,7 @@
       justify-content: center;
       cursor: pointer;
       @media (min-width: $large) {
-        padding: calc(1% + 25px);
+        padding: 1.25em;
       }
       &:hover {
         svg {
@@ -417,6 +420,7 @@
     }
 
     .image-list {
+      user-select: none;
       list-style: none;
       padding: 0;
       margin: 0;
@@ -512,6 +516,8 @@ main {
           width: 45%;
         }
         h1 {
+          user-select: none;
+          cursor: pointer;
           color: $primary;
           font-size: 5em;
           margin: 0;
@@ -528,6 +534,7 @@ main {
           }
         }
         a {
+          user-select: none;
           display: flex;
           align-items: center;
           flex-direction: row;
@@ -623,6 +630,8 @@ main {
         }
       }
       h1 {
+        user-select: none;
+        cursor: pointer;
         font-size: 5.5em;
         position: relative;
         left: 50%;
@@ -669,6 +678,8 @@ main {
         }
       }
       h1 {
+        user-select: none;
+        cursor: pointer;
         font-size: 5.5em;
         position: relative;
         left: 50%;
@@ -715,6 +726,7 @@ main {
           }
 
           div.work-card {
+            user-select: none;
             padding: 20px 20px 0 20px;
             background-color: white;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
@@ -864,6 +876,8 @@ main {
       }
 
       h1 {
+        user-select: none;
+        cursor: pointer;
         font-size: 5.5em;
         position: relative;
         left: 50%;
@@ -900,6 +914,7 @@ main {
           grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         }
         a {
+          user-select: none;
           text-decoration: none;
           @media (min-width: 932px) and (max-width: $extralarge) {
             &:nth-last-child(1):nth-child(odd) {
@@ -1055,6 +1070,8 @@ main {
         }
       }
       h1 {
+        user-select: none;
+        cursor: pointer;
         font-size: 5.5em;
         position: relative;
         left: 50%;

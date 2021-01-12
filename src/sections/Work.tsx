@@ -29,7 +29,14 @@ export const Work: FC<Props> = ({
     <section id="work" ref={workRef}>
       <Content>
         {isMobile ? <></> : <AboutShapes />}
-        <h1>Work</h1>
+        <h1
+          onClick={() => {
+            window.history.replaceState("", "", "#work");
+          }}
+          title="Click to update the active link"
+        >
+          Work
+        </h1>
         <WorkWrapper>
           <WorkCard
             description={

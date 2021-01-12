@@ -13,7 +13,14 @@ export const About: FC<Props> = ({ isMobile, aboutRef }) => {
     <section id="about" ref={aboutRef}>
       <Content>
         {isMobile ? <></> : <AboutShapes />}
-        <h1>About</h1>
+        <h1
+          onClick={() => {
+            window.history.replaceState("", "", "#about");
+          }}
+          title="Click to update the active link"
+        >
+          About
+        </h1>
         <p>
           I'm a self-taught software engineer who is currently working at{" "}
           <ExternalLink text={"Cerner"} link={"https://www.cerner.com/"} />. In
