@@ -18,7 +18,7 @@ const App: FC = () => {
     setIsTop(window.scrollY < 10);
   };
 
-  const checkMobileDebounced = debounce(checkMobile, 100, {
+  const checkMobileDebounced = debounce(checkMobile, 1000, {
     isImmediate: true,
   });
 
