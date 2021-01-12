@@ -1,5 +1,5 @@
 //dependencies
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 //components
 import PrimaryModal from "./components/PrimaryModal";
 import SecondaryModal from "./components/SecondaryModal";
