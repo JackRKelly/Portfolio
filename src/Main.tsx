@@ -1,11 +1,10 @@
 //dependencies
 import React, { FC, useRef, useState } from "react";
-import { useSpring } from "react-spring/web";
 //components
 import PrimaryModal from "./components/PrimaryModal";
 import SecondaryModal from "./components/SecondaryModal";
 //methods
-import { isInViewport, calc } from "./util";
+import { isInViewport } from "./util";
 //styles
 import "./Main.scss";
 //util
@@ -48,7 +47,6 @@ export const Main: FC<Props> = ({
   const workRef = useRef(null);
   const articleRef = useRef(null);
   const contactRef = useRef(null);
-  const parallaxRef = useRef(null);
 
   const checkCurrentRef = () => {
     document.documentElement.style.setProperty(
@@ -102,11 +100,6 @@ export const Main: FC<Props> = ({
 
   window.addEventListener("scroll", scrollPositionCheck);
 
-  const [parallax, setParallax] = useSpring(() => ({
-    xy: [0, 0],
-    config: { mass: 20, tension: 200, friction: 250 },
-  }));
-
   return (
     <>
       <PrimaryModal
@@ -126,17 +119,8 @@ export const Main: FC<Props> = ({
 
       <BackToTop isMobile={isMobile} activeRef={activeRef} />
 
-      <main
-        id="main"
-        onMouseMove={({ clientX: x, clientY: y }) => {
-          if (parallaxRef.current) {
-            if (isInViewport(parallaxRef.current)) {
-              setParallax({ xy: calc(x, y) });
-            }
-          }
-        }}
-      >
-        <Home parallax={parallax} parallaxRef={parallaxRef} homeRef={homeRef} />
+      <main id="main">
+        <Home homeRef={homeRef} />
         <About isMobile={isMobile} aboutRef={aboutRef} />
         <Work
           isMobile={isMobile}
