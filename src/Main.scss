@@ -913,44 +913,45 @@ main {
         @media (max-width: $small) {
           grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         }
-        a {
-          user-select: none;
-          text-decoration: none;
-          @media (min-width: 932px) and (max-width: $extralarge) {
-            &:nth-last-child(1):nth-child(odd) {
-              grid-column: span 2;
-              width: 50%;
-              margin: auto;
-            }
-          }
-          li {
-            padding: 20px 20px 0 20px;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
-            border-radius: 3px;
-            cursor: pointer;
-            &:hover {
-              .image {
-                img {
-                  transform: scale(1.05);
-                  filter: grayscale(0);
-                }
+        li {
+          padding: 20px 20px 0 20px;
+          background-color: white;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+          border-radius: 3px;
+          cursor: pointer;
+          &:hover {
+            .image {
+              img {
+                transform: scale(1.05);
+                filter: grayscale(0);
               }
-              .text {
-                .link {
-                  svg {
-                    polyline {
-                      transform: translate(2px, -2px);
-                    }
+            }
+            .text {
+              .link {
+                svg {
+                  polyline {
+                    transform: translate(2px, -2px);
                   }
                 }
               }
-              .tag-list {
-                li {
-                  transform: translateY(3px);
-                }
+            }
+            .tag-list {
+              li {
+                transform: translateY(3px);
               }
             }
+          }
+          a {
+            user-select: none;
+            text-decoration: none;
+            @media (min-width: 932px) and (max-width: $extralarge) {
+              &:nth-last-child(1):nth-child(odd) {
+                grid-column: span 2;
+                width: 50%;
+                margin: auto;
+              }
+            }
+
             .image {
               width: 95%;
               position: relative;
