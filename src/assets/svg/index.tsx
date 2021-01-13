@@ -681,7 +681,7 @@ export const HeroShapes = React.forwardRef((props: any, ref: any) => {
           className="hero-image"
           placeholder={HeroPlaceholder}
           src={JRKHero}
-          alt="JRK Hero"
+          alt="Jack Kelly Hero"
           lazy={true}
         />
       </animated.div>

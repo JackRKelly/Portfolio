@@ -14,8 +14,8 @@ const ArticleCard: FC<Props> = (props: Props) => {
   const { description, tags, title, link, image } = props;
 
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
-      <li>
+    <li>
+      <a href={link} target="_blank" rel="noopener noreferrer">
         <div className="image">
           <ImageContainer
             src={image.src}
@@ -42,8 +42,8 @@ const ArticleCard: FC<Props> = (props: Props) => {
             </p>
           </div>
         </div>
-      </li>
-    </a>
+      </a>
+    </li>
   );
 };
 

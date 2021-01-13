@@ -1153,7 +1153,7 @@ main {
                 color: black;
                 display: block;
                 border: none;
-                font-family: "Neutra";
+                font-family: "Neutra", sans-serif;
                 padding: 0;
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
                 background-color: white;
@@ -1222,11 +1222,14 @@ main {
               }
             }
           }
+          label {
+            display: none;
+          }
           input {
             width: 48.5%;
             padding: 0.75em;
             margin: 0 0 1.5em;
-            font-family: "Neutra";
+            font-family: "Neutra", sans-serif;
             font-size: 1.5em;
             border: none;
             border-radius: 2px;
@@ -1248,7 +1251,7 @@ main {
             max-height: 500px;
             min-height: 150px;
             padding: 0.8em;
-            font-family: "Neutra";
+            font-family: "Neutra", sans-serif;
             font-size: 1.5em;
             border: none;
             border-radius: 2px;
@@ -1265,7 +1268,7 @@ main {
           button.submit-button {
             position: absolute;
             border: none;
-            font-family: "Neutra";
+            font-family: "Neutra", sans-serif;
             padding: 0;
             bottom: -1.25em;
             right: 2.5em;

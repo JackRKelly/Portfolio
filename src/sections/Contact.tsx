@@ -87,6 +87,7 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               </ContactOption>
             </ContactOptionsWrapper>
             <input type="hidden" name="form-name" value="contact" />
+            <label htmlFor="fullname">Full Name</label>
             <input
               type="text"
               name="fullname"
@@ -97,6 +98,7 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               }}
               required
             />
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
@@ -107,6 +109,7 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               }}
               required
             />
+            <label htmlFor="message">Message</label>
             <textarea
               name="message"
               cols={30}

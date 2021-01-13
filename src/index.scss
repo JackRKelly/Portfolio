@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: "Neutra";
+  font-family: "Neutra", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $dark;
@@ -23,19 +23,21 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, "Courier New", monospace;
 }
 
 @font-face {
   font-family: Neutra;
   font-weight: bold;
   src: url(./assets/fonts/NeutraTextBold.otf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Neutra;
   font-weight: normal;
   src: url(./assets/fonts/NeutraTextBook.otf);
+  font-display: swap;
 }
 
 * {
