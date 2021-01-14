@@ -20,14 +20,7 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
     <section id="contact" ref={contactRef}>
       <Content>
         {isMobile ? <></> : <AboutShapes />}
-        <h1
-          onClick={() => {
-            window.history.replaceState("", "", "#contact");
-          }}
-          title="Click to update the active link"
-        >
-          Contact
-        </h1>
+        <h1>Contact</h1>
         <div className="form-wrapper">
           <form
             id="contactForm"

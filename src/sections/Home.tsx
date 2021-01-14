@@ -49,14 +49,7 @@ export const Home: FC<Props> = ({ homeRef }) => {
     >
       <Content>
         <div className="info">
-          <h1
-            onClick={() => {
-              window.history.pushState("", "", "/");
-            }}
-            title="Click to update the active link"
-          >
-            Jack Kelly
-          </h1>
+          <h1>Jack Kelly</h1>
           <p>
             I'm a self-taught software engineer based in Kansas who enjoys
             designing and building websites, writing software, and everything in

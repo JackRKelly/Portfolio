@@ -15,14 +15,7 @@ export const Articles: FC<Props> = ({ isMobile, articleRef }) => {
     <section id="articles" ref={articleRef}>
       <Content>
         {isMobile ? <></> : <AboutShapes />}
-        <h1
-          onClick={() => {
-            window.history.replaceState("", "", "#articles");
-          }}
-          title="Click to update the active link"
-        >
-          Articles
-        </h1>
+        <h1>Articles</h1>
         <ArticleWrapper>
           <ArticleCard
             description={
