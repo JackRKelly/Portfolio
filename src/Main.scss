@@ -915,6 +915,14 @@ main {
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
           border-radius: 3px;
           cursor: pointer;
+          @media (min-width: 932px) and (max-width: $extralarge) {
+            &:nth-last-child(1):nth-child(odd) {
+              grid-column: span 2;
+              width: 50%;
+              margin: auto;
+            }
+          }
+
           &:hover {
             .image {
               img {
@@ -940,14 +948,6 @@ main {
           a {
             user-select: none;
             text-decoration: none;
-            @media (min-width: 932px) and (max-width: $extralarge) {
-              &:nth-last-child(1):nth-child(odd) {
-                grid-column: span 2;
-                width: 50%;
-                margin: auto;
-              }
-            }
-
             .image {
               width: 95%;
               position: relative;
