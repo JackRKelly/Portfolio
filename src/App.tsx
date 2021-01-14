@@ -22,8 +22,6 @@ const App: FC = () => {
     isImmediate: true,
   });
 
-  window.addEventListener("resize", checkMobileDebounced);
-
   useEffect(() => {
     checkMobile();
   });
@@ -38,7 +36,14 @@ const App: FC = () => {
     }
   );
 
-  window.addEventListener("scroll", calcPercentDebounced);
+  useEffect(() => {
+    window.addEventListener("scroll", calcPercentDebounced);
+    window.addEventListener("resize", checkMobileDebounced);
+    return () => {
+      window.removeEventListener("scroll", calcPercentDebounced);
+      window.removeEventListener("resize", checkMobileDebounced);
+    };
+  }, [calcPercentDebounced, checkMobileDebounced]);
 
   return (
     <div className="App">

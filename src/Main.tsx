@@ -1,5 +1,5 @@
 //dependencies
-import React, { FC, useRef, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 //components
 import PrimaryModal from "./components/PrimaryModal";
 import SecondaryModal from "./components/SecondaryModal";
@@ -98,7 +98,12 @@ export const Main: FC<Props> = ({
     checkCurrentRef();
   }, 50);
 
-  window.addEventListener("scroll", scrollPositionCheck);
+  useEffect(() => {
+    window.addEventListener("scroll", scrollPositionCheck);
+    return () => {
+      window.removeEventListener("scroll", scrollPositionCheck);
+    };
+  }, [scrollPositionCheck]);
 
   return (
     <>
