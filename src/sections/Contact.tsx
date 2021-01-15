@@ -80,10 +80,11 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               </ContactOption>
             </ContactOptionsWrapper>
             <input type="hidden" name="form-name" value="contact" />
-            <label htmlFor="fullname">Full Name</label>
+
             <input
               type="text"
               name="fullname"
+              id="fullname"
               placeholder="Full Name"
               value={fullname}
               onChange={(e) => {
@@ -91,10 +92,14 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               }}
               required
             />
-            <label htmlFor="email">Email</label>
+            <label htmlFor="fullname" className="hidden-label">
+              Full Name
+            </label>
+
             <input
               type="email"
               name="email"
+              id="email"
               placeholder="Email"
               value={email}
               onChange={(e) => {
@@ -102,11 +107,15 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               }}
               required
             />
-            <label htmlFor="message">Message</label>
+            <label htmlFor="email" className="hidden-label">
+              Email
+            </label>
+
             <textarea
               name="message"
               cols={30}
               rows={7}
+              id="message"
               placeholder="Reason for reaching out to me"
               value={message}
               onChange={(e) => {
@@ -114,6 +123,9 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               }}
               required
             ></textarea>
+            <label htmlFor="message" className="hidden-label">
+              Message
+            </label>
             <button
               type="submit"
               className="submit-button"
