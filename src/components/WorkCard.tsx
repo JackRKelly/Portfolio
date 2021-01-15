@@ -77,7 +77,7 @@ const WorkCard: React.FC<Props> = (props: Props) => {
           </ul>
         </div>
         <div className="text">
-          <h5>{title}</h5>
+          <p className="title">{title}</p>
           <p>{splitDescription(description)}</p>
           <div className="link" title={`Open work modal for ${title}`}>
             <p>

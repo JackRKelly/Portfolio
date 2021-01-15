@@ -11,6 +11,7 @@ export const Footer: FC = () => {
           <div className="jrk-logo" title="Back to top">
             <AnchorLink offset="0" href="#main">
               <JRKLogoStroke />
+              <span className="hidden-text">Home</span>
             </AnchorLink>
           </div>
         </div>

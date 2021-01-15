@@ -801,7 +801,8 @@ main {
               @media (max-width: $large) {
                 font-size: 20px;
               }
-              h5 {
+              .title {
+                font-weight: bold;
                 margin: 0 0 15px 0;
                 font-size: 1.75em;
                 color: $dark;
@@ -901,7 +902,7 @@ main {
         @media (max-width: $small) {
           grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         }
-        li {
+        .article-card {
           padding: 20px 20px 0 20px;
           background-color: white;
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
@@ -994,7 +995,8 @@ main {
               @media (max-width: $large) {
                 font-size: 20px;
               }
-              h5 {
+              .title {
+                font-weight: bold;
                 margin: 0 0 15px 0;
                 font-size: 1.25em;
                 color: $dark;

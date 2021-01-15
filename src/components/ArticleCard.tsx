@@ -14,7 +14,7 @@ const ArticleCard: FC<Props> = (props: Props) => {
   const { description, tags, title, link, image } = props;
 
   return (
-    <li>
+    <li className="article-card">
       <a href={link} target="_blank" rel="noopener noreferrer">
         <div className="image">
           <ImageContainer
@@ -31,7 +31,7 @@ const ArticleCard: FC<Props> = (props: Props) => {
           </ul>
         </div>
         <div className="text">
-          <h5>{title}</h5>
+          <p className="title">{title}</p>
           <p>{description}</p>
           <div
             className="link"

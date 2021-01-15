@@ -30,6 +30,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                   <li className="logo">
                     <AnchorLink offset="100" href="#home">
                       <JRKLogo />
+                      <span className="hidden-text">Home Page</span>
                     </AnchorLink>
                   </li>
                   <li className="divider">
@@ -47,6 +48,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                       <span className="sub">
                         <ExternalLinkIcon />
                       </span>
+                      <span className="hidden-text">Github</span>
                     </a>
                   </li>
                   <li className="icon">
@@ -61,6 +63,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                       <span className="sub">
                         <ExternalLinkIcon />
                       </span>
+                      <span className="hidden-text">Dev to</span>
                     </a>
                   </li>
                   <li className="icon">
@@ -75,6 +78,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                       <span className="sub">
                         <ExternalLinkIcon />
                       </span>
+                      <span className="hidden-text">LinkedIn</span>
                     </a>
                   </li>
                 </ul>
@@ -176,6 +180,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                 <li className={activeRef === 0 ? "active logo" : "logo"}>
                   <AnchorLink offset="100" href="#home">
                     <JRKLogo />
+                    <span className="hidden-text">Home</span>
                   </AnchorLink>
                 </li>
                 <li className="divider">
@@ -193,6 +198,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                     <span className="sub">
                       <ExternalLinkIcon />
                     </span>
+                    <span className="hidden-text">Github</span>
                   </a>
                 </li>
                 <li className="icon">
@@ -207,6 +213,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                     <span className="sub">
                       <ExternalLinkIcon />
                     </span>
+                    <span className="hidden-text">Dev to</span>
                   </a>
                 </li>
                 <li className="icon">
@@ -221,6 +228,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                     <span className="sub">
                       <ExternalLinkIcon />
                     </span>
+                    <span className="hidden-text">LinkedIn</span>
                   </a>
                 </li>
               </ul>
