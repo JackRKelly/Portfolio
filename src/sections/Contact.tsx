@@ -79,53 +79,64 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
                 <DownloadIcon />
               </ContactOption>
             </ContactOptionsWrapper>
+
             <input type="hidden" name="form-name" value="contact" />
 
-            <input
-              type="text"
-              name="fullname"
-              id="fullname"
-              placeholder="Full Name"
-              value={fullname}
-              onChange={(e) => {
-                setFullname(e.target.value);
-              }}
-              required
-            />
-            <label htmlFor="fullname" className="hidden-label">
-              Full Name
-            </label>
+            <div
+              className={`input-wrapper input ${
+                fullname.length > 0 ? "filled" : ""
+              }`}
+            >
+              <label htmlFor="fullname">Full Name</label>
+              <input
+                type="text"
+                name="fullname"
+                id="fullname"
+                value={fullname}
+                onChange={(e) => {
+                  setFullname(e.target.value);
+                }}
+                required
+              />
+            </div>
 
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              required
-            />
-            <label htmlFor="email" className="hidden-label">
-              Email
-            </label>
+            <div
+              className={`input-wrapper input ${
+                email.length > 0 ? "filled" : ""
+              }`}
+            >
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                required
+              />
+            </div>
 
-            <textarea
-              name="message"
-              cols={30}
-              rows={7}
-              id="message"
-              placeholder="Reason for reaching out to me"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              required
-            ></textarea>
-            <label htmlFor="message" className="hidden-label">
-              Message
-            </label>
+            <div
+              className={`input-wrapper textarea ${
+                message.length > 0 ? "filled" : ""
+              }`}
+            >
+              <label htmlFor="message">Message</label>
+              <textarea
+                name="message"
+                cols={30}
+                rows={7}
+                id="message"
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
+                required
+              ></textarea>
+            </div>
+
             <button
               type="submit"
               className="submit-button"
