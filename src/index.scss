@@ -60,3 +60,8 @@ code {
     }
   }
 }
+
+::selection {
+  color: #fff;
+  background-color: $primary;
+}
