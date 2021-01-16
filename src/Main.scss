@@ -1266,6 +1266,7 @@ main {
               color: $medium-dark;
               top: 0.75em;
               left: 1.1em;
+              font-size: 1.5em;
               @include ease-in-out(200ms);
               @media (max-width: $medium) {
                 font-size: 1.2em;
@@ -1414,11 +1415,6 @@ main {
           }
         }
       }
-    }
-  }
-  section {
-    @media (max-width: $large) {
-      font-size: 12px;
     }
   }
 }
