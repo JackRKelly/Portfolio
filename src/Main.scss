@@ -917,12 +917,17 @@ main {
           }
 
           &:hover {
-            .image {
-              img {
-                transform: scale(1.05);
-                filter: grayscale(0);
+            a {
+              .image {
+                .image-container {
+                  img {
+                    transform: scale(1.05);
+                    filter: grayscale(0);
+                  }
+                }
               }
             }
+
             .text {
               .link {
                 svg {
