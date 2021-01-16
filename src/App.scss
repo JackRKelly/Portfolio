@@ -93,7 +93,7 @@ nav {
   }
   ul.container {
     max-width: 1920px;
-    width: 90%;
+    width: 80%;
     margin: auto;
     display: flex;
     font-weight: bold;
@@ -103,6 +103,12 @@ nav {
     justify-content: space-between;
     padding: 10px 0;
     @include ease-in-out(200ms);
+    @media (max-width: $medium) {
+      width: 85%;
+    }
+    @media (max-width: $small) {
+      width: 90%;
+    }
     li {
       display: inline-block;
       &.right {
