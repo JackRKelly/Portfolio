@@ -752,7 +752,7 @@ main {
               position: relative;
               top: -2.5em;
               @media (max-width: $large) {
-                top: -5em;
+                top: -3.5em;
               }
               left: 50%;
               transform: translateX(-50%);
@@ -949,7 +949,7 @@ main {
               left: 50%;
               transform: translateX(-50%);
               @media (max-width: $large) {
-                top: -5em;
+                top: -3.5em;
               }
               .image-container {
                 border-radius: 3px;
