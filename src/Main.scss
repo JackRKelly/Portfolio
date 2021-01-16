@@ -517,7 +517,7 @@ main {
           }
         }
         p {
-          margin: 20px 0;
+          margin: 1.25em 0;
           font-size: 1.5em;
           @media (max-width: $medium) {
             font-size: 1.25em;
@@ -780,7 +780,6 @@ main {
                   font-size: 1.5em;
                   display: inline-block;
                   margin-left: 17px;
-                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
                   @include ease-in-out(200ms);
                   @media (min-width: $large) {
                     font-size: 0.8em;
@@ -971,6 +970,7 @@ main {
                 position: absolute;
                 bottom: -11px;
                 li {
+                  border-radius: 2px;
                   padding: 5px 15px;
                   background-color: $primary;
                   color: white;
@@ -978,7 +978,6 @@ main {
                   font-size: 1.5em;
                   display: inline-block;
                   margin-left: 17px;
-                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
                   @include ease-in-out(200ms);
                   @media (min-width: $large) {
                     font-size: 0.8em;
