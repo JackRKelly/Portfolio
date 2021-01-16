@@ -4,7 +4,6 @@ import { debounce } from "ts-debounce";
 import { Main } from "./Main";
 import "./App.scss";
 import { calcPercent } from "./util";
-import ReactGA from "react-ga";
 
 const App: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -36,10 +35,6 @@ const App: FC = () => {
       isImmediate: true,
     }
   );
-
-  useEffect(() => {
-    ReactGA.initialize("G-4WQ5BHB722");
-  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", calcPercentDebounced);
