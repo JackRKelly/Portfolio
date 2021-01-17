@@ -626,6 +626,7 @@ main {
         left: 50%;
         @media (max-width: $medium) {
           left: 42%;
+          font-size: 4.5em;
         }
         transform: translateX(-50%);
         margin: 0;
@@ -642,6 +643,9 @@ main {
       p {
         font-size: 1.75em;
         margin: 0;
+        @media (max-width: $medium) {
+          font-size: 1.25em;
+        }
       }
     }
   }
@@ -672,6 +676,7 @@ main {
         left: 50%;
         @media (max-width: $medium) {
           left: 55%;
+          font-size: 4.5em;
         }
         transform: translateX(-50%);
         margin: 0;
@@ -787,6 +792,9 @@ main {
                   @media (min-width: $extralarge) {
                     font-size: 1em;
                   }
+                  @media (max-width: $medium) {
+                    font-size: 1em;
+                  }
                 }
               }
             }
@@ -868,6 +876,7 @@ main {
         left: 50%;
         @media (max-width: $medium) {
           left: 45%;
+          font-size: 4.5em;
         }
         transform: translateX(-50%);
         margin: 0;
@@ -985,6 +994,9 @@ main {
                   @media (min-width: $extralarge) {
                     font-size: 1em;
                   }
+                  @media (max-width: $medium) {
+                    font-size: 1em;
+                  }
                 }
               }
             }
@@ -1072,6 +1084,7 @@ main {
         margin-bottom: 1em;
         @media (max-width: $medium) {
           left: 55%;
+          font-size: 4.5em;
         }
         &::after {
           @include headerPseudoText("04", true);

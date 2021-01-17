@@ -16,7 +16,7 @@ export const splitDescription = (description: string) => {
   let final = {
     split: description.split(" "),
     getSlice: function () {
-      return this.split.slice(0, 35).join(" ");
+      return this.split.slice(0, 29).join(" ");
     },
     getEnd: function () {
       return this.split.length > 35 ? "..." : "";
