@@ -17,13 +17,7 @@ const ArticleCard: FC<Props> = (props: Props) => {
     <li className="article-card">
       <a href={link} target="_blank" rel="noopener noreferrer">
         <div className="image">
-          <ImageContainer
-            src={image.src}
-            thumb={image.thumb}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-          />
+          <ImageContainer {...image} />
           <ul className="tag-list">
             {tags.map((tag, index) => (
               <li key={index}>{tag}</li>
