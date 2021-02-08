@@ -49,11 +49,13 @@ import RailsRecipe2 from "../assets/images/railsrecipe/Screenshot_2.png";
 import RailsRecipe3 from "../assets/images/railsrecipe/Screenshot_3.png";
 import RailsRecipe4 from "../assets/images/railsrecipe/Screenshot_4.png";
 import RailsRecipe5 from "../assets/images/railsrecipe/Screenshot_5.png";
+import RailsRecipe6 from "../assets/images/railsrecipe/Screenshot_6.png";
 import RailsRecipe1Thumb from "../assets/images/railsrecipe/Screenshot_1-thumb.png";
 import RailsRecipe2Thumb from "../assets/images/railsrecipe/Screenshot_2-thumb.png";
 import RailsRecipe3Thumb from "../assets/images/railsrecipe/Screenshot_3-thumb.png";
 import RailsRecipe4Thumb from "../assets/images/railsrecipe/Screenshot_4-thumb.png";
 import RailsRecipe5Thumb from "../assets/images/railsrecipe/Screenshot_5-thumb.png";
+import RailsRecipe6Thumb from "../assets/images/railsrecipe/Screenshot_6-thumb.png";
 
 //Articles
 import FullStackApplication from "../assets/images/articles/full-stack.jpg";
@@ -267,6 +269,13 @@ export const images: {
       thumb: RailsRecipe5Thumb,
       src: RailsRecipe5,
       alt: "RailsRecipe Screenshot #5",
+    },
+    {
+      width: 3360,
+      height: 1878,
+      thumb: RailsRecipe6Thumb,
+      src: RailsRecipe6,
+      alt: "RailsRecipe Screenshot #6",
     },
   ],
   articles: {

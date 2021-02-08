@@ -37,7 +37,7 @@ export const Work: FC<Props> = ({
             }
             primaryColor={"#7353ff"}
             title={"Fridge Man"}
-            tags={["Full-Stack", "React.js"]}
+            tags={["Node.js", "React.js"]}
             viewport={viewport}
             github={"https://github.com/JackRKelly/FridgeMan"}
             preview={"https://vimeo.com/412508762"}
@@ -71,12 +71,29 @@ export const Work: FC<Props> = ({
             }
             title={"Jacks Peppers"}
             primaryColor={"#C1272D"}
-            tags={["Full-Stack", "React.js"]}
+            tags={["Node.js", "React.js"]}
             github={"https://github.com/JackRKelly/JacksPeppers"}
             preview={"https://vimeo.com/451655410"}
             viewport={viewport}
             thumbnail={images.jackspeppers[0]}
             images={images.jackspeppers}
+            setIsModalOpen={setIsModalOpen}
+            setIsImageModalOpen={setIsImageModalOpen}
+            setImageModalList={setImageModalList}
+            setModalInfo={setModalInfo}
+          />
+          <WorkCard
+            description={
+              "Rails Recipe is a recipe sharing website built using Ruby on Rails, React, Styled Components, and Typescript. You can create and preview recipes on Rails Recipe. The Ruby on Rails REST API supports read, delete, and create operations. Rails Recipe using react toastify for notificaiton toasting."
+            }
+            title={"Rails Recipe"}
+            primaryColor={"#1d998b"}
+            tags={["React.js", "Ruby on Rails"]}
+            github={"https://github.com/JackRKelly/RailsRecipe"}
+            preview={"https://vimeo.com/509593354"}
+            viewport={viewport}
+            thumbnail={images.railsrecipe[0]}
+            images={images.railsrecipe}
             setIsModalOpen={setIsModalOpen}
             setIsImageModalOpen={setIsImageModalOpen}
             setImageModalList={setImageModalList}
