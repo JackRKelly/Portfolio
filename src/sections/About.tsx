@@ -19,8 +19,8 @@ export const About: FC<Props> = ({ isMobile, aboutRef }) => {
           <ExternalLink text={"Cerner"} link={"https://www.cerner.com/"} />. In
           my free time, I enjoy contributing to open-source, designing, and
           working on side projects. Some technologies I enjoy are Typescript,
-          Rust, React.js, Ruby, and Node.js. I have been writing code for 5
-          years since I first got introduced to web development.
+          Rust, C#, and Ruby. I have been writing code for 5 years since I first
+          got introduced to web development.
         </p>
       </Content>
     </section>
