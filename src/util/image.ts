@@ -43,6 +43,18 @@ import JacksPeppers3Thumb from "../assets/images/jackspeppers/Screenshot_3-thumb
 import JacksPeppers4Thumb from "../assets/images/jackspeppers/Screenshot_4-thumb.png";
 import JacksPeppers5Thumb from "../assets/images/jackspeppers/Screenshot_5-thumb.png";
 import JacksPeppers6Thumb from "../assets/images/jackspeppers/Screenshot_6-thumb.png";
+//Jacks Peppers
+import RailsRecipe1 from "../assets/images/railsrecipe/Screenshot_1.png";
+import RailsRecipe2 from "../assets/images/railsrecipe/Screenshot_2.png";
+import RailsRecipe3 from "../assets/images/railsrecipe/Screenshot_3.png";
+import RailsRecipe4 from "../assets/images/railsrecipe/Screenshot_4.png";
+import RailsRecipe5 from "../assets/images/railsrecipe/Screenshot_5.png";
+import RailsRecipe1Thumb from "../assets/images/railsrecipe/Screenshot_1-thumb.png";
+import RailsRecipe2Thumb from "../assets/images/railsrecipe/Screenshot_2-thumb.png";
+import RailsRecipe3Thumb from "../assets/images/railsrecipe/Screenshot_3-thumb.png";
+import RailsRecipe4Thumb from "../assets/images/railsrecipe/Screenshot_4-thumb.png";
+import RailsRecipe5Thumb from "../assets/images/railsrecipe/Screenshot_5-thumb.png";
+
 //Articles
 import FullStackApplication from "../assets/images/articles/full-stack.jpg";
 import Networking from "../assets/images/articles/networking.jpg";
@@ -61,6 +73,7 @@ export const images: {
   fridgeman: Image[];
   jacksquared: Image[];
   jackspeppers: Image[];
+  railsrecipe: Image[];
   articles: {
     networking: Image;
     fullstack: Image;
@@ -217,6 +230,43 @@ export const images: {
       thumb: JacksPeppers6Thumb,
       src: JacksPeppers6,
       alt: "JacksPeppers Screenshot #6",
+    },
+  ],
+  railsrecipe: [
+    {
+      width: 3360,
+      height: 1878,
+      thumb: RailsRecipe1Thumb,
+      src: RailsRecipe1,
+      alt: "RailsRecipe Screenshot #1",
+    },
+    {
+      width: 3360,
+      height: 1878,
+      thumb: RailsRecipe2Thumb,
+      src: RailsRecipe2,
+      alt: "RailsRecipe Screenshot #2",
+    },
+    {
+      width: 3360,
+      height: 1878,
+      thumb: RailsRecipe3Thumb,
+      src: RailsRecipe3,
+      alt: "RailsRecipe Screenshot #3",
+    },
+    {
+      width: 3360,
+      height: 1878,
+      thumb: RailsRecipe4Thumb,
+      src: RailsRecipe4,
+      alt: "RailsRecipe Screenshot #4",
+    },
+    {
+      width: 3360,
+      height: 1878,
+      thumb: RailsRecipe5Thumb,
+      src: RailsRecipe5,
+      alt: "RailsRecipe Screenshot #5",
     },
   ],
   articles: {
