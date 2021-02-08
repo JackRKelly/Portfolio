@@ -84,7 +84,7 @@ export const Work: FC<Props> = ({
           />
           <WorkCard
             description={
-              "Rails Recipe is a recipe sharing website built using Ruby on Rails, React, Styled Components, and Typescript. You can create and preview recipes on Rails Recipe. The Ruby on Rails REST API supports read, delete, and create operations. Rails Recipe using react toastify for notificaiton toasting."
+              "Rails Recipe is a recipe sharing website built using Ruby on Rails, React, Styled Components, and Typescript. You can create and preview recipes on Rails Recipe. The Ruby on Rails REST API supports read, delete, and create operations. Rails Recipe uses react toastify for notificaiton toasting."
             }
             title={"Rails Recipe"}
             primaryColor={"#1d998b"}
