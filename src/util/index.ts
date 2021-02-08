@@ -108,14 +108,19 @@ export const encode = (data: any) => {
     .join("&");
 };
 
-export const isInViewport = (el) => {
-  var rect = el.getBoundingClientRect();
+export const isInViewport = (el: HTMLElement | null): boolean => {
+  if (el === null) return false;
+
+  let top = el.offsetTop;
+  let left = el.offsetLeft;
+  let width = el.offsetWidth;
+  let height = el.offsetHeight;
+
   return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight) + 400 &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    top < window.pageYOffset + window.innerHeight &&
+    left < window.pageXOffset + window.innerWidth &&
+    top + height > window.pageYOffset &&
+    left + width > window.pageXOffset
   );
 };
 
