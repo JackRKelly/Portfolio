@@ -63,12 +63,6 @@ export const Main: FC<Props> = ({
           document.title = "Home | Jack Kelly";
         }
       }
-      if (aboutRef.current) {
-        if (isInViewport(aboutRef.current)) {
-          setActiveRef(1);
-          document.title = "About | Jack Kelly";
-        }
-      }
       if (workRef.current) {
         if (isInViewport(workRef.current)) {
           setActiveRef(2);
@@ -85,6 +79,12 @@ export const Main: FC<Props> = ({
         if (isInViewport(contactRef.current)) {
           setActiveRef(4);
           document.title = "Contact | Jack Kelly";
+        }
+      }
+      if (aboutRef.current) {
+        if (isInViewport(aboutRef.current)) {
+          setActiveRef(1);
+          document.title = "About | Jack Kelly";
         }
       }
     }
