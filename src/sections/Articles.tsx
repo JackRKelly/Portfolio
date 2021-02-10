@@ -39,13 +39,13 @@ export const Articles: FC<Props> = ({ isMobile, articleRef }) => {
           />
           <ArticleCard
             description={
-              "How to create and publish a full stack application using React.js, Nginx, Strapi, MongoDB, and DigitalOcean."
+              "How to have a professional online appearance to help you land that next position."
             }
-            title={"Create a Full-Stack App"}
-            image={images.articles.fullstack}
-            tags={["Tutorial", "Cloud Hosting"]}
+            title={"Professional online appearance"}
+            image={images.articles.appearance}
+            tags={["Career", "Beginners"]}
             link={
-              "https://dev.to/jackrkelly/create-a-full-stack-web-application-using-react-strapi-nginx-mongodb-and-digitalocean-bkh"
+              "https://dev.to/jackrkelly/how-to-have-a-professional-online-appearance-39gk"
             }
           />
         </ArticleWrapper>

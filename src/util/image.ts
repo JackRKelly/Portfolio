@@ -59,9 +59,11 @@ import RailsRecipe6Thumb from "../assets/images/railsrecipe/Screenshot_6-thumb.p
 
 //Articles
 import FullStackApplication from "../assets/images/articles/full-stack.jpg";
-import Networking from "../assets/images/articles/networking.jpg";
 import FullStackApplicationThumb from "../assets/images/articles/full-stack-thumb.png";
+import Networking from "../assets/images/articles/networking.jpg";
 import NetworkingThumb from "../assets/images/articles/networking-thumb.png";
+import Appearance from "../assets/images/articles/professional-apperance.jpg";
+import AppearanceThumb from "../assets/images/articles/professional-apperance-thumb.png";
 
 export interface Image {
   width: number;
@@ -79,6 +81,7 @@ export const images: {
   articles: {
     networking: Image;
     fullstack: Image;
+    appearance: Image;
   };
 } = {
   fridgeman: [
@@ -292,6 +295,13 @@ export const images: {
       thumb: FullStackApplicationThumb,
       src: FullStackApplication,
       alt: "Full-stack web app article by Jack Kelly",
+    },
+    appearance: {
+      width: 2559,
+      height: 1326,
+      thumb: AppearanceThumb,
+      src: Appearance,
+      alt: "Professional appearance by Jack Kelly",
     },
   },
 };
