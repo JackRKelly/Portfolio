@@ -39,7 +39,7 @@ export const Articles: FC<Props> = ({ isMobile, articleRef }) => {
           />
           <ArticleCard
             description={
-              "How to have a professional online appearance to help you land that next position."
+              "How to have a professional online appearance to help you land that next position as a developer/designer."
             }
             title={"Professional online appearance"}
             image={images.articles.appearance}
