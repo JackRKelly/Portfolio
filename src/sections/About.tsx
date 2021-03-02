@@ -16,8 +16,8 @@ export const About: FC<Props> = ({ isMobile, aboutRef }) => {
         <h1>About</h1>
         <p>
           I'm a self-taught software engineer who is currently working at{" "}
-          <ExternalLink text={"Cerner"} link={"https://www.cerner.com/"} />. In
-          my free time, I enjoy contributing to open-source, designing, and
+          <ExternalLink text={"Yellow"} link={"https://www.myyellow.com/"} />.
+          In my free time, I enjoy contributing to open-source, designing, and
           working on side projects. Some technologies I enjoy are Typescript,
           Rust, C#, and Ruby. I have been writing code for 5 years since I first
           got introduced to web development.
