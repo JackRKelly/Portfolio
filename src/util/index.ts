@@ -43,6 +43,8 @@ export const zIndexSwitch = (index: number) => {
       return 2;
     case 4:
       return 1;
+    default:
+      return 1;
   }
 };
 
@@ -58,6 +60,8 @@ export const scaleSwitch = (index: number) => {
       return 0.75;
     case 4:
       return 0.5;
+    default:
+      return 1;
   }
 };
 
@@ -73,6 +77,8 @@ export const opacitySwitch = (index: number) => {
       return 0.8;
     case 4:
       return 0;
+    default:
+      return 1;
   }
 };
 
@@ -90,15 +96,17 @@ export const transitionSwitch = (index: number) => {
 export const translateSwitch = (index: number) => {
   switch (index) {
     case 0:
-      return `-125%`;
+      return "-125%";
     case 1:
-      return `-100%`;
+      return "-100%";
     case 2:
-      return `-50%`;
+      return "-50%";
     case 3:
-      return `0%`;
+      return "0%";
     case 4:
-      return `25%`;
+      return "25%";
+    default:
+      return "-50%";
   }
 };
 
