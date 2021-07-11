@@ -1,11 +1,11 @@
-import React, { FC, ReactNode } from "react";
+import React, {ReactNode} from 'react';
 
 interface Props {
-  children?: ReactNode;
+	children?: ReactNode;
 }
 
-const ArticleWrapper: FC<Props> = (props: Props) => {
-  return <ul className="article-wrapper">{props.children}</ul>;
-};
+function ArticleWrapper(props: Props) {
+	return <ul className="article-wrapper">{props.children}</ul>;
+}
 
 export default ArticleWrapper;

@@ -1,21 +1,18 @@
-import React, { FC } from "react";
-import { ExternalLinkIcon } from "../assets/svg";
+import React from 'react';
+import {ExternalLinkIcon} from '../assets/svg';
 
 interface Props {
-  text: string;
-  link: string;
+	text: string;
+	link: string;
 }
 
-export const ExternalLink: FC<Props> = ({ text, link }) => {
-  return (
-    <a
-      href={link}
-      className="external-link"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {text}
-      <ExternalLinkIcon />
-    </a>
-  );
-};
+export function ExternalLink(props: Props) {
+	const {text, link} = props;
+
+	return (
+		<a href={link} className="external-link" target="_blank" rel="noopener noreferrer">
+			{text}
+			<ExternalLinkIcon />
+		</a>
+	);
+}

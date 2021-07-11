@@ -1,23 +1,31 @@
-import React from "react";
+import React, {MutableRefObject} from 'react';
 
-export const useIntersectionObserver = ({
-  target,
-  onIntersect,
-  threshold = 0.1,
-  rootMargin = "0px",
-}) => {
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(onIntersect, {
-      rootMargin,
-      threshold,
-    });
+interface Props {
+	target: MutableRefObject<null> | MutableRefObject<Element>;
+	onIntersect: IntersectionObserverCallback;
+	threshold?: number;
+	rootMargin?: string;
+}
 
-    const current = target.current;
+export const useIntersectionObserver = (props: Props) => {
+	const {target, onIntersect, threshold = 0.1, rootMargin = '0px'} = props;
 
-    observer.observe(current);
+	React.useEffect(() => {
+		const observer = new IntersectionObserver(onIntersect, {
+			rootMargin,
+			threshold,
+		});
 
-    return () => {
-      observer.unobserve(current);
-    };
-  });
+		const {current} = target;
+
+		if (current) {
+			observer.observe(current);
+		}
+
+		return () => {
+			if (current) {
+				observer.unobserve(current);
+			}
+		};
+	});
 };

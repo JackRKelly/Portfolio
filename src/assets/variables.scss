@@ -42,7 +42,7 @@ $extralarge: 1600px;
     position: absolute;
     bottom: $bottom;
     left: 50%;
-    width: 0%;
+    width: 0;
     transform: translateX(-50%);
     height: 3px;
     background-color: $dark;
@@ -124,7 +124,7 @@ $extralarge: 1600px;
 @mixin headerPseudoText($content, $isLeft) {
   content: $content;
   position: absolute;
-  font-family: "Domine";
+  font-family: "Domine", serif;
   font-weight: lighter;
   font-size: 1.7em;
   @if ($isLeft) {
@@ -167,7 +167,7 @@ $extralarge: 1600px;
     position: absolute;
     bottom: $bottom;
     left: 50%;
-    width: 0%;
+    width: 0;
     transform: translateX(-50%);
     height: 3px;
     @include ease-in-out(100ms);

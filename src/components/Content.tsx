@@ -1,11 +1,12 @@
-import React, { FC, ReactNode } from "react";
+import React, {ReactNode} from 'react';
 
 interface Props {
-  children?: ReactNode;
+	children?: ReactNode;
 }
 
-const Content: FC<Props> = (props: Props) => {
-  return <div className="content">{props.children}</div>;
-};
+function Content(props: Props) {
+	const {children} = props;
+	return <div className="content">{children}</div>;
+}
 
 export default Content;
