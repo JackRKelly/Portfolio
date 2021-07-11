@@ -33,6 +33,8 @@
 		"start": "vite",
 		"build": "vite build",
 		"lint": "eslint ./src/**/*.{ts,js,jsx,tsx}",
-		"lint:fix": "eslint ./src/**/*.{ts,js,jsx,tsx} --fix"
+		"lint:fix": "eslint ./src/**/*.{ts,js,jsx,tsx} --fix",
+		"format": "prettier --check ./src/**/*.{ts,js,jsx,tsx,json}",
+		"format:fix": "prettier --write ./src/**/*.{ts,js,jsx,tsx,json}"
 	}
 }
