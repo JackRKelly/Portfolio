@@ -1,8 +1,8 @@
 // Dependencies
 import React, {useEffect, useState} from 'react';
 // Components
-import PrimaryModal from './components/PrimaryModal';
-import SecondaryModal from './components/SecondaryModal';
+import {PrimaryModal} from './components/PrimaryModal';
+import {SecondaryModal} from './components/SecondaryModal';
 // Methods
 // import {isInViewport} from './util';
 // Styles

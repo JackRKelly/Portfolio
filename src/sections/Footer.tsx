@@ -1,7 +1,7 @@
 import React from 'react';
 import {JRKLogoStroke} from '../assets/svg';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Content from '../components/Content';
+import {Content} from '../components/Content';
 
 export function Footer() {
 	return (

@@ -132,8 +132,8 @@ nav {
               content: "";
               position: absolute;
               bottom: -3px;
-              left: 0%;
-              width: 0%;
+              left: 0;
+              width: 0;
               height: 3px;
               background-color: $primary;
               @include ease-in-out(200ms);

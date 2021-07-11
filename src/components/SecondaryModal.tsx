@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import {BackArrow} from '../assets/svg/';
 import {Image} from '../util/image';
-import ImageContainer from './ImageContainer';
+import {ImageContainer} from './ImageContainer';
 
 interface Props {
 	isImageModalOpen: boolean;
@@ -9,7 +9,7 @@ interface Props {
 	imageModalList: Image[];
 }
 
-function SecondaryModal(props: Props) {
+export function SecondaryModal(props: Props) {
 	const {setIsImageModalOpen, isImageModalOpen, imageModalList} = props;
 	const listRef = useRef<HTMLDivElement | null>(null);
 
@@ -57,5 +57,3 @@ function SecondaryModal(props: Props) {
 		</div>
 	);
 }
-
-export default SecondaryModal;

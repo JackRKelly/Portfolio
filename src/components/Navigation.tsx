@@ -8,6 +8,7 @@ import {
 	Hamburger,
 	ExternalLinkIcon,
 } from '../assets/svg';
+import {Link, animateScroll} from 'react-scroll';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 interface Props {
@@ -28,10 +29,10 @@ export function Navigation(props: Props) {
 					<li className="left">
 						<ul>
 							<li className="logo">
-								<AnchorLink offset="100" href="#home">
+								<Link smooth to="#home" activeClass="active" duration={200}>
 									<JRKLogo />
 									<span className="hidden-text">Home Page</span>
-								</AnchorLink>
+								</Link>
 							</li>
 							<li className="divider">
 								<div />
@@ -111,9 +112,9 @@ export function Navigation(props: Props) {
 							setIsNavOpen(false);
 						}}
 					>
-						<AnchorLink offset="70" href="#home">
+						<Link smooth to="#home" activeClass="active" duration={200}>
 							Home
-						</AnchorLink>
+						</Link>
 					</li>
 					<li
 						className="anchor"
@@ -131,9 +132,9 @@ export function Navigation(props: Props) {
 							setIsNavOpen(false);
 						}}
 					>
-						<AnchorLink offset="70" href="#work">
+						<Link smooth to="#work" activeClass="active" duration={200}>
 							Work
-						</AnchorLink>
+						</Link>
 					</li>
 					<li
 						className="anchor"
@@ -141,9 +142,9 @@ export function Navigation(props: Props) {
 							setIsNavOpen(false);
 						}}
 					>
-						<AnchorLink offset="50" href="#articles">
+						<Link smooth to="#articles" activeClass="active" duration={200}>
 							Articles
-						</AnchorLink>
+						</Link>
 					</li>
 					<li
 						className="anchor"
@@ -151,9 +152,9 @@ export function Navigation(props: Props) {
 							setIsNavOpen(false);
 						}}
 					>
-						<AnchorLink offset="70" href="#contact">
+						<Link smooth to="#contact" activeClass="active" duration={200}>
 							Contact
-						</AnchorLink>
+						</Link>
 					</li>
 				</ul>
 			</nav>
@@ -214,49 +215,43 @@ export function Navigation(props: Props) {
 				<li className="right">
 					<ul>
 						<li>
-							<AnchorLink
-								offset="0"
-								href="#main"
-								className={activeRef === 0 ? 'anchor active' : 'anchor'}
+							<a
+								className="anchor"
+								onClick={() => {
+									animateScroll.scrollToTop({
+										duration: 200,
+									});
+								}}
 							>
 								Home
-							</AnchorLink>
+							</a>
 						</li>
 						<li>
-							<AnchorLink
-								offset="175"
-								href="#about"
-								className={activeRef === 1 ? 'anchor active' : 'anchor'}
+							<Link
+								smooth
+								offset={-170}
+								to="about"
+								className="anchor"
+								activeClass="active"
+								duration={200}
 							>
 								About
-							</AnchorLink>
+							</Link>
 						</li>
 						<li>
-							<AnchorLink
-								offset="50"
-								href="#work"
-								className={activeRef === 2 ? 'anchor active' : 'anchor'}
-							>
+							<Link smooth to="work" className="anchor" activeClass="active" duration={200}>
 								Work
-							</AnchorLink>
+							</Link>
 						</li>
 						<li>
-							<AnchorLink
-								offset="50"
-								href="#articles"
-								className={activeRef === 3 ? 'anchor active' : 'anchor'}
-							>
+							<Link smooth to="articles" className="anchor" activeClass="active" duration={200}>
 								Articles
-							</AnchorLink>
+							</Link>
 						</li>
 						<li>
-							<AnchorLink
-								offset="50"
-								href="#contact"
-								className={activeRef === 4 ? 'anchor active' : 'anchor'}
-							>
+							<Link smooth to="contact" className="anchor" activeClass="active" duration={200}>
 								Contact
-							</AnchorLink>
+							</Link>
 						</li>
 					</ul>
 				</li>

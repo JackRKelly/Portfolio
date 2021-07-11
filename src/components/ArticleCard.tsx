@@ -1,6 +1,6 @@
 import React from 'react';
 import {ExternalLinkIcon} from '../assets/svg/';
-import ImageContainer from './ImageContainer';
+import {ImageContainer} from './ImageContainer';
 import {Image} from '../util/image';
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 	image: Image;
 }
 
-function ArticleCard(props: Props) {
+export function ArticleCard(props: Props) {
 	const {description, tags, title, link, image} = props;
 
 	return (
@@ -38,5 +38,3 @@ function ArticleCard(props: Props) {
 		</li>
 	);
 }
-
-export default ArticleCard;

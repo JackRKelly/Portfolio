@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {Navigation} from './components/Navigation';
 import {debounce} from 'ts-debounce';
 import {Main} from './Main';
@@ -12,11 +12,11 @@ function App() {
 	const [isTop, setIsTop] = useState(true);
 	const [viewport, setViewport] = useState<number>(0);
 
-	const checkMobile = () => {
+	const checkMobile = useCallback(() => {
 		setViewport(window.innerWidth);
 		setIsMobile(viewport < 900);
 		setIsTop(window.scrollY < 10);
-	};
+	}, [viewport]);
 
 	const checkMobileDebounced = debounce(checkMobile, 1000, {
 		isImmediate: true,

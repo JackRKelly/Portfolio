@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image} from '../util/image';
 import {scaleSwitch, opacitySwitch, zIndexSwitch, transitionSwitch, translateSwitch} from '../util';
-import ImageContainer from './ImageContainer';
+import {ImageContainer} from './ImageContainer';
 
 interface Props {
 	image: Image;
@@ -9,7 +9,7 @@ interface Props {
 	carouselHeight: number;
 }
 
-function CarouselImage(props: Props) {
+export function CarouselImage(props: Props) {
 	const {image, index, carouselHeight} = props;
 
 	return (
@@ -33,5 +33,3 @@ function CarouselImage(props: Props) {
 		</div>
 	);
 }
-
-export default CarouselImage;

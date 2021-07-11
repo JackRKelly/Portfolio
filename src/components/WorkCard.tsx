@@ -2,7 +2,7 @@ import React, {Dispatch, SetStateAction} from 'react';
 import {ExpandWork} from '../assets/svg/';
 import {ModalDetails, onModalOpen, splitDescription} from '../util';
 import {Image} from '../util/image';
-import ImageContainer from './ImageContainer';
+import {ImageContainer} from './ImageContainer';
 
 interface Props {
 	description: string;
@@ -21,7 +21,7 @@ interface Props {
 	// setImageModalList: Dispatch<SetStateAction<Image[]>>;
 }
 
-function WorkCard(props: Props) {
+export function WorkCard(props: Props) {
 	const {
 		description,
 		tags,
@@ -86,5 +86,3 @@ function WorkCard(props: Props) {
 		</li>
 	);
 }
-
-export default WorkCard;

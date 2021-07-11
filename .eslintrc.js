@@ -8,6 +8,10 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: 12,
 		sourceType: 'module',
+		project: './tsconfig.json',
+		ecmaFeatures: {
+			jsx: 'true',
+		},
 	},
 	plugins: ['@typescript-eslint'],
 	rules: {

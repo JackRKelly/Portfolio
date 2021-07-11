@@ -12,7 +12,7 @@ export interface ModalDetails {
 	primaryColor?: string;
 }
 
-export const splitDescription = (description: string) => {
+export function splitDescription(description: string) {
 	const final = {
 		split: description.split(' '),
 		getSlice() {
@@ -24,14 +24,13 @@ export const splitDescription = (description: string) => {
 	};
 
 	return `${final.getSlice()}${final.getEnd()}`;
-};
+}
 
-export const calc = (x: number, y: number) => [
-	(x - window.innerWidth) / 2,
-	(y - window.innerHeight) / 2,
-];
+export function calc(x: number, y: number) {
+	return [(x - window.innerWidth) / 2, (y - window.innerHeight) / 2];
+}
 
-export const zIndexSwitch = (index: number) => {
+export function zIndexSwitch(index: number) {
 	switch (index) {
 		case 0:
 			return 1;
@@ -46,9 +45,9 @@ export const zIndexSwitch = (index: number) => {
 		default:
 			return 1;
 	}
-};
+}
 
-export const scaleSwitch = (index: number) => {
+export function scaleSwitch(index: number) {
 	switch (index) {
 		case 0:
 			return 0.5;
@@ -63,9 +62,9 @@ export const scaleSwitch = (index: number) => {
 		default:
 			return 1;
 	}
-};
+}
 
-export const opacitySwitch = (index: number) => {
+export function opacitySwitch(index: number) {
 	switch (index) {
 		case 0:
 			return 0;
@@ -80,9 +79,9 @@ export const opacitySwitch = (index: number) => {
 		default:
 			return 1;
 	}
-};
+}
 
-export const transitionSwitch = (index: number) => {
+export function transitionSwitch(index: number) {
 	switch (index) {
 		case 0:
 			return 200;
@@ -91,9 +90,9 @@ export const transitionSwitch = (index: number) => {
 		default:
 			return 450;
 	}
-};
+}
 
-export const translateSwitch = (index: number) => {
+export function translateSwitch(index: number) {
 	switch (index) {
 		case 0:
 			return '-125%';
@@ -108,14 +107,15 @@ export const translateSwitch = (index: number) => {
 		default:
 			return '-50%';
 	}
-};
+}
 
-export const encode = (data: Record<string, string>) =>
-	Object.keys(data)
+export function encode(data: Record<string, string>) {
+	return Object.keys(data)
 		.map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
 		.join('&');
+}
 
-export const isInViewport = (el: HTMLElement | null): boolean => {
+export function isInViewport(el: HTMLElement | null): boolean {
 	if (el === null) {
 		return false;
 	}
@@ -131,30 +131,30 @@ export const isInViewport = (el: HTMLElement | null): boolean => {
 		top + height > window.pageYOffset &&
 		left + width > window.pageXOffset
 	);
-};
+}
 
-export const calcPercent = () => {
+export function calcPercent() {
 	const h = document.documentElement;
 	const b = document.body;
 	const st = 'scrollTop';
 	const sh = 'scrollHeight';
 
 	return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
-};
+}
 
-export const onModalOpen = () => {
+export function onModalOpen() {
 	const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
 	const {body} = document;
 	setTimeout(() => {
 		body.style.position = 'fixed';
 		body.style.top = `-${scrollY}`;
 	}, 200);
-};
+}
 
-export const onModalClose = () => {
+export function onModalClose() {
 	const {body} = document;
 	const scrollY = body.style.top;
 	body.style.position = '';
 	body.style.top = '';
 	window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-};
+}

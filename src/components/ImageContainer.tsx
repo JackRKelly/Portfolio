@@ -11,7 +11,7 @@ interface Props {
 	carouselHeight?: number;
 }
 
-function ImageContainer(props: Props) {
+export function ImageContainer(props: Props) {
 	const {thumb, alt, src, height, width, carouselHeight} = props;
 	const ref: MutableRefObject<HTMLDivElement | null> = React.useRef(null);
 	const [isVisible, setIsVisible] = React.useState(false);
@@ -70,5 +70,3 @@ function ImageContainer(props: Props) {
 		</div>
 	);
 }
-
-export default ImageContainer;

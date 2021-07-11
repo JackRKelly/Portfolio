@@ -13,7 +13,7 @@ interface Props {
 	setImageModalList: React.Dispatch<React.SetStateAction<Image[]>>;
 }
 
-function PrimaryModal(props: Props) {
+export function PrimaryModal(props: Props) {
 	const {modalInfo, isModalOpen, setIsModalOpen, viewport, setIsImageModalOpen, setImageModalList} =
 		props;
 
@@ -132,5 +132,3 @@ function PrimaryModal(props: Props) {
 
 	return null;
 }
-
-export default PrimaryModal;

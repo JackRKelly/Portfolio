@@ -483,7 +483,7 @@ main {
   overflow: hidden;
   section#home {
     position: relative;
-    height: 100vh;
+    height: 95vh;
     min-height: -webkit-fill-available;
     @media (max-width: $small) and (min-height: 700px) {
       height: 90vh;
@@ -601,7 +601,7 @@ main {
     }
   }
   section#about {
-    padding-top: 2em;
+    padding-top: 3em;
     .content {
       position: relative;
       svg.shapes {

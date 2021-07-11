@@ -1,7 +1,8 @@
 import {ModalDetails} from '../util';
 import React, {useEffect, useState} from 'react';
-import Carousel from './Carousel';
+import {Carousel} from './Carousel';
 import {Image} from '../util/image';
+
 interface Props {
 	isModalOpen: boolean;
 	modalInfo?: ModalDetails;

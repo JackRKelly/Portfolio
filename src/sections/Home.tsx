@@ -1,10 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {DownArrow, HeroShapes} from '../assets/svg';
-import Content from '../components/Content';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import {Content} from '../components/Content';
 import {debounce} from 'ts-debounce';
 import {isInViewport, calc} from '../util';
 import {useSpring} from 'react-spring/web';
+import {Element, Link} from 'react-scroll';
 
 export function Home() {
 	const [isHeroVisible, setIsHeroVisible] = useState<boolean>(false);
@@ -28,32 +28,34 @@ export function Home() {
 	}, []);
 
 	return (
-		<section
-			id="home"
-			onMouseMove={({clientX: x, clientY: y}) => {
-				if (parallaxRef.current) {
-					checkIsHeroVisibleDebounced(parallaxRef);
-					if (isHeroVisible) {
-						setParallax({xy: calc(x, y)});
+		<Element name="home">
+			<section
+				id="home"
+				onMouseMove={({clientX: x, clientY: y}) => {
+					if (parallaxRef.current) {
+						checkIsHeroVisibleDebounced(parallaxRef);
+						if (isHeroVisible) {
+							setParallax({xy: calc(x, y)});
+						}
 					}
-				}
-			}}
-		>
-			<Content>
-				<div className="info">
-					<h1>Jack Kelly</h1>
-					<p>
-						I&apos;m a self-taught software engineer based in Kansas who enjoys designing and
-						building websites, writing software, and everything in between.
-					</p>
-					<AnchorLink offset="70" href="#work">
-						<DownArrow /> View My Work
-					</AnchorLink>
-				</div>
-				<div className="hero">
-					<HeroShapes ref={parallaxRef} parallax={parallax} />
-				</div>
-			</Content>
-		</section>
+				}}
+			>
+				<Content>
+					<div className="info">
+						<h1>Jack Kelly</h1>
+						<p>
+							I&apos;m a self-taught software engineer based in Kansas who enjoys designing and
+							building websites, writing software, and everything in between.
+						</p>
+						<Link smooth to="work" className="anchor" activeClass="active" duration={200}>
+							<DownArrow /> View My Work
+						</Link>
+					</div>
+					<div className="hero">
+						<HeroShapes ref={parallaxRef} parallax={parallax} />
+					</div>
+				</Content>
+			</section>
+		</Element>
 	);
 }

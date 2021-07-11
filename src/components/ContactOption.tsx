@@ -7,7 +7,7 @@ interface Props {
 	title?: string;
 }
 
-function ContactOption(props: Props) {
+export function ContactOption(props: Props) {
 	const {href, string, children, title} = props;
 
 	return (
@@ -25,5 +25,3 @@ function ContactOption(props: Props) {
 		</li>
 	);
 }
-
-export default ContactOption;

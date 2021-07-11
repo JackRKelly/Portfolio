@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {ArrowLeft, ArrowRight} from '../assets/svg/';
 import {debounce} from 'ts-debounce';
-import CarouselImage from './CarouselImage';
+import {CarouselImage} from './CarouselImage';
 import {Image} from '../util/image';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 	setImageModalList: React.Dispatch<React.SetStateAction<Image[]>>;
 }
 
-function Carousel(props: Props) {
+export function Carousel(props: Props) {
 	const {images, isModalOpen, viewport, color, setIsImageModalOpen, setImageModalList} = props;
 
 	const [imageList, setImageList] = useState([0, 1, 2, 3, 4]);
@@ -130,5 +130,3 @@ function Carousel(props: Props) {
 		</div>
 	);
 }
-
-export default Carousel;
