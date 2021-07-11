@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/webicontest.png" />
+    <link rel="icon" href="/webicontest.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -13,12 +13,12 @@
       name="keywords"
       content="HTML, CSS, JavaScript, Typescript, Software Engineer, Jack Kelly, Jack Ryan Kelly, Software Engineer, Kansas, Portfolio, Website, Software Engineer Portfolio, Developer, Rust, Ruby, Cerner, Yellow Freight, Yellow, My Yellow, Programmer, Self taught, Self-taught, Mongo DB, Postgres, Redis, Java, Git, SQL, Computer Science, Database, Designer, UI, UX, User Interface, User Experience, Linux, Web Services, Software Development, Development, Github, Articles, Article, Dev.to, Twitter"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Domine&display=swap"
       rel="stylesheet"
     />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="/manifest.json" />
     <title>Home | Jack Kelly</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -31,18 +31,6 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-4WQ5BHB722"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-4WQ5BHB722");
-    </script>
+    <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>
