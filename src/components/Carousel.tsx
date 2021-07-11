@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {LeftArrow, RightArrow} from '../assets/svg/';
+import {ArrowLeft, ArrowRight} from '../assets/svg/';
 import {debounce} from 'ts-debounce';
 import CarouselImage from './CarouselImage';
 import {Image} from '../util/image';
@@ -105,7 +105,7 @@ function Carousel(props: Props) {
 			}}
 		>
 			<div className="left" onClick={previousImage}>
-				<LeftArrow color={color} />
+				<ArrowLeft color={color} />
 			</div>
 			<div
 				className="images"
@@ -125,7 +125,7 @@ function Carousel(props: Props) {
 			</div>
 
 			<div className="right" onClick={nextImage}>
-				<RightArrow color={color} />
+				<ArrowRight color={color} />
 			</div>
 		</div>
 	);

@@ -1,10 +1,10 @@
 import React from 'react';
 
 interface LeftArrowProps {
-	color: string;
+	color?: string;
 }
 
-export function LeftArrow(props: LeftArrowProps) {
+export function ArrowLeft(props: LeftArrowProps) {
 	const {color} = props;
 
 	return (
