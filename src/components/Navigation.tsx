@@ -37,11 +37,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                     <div></div>
                   </li>
                   <li className="icon">
-                    <a
-                      href="https://github.com/JackRKelly"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href="https://github.com/JackRKelly" target="_blank" rel="noopener noreferrer">
                       <span className="main">
                         <Github />
                       </span>
@@ -52,11 +48,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                     </a>
                   </li>
                   <li className="icon">
-                    <a
-                      href="https://dev.to/jackrkelly"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href="https://dev.to/jackrkelly" target="_blank" rel="noopener noreferrer">
                       <span className="main">
                         <Devto />
                       </span>
@@ -67,11 +59,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                     </a>
                   </li>
                   <li className="icon">
-                    <a
-                      href="https://www.linkedin.com/in/jackkelly4/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href="https://www.linkedin.com/in/jackkelly4/" target="_blank" rel="noopener noreferrer">
                       <span className="main">
                         <LinkedInBox />
                       </span>
@@ -167,14 +155,8 @@ export const Navigation: FC<Props> = (props: Props) => {
           </nav>
         </>
       ) : (
-        <nav
-          className="desktop"
-          style={{ boxShadow: isTop ? "none" : "0 0 20px rgba(0, 0, 0, 0.16)" }}
-        >
-          <ul
-            className="container"
-            style={{ padding: isTop ? "20px 0" : "10px 0" }}
-          >
+        <nav className="desktop" style={{ boxShadow: isTop ? "none" : "0 0 20px rgba(0, 0, 0, 0.16)" }}>
+          <ul className="container" style={{ padding: isTop ? "20px 0" : "10px 0" }}>
             <li className="left">
               <ul>
                 <li className={activeRef === 0 ? "active logo" : "logo"}>
@@ -187,11 +169,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                   <div></div>
                 </li>
                 <li className="icon">
-                  <a
-                    href="https://github.com/JackRKelly"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://github.com/JackRKelly" target="_blank" rel="noopener noreferrer">
                     <span className="main">
                       <Github />
                     </span>
@@ -202,11 +180,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                   </a>
                 </li>
                 <li className="icon">
-                  <a
-                    href="https://dev.to/jackrkelly"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://dev.to/jackrkelly" target="_blank" rel="noopener noreferrer">
                     <span className="main">
                       <Devto />
                     </span>
@@ -217,11 +191,7 @@ export const Navigation: FC<Props> = (props: Props) => {
                   </a>
                 </li>
                 <li className="icon">
-                  <a
-                    href="https://www.linkedin.com/in/jackkelly4/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://www.linkedin.com/in/jackkelly4/" target="_blank" rel="noopener noreferrer">
                     <span className="main">
                       <LinkedInBox />
                     </span>
@@ -236,47 +206,27 @@ export const Navigation: FC<Props> = (props: Props) => {
             <li className="right">
               <ul>
                 <li>
-                  <AnchorLink
-                    offset="0"
-                    href="#main"
-                    className={activeRef === 0 ? "anchor active" : "anchor"}
-                  >
+                  <AnchorLink offset="0" href="#main" className={activeRef === 0 ? "anchor active" : "anchor"}>
                     Home
                   </AnchorLink>
                 </li>
                 <li>
-                  <AnchorLink
-                    offset="175"
-                    href="#about"
-                    className={activeRef === 1 ? "anchor active" : "anchor"}
-                  >
+                  <AnchorLink offset="175" href="#about" className={activeRef === 1 ? "anchor active" : "anchor"}>
                     About
                   </AnchorLink>
                 </li>
                 <li>
-                  <AnchorLink
-                    offset="50"
-                    href="#work"
-                    className={activeRef === 2 ? "anchor active" : "anchor"}
-                  >
+                  <AnchorLink offset="50" href="#work" className={activeRef === 2 ? "anchor active" : "anchor"}>
                     Work
                   </AnchorLink>
                 </li>
                 <li>
-                  <AnchorLink
-                    offset="50"
-                    href="#articles"
-                    className={activeRef === 3 ? "anchor active" : "anchor"}
-                  >
+                  <AnchorLink offset="50" href="#articles" className={activeRef === 3 ? "anchor active" : "anchor"}>
                     Articles
                   </AnchorLink>
                 </li>
                 <li>
-                  <AnchorLink
-                    offset="50"
-                    href="#contact"
-                    className={activeRef === 4 ? "anchor active" : "anchor"}
-                  >
+                  <AnchorLink offset="50" href="#contact" className={activeRef === 4 ? "anchor active" : "anchor"}>
                     Contact
                   </AnchorLink>
                 </li>

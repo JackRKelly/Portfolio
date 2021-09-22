@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { AboutShapes } from "../assets/svg";
 import ArticleCard from "../components/ArticleCard";
 import ArticleWrapper from "../components/ArticleWrapper";
-import Content from "../components/Content";
+import { Content } from "../components/Content";
 import { images } from "../util/image";
 
 interface Props {
@@ -44,9 +44,7 @@ export const Articles: FC<Props> = ({ isMobile, articleRef }) => {
             title={"Professional online appearance"}
             image={images.articles.appearance}
             tags={["Career", "Beginners"]}
-            link={
-              "https://dev.to/jackrkelly/how-to-have-a-professional-online-appearance-39gk"
-            }
+            link={"https://dev.to/jackrkelly/how-to-have-a-professional-online-appearance-39gk"}
           />
         </ArticleWrapper>
       </Content>

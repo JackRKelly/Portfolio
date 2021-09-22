@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { AboutShapes } from "../assets/svg";
-import Content from "../components/Content";
+import { Content } from "../components/Content";
 import WorkCard from "../components/WorkCard";
 import WorkWrapper from "../components/WorkWrapper";
 import { ModalDetails } from "../util";

@@ -8,12 +8,7 @@ interface Props {
 
 export const ExternalLink: FC<Props> = ({ text, link }) => {
   return (
-    <a
-      href={link}
-      className="external-link"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a href={link} className="external-link" target="_blank" rel="noopener noreferrer">
       {text}
       <ExternalLinkIcon />
     </a>

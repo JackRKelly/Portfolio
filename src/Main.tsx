@@ -28,13 +28,7 @@ interface Props {
   setIsTop: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Main: FC<Props> = ({
-  isMobile,
-  viewport,
-  setIsTop,
-  activeRef,
-  setActiveRef,
-}) => {
+export const Main: FC<Props> = ({ isMobile, viewport, setIsTop, activeRef, setActiveRef }) => {
   //Modal State
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [modalInfo, setModalInfo] = useState<ModalDetails | undefined>();
@@ -49,10 +43,7 @@ export const Main: FC<Props> = ({
   const contactRef = useRef(null);
 
   const checkCurrentRef = () => {
-    document.documentElement.style.setProperty(
-      "--scroll-y",
-      `${window.scrollY}px`
-    );
+    document.documentElement.style.setProperty("--scroll-y", `${window.scrollY}px`);
 
     setIsTop(window.scrollY < 10);
 
@@ -91,10 +82,7 @@ export const Main: FC<Props> = ({
   };
 
   const scrollPositionCheck = debounce(() => {
-    document.documentElement.style.setProperty(
-      "--scroll-y",
-      `${window.scrollY}px`
-    );
+    document.documentElement.style.setProperty("--scroll-y", `${window.scrollY}px`);
     checkCurrentRef();
   }, 50);
 

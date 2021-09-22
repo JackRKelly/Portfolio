@@ -26,10 +26,7 @@ export const splitDescription = (description: string) => {
   return `${final.getSlice()}${final.getEnd()}`;
 };
 
-export const calc = (x: number, y: number) => [
-  x - window.innerWidth / 2,
-  y - window.innerHeight / 2,
-];
+export const calc = (x: number, y: number) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
 export const zIndexSwitch = (index: number) => {
   switch (index) {

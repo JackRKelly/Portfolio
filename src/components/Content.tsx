@@ -4,8 +4,6 @@ interface Props {
   children?: ReactNode;
 }
 
-const Content: FC<Props> = (props: Props) => {
+export const Content: FC<Props> = (props: Props) => {
   return <div className="content">{props.children}</div>;
 };
-
-export default Content;

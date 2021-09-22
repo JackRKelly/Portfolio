@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from "react";
 import { DownArrow, HeroShapes } from "../assets/svg";
-import Content from "../components/Content";
+import { Content } from "../components/Content";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { debounce } from "ts-debounce";
 import { isInViewport, calc } from "../util";
@@ -23,12 +23,9 @@ export const Home: FC<Props> = ({ homeRef }) => {
     setIsHeroVisible(isInViewport(hero.current));
   };
 
-  const checkIsHeroVisibleDebounced = debounce(
-    (hero: React.MutableRefObject<null>) => {
-      checkIsHeroVisible(hero);
-    },
-    500
-  );
+  const checkIsHeroVisibleDebounced = debounce((hero: React.MutableRefObject<null>) => {
+    checkIsHeroVisible(hero);
+  }, 500);
 
   useEffect(() => {
     checkIsHeroVisible(parallaxRef);
@@ -51,9 +48,8 @@ export const Home: FC<Props> = ({ homeRef }) => {
         <div className="info">
           <h1>Jack Kelly</h1>
           <p>
-            I'm a self-taught software engineer based in Kansas who enjoys
-            designing and building websites, writing software, and everything in
-            between.
+            I'm a self-taught software engineer based in Kansas who enjoys designing and building websites, writing
+            software, and everything in between.
           </p>
           <AnchorLink offset="70" href="#work">
             <DownArrow /> View My Work

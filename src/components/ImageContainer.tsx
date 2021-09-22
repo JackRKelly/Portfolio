@@ -11,14 +11,7 @@ interface Props {
   carouselHeight?: number;
 }
 
-const ImageContainer: FC<Props> = ({
-  thumb,
-  alt,
-  src,
-  height,
-  width,
-  carouselHeight,
-}) => {
+const ImageContainer: FC<Props> = ({ thumb, alt, src, height, width, carouselHeight }) => {
   const ref = React.useRef(null);
   const [isVisible, setIsVisible] = React.useState(false);
 
@@ -67,11 +60,7 @@ const ImageContainer: FC<Props> = ({
     );
   } else {
     return (
-      <div
-        ref={ref}
-        className="image-container"
-        style={{ paddingBottom: `${aspectRatio}%` }}
-      >
+      <div ref={ref} className="image-container" style={{ paddingBottom: `${aspectRatio}%` }}>
         {isVisible && <Image src={src} thumb={thumb} alt={alt} />}
       </div>
     );

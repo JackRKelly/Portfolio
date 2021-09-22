@@ -69,11 +69,7 @@ const PrimaryModal: React.FC<Props> = ({
             <ul className="link-list">
               {modalInfo.live ? (
                 <li>
-                  <a
-                    href={modalInfo.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={modalInfo.live} target="_blank" rel="noopener noreferrer">
                     <div className="svg-wrapper">
                       <span className="main">
                         <LinkIcon />
@@ -90,11 +86,7 @@ const PrimaryModal: React.FC<Props> = ({
               )}
               {modalInfo.preview ? (
                 <li>
-                  <a
-                    href={modalInfo.preview}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={modalInfo.preview} target="_blank" rel="noopener noreferrer">
                     <div className="svg-wrapper">
                       <span className="main">
                         <Preview />
@@ -111,11 +103,7 @@ const PrimaryModal: React.FC<Props> = ({
               )}
               {modalInfo.github ? (
                 <li>
-                  <a
-                    href={modalInfo.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={modalInfo.github} target="_blank" rel="noopener noreferrer">
                     <div className="svg-wrapper">
                       <span className="main">
                         <Github />

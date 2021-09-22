@@ -1,13 +1,7 @@
 import React from "react";
 import { Image } from "../util/image";
 
-import {
-  scaleSwitch,
-  opacitySwitch,
-  zIndexSwitch,
-  transitionSwitch,
-  translateSwitch,
-} from "../util";
+import { scaleSwitch, opacitySwitch, zIndexSwitch, transitionSwitch, translateSwitch } from "../util";
 import ImageContainer from "./ImageContainer";
 
 interface Props {
@@ -22,9 +16,7 @@ const CarouselImage: React.FC<Props> = ({ image, index, carouselHeight }) => {
     <div
       className="carousel-image"
       style={{
-        transform: `translateX(${translateSwitch(index)}) scale(${scaleSwitch(
-          index
-        )})`,
+        transform: `translateX(${translateSwitch(index)}) scale(${scaleSwitch(index)})`,
         zIndex: zIndexSwitch(index),
         opacity: opacitySwitch(index),
         transition: `all ${transitionSwitch(index)}ms ease`,

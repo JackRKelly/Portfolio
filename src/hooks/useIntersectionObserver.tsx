@@ -1,11 +1,6 @@
 import React from "react";
 
-export const useIntersectionObserver = ({
-  target,
-  onIntersect,
-  threshold = 0.1,
-  rootMargin = "0px",
-}) => {
+export const useIntersectionObserver = ({ target, onIntersect, threshold = 0.1, rootMargin = "0px" }) => {
   React.useEffect(() => {
     const observer = new IntersectionObserver(onIntersect, {
       rootMargin,

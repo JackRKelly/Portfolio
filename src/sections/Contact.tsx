@@ -3,7 +3,7 @@ import React, { FC, FormEvent, useState } from "react";
 import { AboutShapes, DownloadIcon, EmailIcon, LinkedIn } from "../assets/svg";
 import ContactOption from "../components/ContactOption";
 import ContactOptionsWrapper from "../components/ContactOptionsWrapper";
-import Content from "../components/Content";
+import { Content } from "../components/Content";
 
 interface Props {
   isMobile: boolean;
@@ -71,22 +71,14 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
                 <LinkedIn />
               </ContactOption>
 
-              <ContactOption
-                string="Resume"
-                href="/pdf/jack-kelly-resume.pdf"
-                title="View Jack Kelly's Resume"
-              >
+              <ContactOption string="Resume" href="/pdf/jack-kelly-resume.pdf" title="View Jack Kelly's Resume">
                 <DownloadIcon />
               </ContactOption>
             </ContactOptionsWrapper>
 
             <input type="hidden" name="form-name" value="contact" />
 
-            <div
-              className={`input-wrapper input ${
-                fullname.length > 0 ? "filled" : ""
-              }`}
-            >
+            <div className={`input-wrapper input ${fullname.length > 0 ? "filled" : ""}`}>
               <label htmlFor="fullname">Full Name</label>
               <input
                 type="text"
@@ -100,11 +92,7 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               />
             </div>
 
-            <div
-              className={`input-wrapper input ${
-                email.length > 0 ? "filled" : ""
-              }`}
-            >
+            <div className={`input-wrapper input ${email.length > 0 ? "filled" : ""}`}>
               <label htmlFor="email">Email</label>
               <input
                 type="email"
@@ -118,11 +106,7 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               />
             </div>
 
-            <div
-              className={`input-wrapper textarea ${
-                message.length > 0 ? "filled" : ""
-              }`}
-            >
+            <div className={`input-wrapper textarea ${message.length > 0 ? "filled" : ""}`}>
               <label htmlFor="message">Message</label>
               <textarea
                 name="message"
@@ -137,18 +121,9 @@ export const Contact: FC<Props> = ({ isMobile, contactRef }) => {
               ></textarea>
             </div>
 
-            <button
-              type="submit"
-              className="submit-button"
-              title="Submit the contact form"
-            >
+            <button type="submit" className="submit-button" title="Submit the contact form">
               <div className="icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="44"
-                  height="44"
-                  viewBox="0 0 44 44"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
                   <path
                     id="plane"
                     d="M44,0,33,40.333,18.1,27.062l14.3-15.1L13.228,25.216,0,22ZM16.5,30.558V44l5.973-8.123Z"

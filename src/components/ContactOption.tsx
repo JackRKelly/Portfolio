@@ -10,13 +10,7 @@ interface Props {
 const ContactOption: React.FC<Props> = ({ href, string, children, title }) => {
   return (
     <li>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="submit-button"
-        title={title}
-      >
+      <a href={href} target="_blank" rel="noopener noreferrer" className="submit-button" title={title}>
         <div className="icon">{children}</div>
         <p>{string}</p>
       </a>

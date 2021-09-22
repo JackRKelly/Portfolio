@@ -15,14 +15,7 @@ interface Props {
 }
 
 const Carousel: FC<Props> = (props: Props) => {
-  const {
-    images,
-    isModalOpen,
-    viewport,
-    color,
-    setIsImageModalOpen,
-    setImageModalList,
-  } = props;
+  const { images, isModalOpen, viewport, color, setIsImageModalOpen, setImageModalList } = props;
 
   const [imageList, setImageList] = useState([0, 1, 2, 3, 4]);
   const [xDown, setXDown] = useState<null | number>(null);

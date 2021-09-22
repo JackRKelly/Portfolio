@@ -27,10 +27,7 @@ const ArticleCard: FC<Props> = (props: Props) => {
         <div className="text">
           <p className="title">{title}</p>
           <p>{description}</p>
-          <div
-            className="link"
-            title={`Open external link for "${title}" article`}
-          >
+          <div className="link" title={`Open external link for "${title}" article`}>
             <p>
               Visit on Dev.to <ExternalLinkIcon />
             </p>

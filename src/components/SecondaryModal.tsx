@@ -9,11 +9,7 @@ interface Props {
   imageModalList: Image[];
 }
 
-const SecondaryModal: React.FC<Props> = ({
-  setIsImageModalOpen,
-  isImageModalOpen,
-  imageModalList,
-}) => {
+const SecondaryModal: React.FC<Props> = ({ setIsImageModalOpen, isImageModalOpen, imageModalList }) => {
   const listRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -45,13 +41,7 @@ const SecondaryModal: React.FC<Props> = ({
           {imageModalList.map((img, index) => (
             <li key={index}>
               <a href={img.src} target="_blank" rel="noopener noreferrer">
-                <ImageContainer
-                  src={img.src}
-                  thumb={img.thumb}
-                  alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                />
+                <ImageContainer src={img.src} thumb={img.thumb} alt={img.alt} width={img.width} height={img.height} />
               </a>
             </li>
           ))}
