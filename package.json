@@ -1,43 +1,46 @@
 {
-	"name": "portfolio",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"react": "^16.13.1",
-		"react-anchor-link-smooth-scroll": "^1.0.12",
-		"react-cool-img": "^1.2.8",
-		"react-dom": "^16.13.1",
-		"react-scripts": "3.4.3",
-		"react-scroll": "^1.8.4",
-		"react-spring": "^8.0.27",
-		"ts-debounce": "^2.0.1"
-	},
-	"devDependencies": {
-		"sass": "^1.42.1",
-		"@types/node": "^12.12.62",
-		"@types/react": "^16.9.49",
-		"@types/react-dom": "^16.9.8",
-		"typescript": "^3.7.5"
-	},
-	"scripts": {
-		"start": "set PORT=3006 && react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	}
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-cool-img": "^1.2.8",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "react-scroll": "^1.8.4",
+    "react-spring": "^8.0.27",
+    "ts-debounce": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.62",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "prettier": "^2.4.1",
+    "sass": "^1.42.1",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "start": "set PORT=3006 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "yarn prettier --write ./src/**/*.{js,jsx,json,md,ts,tsx}",
+    "format:check": "yarn prettier ./src/**/*.{js,jsx,json,md,ts,tsx}"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
